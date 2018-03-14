@@ -55,6 +55,25 @@ class Question
         return (int) $row['count'];
     }
 
+    public function selectOrderByCreatedDesc() : Generator
+    {
+        $sql = '
+            SELECT `question`.`question_id`
+                 , `question`.`user_id`
+                 , `question`.`subject`
+                 , `question`.`message`
+                 , `question`.`created`
+              FROM `question`
+             ORDER
+                BY `question`.`created` DESC
+             LIMIT 100
+                 ;
+        ';
+        foreach ($this->adapter->query($sql)->execute() as $row) {
+            yield($row);
+        }
+    }
+
     /**
      * Select where question ID.
      *
