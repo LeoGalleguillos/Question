@@ -23,22 +23,18 @@ class Submit
     /**
      * Submit.
      *
-     * @param $userId,
-     * @param string $subject,
-     * @param string $message
+     * @param $userId
      * @return QuestionEntity\Question
      */
     public function submit(
-        $userId,
-        string $subject,
-        string $message
+        $userId
     ) : QuestionEntity\Question {
         $errors = [];
 
-        if (empty($subject)) {
+        if (empty($_POST['subject'])) {
             $errors[] = 'Invalid subject.';
         }
-        if (empty($message)) {
+        if (empty($_POST['message'])) {
             $errors[] = 'Invalid message.';
         }
 
@@ -49,8 +45,8 @@ class Submit
 
         $questionId = $this->questionTable->insert(
             $userId,
-            $subject,
-            $message
+            $_POST['subject'],
+            $_POST['message']
         );
 
         return $this->questionFactory->buildFromQuestionId($questionId);
