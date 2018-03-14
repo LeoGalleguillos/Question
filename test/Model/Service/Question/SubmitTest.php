@@ -1,6 +1,7 @@
 <?php
 namespace LeoGalleguillos\QuestionTest\Model\Service\Question;
 
+use Exception;
 use LeoGalleguillos\Flash\Model\Service as FlashService;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
@@ -34,5 +35,18 @@ class SubmitTest extends TestCase
             QuestionService\Question\Submit::class,
             $this->submitQuestionService
         );
+    }
+
+    public function testSubmit()
+    {
+        try {
+            $this->submitQuestionService->submit();
+            $this->fail();
+        } catch (Exception $exception) {
+            $this->assertSame(
+                'Invalid form input.',
+                $exception->getMessage()
+            );
+        }
     }
 }
