@@ -7,6 +7,7 @@ use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
+use LeoGalleguillos\User\Model\Entity as UserEntity;
 
 class Submit
 {
@@ -27,7 +28,7 @@ class Submit
      * @return QuestionEntity\Question
      */
     public function submit(
-        $userId
+        UserEntity\User $userEntity = null
     ) : QuestionEntity\Question {
         $errors = [];
 
@@ -44,7 +45,7 @@ class Submit
         }
 
         $questionId = $this->questionTable->insert(
-            $userId,
+            $userEntity->getUserId(),
             $_POST['subject'],
             $_POST['message']
         );
