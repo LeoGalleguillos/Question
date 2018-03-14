@@ -2,6 +2,7 @@
 
 return [
     'modules' => [
+        'LeoGalleguillos\Flash',
         'LeoGalleguillos\Question',
         'Zend\Db',
         'Zend\Router',
