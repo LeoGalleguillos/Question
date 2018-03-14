@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d30378a276d739a67cd697daed81e27e",
-    "content-hash": "0a96b8fae775eb62bb27ba304953fb46",
+    "hash": "097654fb14ee6f70bad52d3200454430",
+    "content-hash": "9934c77aa33215a7fb46a25509bdfa8a",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -91,6 +91,36 @@
                 "instantiate"
             ],
             "time": "2015-06-14 21:17:01"
+        },
+        {
+            "name": "leo-galleguillos/flash",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LeoGalleguillos/Flash.git",
+                "reference": "b326f261caa5def2df78c17be436f116881d20e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LeoGalleguillos/Flash/zipball/b326f261caa5def2df78c17be436f116881d20e9",
+                "reference": "b326f261caa5def2df78c17be436f116881d20e9",
+                "shasum": ""
+            },
+            "require": {
+                "zendframework/zend-test": "^3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LeoGalleguillos\\Flash\\": "src/",
+                    "LeoGalleguillos\\FlashTest\\": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2018-02-05 17:33:48"
         },
         {
             "name": "myclabs/deep-copy",
@@ -2542,7 +2572,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "leo-galleguillos/flash": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
