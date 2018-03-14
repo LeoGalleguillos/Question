@@ -1,0 +1,15 @@
+{
+    "minimum-stability": "dev",
+    "name": "leo-galleguillos/question",
+    "license": "MIT",
+    "require": {
+        "zendframework/zend-test": "^3.1",
+        "zendframework/zend-db": "^2.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "LeoGalleguillos\\Question\\": "src/",
+            "LeoGalleguillos\\QuestionTest\\": "test/"
+        }
+    }
+}
