@@ -7,14 +7,14 @@ use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use PHPUnit\Framework\TestCase;
 
-class CreateTest extends TestCase
+class SubmitTest extends TestCase
 {
     protected function setUp()
     {
         $this->questionTableMock = $this->createMock(
             QuestionTable\Question::class
         );
-        $this->createQuestionService = new QuestionService\Question\Create(
+        $this->submitQuestionService = new QuestionService\Question\Submit(
             $this->questionTableMock
         );
     }
@@ -22,8 +22,8 @@ class CreateTest extends TestCase
     public function testInitialize()
     {
         $this->assertInstanceOf(
-            QuestionService\Question\Create::class,
-            $this->createQuestionService
+            QuestionService\Question\Submit::class,
+            $this->submitQuestionService
         );
     }
 }

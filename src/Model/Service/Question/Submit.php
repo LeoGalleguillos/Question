@@ -6,7 +6,7 @@ use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 
-class Create
+class Submit
 {
     public function __construct(
         QuestionTable\Question $questionTable
@@ -15,9 +15,9 @@ class Create
     }
 
     /**
-     * Create question.
+     * Submit.
      */
-    public function create(
+    public function submit(
         $userId,
         string $subject,
         string $message
