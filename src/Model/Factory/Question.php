@@ -4,10 +4,14 @@ namespace LeoGalleguillos\Question\Model\Factory;
 use DateTime;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\Entity\Model\Factory as EntityFactory;
 
 class Question
 {
+    /**
+     * Construct
+     *
+     * @param QuestionTable\Question $questionTable
+     */
     public function __construct(
         QuestionTable\Question $questionTable
     ) {
@@ -20,8 +24,9 @@ class Question
      * @param array $array
      * @return QuestionEntity\Question
      */
-    public function buildFromArray(array $array) : QuestionEntity\Question
-    {
+    public function buildFromArray(
+        array $array
+    ) : QuestionEntity\Question {
         $questionEntity = new QuestionEntity\Question();
         $questionEntity->setCreated(new DateTime($array['created']))
                        ->setMessage($array['message'])
@@ -32,8 +37,15 @@ class Question
         return $questionEntity;
     }
 
-    public function buildFromQuestionId(int $questionId) : QuestionEntity\Question
-    {
+    /**
+     * Build from question ID.
+     *
+     * @param int $questionId
+     * @return QuestionEntity\Question
+     */
+    public function buildFromQuestionId(
+        int $questionId
+    ) : QuestionEntity\Question {
         return $this->buildFromArray(
             $this->questionTable->selectWhereQuestionId($questionId)
         );
