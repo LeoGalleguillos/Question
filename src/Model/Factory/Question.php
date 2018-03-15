@@ -26,7 +26,8 @@ class Question
         $questionEntity->setCreated(new DateTime($array['created']))
                        ->setMessage($array['message'])
                        ->setQuestionId($array['question_id'])
-                       ->setSubject($array['subject']);
+                       ->setSubject($array['subject'])
+                       ->setViews($array['views']);
 
         return $questionEntity;
     }
