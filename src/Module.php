@@ -6,6 +6,7 @@ use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use LeoGalleguillos\Question\View\Helper as QuestionHelper;
+use LeoGalleguillos\String\Model\Service as StringService;
 
 class Module
 {
@@ -34,6 +35,11 @@ class Module
                     return new QuestionService\Questions(
                         $serviceManager->get(QuestionFactory\Question::class),
                         $serviceManager->get(QuestionTable\Question::class)
+                    );
+                },
+                QuestionService\Question\RootRelativeUrl::class => function ($serviceManager) {
+                    return new QuestionService\Question\RootRelativeUrl(
+                        $serviceManager->get(StringService\UrlFriendly::class)
                     );
                 },
                 QuestionService\Question\Submit::class => function ($serviceManager) {
