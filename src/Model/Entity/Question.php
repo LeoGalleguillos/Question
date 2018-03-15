@@ -12,6 +12,7 @@ class Question
     protected $created;
     protected $subject;
     protected $message;
+    protected $views;
 
     public function getCreated() : DateTime
     {
@@ -36,6 +37,11 @@ class Question
     public function getUserId() : int
     {
         return $this->userId;
+    }
+
+    public function getViews() : int
+    {
+        return $this->views;
     }
 
     public function setCreated(DateTime $created) : QuestionEntity\Question
@@ -65,6 +71,12 @@ class Question
     public function setUserId(int $userId) : QuestionEntity\Question
     {
         $this->userId = $userId;
+        return $this;
+    }
+
+    public function setViews(int $views) : QuestionEntity\Question
+    {
+        $this->views = $views;
         return $this;
     }
 }
