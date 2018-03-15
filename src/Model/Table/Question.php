@@ -63,6 +63,7 @@ class Question
                  , `question`.`subject`
                  , `question`.`message`
                  , `question`.`created`
+                 , `question`.`views`
               FROM `question`
              ORDER
                 BY `question`.`created` DESC
@@ -88,6 +89,7 @@ class Question
                  , `question`.`subject`
                  , `question`.`message`
                  , `question`.`created`
+                 , `question`.`views`
               FROM `question`
              WHERE `question`.`question_id` = :questionId
              ORDER
