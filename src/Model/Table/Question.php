@@ -101,4 +101,18 @@ class Question
         ];
         return $this->adapter->query($sql)->execute($parameters)->current();
     }
+
+    public function updateViewsWhereQuestionId(int $questionId) : bool
+    {
+        $sql = '
+            UPDATE `question`
+               SET `question`.`views` = `question`.`views` + 1
+             WHERE `question`.`question_id` = :questionId
+                 ;
+        ';
+        $parameters = [
+            'questionId' => $questionId,
+        ];
+        return (bool) $this->adapter->query($sql, $parameters)->getAffectedRows();
+    }
 }

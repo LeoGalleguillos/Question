@@ -43,6 +43,11 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionService\Question\IncrementViews::class => function ($serviceManager) {
+                    return new QuestionService\Question\IncrementViews(
+                        $serviceManager->get(QuestionTable\Question::class)
+                    );
+                },
                 QuestionService\Question\RootRelativeUrl::class => function ($serviceManager) {
                     return new QuestionService\Question\RootRelativeUrl(
                         $serviceManager->get(StringService\UrlFriendly::class)
