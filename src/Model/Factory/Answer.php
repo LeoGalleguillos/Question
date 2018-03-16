@@ -42,7 +42,7 @@ class Answer
      * @param int $answerId
      * @return QuestionEntity\Answer
      */
-    public function buildFromQuestionId(
+    public function buildFromAnswerId(
         int $answerId
     ) : QuestionEntity\Answer {
         return $this->buildFromArray(
