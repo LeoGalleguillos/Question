@@ -22,7 +22,7 @@ class AnswerTest extends TableTestCase
         $configArray     = $configArray['db']['adapters']['leogalle_test'];
         $this->adapter   = new Adapter($configArray);
 
-        $this->answerTable = new QuestionTable\Question($this->adapter);
+        $this->answerTable = new QuestionTable\Answer($this->adapter);
 
         $this->setForeignKeyChecks0();
         $this->dropTable();
@@ -45,8 +45,23 @@ class AnswerTest extends TableTestCase
     public function testInitialize()
     {
         $this->assertInstanceOf(
-            QuestionTable\Question::class,
+            QuestionTable\Answer::class,
             $this->answerTable
+        );
+    }
+
+    public function testInsertAndSelectCount()
+    {
+        $this->assertSame(
+            0,
+            $this->answerTable->selectCount()
+        );
+        $this->answerTable->insert(1, 2, 'message');
+        $this->answerTable->insert(3, 4, 'message');
+        $this->answerTable->insert(5, 6, 'message');
+        $this->assertSame(
+            3,
+            $this->answerTable->selectCount()
         );
     }
 }
