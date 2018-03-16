@@ -46,7 +46,7 @@ class Answer
         int $answerId
     ) : QuestionEntity\Answer {
         return $this->buildFromArray(
-            $this->questionTable->selectWhereAnswerId($answerId)
+            $this->answerTable->selectWhereAnswerId($answerId)
         );
     }
 }
