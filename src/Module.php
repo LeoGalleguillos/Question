@@ -60,6 +60,11 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionTable\Answer::class => function ($serviceManager) {
+                    return new QuestionTable\Answer(
+                        $serviceManager->get('main')
+                    );
+                },
                 QuestionTable\Question::class => function ($serviceManager) {
                     return new QuestionTable\Question(
                         $serviceManager->get('main')
