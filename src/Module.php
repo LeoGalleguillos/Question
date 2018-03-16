@@ -42,6 +42,13 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionService\Answer\Submit::class => function ($serviceManager) {
+                    return new QuestionService\Answer\Submit(
+                        $serviceManager->get(FlashService\Flash::class),
+                        $serviceManager->get(QuestionFactory\Answer::class),
+                        $serviceManager->get(QuestionTable\Answer::class)
+                    );
+                },
                 QuestionService\Questions::class => function ($serviceManager) {
                     return new QuestionService\Questions(
                         $serviceManager->get(QuestionFactory\Question::class),
