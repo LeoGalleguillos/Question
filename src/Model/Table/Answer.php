@@ -56,6 +56,30 @@ class Answer
     }
 
     /**
+     * Select where answer ID.
+     *
+     * @param int $answerId
+     * @return array
+     */
+    public function selectWhereAnswerId(int $answerId) : array
+    {
+        $sql = '
+            SELECT `answer`.`answer_id`
+                 , `answer`.`question_id`
+                 , `answer`.`user_id`
+                 , `answer`.`message`
+                 , `answer`.`created`
+              FROM `answer`
+             WHERE `answer`.`answer_id` = :answerId
+                 ;
+        ';
+        $parameters = [
+            'answerId' => $answerId,
+        ];
+        return $this->adapter->query($sql)->execute($parameters)->current();
+    }
+
+    /**
      * Select where question ID.
      *
      * @param int $questionId

@@ -48,4 +48,29 @@ class AnswerTest extends TestCase
             $this->answerFactory->buildFromArray($array)
         );
     }
+
+    public function testBuildFromAnswerId()
+    {
+        $array = [
+            'answer_id'   => 1,
+            'question_id' => 1,
+            'user_id'     => 1,
+            'message'     => 'message',
+            'created'     => '2018-03-12 22:12:23',
+        ];
+        $this->answerTableMock->method('selectWhereAnswerId')->willReturn(
+            $array
+        );
+
+        $answerEntity = new QuestionEntity\Answer();
+        $answerEntity->setAnswerId($array['answer_id'])
+                     ->setCreated(new DateTime($array['created']))
+                     ->setMessage($array['message'])
+                     ->setQuestionId($array['question_id']);
+
+        $this->assertEquals(
+            $answerEntity,
+            $this->answerFactory->buildFromArray($array)
+        );
+    }
 }
