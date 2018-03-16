@@ -35,4 +35,18 @@ class Answer
 
         return $answerEntity;
     }
+
+    /**
+     * Build from answer ID.
+     *
+     * @param int $answerId
+     * @return QuestionEntity\Answer
+     */
+    public function buildFromQuestionId(
+        int $answerId
+    ) : QuestionEntity\Answer {
+        return $this->buildFromArray(
+            $this->questionTable->selectWhereAnswerId($answerId)
+        );
+    }
 }
