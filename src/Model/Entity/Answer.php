@@ -14,6 +14,11 @@ class Answer
     protected $userId;
     protected $views;
 
+    public function getAnswerId() : int
+    {
+        return $this->answerId;
+    }
+
     public function getCreated() : DateTime
     {
         return $this->created;
@@ -37,6 +42,12 @@ class Answer
     public function getViews() : int
     {
         return $this->views;
+    }
+
+    public function setAnswerId(int $answerId) : QuestionEntity\Answer
+    {
+        $this->answerId = $answerId;
+        return $this;
     }
 
     public function setCreated(DateTime $created) : QuestionEntity\Answer
