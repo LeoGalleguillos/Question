@@ -4,7 +4,6 @@ namespace LeoGalleguillos\Question\Model\Factory;
 use DateTime;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use TypeError;
 
 class Question
 {
@@ -34,10 +33,8 @@ class Question
                        ->setSubject($array['subject'])
                        ->setViews($array['views']);
 
-        try {
+        if (!empty($array['message'])) {
             $questionEntity->setMessage($array['message']);
-        } catch (TypeError $typeError) {
-            // Do nothing.
         }
 
         return $questionEntity;
