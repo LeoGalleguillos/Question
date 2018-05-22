@@ -21,9 +21,9 @@ class Question
      * @return int
      */
     public function insert(
-        $userId,
+        int $userId = null,
         string $subject,
-        string $message
+        string $message = null
     ) : int {
         $sql = '
             INSERT

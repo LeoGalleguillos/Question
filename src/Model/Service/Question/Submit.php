@@ -41,8 +41,12 @@ class Submit
             throw new Exception('Invalid form input.');
         }
 
+        if ($userEntity) {
+            $userId = $userEntity->getUserId();
+        }
+
         $questionId = $this->questionTable->insert(
-            $userEntity->getUserId() ?? null,
+            $userId ?? null,
             $_POST['subject'],
             $_POST['message'] ?? null
         );
