@@ -35,9 +35,6 @@ class Submit
         if (empty($_POST['subject'])) {
             $errors[] = 'Invalid subject.';
         }
-        if (empty($_POST['message'])) {
-            $errors[] = 'Invalid message.';
-        }
 
         if ($errors) {
             $this->flashService->set('errors', $errors);
@@ -45,9 +42,9 @@ class Submit
         }
 
         $questionId = $this->questionTable->insert(
-            $userEntity->getUserId(),
+            $userEntity->getUserId() ?? null,
             $_POST['subject'],
-            $_POST['message']
+            $_POST['message'] ?? null
         );
 
         return $this->questionFactory->buildFromQuestionId($questionId);
