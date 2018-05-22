@@ -29,10 +29,15 @@ class Question
     ) : QuestionEntity\Question {
         $questionEntity = new QuestionEntity\Question();
         $questionEntity->setCreated(new DateTime($array['created']))
-                       ->setMessage($array['message'])
                        ->setQuestionId($array['question_id'])
                        ->setSubject($array['subject'])
                        ->setViews($array['views']);
+
+        try {
+            $questionEntity->setMessage($array['message']);
+        } catch (TypeError $typeError) {
+            // Do nothing.
+        }
 
         return $questionEntity;
     }
