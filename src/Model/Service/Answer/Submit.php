@@ -32,7 +32,7 @@ class Submit
     ) : QuestionEntity\Answer {
         $errors = [];
 
-        if (empty($_POST['question_id'])) {
+        if (empty($_POST['question-id'])) {
             $errors[] = 'Invalid question ID.';
         }
         if (empty($_POST['message'])) {
