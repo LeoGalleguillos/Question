@@ -74,6 +74,7 @@ class Answer
             SELECT `answer`.`answer_id`
                  , `answer`.`question_id`
                  , `answer`.`user_id`
+                 , `answer`.`name`
                  , `answer`.`message`
                  , `answer`.`created`
               FROM `answer`
@@ -98,6 +99,7 @@ class Answer
             SELECT `answer`.`answer_id`
                  , `answer`.`question_id`
                  , `answer`.`user_id`
+                 , `answer`.`name`
                  , `answer`.`message`
                  , `answer`.`created`
               FROM `answer`
