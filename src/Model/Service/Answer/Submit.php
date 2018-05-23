@@ -44,9 +44,11 @@ class Submit
             throw new Exception('Invalid form input.');
         }
 
+        $userId = isset($userEntity) ? $userEntity->getUserId() : null;
+
         $answerId = $this->answerTable->insert(
-            $_POST['question_id'],
-            $userEntity->getUserId(),
+            $_POST['question-id'],
+            $userId,
             $_POST['message']
         );
 

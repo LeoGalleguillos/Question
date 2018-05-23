@@ -39,6 +39,7 @@ class SubmitTest extends TestCase
 
     public function testSubmit()
     {
+        $_POST = [];
         try {
             $this->submitQuestionService->submit();
             $this->fail();
@@ -48,5 +49,14 @@ class SubmitTest extends TestCase
                 $exception->getMessage()
             );
         }
+
+        $_POST = [
+            'question-id' => '123',
+            'message'     => 'this is the message',
+        ];
+        $this->assertInstanceOf(
+            QuestionEntity\Answer::class,
+            $this->submitQuestionService->submit()
+        );
     }
 }
