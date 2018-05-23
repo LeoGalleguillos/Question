@@ -18,6 +18,9 @@ class Answer
     }
 
     /**
+     * @param int $questionId
+     * @param int|null $userId
+     * @param string $message
      * @return int
      */
     public function insert(
@@ -44,6 +47,9 @@ class Answer
                     ->getGeneratedValue();
     }
 
+    /**
+     * @return int
+     */
     public function selectCount()
     {
         $sql = '
