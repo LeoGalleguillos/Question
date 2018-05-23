@@ -45,10 +45,12 @@ class Submit
         }
 
         $userId = isset($userEntity) ? $userEntity->getUserId() : null;
+        $name   = $_POST['name'] ?? null;
 
         $answerId = $this->answerTable->insert(
             $_POST['question-id'],
             $userId,
+            $name,
             $_POST['message']
         );
 

@@ -26,6 +26,7 @@ class Answer
     public function insert(
         int $questionId,
         int $userId = null,
+        string $name = null,
         string $message
     ) : int {
         $sql = '

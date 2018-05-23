@@ -56,9 +56,9 @@ class AnswerTest extends TableTestCase
             0,
             $this->answerTable->selectCount()
         );
-        $this->answerTable->insert(1, 2, 'message');
-        $this->answerTable->insert(3, 4, 'message');
-        $this->answerTable->insert(5, 6, 'message');
+        $this->answerTable->insert(1, 2, 'name', 'message');
+        $this->answerTable->insert(3, null, 'name', 'message');
+        $this->answerTable->insert(5, 6, null, 'message');
         $this->assertSame(
             3,
             $this->answerTable->selectCount()
@@ -67,9 +67,9 @@ class AnswerTest extends TableTestCase
 
     public function testSelectWhereAnswerId()
     {
-        $this->answerTable->insert(1, 2, 'message1');
-        $this->answerTable->insert(3, 4, 'message2');
-        $this->answerTable->insert(5, 6, 'third message');
+        $this->answerTable->insert(1, 2, 'name', 'message1');
+        $this->answerTable->insert(3, null, 'name', 'message');
+        $this->answerTable->insert(5, 6, null, 'third message');
 
         $this->assertSame(
             'message1',
