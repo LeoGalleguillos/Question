@@ -32,15 +32,16 @@ class Answer
         $sql = '
             INSERT
               INTO `answer` (
-                   `question_id`, `user_id`, `message`, `created`
+                   `question_id`, `user_id`, `name`, `message`, `created`
                    )
-            VALUES (:questionId, :userId, :message, UTC_TIMESTAMP())
+            VALUES (?, ?, ?, ?, UTC_TIMESTAMP())
                  ;
         ';
         $parameters = [
-            'questionId' => $questionId,
-            'userId'     => $userId,
-            'message'    => $message,
+            $questionId,
+            $userId,
+            $name,
+            $message,
         ];
         return $this->adapter
                     ->query($sql)
