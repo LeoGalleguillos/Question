@@ -64,6 +64,21 @@ class Answer
     }
 
     /**
+     * @return int
+     */
+    public function selectCountWhereQuestionId(int $questionId)
+    {
+        $sql = '
+            SELECT COUNT(*) AS `count`
+              FROM `answer`
+             WHERE `question_id` = ?
+                 ;
+        ';
+        $row = $this->adapter->query($sql)->execute([$questionId])->current();
+        return (int) $row['count'];
+    }
+
+    /**
      * Select where answer ID.
      *
      * @param int $answerId

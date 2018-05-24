@@ -48,6 +48,11 @@ class Module
                         $serviceManager->get(QuestionTable\Answer::class)
                     );
                 },
+                QuestionService\Answer\Count::class => function ($serviceManager) {
+                    return new QuestionService\Answer\Count(
+                        $serviceManager->get(QuestionTable\Answer::class)
+                    );
+                },
                 QuestionService\Answer\Submit::class => function ($serviceManager) {
                     return new QuestionService\Answer\Submit(
                         $serviceManager->get(FlashService\Flash::class),
