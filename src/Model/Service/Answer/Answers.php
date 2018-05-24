@@ -24,7 +24,7 @@ class Answers
      * @yield QuestionEntity\Answer
      * @return Generator
      */
-    public function submit(
+    public function getAnswers(
         QuestionEntity\Question $questionEntity
     ) : Generator {
         $arrays = $this->answerTable->selectWhereQuestionId(
