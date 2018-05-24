@@ -1,6 +1,7 @@
 <?php
 namespace LeoGalleguillos\QuestionTest\Model\Service\Answer;
 
+use Generator;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
@@ -28,6 +29,17 @@ class AnswersTest extends TestCase
         $this->assertInstanceOf(
             QuestionService\Answer\Answers::class,
             $this->answersService
+        );
+    }
+
+    public function testGetAnswers()
+    {
+        $questionEntity = new QuestionEntity\Question();
+        $generator = $this->answersService->getAnswers($questionEntity);
+
+        $this->assertInstanceOf(
+            Generator::class,
+            $generator
         );
     }
 }
