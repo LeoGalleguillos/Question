@@ -85,12 +85,12 @@ class Module
                 },
                 QuestionTable\Answer::class => function ($serviceManager) {
                     return new QuestionTable\Answer(
-                        $serviceManager->get('main')
+                        $serviceManager->get('question')
                     );
                 },
                 QuestionTable\Question::class => function ($serviceManager) {
                     return new QuestionTable\Question(
-                        $serviceManager->get('main')
+                        $serviceManager->get('question')
                     );
                 },
             ],
