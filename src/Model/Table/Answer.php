@@ -26,21 +26,19 @@ class Answer
     public function insert(
         int $questionId,
         int $userId = null,
-        string $name = null,
         string $message
     ) : int {
         $sql = '
             INSERT
               INTO `answer` (
-                   `question_id`, `user_id`, `name`, `message`, `created`
+                   `question_id`, `user_id`, `message`, `created`
                    )
-            VALUES (?, ?, ?, ?, UTC_TIMESTAMP())
+            VALUES (?, ?, ?, UTC_TIMESTAMP())
                  ;
         ';
         $parameters = [
             $questionId,
             $userId,
-            $name,
             $message,
         ];
         return $this->adapter
@@ -90,7 +88,6 @@ class Answer
             SELECT `answer`.`answer_id`
                  , `answer`.`question_id`
                  , `answer`.`user_id`
-                 , `answer`.`name`
                  , `answer`.`message`
                  , `answer`.`created`
               FROM `answer`
@@ -115,7 +112,6 @@ class Answer
             SELECT `answer`.`answer_id`
                  , `answer`.`question_id`
                  , `answer`.`user_id`
-                 , `answer`.`name`
                  , `answer`.`message`
                  , `answer`.`created`
               FROM `answer`

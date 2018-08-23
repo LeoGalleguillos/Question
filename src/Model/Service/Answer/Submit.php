@@ -50,7 +50,6 @@ class Submit
         $answerId = $this->answerTable->insert(
             $_POST['question-id'],
             $userId,
-            $name,
             $_POST['message']
         );
 
