@@ -9,4 +9,4 @@ CREATE TABLE `question` (
     `created` datetime not null,
     PRIMARY KEY (`question_id`),
     KEY `user_id` (`user_id`)
-) charset=utf8;
+) CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
