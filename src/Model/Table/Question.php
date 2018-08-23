@@ -44,6 +44,35 @@ class Question
                     ->getGeneratedValue();
     }
 
+    /**
+     * @return int
+     */
+    public function insertQuestionIdSubjectMessageIp(
+        int $questionId,
+        string $subject,
+        string $message,
+        string $ip
+    ): int {
+        $sql = '
+            INSERT
+              INTO `question` (
+                       `question_id`, `subject`, `message`, `ip`, `created`
+                   )
+            VALUES (?, ?, ?, ?, UTC_TIMESTAMP())
+                 ;
+        ';
+        $parameters = [
+            $questionId,
+            $subject,
+            $message,
+            $ip,
+        ];
+        return (int) $this->adapter
+                          ->query($sql)
+                          ->execute($parameters)
+                          ->getGeneratedValue();
+    }
+
     public function selectCount()
     {
         $sql = '
