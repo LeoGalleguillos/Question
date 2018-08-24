@@ -27,7 +27,7 @@ class QuestionMeta
                  ;
         ';
         $parameters = [
-            $entityId,
+            $questionId,
             $array['name'],
         ];
         return (int) $this->adapter
