@@ -18,6 +18,8 @@ class Answer
     }
 
     /**
+     * Insert into `answer` table.
+     *
      * @param int $questionId
      * @param int|null $userId
      * @param string $message
@@ -27,7 +29,7 @@ class Answer
         int $questionId,
         int $userId = null,
         string $message
-    ) : int {
+    ): int {
         $sql = '
             INSERT
               INTO `answer` (
@@ -48,9 +50,11 @@ class Answer
     }
 
     /**
+     * Select count.
+     *
      * @return int
      */
-    public function selectCount()
+    public function selectCount(): int
     {
         $sql = '
             SELECT COUNT(*) AS `count`
@@ -62,9 +66,12 @@ class Answer
     }
 
     /**
+     * Select count where question ID.
+     *
+     * @param int $questionId
      * @return int
      */
-    public function selectCountWhereQuestionId(int $questionId)
+    public function selectCountWhereQuestionId(int $questionId): int
     {
         $sql = '
             SELECT COUNT(*) AS `count`
