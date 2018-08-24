@@ -65,6 +65,20 @@ class AnswerTest extends TableTestCase
         );
     }
 
+    public function testInsertAnswerIdQuestionIdMessageIp()
+    {
+        $answerId = $this->answerTable->insertAnswerIdQuestionIdMessageIp(
+            12345,
+            54321,
+            'message',
+            'ip'
+        );
+        $this->assertSame(
+            $answerId,
+            12345
+        );
+    }
+
     public function testSelectWhereAnswerId()
     {
         $this->answerTable->insert(1, 2, 'first message');
