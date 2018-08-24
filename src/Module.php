@@ -93,6 +93,11 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\QuestionMeta::class => function ($serviceManager) {
+                    return new QuestionTable\QuestionMeta(
+                        $serviceManager->get('question')
+                    );
+                },
             ],
         ];
     }
