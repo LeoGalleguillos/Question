@@ -23,7 +23,7 @@ class QuestionMeta
             INSERT
               INTO `question_meta`
                    (`question_id`, `name`)
-            VALUES ?, ?
+            VALUES (?, ?)
                  ;
         ';
         $parameters = [
