@@ -6,7 +6,7 @@ use LeoGalleguillos\QuestionTest\TableTestCase;
 use Zend\Db\Adapter\Adapter;
 use PHPUnit\Framework\TestCase;
 
-class MetaTest extends TableTestCase
+class QuestionMetaTest extends TableTestCase
 {
     /**
      * @var string
