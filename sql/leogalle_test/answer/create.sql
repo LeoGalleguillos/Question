@@ -5,6 +5,7 @@ CREATE TABLE `answer` (
     `message` text,
     `ip` varchar(45) default null,
     `created` datetime not null,
+    `deleted` datetime default null,
     PRIMARY KEY (`answer_id`),
     KEY `question_id` (`question_id`),
     KEY `user_id` (`user_id`)
