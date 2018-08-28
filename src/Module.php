@@ -88,6 +88,11 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Answer\Deleted::class => function ($serviceManager) {
+                    return new QuestionTable\Answer\Deleted(
+                        $serviceManager->get('question')
+                    );
+                },
                 QuestionTable\AnswerMeta::class => function ($serviceManager) {
                     return new QuestionTable\AnswerMeta(
                         $serviceManager->get('question')
