@@ -108,6 +108,11 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Question\Subject::class => function ($serviceManager) {
+                    return new QuestionTable\Question\Subject(
+                        $serviceManager->get('question')
+                    );
+                },
                 QuestionTable\QuestionMeta::class => function ($serviceManager) {
                     return new QuestionTable\QuestionMeta(
                         $serviceManager->get('question')
