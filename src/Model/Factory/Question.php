@@ -57,8 +57,21 @@ class Question
     public function buildFromQuestionId(
         int $questionId
     ) : QuestionEntity\Question {
-        return $this->buildFromArray(
-            $this->questionTable->selectWhereQuestionId($questionId)
+        $questionArray = $this->questionTable->selectWhereQuestionId(
+            $questionId
+        );
+
+        try {
+            $metaArray = $this->questionMetaTable->selectWhereQuestionId(
+                $questionId
+            );
+        } catch (Exception $exception) {
+            return $this->buildFromArray($questionArray);
+        }
+
+        return $this->buildFromArrays(
+            $questionArray,
+            $metaArray
         );
     }
 }
