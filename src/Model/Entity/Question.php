@@ -12,6 +12,7 @@ class Question
     protected $created;
     protected $subject;
     protected $message;
+    protected $meta;
     protected $views;
 
     public function getCreated() : DateTime
@@ -22,6 +23,11 @@ class Question
     public function getMessage() : string
     {
         return $this->message;
+    }
+
+    public function getMeta(): array
+    {
+        return $this->meta;
     }
 
     public function getQuestionId() : int
@@ -59,6 +65,12 @@ class Question
     public function setMessage(string $message) : QuestionEntity\Question
     {
         $this->message = $message;
+        return $this;
+    }
+
+    public function setMeta(array $meta): QuestionEntity\Question
+    {
+        $this->meta = $meta;
         return $this;
     }
 
