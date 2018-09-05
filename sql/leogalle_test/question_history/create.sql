@@ -5,6 +5,7 @@ CREATE TABLE `question_history` (
     `subject` varchar(255) not null,
     `message` text,
     `ip` varchar(45) default null,
+    `note` varchar(255) default null,
     `created` datetime not null,
     `question_meta_history_id` int(10) unsigned default null,
     PRIMARY KEY (`question_history_id`),

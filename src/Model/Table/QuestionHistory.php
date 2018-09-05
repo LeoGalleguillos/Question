@@ -24,6 +24,7 @@ class QuestionHistory
         string $subject,
         string $message,
         string $ip,
+        string $note = null,
         string $created,
         int $questionMetaHistoryId = null
     ): int {
@@ -35,6 +36,7 @@ class QuestionHistory
                      , `subject`
                      , `message`
                      , `ip`
+                     , `note`
                      , `created`
                      , `question_meta_history_id`
                    )
@@ -47,6 +49,7 @@ class QuestionHistory
             $subject,
             $message,
             $ip,
+            $note,
             $created,
             $questionMetaHistoryId,
         ];
