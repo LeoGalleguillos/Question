@@ -113,8 +113,18 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\QuestionHistory::class => function ($serviceManager) {
+                    return new QuestionTable\QuestionHistory(
+                        $serviceManager->get('question')
+                    );
+                },
                 QuestionTable\QuestionMeta::class => function ($serviceManager) {
                     return new QuestionTable\QuestionMeta(
+                        $serviceManager->get('question')
+                    );
+                },
+                QuestionTable\QuestionMetaHistory::class => function ($serviceManager) {
+                    return new QuestionTable\QuestionMetaHistory(
                         $serviceManager->get('question')
                     );
                 },
