@@ -2,6 +2,7 @@
 namespace LeoGalleguillos\Question\Model\Factory;
 
 use DateTime;
+use Exception;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 
@@ -38,6 +39,13 @@ class Question
         }
 
         return $questionEntity;
+    }
+
+    public function buildFromArrays(
+        array $array,
+        array $meta
+    ) {
+        return $this->buildFromArray($array)->setMeta($meta);
     }
 
     /**
