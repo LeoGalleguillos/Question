@@ -15,18 +15,20 @@ class QuestionMetaHistory
         $this->adapter = $adapter;
     }
 
-    public function insert(
-        array $array
+    public function insertSelectFromQuestionMeta(
+        int $questionMetaId
     ): int {
         $sql = '
             INSERT
               INTO `question_meta_history_id`
-                   (`name`)
-            VALUES (?)
-                 ;
+                   (`question_meta_id`, `name`)
+            SELECT `question_meta`.`question_meta_id`
+                 , `question_meta`.`name`
+              FROM `question_meta`
+             WHERE `question_meta`.`question_meta_id` = ?
         ';
         $parameters = [
-            $array['name'],
+            $questionMetaId,
         ];
         return (int) $this->adapter
                           ->query($sql)
