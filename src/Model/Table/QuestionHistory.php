@@ -18,40 +18,32 @@ class QuestionHistory
     /**
      * @return int
      */
-    public function insert(
-        int $questionId,
-        int $userId = null,
-        string $subject,
-        string $message,
-        string $ip,
-        string $created,
-        string $note = null,
-        int $questionMetaHistoryId = null
+    public function insertSelectFromQuestion(
+        string $note,
+        int $questionMetaHistoryId = null,
+        int $questionId
     ): int {
         $sql = '
             INSERT
-              INTO `question_history` (
-                       `question_id`
-                     , `user_id`
-                     , `subject`
-                     , `message`
-                     , `ip`
-                     , `created`
-                     , `note`
-                     , `question_meta_history_id`
-                   )
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+              INTO `question_history`
+                   (`question_id`, `user_id`, `subject`, `message`, `ip`, `created`
+                    , `note`, `question_meta_history_id`)
+            SELECT `question`.`question_id`
+                 , `question`.`user_id`
+                 , `question`.`subject`
+                 , `question`.`message`
+                 , `question`.`ip`
+                 , `question`.`created`
+                 , ? #note
+                 , ? #questionMetaHistoryId
+              FROM `question`
+             WHERE `question`.`question_id` = ?
                  ;
         ';
         $parameters = [
-            $questionId,
-            $userId,
-            $subject,
-            $message,
-            $ip,
-            $created,
             $note,
             $questionMetaHistoryId,
+            $questionId,
         ];
         return $this->adapter
                     ->query($sql)
