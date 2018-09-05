@@ -24,8 +24,8 @@ class QuestionHistory
         string $subject,
         string $message,
         string $ip,
-        string $note = null,
         string $created,
+        string $note = null,
         int $questionMetaHistoryId = null
     ): int {
         $sql = '
@@ -36,8 +36,8 @@ class QuestionHistory
                      , `subject`
                      , `message`
                      , `ip`
-                     , `note`
                      , `created`
+                     , `note`
                      , `question_meta_history_id`
                    )
             VALUES (?, ?, ?, ?, ?, ?, ?)
@@ -49,8 +49,8 @@ class QuestionHistory
             $subject,
             $message,
             $ip,
-            $note,
             $created,
+            $note,
             $questionMetaHistoryId,
         ];
         return $this->adapter
