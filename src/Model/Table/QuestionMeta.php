@@ -35,4 +35,20 @@ class QuestionMeta
                           ->execute($parameters)
                           ->getGeneratedValue();
     }
+
+    public function selectWhereQuestionId(int $questionId): array
+    {
+        $sql = '
+            SELECT `question_meta`.`question_meta_id`
+                 , `question_meta`.`question_id`
+                 , `question_meta`.`name`
+              FROM `question_meta`
+             WHERE `question_meta`.`question_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $questionId,
+        ];
+        return $this->adapter->query($sql)->execute($parameters)->current();
+    }
 }
