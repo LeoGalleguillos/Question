@@ -14,8 +14,12 @@ class QuestionTest extends TestCase
         $this->questionTableMock = $this->createMock(
             QuestionTable\Question::class
         );
+        $this->questionMetaTableMock = $this->createMock(
+            QuestionTable\QuestionMeta::class
+        );
         $this->questionFactory = new QuestionFactory\Question(
-            $this->questionTableMock
+            $this->questionTableMock,
+            $this->questionMetaTableMock
         );
     }
 
