@@ -56,9 +56,9 @@ class QuestionTest extends TableTestCase
             0,
             $this->questionTable->selectCount()
         );
-        $this->questionTable->insert(1, 'subject', 'message');
-        $this->questionTable->insert(2, 'subject', 'message');
-        $this->questionTable->insert(3, 'subject', 'message');
+        $this->questionTable->insert(1, 'name', 'subject', 'message');
+        $this->questionTable->insert(2, null, 'subject', 'message');
+        $this->questionTable->insert(3, null, 'subject', 'message');
         $this->assertSame(
             3,
             $this->questionTable->selectCount()
@@ -69,6 +69,7 @@ class QuestionTest extends TableTestCase
     {
         $questionId = $this->questionTable->insertQuestionIdSubjectMessageIp(
             12345,
+            'name',
             'subject',
             'message',
             '123.123.123.123'
@@ -81,7 +82,7 @@ class QuestionTest extends TableTestCase
 
     public function testSelectWhereUserId()
     {
-        $this->questionTable->insert(1, 'subject', 'message');
+        $this->questionTable->insert(1, 'name', 'subject', 'message');
         $array = $this->questionTable->selectWhereQuestionId(1);
         $this->assertInternalType(
             'array',

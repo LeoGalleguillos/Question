@@ -55,8 +55,7 @@ class QuestionHistoryTest extends TableTestCase
     {
         $questionHistoryId = $this->questionHistoryTable->insertSelectFromQuestion(
             'note',
-            123,
-            456
+            123
         );
         $this->assertSame(
             $questionHistoryId,

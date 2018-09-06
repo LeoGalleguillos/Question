@@ -32,6 +32,10 @@ class Submit
     ) : QuestionEntity\Question {
         $errors = [];
 
+        if (empty($_POST['name'])) {
+            $_POST['name'] = 'Anonymous';
+        }
+
         if (empty($_POST['subject'])) {
             $errors[] = 'Invalid subject.';
         }
@@ -47,6 +51,7 @@ class Submit
 
         $questionId = $this->questionTable->insert(
             $userId ?? null,
+            $_POST['name'],
             $_POST['subject'],
             $_POST['message'] ?? null
         );

@@ -63,6 +63,7 @@ class DeletedTest extends TableTestCase
 
         $this->questionTable->insertQuestionIdSubjectMessageIp(
             12345,
+            'name',
             'subject',
             'message',
             'ip'

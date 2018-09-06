@@ -14,12 +14,8 @@ class QuestionTest extends TestCase
         $this->questionTableMock = $this->createMock(
             QuestionTable\Question::class
         );
-        $this->questionMetaTableMock = $this->createMock(
-            QuestionTable\QuestionMeta::class
-        );
         $this->questionFactory = new QuestionFactory\Question(
-            $this->questionTableMock,
-            $this->questionMetaTableMock
+            $this->questionTableMock
         );
     }
 
@@ -36,6 +32,7 @@ class QuestionTest extends TestCase
         $array = [
             'question_id' => 1,
             'user_id'     => 1,
+            'name'        => 'name',
             'subject'     => 'subject',
             'message'     => 'message',
             'created'     => '2018-03-12 22:12:23',
@@ -44,6 +41,7 @@ class QuestionTest extends TestCase
         $questionEntity = new QuestionEntity\Question();
         $questionEntity->setCreated(new DateTime($array['created']))
                        ->setMessage($array['message'])
+                       ->setName($array['name'])
                        ->setQuestionId($array['question_id'])
                        ->setSubject($array['subject'])
                        ->setViews($array['views']);
@@ -54,6 +52,7 @@ class QuestionTest extends TestCase
 
         $array = [
             'question_id' => 1,
+            'name'        => null,
             'subject'     => 'subject',
             'created'     => '2018-03-12 22:12:23',
             'views'       => '123',
@@ -75,6 +74,7 @@ class QuestionTest extends TestCase
             [
                 'question_id' => 123,
                 'user_id'     => 1,
+                'name'        => 'name',
                 'subject'     => 'subject',
                 'message'     => 'message',
                 'created'     => '2018-03-12 22:12:23',

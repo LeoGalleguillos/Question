@@ -22,21 +22,23 @@ class Question
      */
     public function insert(
         int $userId = null,
+        string $name = null,
         string $subject,
         string $message = null
     ) : int {
         $sql = '
             INSERT
               INTO `question` (
-                   `user_id`, `subject`, `message`, `created`
+                   `user_id`, `name`, `subject`, `message`, `created`
                    )
-            VALUES (:userId, :subject, :message, UTC_TIMESTAMP())
+            VALUES (?, ?, ?, ?, UTC_TIMESTAMP())
                  ;
         ';
         $parameters = [
-            'userId'       => $userId,
-            'subject'     => $subject,
-            'message' => $message,
+            $userId,
+            $name,
+            $subject,
+            $message,
         ];
         return $this->adapter
                     ->query($sql)
@@ -49,6 +51,7 @@ class Question
      */
     public function insertQuestionIdSubjectMessageIp(
         int $questionId,
+        string $name,
         string $subject,
         string $message,
         string $ip
@@ -56,13 +59,19 @@ class Question
         $sql = '
             INSERT
               INTO `question` (
-                       `question_id`, `subject`, `message`, `ip`, `created`
+                       `question_id`
+                     , `name`
+                     , `subject`
+                     , `message`
+                     , `ip`
+                     , `created`
                    )
-            VALUES (?, ?, ?, ?, UTC_TIMESTAMP())
+            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP())
                  ;
         ';
         $parameters = [
             $questionId,
+            $name,
             $subject,
             $message,
             $ip,
@@ -89,6 +98,7 @@ class Question
         $sql = '
             SELECT `question`.`question_id`
                  , `question`.`user_id`
+                 , `question`.`name`
                  , `question`.`subject`
                  , `question`.`message`
                  , `question`.`created`
@@ -115,6 +125,7 @@ class Question
         $sql = '
             SELECT `question`.`question_id`
                  , `question`.`user_id`
+                 , `question`.`name`
                  , `question`.`subject`
                  , `question`.`message`
                  , `question`.`created`

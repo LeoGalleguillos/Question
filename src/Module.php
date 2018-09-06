@@ -39,8 +39,7 @@ class Module
                 },
                 QuestionFactory\Question::class => function ($serviceManager) {
                     return new QuestionFactory\Question(
-                        $serviceManager->get(QuestionTable\Question::class),
-                        $serviceManager->get(QuestionTable\QuestionMeta::class)
+                        $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
                 QuestionService\Answer\Answers::class => function ($serviceManager) {
@@ -94,11 +93,6 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
-                QuestionTable\AnswerMeta::class => function ($serviceManager) {
-                    return new QuestionTable\AnswerMeta(
-                        $serviceManager->get('question')
-                    );
-                },
                 QuestionTable\Question::class => function ($serviceManager) {
                     return new QuestionTable\Question(
                         $serviceManager->get('question')
@@ -116,16 +110,6 @@ class Module
                 },
                 QuestionTable\QuestionHistory::class => function ($serviceManager) {
                     return new QuestionTable\QuestionHistory(
-                        $serviceManager->get('question')
-                    );
-                },
-                QuestionTable\QuestionMeta::class => function ($serviceManager) {
-                    return new QuestionTable\QuestionMeta(
-                        $serviceManager->get('question')
-                    );
-                },
-                QuestionTable\QuestionMetaHistory::class => function ($serviceManager) {
-                    return new QuestionTable\QuestionMetaHistory(
                         $serviceManager->get('question')
                     );
                 },

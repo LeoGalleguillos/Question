@@ -12,14 +12,11 @@ class Question
      * Construct
      *
      * @param QuestionTable\Question $questionTable
-     * @param QuestionTable\QuestionMeta $questionMetaTable
      */
     public function __construct(
-        QuestionTable\Question $questionTable,
-        QuestionTable\QuestionMeta $questionMetaTable
+        QuestionTable\Question $questionTable
     ) {
         $this->questionTable     = $questionTable;
-        $this->questionMetaTable = $questionMetaTable;
     }
 
     /**
@@ -41,14 +38,11 @@ class Question
             $questionEntity->setMessage($array['message']);
         }
 
-        return $questionEntity;
-    }
+        if (!empty($array['name'])) {
+            $questionEntity->setName($array['name']);
+        }
 
-    public function buildFromArrays(
-        array $array,
-        array $meta
-    ) {
-        return $this->buildFromArray($array)->setMeta($meta);
+        return $questionEntity;
     }
 
     /**
@@ -60,21 +54,8 @@ class Question
     public function buildFromQuestionId(
         int $questionId
     ) : QuestionEntity\Question {
-        $questionArray = $this->questionTable->selectWhereQuestionId(
-            $questionId
-        );
-
-        try {
-            $metaArray = $this->questionMetaTable->selectWhereQuestionId(
-                $questionId
-            );
-        } catch (Exception $exception) {
-            return $this->buildFromArray($questionArray);
-        }
-
-        return $this->buildFromArrays(
-            $questionArray,
-            $metaArray
+        return $this->buildFromArray(
+            $this->questionTable->selectWhereQuestionId($questionId)
         );
     }
 }
