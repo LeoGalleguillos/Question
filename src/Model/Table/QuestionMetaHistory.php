@@ -20,7 +20,7 @@ class QuestionMetaHistory
     ): int {
         $sql = '
             INSERT
-              INTO `question_meta_history_id`
+              INTO `question_meta_history`
                    (`question_meta_id`, `name`)
             SELECT `question_meta`.`question_meta_id`
                  , `question_meta`.`name`
