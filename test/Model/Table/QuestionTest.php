@@ -67,7 +67,7 @@ class QuestionTest extends TableTestCase
 
     public function testInsertQuestionIdSubjectMessageIp()
     {
-        $questionId = $this->questionTable->insertQuestionIdSubjectMessageIp(
+        $questionId = $this->questionTable->insertQuestionIdNameSubjectMessageIp(
             12345,
             'name',
             'subject',

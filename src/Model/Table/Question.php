@@ -49,7 +49,7 @@ class Question
     /**
      * @return int
      */
-    public function insertQuestionIdSubjectMessageIp(
+    public function insertQuestionIdNameSubjectMessageIp(
         int $questionId,
         string $name,
         string $subject,

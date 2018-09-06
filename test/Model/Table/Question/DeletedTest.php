@@ -61,7 +61,7 @@ class DeletedTest extends TableTestCase
             $this->questionDeletedTable->updateSetToUtcTimestampWhereQuestionId(12345)
         );
 
-        $this->questionTable->insertQuestionIdSubjectMessageIp(
+        $this->questionTable->insertQuestionIdNameSubjectMessageIp(
             12345,
             'name',
             'subject',
