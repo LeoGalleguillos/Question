@@ -29,6 +29,11 @@ class Answer
         return $this->message;
     }
 
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
     public function getQuestionId() : int
     {
         return $this->questionId;
@@ -59,6 +64,12 @@ class Answer
     public function setMessage(string $message) : QuestionEntity\Answer
     {
         $this->message = $message;
+        return $this;
+    }
+
+    public function setName(string $name): QuestionEntity\Answer
+    {
+        $this->name = $name;
         return $this;
     }
 
