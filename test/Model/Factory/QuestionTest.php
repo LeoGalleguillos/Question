@@ -68,4 +68,23 @@ class QuestionTest extends TestCase
             $this->questionFactory->buildFromArray($array)
         );
     }
+
+    public function testBuildFromQuestionId()
+    {
+        $this->questionTableMock->method('selectWhereQuestionId')->willReturn(
+            [
+                'question_id' => 123,
+                'user_id'     => 1,
+                'subject'     => 'subject',
+                'message'     => 'message',
+                'created'     => '2018-03-12 22:12:23',
+                'views'       => '123',
+            ]
+        );
+        $questionEntity = $this->questionFactory->buildFromQuestionId(1);
+        $this->assertSame(
+            $questionEntity->getQuestionId(),
+            123
+        );
+    }
 }
