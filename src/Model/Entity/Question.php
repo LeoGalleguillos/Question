@@ -10,9 +10,9 @@ class Question
     protected $questionId;
     protected $userId;
     protected $created;
+    protected $name;
     protected $subject;
     protected $message;
-    protected $meta;
     protected $views;
 
     public function getCreated() : DateTime
@@ -25,9 +25,9 @@ class Question
         return $this->message;
     }
 
-    public function getMeta(): array
+    public function getName(): string
     {
-        return $this->meta;
+        return $this->name;
     }
 
     public function getQuestionId() : int
@@ -68,9 +68,9 @@ class Question
         return $this;
     }
 
-    public function setMeta(array $meta): QuestionEntity\Question
+    public function setName(string $name): QuestionEntity\Question
     {
-        $this->meta = $meta;
+        $this->name = $name;
         return $this;
     }
 
