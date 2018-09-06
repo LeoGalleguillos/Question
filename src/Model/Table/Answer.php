@@ -22,25 +22,28 @@ class Answer
      *
      * @param int $questionId
      * @param int|null $userId
+     * @param string|null $name
      * @param string $message
      * @return int
      */
     public function insert(
         int $questionId,
         int $userId = null,
+        string $name = null,
         string $message
     ): int {
         $sql = '
             INSERT
               INTO `answer` (
-                   `question_id`, `user_id`, `message`, `created`
+                   `question_id`, `user_id`, `name`, `message`, `created`
                    )
-            VALUES (?, ?, ?, UTC_TIMESTAMP())
+            VALUES (?, ?, ?, ?, UTC_TIMESTAMP())
                  ;
         ';
         $parameters = [
             $questionId,
             $userId,
+            $name,
             $message,
         ];
         return $this->adapter
@@ -52,23 +55,25 @@ class Answer
     /**
      * @return int
      */
-    public function insertAnswerIdQuestionIdMessageIp(
+    public function insertAnswerIdQuestionIdNameMessageIp(
         int $answerId,
         int $questionId,
+        string $name,
         string $message,
         string $ip
     ): int {
         $sql = '
             INSERT
               INTO `answer` (
-                       `answer_id`, `question_id`, `message`, `ip`, `created`
+                       `answer_id`, `question_id`, `name`, `message`, `ip`, `created`
                    )
-            VALUES (?, ?, ?, ?, UTC_TIMESTAMP())
+            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP())
                  ;
         ';
         $parameters = [
             $answerId,
             $questionId,
+            $name,
             $message,
             $ip,
         ];
@@ -124,6 +129,7 @@ class Answer
             SELECT `answer`.`answer_id`
                  , `answer`.`question_id`
                  , `answer`.`user_id`
+                 , `answer`.`name`
                  , `answer`.`message`
                  , `answer`.`created`
               FROM `answer`
@@ -148,6 +154,7 @@ class Answer
             SELECT `answer`.`answer_id`
                  , `answer`.`question_id`
                  , `answer`.`user_id`
+                 , `answer`.`name`
                  , `answer`.`message`
                  , `answer`.`created`
               FROM `answer`

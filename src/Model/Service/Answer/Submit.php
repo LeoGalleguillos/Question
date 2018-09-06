@@ -35,6 +35,9 @@ class Submit
         if (empty($_POST['question-id'])) {
             $errors[] = 'Invalid question ID.';
         }
+        if (empty($_POST['name'])) {
+            $_POST['name'] = null;
+        }
         if (empty($_POST['message'])) {
             $errors[] = 'Invalid message.';
         }
@@ -50,6 +53,7 @@ class Submit
         $answerId = $this->answerTable->insert(
             $_POST['question-id'],
             $userId,
+            $_POST['name'],
             $_POST['message']
         );
 

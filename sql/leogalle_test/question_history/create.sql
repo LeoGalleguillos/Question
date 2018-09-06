@@ -7,8 +7,6 @@ CREATE TABLE `question_history` (
     `ip` varchar(45) default null,
     `created` datetime not null,
     `reason` varchar(255) default null,
-    `question_meta_history_id` int(10) unsigned default null,
     PRIMARY KEY (`question_history_id`),
-    KEY `question_id` (`question_id`),
-    UNIQUE `question_meta_history_id` (`question_meta_history_id`)
+    KEY `question_id` (`question_id`)
 ) CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
