@@ -162,7 +162,6 @@ class Question
         string $subject,
         string $message,
         string $ip,
-        string $created,
         int $questionId
     ): bool {
         $sql = '
@@ -172,7 +171,7 @@ class Question
                  , `question`.`subject` = ?
                  , `question`.`message` = ?
                  , `question`.`ip` = ?
-                 , `question`.`created` = ?
+                 , `question`.`created` = UTC_TIMESTAMP()
              WHERE `question`.`question_id` = ?
                  ;
         ';
@@ -182,7 +181,6 @@ class Question
             $subject,
             $message,
             $ip,
-            $created,
             $questionId,
         ];
         return (bool) $this->adapter
