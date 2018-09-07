@@ -155,4 +155,39 @@ class Question
         ];
         return (bool) $this->adapter->query($sql, $parameters)->getAffectedRows();
     }
+
+    public function updateWhereQuestionId(
+        int $userId,
+        string $name = null,
+        string $subject,
+        string $message,
+        string $ip,
+        string $created,
+        int $questionId
+    ): bool {
+        $sql = '
+            UPDATE `question`
+               SET `question`.`user_id` = ?
+                 , `question`.`name` = ?
+                 , `question`.`subject` = ?
+                 , `question`.`message` = ?
+                 , `question`.`ip` = ?
+                 , `question`.`created` = ?
+             WHERE `question`.`question_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $userId,
+            $name,
+            $subject,
+            $message,
+            $ip,
+            $created,
+            $questionId,
+        ];
+        return (bool) $this->adapter
+                           ->query($sql)
+                           ->execute($parameters)
+                           ->getAffectedRows();
+    }
 }
