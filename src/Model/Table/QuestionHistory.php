@@ -25,15 +25,24 @@ class QuestionHistory
         $sql = '
             INSERT
               INTO `question_history`
-                   (`question_id`, `user_id`, `subject`, `message`, `ip`, `created`
-                    , `reason`)
+                 (
+                      `question_id`
+                    , `user_id`
+                    , `name`
+                    , `subject`
+                    , `message`
+                    , `ip`
+                    , `created`
+                    , `reason`
+                 )
             SELECT `question`.`question_id`
                  , `question`.`user_id`
+                 , `question`.`name`
                  , `question`.`subject`
                  , `question`.`message`
                  , `question`.`ip`
                  , `question`.`created`
-                 , ? # reason
+                 , ?
               FROM `question`
              WHERE `question`.`question_id` = ?
                  ;
