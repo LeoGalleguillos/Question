@@ -24,17 +24,13 @@ class Submit
     /**
      * Submit.
      *
-     * @param $userId
+     * @param UserEntity\User $userEntity
      * @return QuestionEntity\Question
      */
     public function submit(
         UserEntity\User $userEntity = null
-    ) : QuestionEntity\Question {
+    ): QuestionEntity\Question {
         $errors = [];
-
-        if (empty($_POST['name'])) {
-            $_POST['name'] = 'Anonymous';
-        }
 
         if (empty($_POST['subject'])) {
             $errors[] = 'Invalid subject.';
@@ -51,7 +47,7 @@ class Submit
 
         $questionId = $this->questionTable->insert(
             $userId ?? null,
-            $_POST['name'],
+            $_POST['name'] ?? null,
             $_POST['subject'],
             $_POST['message'] ?? null
         );
