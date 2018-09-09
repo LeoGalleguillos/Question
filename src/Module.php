@@ -60,6 +60,13 @@ class Module
                         $serviceManager->get(QuestionTable\Answer::class)
                     );
                 },
+                QuestionService\Edit::class => function ($serviceManager) {
+                    return new QuestionService\Edit(
+                        $serviceManager->get('question'),
+                        $serviceManager->get(QuestionTable\Question::class),
+                        $serviceManager->get(QuestionTable\QuestionHistory::class)
+                    );
+                },
                 QuestionService\Questions::class => function ($serviceManager) {
                     return new QuestionService\Questions(
                         $serviceManager->get(QuestionFactory\Question::class),
