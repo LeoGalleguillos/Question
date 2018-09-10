@@ -53,6 +53,13 @@ class Module
                         $serviceManager->get(QuestionTable\Answer::class)
                     );
                 },
+                QuestionService\Answer\Edit::class => function ($serviceManager) {
+                    return new QuestionService\Answer\Edit(
+                        $serviceManager->get('question'),
+                        $serviceManager->get(QuestionTable\Answer::class),
+                        $serviceManager->get(QuestionTable\AnswerHistory::class)
+                    );
+                },
                 QuestionService\Answer\Submit::class => function ($serviceManager) {
                     return new QuestionService\Answer\Submit(
                         $serviceManager->get(FlashService\Flash::class),
@@ -92,6 +99,11 @@ class Module
                 },
                 QuestionTable\Answer::class => function ($serviceManager) {
                     return new QuestionTable\Answer(
+                        $serviceManager->get('question')
+                    );
+                },
+                QuestionTable\AnswerHistory::class => function ($serviceManager) {
+                    return new QuestionTable\AnswerHistory(
                         $serviceManager->get('question')
                     );
                 },
