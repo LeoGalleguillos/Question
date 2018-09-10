@@ -769,12 +769,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "6a24e4d487727e799d2ffa33a1b2f4164f412cc4"
+                "reference": "488da461e009d207680921f2915d4da032292db3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6a24e4d487727e799d2ffa33a1b2f4164f412cc4",
-                "reference": "6a24e4d487727e799d2ffa33a1b2f4164f412cc4",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/488da461e009d207680921f2915d4da032292db3",
+                "reference": "488da461e009d207680921f2915d4da032292db3",
                 "shasum": ""
             },
             "require": {
@@ -845,7 +845,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-08-24 14:02:14"
+            "time": "2018-09-10 09:25:48"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -853,12 +853,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "cd1cf05c553ecfec36b170070573e540b67d3f1f"
+                "reference": "13862f9c620ffbc8895792abe2a9e473326fb905"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/cd1cf05c553ecfec36b170070573e540b67d3f1f",
-                "reference": "cd1cf05c553ecfec36b170070573e540b67d3f1f",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/13862f9c620ffbc8895792abe2a9e473326fb905",
+                "reference": "13862f9c620ffbc8895792abe2a9e473326fb905",
                 "shasum": ""
             },
             "require": {
@@ -904,7 +904,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2018-08-09 05:50:03"
+            "time": "2018-09-09 05:48:43"
         },
         {
             "name": "psr/container",
