@@ -170,4 +170,34 @@ class Answer
             yield $array;
         }
     }
+
+    public function updateWhereAnswerId(
+        int $userId,
+        string $name = null,
+        string $message,
+        string $ip,
+        int $answerId
+    ): bool {
+        $sql = '
+            UPDATE `answer`
+               SET `answer`.`user_id` = ?
+                 , `answer`.`name` = ?
+                 , `answer`.`message` = ?
+                 , `answer`.`ip` = ?
+                 , `answer`.`created` = UTC_TIMESTAMP()
+             WHERE `answer`.`answer_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $userId,
+            $name,
+            $message,
+            $ip,
+            $answerId,
+        ];
+        return (bool) $this->adapter
+                           ->query($sql)
+                           ->execute($parameters)
+                           ->getAffectedRows();
+    }
 }
