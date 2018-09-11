@@ -31,8 +31,8 @@ class Question
         $questionEntity = new QuestionEntity\Question();
         $questionEntity->setCreated(new DateTime($array['created']))
                        ->setQuestionId($array['question_id'])
-                       ->setSubject($array['subject'])
-                       ->setViews($array['views']);
+                       ->setSubject($array['subject']);
+
 
         if (!empty($array['message'])) {
             $questionEntity->setMessage($array['message']);
@@ -40,6 +40,10 @@ class Question
 
         if (!empty($array['name'])) {
             $questionEntity->setName($array['name']);
+        }
+
+        if (!empty($array['views'])) {
+            $questionEntity->setViews($array['views']);
         }
 
         return $questionEntity;

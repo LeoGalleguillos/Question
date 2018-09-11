@@ -36,15 +36,13 @@ class QuestionTest extends TestCase
             'subject'     => 'subject',
             'message'     => 'message',
             'created'     => '2018-03-12 22:12:23',
-            'views'       => '123',
         ];
         $questionEntity = new QuestionEntity\Question();
         $questionEntity->setCreated(new DateTime($array['created']))
                        ->setMessage($array['message'])
                        ->setName($array['name'])
                        ->setQuestionId($array['question_id'])
-                       ->setSubject($array['subject'])
-                       ->setViews($array['views']);
+                       ->setSubject($array['subject']);
         $this->assertEquals(
             $questionEntity,
             $this->questionFactory->buildFromArray($array)
