@@ -74,6 +74,11 @@ class Module
                         $serviceManager->get(QuestionTable\QuestionHistory::class)
                     );
                 },
+                QuestionService\Edit\Queue::class => function ($serviceManager) {
+                    return new QuestionService\Edit\Queue(
+                        $serviceManager->get(QuestionTable\QuestionEditQueue::class)
+                    );
+                },
                 QuestionService\Questions::class => function ($serviceManager) {
                     return new QuestionService\Questions(
                         $serviceManager->get(QuestionFactory\Question::class),
@@ -124,6 +129,11 @@ class Module
                 },
                 QuestionTable\Question\Subject::class => function ($serviceManager) {
                     return new QuestionTable\Question\Subject(
+                        $serviceManager->get('question')
+                    );
+                },
+                QuestionTable\QuestionEditQueue::class => function ($serviceManager) {
+                    return new QuestionTable\QuestionEditQueue(
                         $serviceManager->get('question')
                     );
                 },
