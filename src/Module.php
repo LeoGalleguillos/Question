@@ -79,6 +79,13 @@ class Module
                         $serviceManager->get(QuestionTable\QuestionEditQueue::class)
                     );
                 },
+                QuestionService\Edit\Queue\Approve::class => function ($serviceManager) {
+                    return new QuestionService\Edit\Queue\Approve(
+                        $serviceManager->get(QuestionFactory\Question::class),
+                        $serviceManager->get(QuestionService\Edit::class),
+                        $serviceManager->get(QuestionTable\QuestionEditQueue::class)
+                    );
+                },
                 QuestionService\Edit\Queue\Pending::class => function ($serviceManager) {
                     return new QuestionService\Edit\Queue\Pending(
                         $serviceManager->get(QuestionFactory\Question::class),
