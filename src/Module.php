@@ -79,6 +79,12 @@ class Module
                         $serviceManager->get(QuestionTable\QuestionEditQueue::class)
                     );
                 },
+                QuestionService\Edit\Queue\Pending::class => function ($serviceManager) {
+                    return new QuestionService\Edit\Queue\Pending(
+                        $serviceManager->get(QuestionFactory\Question::class),
+                        $serviceManager->get(QuestionTable\QuestionEditQueue::class)
+                    );
+                },
                 QuestionService\Questions::class => function ($serviceManager) {
                     return new QuestionService\Questions(
                         $serviceManager->get(QuestionFactory\Question::class),
