@@ -60,6 +60,11 @@ class Module
                         $serviceManager->get(QuestionTable\AnswerHistory::class)
                     );
                 },
+                QuestionService\Answer\Edit\Queue::class => function ($serviceManager) {
+                    return new QuestionService\Answer\Edit\Queue(
+                        $serviceManager->get(QuestionTable\AnswerEditQueue::class)
+                    );
+                },
                 QuestionService\Answer\Submit::class => function ($serviceManager) {
                     return new QuestionService\Answer\Submit(
                         $serviceManager->get(FlashService\Flash::class),
@@ -117,6 +122,11 @@ class Module
                 },
                 QuestionTable\Answer::class => function ($serviceManager) {
                     return new QuestionTable\Answer(
+                        $serviceManager->get('question')
+                    );
+                },
+                QuestionTable\AnswerEditQueue::class => function ($serviceManager) {
+                    return new QuestionTable\AnswerEditQueue(
                         $serviceManager->get('question')
                     );
                 },
