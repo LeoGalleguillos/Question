@@ -21,8 +21,8 @@ class Pending
         $generator = $this->questionEditQueueTable->selectWhereQueueStatusId(0);
         foreach ($generator as $array) {
             yield [
-                $this->questionFactory->buildFromQuestionId($array['question_id']),
-                $this->questionFactory->buildFromArray($array),
+                'currentQuestionEntity' => $this->questionFactory->buildFromQuestionId($array['question_id']),
+                'newQuestionEntity' => $this->questionFactory->buildFromArray($array),
             ];
         }
     }
