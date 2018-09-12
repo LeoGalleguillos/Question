@@ -22,8 +22,9 @@ class Pending
         foreach ($generator as $array) {
             yield [
                 'currentQuestionEntity' => $this->questionFactory->buildFromQuestionId($array['question_id']),
-                'newQuestionEntity' => $this->questionFactory->buildFromArray($array),
-                'reason' => $array['reason'],
+                'newQuestionEntity'     => $this->questionFactory->buildFromArray($array),
+                'reason'                => $array['reason'],
+                'questionEditQueueId'   => $array['question_edit_queue_id'],
             ];
         }
     }
