@@ -23,6 +23,7 @@ class Pending
             yield [
                 'currentQuestionEntity' => $this->questionFactory->buildFromQuestionId($array['question_id']),
                 'newQuestionEntity' => $this->questionFactory->buildFromArray($array),
+                'reason' => $array['reason'],
             ];
         }
     }
