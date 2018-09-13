@@ -33,17 +33,16 @@ class Question
                        ->setQuestionId($array['question_id'])
                        ->setSubject($array['subject']);
 
-
-        if (!empty($array['message'])) {
+        if (isset($array['message'])) {
             $questionEntity->setMessage($array['message']);
         }
 
-        if (!empty($array['name'])) {
+        if (isset($array['name'])) {
             $questionEntity->setName($array['name']);
         }
 
-        if (!empty($array['views'])) {
-            $questionEntity->setViews($array['views']);
+        if (isset($array['views'])) {
+            $questionEntity->setViews((int) $array['views']);
         }
 
         return $questionEntity;
