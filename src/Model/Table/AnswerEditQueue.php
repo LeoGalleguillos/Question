@@ -21,6 +21,7 @@ class AnswerEditQueue
      */
     public function insert(
         int $answerId,
+        int $questionId,
         int $userId,
         string $name = null,
         string $message,
@@ -32,6 +33,7 @@ class AnswerEditQueue
               INTO `answer_edit_queue`
                  (
                       `answer_id`
+                    , `question_id`
                     , `user_id`
                     , `name`
                     , `message`
@@ -39,11 +41,12 @@ class AnswerEditQueue
                     , `created`
                     , `reason`
                  )
-            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), ?)
+            VALUES (?, ?, ?, ?, ?, ?, UTC_TIMESTAMP(), ?)
                  ;
         ';
         $parameters = [
             $answerId,
+            $questionId,
             $userId,
             $name,
             $message,
@@ -62,6 +65,7 @@ class AnswerEditQueue
         $sql = '
             SELECT `answer_edit_queue_id`
                  , `answer_id`
+                 , `question_id`
                  , `user_id`
                  , `name`
                  , `message`
@@ -86,6 +90,7 @@ class AnswerEditQueue
         $sql = '
             SELECT `answer_edit_queue_id`
                  , `answer_id`
+                 , `question_id`
                  , `user_id`
                  , `name`
                  , `message`

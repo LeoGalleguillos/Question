@@ -23,6 +23,7 @@ class Queue
     ) {
         $answerEditQueueId = $this->answerEditQueueTable->insert(
             $answerEntity->getAnswerId(),
+            $answerEntity->getQuestionId(),
             $userEntity->getUserId(),
             $name,
             $message,

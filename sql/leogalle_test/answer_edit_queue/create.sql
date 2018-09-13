@@ -1,6 +1,7 @@
 CREATE TABLE `answer_edit_queue` (
     `answer_edit_queue_id` int(10) unsigned auto_increment,
     `answer_id` int(10) unsigned not null,
+    `question_id` int(10) unsigned not null,
     `user_id` int(10) unsigned default null,
     `name` varchar(255) default null,
     `message` text,

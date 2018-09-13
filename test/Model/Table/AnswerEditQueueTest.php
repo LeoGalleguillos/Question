@@ -53,6 +53,7 @@ class AnswerEditQueueTest extends TableTestCase
     {
         $answerEditQueueId = $this->answerEditQueueTable->insert(
             12345,
+            54321,
             1,
             'name',
             'message',
@@ -65,6 +66,7 @@ class AnswerEditQueueTest extends TableTestCase
         );
         $answerEditQueueId = $this->answerEditQueueTable->insert(
             67890,
+            9876,
             1,
             'name',
             'message',
