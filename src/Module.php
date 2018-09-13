@@ -163,6 +163,11 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Question\Message::class => function ($serviceManager) {
+                    return new QuestionTable\Question\Message(
+                        $serviceManager->get('question')
+                    );
+                },
                 QuestionTable\Question\Subject::class => function ($serviceManager) {
                     return new QuestionTable\Question\Subject(
                         $serviceManager->get('question')
