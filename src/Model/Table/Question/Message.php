@@ -25,7 +25,7 @@ class Message
         int $limitOffset,
         int $limitRowCount
     ): Generator {
-        $sql = '
+        $sql = "
             SELECT `question`.`question_id`
                  , `question`.`user_id`
                  , `question`.`name`
@@ -34,9 +34,9 @@ class Message
                  , `question`.`created`
                  , `question`.`views`
               FROM `question`
-             WHERE `question`.`message` LIKE CONCAT(\'%\', ?, \'%\')
-             LIMIT 100
-        ';
+             WHERE `question`.`message` LIKE CONCAT('%', ?, '%')
+             LIMIT $limitOffset, $limitRowCount
+        ";
         $parameters = [
             $message,
         ];

@@ -80,7 +80,7 @@ class MessageTest extends TableTestCase
 
         $result = $this->questionMessageTable->selectWhereMessageLikeWildcard(
             'oba',
-            1,
+            0,
             10
         );
         $results = iterator_to_array($result);
@@ -91,7 +91,7 @@ class MessageTest extends TableTestCase
 
         $result = $this->questionMessageTable->selectWhereMessageLikeWildcard(
             '&lt;',
-            1,
+            0,
             10
         );
         $results = iterator_to_array($result);
@@ -102,7 +102,7 @@ class MessageTest extends TableTestCase
 
         $result = $this->questionMessageTable->selectWhereMessageLikeWildcard(
             '&gt;',
-            1,
+            0,
             10
         );
         $results = iterator_to_array($result);
