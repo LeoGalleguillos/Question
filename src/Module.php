@@ -65,6 +65,19 @@ class Module
                         $serviceManager->get(QuestionTable\AnswerEditQueue::class)
                     );
                 },
+                QuestionService\Answer\Edit\Queue\Approve::class => function ($serviceManager) {
+                    return new QuestionService\Answer\Edit\Queue\Approve(
+                        $serviceManager->get(QuestionFactory\Answer::class),
+                        $serviceManager->get(QuestionService\Answer\Edit::class),
+                        $serviceManager->get(QuestionTable\AnswerEditQueue::class)
+                    );
+                },
+                QuestionService\Answer\Edit\Queue\Pending::class => function ($serviceManager) {
+                    return new QuestionService\Answer\Edit\Queue\Pending(
+                        $serviceManager->get(QuestionFactory\Answer::class),
+                        $serviceManager->get(QuestionTable\AnswerEditQueue::class)
+                    );
+                },
                 QuestionService\Answer\Submit::class => function ($serviceManager) {
                     return new QuestionService\Answer\Submit(
                         $serviceManager->get(FlashService\Flash::class),
