@@ -119,4 +119,33 @@ class MessageTest extends TableTestCase
         $results = iterator_to_array($result);
         $this->assertEmpty($results);
     }
+
+    public function testUpdateWhereQuestionId()
+    {
+        $this->questionTable->insert(
+            1,
+            'name',
+            'subject',
+            'foobarbaz'
+        );
+
+        $this->assertFalse(
+            $this->questionMessageTable->updateWhereQuestionId(
+                'foobarbaz',
+                1
+            )
+        );
+        $this->assertTrue(
+            $this->questionMessageTable->updateWhereQuestionId(
+                'foo, bar, baz',
+                1
+            )
+        );
+        $this->assertFalse(
+            $this->questionMessageTable->updateWhereQuestionId(
+                'foobarbaz',
+                2
+            )
+        );
+    }
 }

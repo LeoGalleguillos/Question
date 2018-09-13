@@ -44,4 +44,27 @@ class Message
             yield $array;
         }
     }
+
+    /**
+     * @return bool
+     */
+    public function updateWhereQuestionId(
+        string $message,
+        int $questionId
+    ): bool {
+        $sql = '
+            UPDATE `question`
+               SET `question`.`message` = ?
+             WHERE `question`.`question_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $message,
+            $questionId,
+        ];
+        return (bool) $this->adapter
+                           ->query($sql)
+                           ->execute($parameters)
+                           ->getAffectedRows();
+    }
 }
