@@ -20,8 +20,8 @@ class Message
      * @return Generator
      * @yield array
      */
-    public function selectWhereMessageLikeWildcard(
-        string $message,
+    public function selectWhereMessageRegularExpression(
+        string $regularExpression,
         int $limitOffset,
         int $limitRowCount
     ): Generator {
@@ -34,11 +34,11 @@ class Message
                  , `question`.`created`
                  , `question`.`views`
               FROM `question`
-             WHERE `question`.`message` LIKE CONCAT('%', ?, '%')
+             WHERE `question`.`message` REGEXP ?
              LIMIT $limitOffset, $limitRowCount
         ";
         $parameters = [
-            $message,
+            $regularExpression,
         ];
         foreach ($this->adapter->query($sql)->execute($parameters) as $array) {
             yield $array;

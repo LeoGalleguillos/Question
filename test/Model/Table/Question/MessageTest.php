@@ -55,9 +55,9 @@ class MessageTest extends TableTestCase
         );
     }
 
-    public function testSelectWhereMessageLikeWildcard()
+    public function testSelectWhereMessageRegularExpression()
     {
-        $result = $this->questionMessageTable->selectWhereMessageLikeWildcard(
+        $result = $this->questionMessageTable->selectWhereMessageRegularExpression(
             'oba',
             1,
             1
@@ -78,7 +78,7 @@ class MessageTest extends TableTestCase
             '&lt;b&gt;'
         );
 
-        $result = $this->questionMessageTable->selectWhereMessageLikeWildcard(
+        $result = $this->questionMessageTable->selectWhereMessageRegularExpression(
             'oba',
             0,
             10
@@ -89,7 +89,7 @@ class MessageTest extends TableTestCase
             '1'
         );
 
-        $result = $this->questionMessageTable->selectWhereMessageLikeWildcard(
+        $result = $this->questionMessageTable->selectWhereMessageRegularExpression(
             '&lt;',
             0,
             10
@@ -100,7 +100,7 @@ class MessageTest extends TableTestCase
             '2'
         );
 
-        $result = $this->questionMessageTable->selectWhereMessageLikeWildcard(
+        $result = $this->questionMessageTable->selectWhereMessageRegularExpression(
             '&gt;',
             0,
             10
@@ -111,13 +111,24 @@ class MessageTest extends TableTestCase
             '2'
         );
 
-        $result = $this->questionMessageTable->selectWhereMessageLikeWildcard(
+        $result = $this->questionMessageTable->selectWhereMessageRegularExpression(
             'hello',
-            1,
+            0,
             10
         );
         $results = iterator_to_array($result);
         $this->assertEmpty($results);
+
+        $result = $this->questionMessageTable->selectWhereMessageRegularExpression(
+            '[A-Za-z0-9]+;',
+            0,
+            10
+        );
+        $results = iterator_to_array($result);
+        $this->assertSame(
+            $results[0]['question_id'],
+            '2'
+        );
     }
 
     public function testUpdateWhereQuestionId()
