@@ -138,6 +138,16 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Answer\Deleted::class => function ($serviceManager) {
+                    return new QuestionTable\Answer\Deleted(
+                        $serviceManager->get('question')
+                    );
+                },
+                QuestionTable\Answer\Message::class => function ($serviceManager) {
+                    return new QuestionTable\Answer\Message(
+                        $serviceManager->get('question')
+                    );
+                },
                 QuestionTable\AnswerEditQueue::class => function ($serviceManager) {
                     return new QuestionTable\AnswerEditQueue(
                         $serviceManager->get('question')
@@ -145,11 +155,6 @@ class Module
                 },
                 QuestionTable\AnswerHistory::class => function ($serviceManager) {
                     return new QuestionTable\AnswerHistory(
-                        $serviceManager->get('question')
-                    );
-                },
-                QuestionTable\Answer\Deleted::class => function ($serviceManager) {
-                    return new QuestionTable\Answer\Deleted(
                         $serviceManager->get('question')
                     );
                 },
