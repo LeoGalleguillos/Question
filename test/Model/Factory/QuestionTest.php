@@ -35,10 +35,12 @@ class QuestionTest extends TestCase
             'name'        => 'name',
             'subject'     => 'subject',
             'message'     => 'message',
+            'ip'          => '1.2.3.4',
             'created'     => '2018-03-12 22:12:23',
         ];
         $questionEntity = new QuestionEntity\Question();
         $questionEntity->setCreated(new DateTime($array['created']))
+                       ->setIp($array['ip'])
                        ->setMessage($array['message'])
                        ->setName($array['name'])
                        ->setQuestionId($array['question_id'])
@@ -52,11 +54,13 @@ class QuestionTest extends TestCase
             'question_id' => 1,
             'name'        => null,
             'subject'     => 'subject',
-            'created'     => '2018-03-12 22:12:23',
+            'ip'          => '1.2.3.4',
             'views'       => '123',
+            'created'     => '2018-03-12 22:12:23',
         ];
         $questionEntity = new QuestionEntity\Question();
         $questionEntity->setCreated(new DateTime($array['created']))
+                       ->setIp($array['ip'])
                        ->setQuestionId($array['question_id'])
                        ->setSubject($array['subject'])
                        ->setViews($array['views']);
@@ -76,6 +80,7 @@ class QuestionTest extends TestCase
                 'subject'     => 'subject',
                 'message'     => 'message',
                 'created'     => '2018-03-12 22:12:23',
+                'ip'          => '1.2.3.4',
                 'views'       => '123',
             ]
         );

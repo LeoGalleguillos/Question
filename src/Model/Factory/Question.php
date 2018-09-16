@@ -31,7 +31,8 @@ class Question
         $questionEntity = new QuestionEntity\Question();
         $questionEntity->setCreated(new DateTime($array['created']))
                        ->setQuestionId($array['question_id'])
-                       ->setSubject($array['subject']);
+                       ->setSubject($array['subject'])
+                       ->setIp($array['ip']);
 
         if (isset($array['message'])) {
             $questionEntity->setMessage($array['message']);

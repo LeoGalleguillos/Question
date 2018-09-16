@@ -7,17 +7,23 @@ use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 
 class Question
 {
-    protected $questionId;
-    protected $userId;
     protected $created;
-    protected $name;
-    protected $subject;
+    protected $ip;
     protected $message;
+    protected $name;
+    protected $questionId;
+    protected $subject;
+    protected $userId;
     protected $views;
 
     public function getCreated() : DateTime
     {
         return $this->created;
+    }
+
+    public function getIp(): string
+    {
+        return $this->ip;
     }
 
     public function getMessage() : string
@@ -56,9 +62,9 @@ class Question
         return $this;
     }
 
-    public function setSubject(string $subject) : QuestionEntity\Question
+    public function setIp(string $ip): QuestionEntity\Question
     {
-        $this->subject = $subject;
+        $this->ip = $ip;
         return $this;
     }
 
@@ -77,6 +83,12 @@ class Question
     public function setQuestionId(int $questionId) : QuestionEntity\Question
     {
         $this->questionId = $questionId;
+        return $this;
+    }
+
+    public function setSubject(string $subject) : QuestionEntity\Question
+    {
+        $this->subject = $subject;
         return $this;
     }
 

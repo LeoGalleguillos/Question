@@ -129,6 +129,7 @@ class Question
                  , `question`.`subject`
                  , `question`.`message`
                  , `question`.`created`
+                 , `question`.`ip`
                  , `question`.`views`
               FROM `question`
              WHERE `question`.`question_id` = :questionId
