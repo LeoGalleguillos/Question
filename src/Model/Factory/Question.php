@@ -2,7 +2,6 @@
 namespace LeoGalleguillos\Question\Model\Factory;
 
 use DateTime;
-use Exception;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 
@@ -16,7 +15,7 @@ class Question
     public function __construct(
         QuestionTable\Question $questionTable
     ) {
-        $this->questionTable     = $questionTable;
+        $this->questionTable = $questionTable;
     }
 
     /**
@@ -27,12 +26,12 @@ class Question
      */
     public function buildFromArray(
         array $array
-    ) : QuestionEntity\Question {
+    ): QuestionEntity\Question {
         $questionEntity = new QuestionEntity\Question();
         $questionEntity->setCreated(new DateTime($array['created']))
+                       ->setIp($array['ip'])
                        ->setQuestionId($array['question_id'])
-                       ->setSubject($array['subject'])
-                       ->setIp($array['ip']);
+                       ->setSubject($array['subject']);
 
         if (isset($array['message'])) {
             $questionEntity->setMessage($array['message']);
@@ -57,7 +56,7 @@ class Question
      */
     public function buildFromQuestionId(
         int $questionId
-    ) : QuestionEntity\Question {
+    ): QuestionEntity\Question {
         return $this->buildFromArray(
             $this->questionTable->selectWhereQuestionId($questionId)
         );
