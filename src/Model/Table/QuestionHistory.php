@@ -56,4 +56,32 @@ class QuestionHistory
                     ->execute($parameters)
                     ->getGeneratedValue();
     }
+
+    public function selectWhereQuestionIdOrderByCreatedAscLimit1(
+        int $questionId
+    ): array {
+        $sql = '
+            SELECT `question_history`.`question_id`
+                 , `question_history`.`user_id`
+                 , `question_history`.`name`
+                 , `question_history`.`subject`
+                 , `question_history`.`message`
+                 , `question_history`.`ip`
+                 , `question_history`.`created`
+                 , `question_history`.`reason`
+              FROM `question_history`
+             WHERE `question_history`.`question_id` = ?
+             ORDER
+                BY `created` ASC
+             LIMIT 1
+                 ;
+        ';
+        $parameters = [
+            $questionId,
+        ];
+        return $this->adapter
+                    ->query($sql)
+                    ->execute($parameters)
+                    ->current();
+    }
 }

@@ -9,5 +9,5 @@ CREATE TABLE `question_history` (
     `created` datetime not null,
     `reason` varchar(255) default null,
     PRIMARY KEY (`question_history_id`),
-    KEY `question_id` (`question_id`)
+    KEY `question_id_created` (`question_id`, `created`)
 ) CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
