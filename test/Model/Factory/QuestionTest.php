@@ -88,6 +88,18 @@ class QuestionTest extends TestCase
                 'views'       => '123',
             ]
         );
+        $this->questionHistoryTableMock->method('selectWhereQuestionIdOrderByCreatedAscLimit1')->willReturn(
+            [
+                'question_id' => 123,
+                'user_id'     => 2,
+                'name'        => 'name',
+                'subject'     => 'subject',
+                'message'     => 'message',
+                'created'     => '2018-02-12 22:12:23',
+                'ip'          => '1.2.3.4',
+                'views'       => '123',
+            ]
+        );
         $questionEntity = $this->questionFactory->buildFromQuestionId(1);
         $this->assertSame(
             $questionEntity->getQuestionId(),
