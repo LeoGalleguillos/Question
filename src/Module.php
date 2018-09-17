@@ -169,6 +169,11 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Question\Ip::class => function ($serviceManager) {
+                    return new QuestionTable\Question\Ip(
+                        $serviceManager->get('question')
+                    );
+                },
                 QuestionTable\Question\Message::class => function ($serviceManager) {
                     return new QuestionTable\Question\Message(
                         $serviceManager->get('question')
