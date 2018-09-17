@@ -8,6 +8,7 @@ use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 class Question
 {
     protected $created;
+    protected $history;
     protected $ip;
     protected $message;
     protected $name;
@@ -19,6 +20,11 @@ class Question
     public function getCreated() : DateTime
     {
         return $this->created;
+    }
+
+    public function getHistory(): array
+    {
+        return $this->history;
     }
 
     public function getIp(): string
@@ -59,6 +65,12 @@ class Question
     public function setCreated(DateTime $created) : QuestionEntity\Question
     {
         $this->created = $created;
+        return $this;
+    }
+
+    public function setHistory(array $history): QuestionEntity\Question
+    {
+        $this->history = $history;
         return $this;
     }
 
