@@ -13,9 +13,11 @@ class Question
      * @param QuestionTable\Question $questionTable
      */
     public function __construct(
-        QuestionTable\Question $questionTable
+        QuestionTable\Question $questionTable,
+        QuestionTable\QuestionHistory $questionHistoryTable
     ) {
-        $this->questionTable = $questionTable;
+        $this->questionTable        = $questionTable;
+        $this->questionHistoryTable = $questionHistoryTable;
     }
 
     /**
