@@ -72,7 +72,7 @@ class QuestionHistory
               FROM `question_history`
              WHERE `question_history`.`question_id` = ?
              ORDER
-                BY `created` ASC
+                BY `question_history`.`created` ASC
              LIMIT 1
                  ;
         ';
