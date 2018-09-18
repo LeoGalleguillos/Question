@@ -14,9 +14,11 @@ class Answer
      * @param QuestionTable\Question $answerTable
      */
     public function __construct(
-        QuestionTable\Answer $answerTable
+        QuestionTable\Answer $answerTable,
+        QuestionTable\AnswerHistory $answerHistoryTable
     ) {
-        $this->answerTable = $answerTable;
+        $this->answerTable        = $answerTable;
+        $this->answerHistoryTable = $answerHistoryTable;
     }
 
     /**

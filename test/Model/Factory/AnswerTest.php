@@ -14,8 +14,12 @@ class AnswerTest extends TestCase
         $this->answerTableMock = $this->createMock(
             QuestionTable\Answer::class
         );
+        $this->answerHistoryTableMock = $this->createMock(
+            QuestionTable\AnswerHistory::class
+        );
         $this->answerFactory = new QuestionFactory\Answer(
-            $this->answerTableMock
+            $this->answerTableMock,
+            $this->answerHistoryTableMock
         );
     }
 

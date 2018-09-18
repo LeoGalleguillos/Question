@@ -34,7 +34,8 @@ class Module
             'factories' => [
                 QuestionFactory\Answer::class => function ($serviceManager) {
                     return new QuestionFactory\Answer(
-                        $serviceManager->get(QuestionTable\Answer::class)
+                        $serviceManager->get(QuestionTable\Answer::class),
+                        $serviceManager->get(QuestionTable\AnswerHistory::class)
                     );
                 },
                 QuestionFactory\Question::class => function ($serviceManager) {
