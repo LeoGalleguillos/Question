@@ -26,7 +26,7 @@ class Answer
      */
     public function buildFromArray(
         array $array
-    ) : QuestionEntity\Answer {
+    ): QuestionEntity\Answer {
         $answerEntity = new QuestionEntity\Answer();
         $answerEntity->setAnswerId($array['answer_id'])
                      ->setCreated(new DateTime($array['created']))
@@ -48,7 +48,7 @@ class Answer
      */
     public function buildFromAnswerId(
         int $answerId
-    ) : QuestionEntity\Answer {
+    ): QuestionEntity\Answer {
         return $this->buildFromArray(
             $this->answerTable->selectWhereAnswerId($answerId)
         );
