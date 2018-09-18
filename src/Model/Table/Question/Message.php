@@ -33,6 +33,7 @@ class Message
                  , `question`.`message`
                  , `question`.`views`
                  , `question`.`created`
+                 , `question`.`deleted`
               FROM `question`
              WHERE `question`.`message` REGEXP ?
              LIMIT $limitOffset, $limitRowCount

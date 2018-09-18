@@ -103,6 +103,7 @@ class Question
                  , `question`.`message`
                  , `question`.`views`
                  , `question`.`created`
+                 , `question`.`deleted`
               FROM `question`
              ORDER
                 BY `question`.`created` DESC
@@ -131,6 +132,7 @@ class Question
                  , `question`.`ip`
                  , `question`.`views`
                  , `question`.`created`
+                 , `question`.`deleted`
               FROM `question`
              WHERE `question`.`question_id` = :questionId
              ORDER
