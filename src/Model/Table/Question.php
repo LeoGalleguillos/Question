@@ -12,12 +12,23 @@ class Question
      */
     protected $adapter;
 
+    /**
+     * Construct.
+     *
+     * @param Adapter $adapter
+     */
     public function __construct(Adapter $adapter)
     {
         $this->adapter = $adapter;
     }
 
     /**
+     * Insert.
+     *
+     * @param int|null $userId
+     * @param string|null $name
+     * @param string $subject
+     * @param string|null $message
      * @return int
      */
     public function insert(
@@ -25,7 +36,7 @@ class Question
         string $name = null,
         string $subject,
         string $message = null
-    ) : int {
+    ): int {
         $sql = '
             INSERT
               INTO `question` (
@@ -47,6 +58,13 @@ class Question
     }
 
     /**
+     * Insert question ID, name, subject, message, and IP.
+     *
+     * @param int $questionId
+     * @param string $name
+     * @param string $subject
+     * @param string $message
+     * @param string $ip
      * @return int
      */
     public function insertQuestionIdNameSubjectMessageIp(
@@ -82,7 +100,10 @@ class Question
                           ->getGeneratedValue();
     }
 
-    public function selectCount()
+    /**
+     * Select count.
+     */
+    public function selectCount(): int
     {
         $sql = '
             SELECT COUNT(*) AS `count`
@@ -93,7 +114,7 @@ class Question
         return (int) $row['count'];
     }
 
-    public function selectOrderByCreatedDesc() : Generator
+    public function selectOrderByCreatedDesc(): Generator
     {
         $sql = '
             SELECT `question`.`question_id`
