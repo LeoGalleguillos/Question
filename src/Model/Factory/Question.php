@@ -48,6 +48,10 @@ class Question
             $questionEntity->setViews((int) $array['views']);
         }
 
+        if (isset($array['deleted'])) {
+            $questionEntity->setDeleted(new DateTime($array['deleted']));
+        }
+
         return $questionEntity;
     }
 

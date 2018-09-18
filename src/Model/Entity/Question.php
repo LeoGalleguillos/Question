@@ -2,12 +2,12 @@
 namespace LeoGalleguillos\Question\Model\Entity;
 
 use DateTime;
-use LeoGalleguillos\Entity\Model\Entity as EntityEntity;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 
 class Question
 {
     protected $created;
+    protected $deleted;
     protected $history;
     protected $ip;
     protected $message;
@@ -20,6 +20,11 @@ class Question
     public function getCreated() : DateTime
     {
         return $this->created;
+    }
+
+    public function getDeleted(): DateTime
+    {
+        return $this->deleted;
     }
 
     public function getHistory(): array
@@ -65,6 +70,12 @@ class Question
     public function setCreated(DateTime $created) : QuestionEntity\Question
     {
         $this->created = $created;
+        return $this;
+    }
+
+    public function setDeleted(DateTime $deleted): QuestionEntity\Question
+    {
+        $this->deleted = $deleted;
         return $this;
     }
 
