@@ -9,5 +9,6 @@ CREATE TABLE `answer` (
     `deleted` datetime default null,
     PRIMARY KEY (`answer_id`),
     KEY `question_id` (`question_id`),
-    KEY `user_id` (`user_id`)
+    KEY `user_id` (`user_id`),
+    KEY `ip` (`ip`)
 ) CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
