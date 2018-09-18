@@ -131,6 +131,7 @@ class Answer
                  , `answer`.`user_id`
                  , `answer`.`name`
                  , `answer`.`message`
+                 , `answer`.`ip`
                  , `answer`.`created`
               FROM `answer`
              WHERE `answer`.`answer_id` = :answerId
@@ -156,6 +157,7 @@ class Answer
                  , `answer`.`user_id`
                  , `answer`.`name`
                  , `answer`.`message`
+                 , `answer`.`ip`
                  , `answer`.`created`
               FROM `answer`
              WHERE `answer`.`question_id` = :questionId
