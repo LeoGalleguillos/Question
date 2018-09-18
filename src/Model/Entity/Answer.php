@@ -10,6 +10,7 @@ class Answer
     protected $created;
     protected $deleted;
     protected $answerId;
+    protected $history;
     protected $message;
     protected $questionId;
     protected $userId;
@@ -28,6 +29,11 @@ class Answer
     public function getDeleted(): DateTime
     {
         return $this->deleted;
+    }
+
+    public function getHistory(): array
+    {
+        return $this->history;
     }
 
     public function getMessage(): string
@@ -70,6 +76,12 @@ class Answer
     public function setDeleted(DateTime $deleted): QuestionEntity\Answer
     {
         $this->deleted = $deleted;
+        return $this;
+    }
+
+    public function setHistory(array $history): QuestionEntity\Answer
+    {
+        $this->history = $history;
         return $this;
     }
 
