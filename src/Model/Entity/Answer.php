@@ -8,6 +8,7 @@ use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 class Answer
 {
     protected $created;
+    protected $deleted;
     protected $answerId;
     protected $message;
     protected $questionId;
@@ -22,6 +23,11 @@ class Answer
     public function getCreated() : DateTime
     {
         return $this->created;
+    }
+
+    public function getDeleted(): DateTime
+    {
+        return $this->deleted;
     }
 
     public function getMessage() : string
@@ -58,6 +64,12 @@ class Answer
     public function setCreated(DateTime $created) : QuestionEntity\Answer
     {
         $this->created = $created;
+        return $this;
+    }
+
+    public function setDeleted(DateTime $deleted): QuestionEntity\Answer
+    {
+        $this->deleted = $deleted;
         return $this;
     }
 
