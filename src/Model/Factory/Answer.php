@@ -4,6 +4,7 @@ namespace LeoGalleguillos\Question\Model\Factory;
 use DateTime;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
+use TypeError;
 
 class Answer
 {
@@ -49,8 +50,22 @@ class Answer
     public function buildFromAnswerId(
         int $answerId
     ): QuestionEntity\Answer {
-        return $this->buildFromArray(
+        $answerEntity = $this->buildFromArray(
             $this->answerTable->selectWhereAnswerId($answerId)
         );
+
+        try {
+            $array = $this->answerHistoryTable->selectWhereAnswerIdOrderByCreatedAscLimit1(
+                $answerId
+            );
+            $history = [
+                0 => $this->buildFromArray($array),
+            ];
+            $answerEntity->setHistory($history);
+        } catch (TypeError $typeError) {
+            // Do nothing.
+        }
+
+        return $answerEntity;
     }
 }
