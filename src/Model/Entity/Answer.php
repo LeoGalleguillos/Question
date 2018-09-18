@@ -2,14 +2,13 @@
 namespace LeoGalleguillos\Question\Model\Entity;
 
 use DateTime;
-use LeoGalleguillos\Entity\Model\Entity as EntityEntity;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 
 class Answer
 {
+    protected $answerId;
     protected $created;
     protected $deleted;
-    protected $answerId;
     protected $history;
     protected $message;
     protected $questionId;
