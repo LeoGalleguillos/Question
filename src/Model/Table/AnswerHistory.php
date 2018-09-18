@@ -54,4 +54,31 @@ class AnswerHistory
                     ->execute($parameters)
                     ->getGeneratedValue();
     }
+
+    public function selectWhereAnswerIdOrderByCreatedAscLimit1(
+        int $answerId
+    ): array {
+        $sql = '
+            SELECT `answer_history`.`answer_id`
+                 , `answer_history`.`user_id`
+                 , `answer_history`.`name`
+                 , `answer_history`.`message`
+                 , `answer_history`.`ip`
+                 , `answer_history`.`created`
+                 , `answer_history`.`reason`
+              FROM `answer_history`
+             WHERE `answer_history`.`answer_id` = ?
+             ORDER
+                BY `answer_history`.`created` ASC
+             LIMIT 1
+                 ;
+        ';
+        $parameters = [
+            $answerId,
+        ];
+        return $this->adapter
+                    ->query($sql)
+                    ->execute($parameters)
+                    ->current();
+    }
 }
