@@ -101,8 +101,8 @@ class Question
                  , `question`.`name`
                  , `question`.`subject`
                  , `question`.`message`
-                 , `question`.`created`
                  , `question`.`views`
+                 , `question`.`created`
               FROM `question`
              ORDER
                 BY `question`.`created` DESC
@@ -128,9 +128,9 @@ class Question
                  , `question`.`name`
                  , `question`.`subject`
                  , `question`.`message`
-                 , `question`.`created`
                  , `question`.`ip`
                  , `question`.`views`
+                 , `question`.`created`
               FROM `question`
              WHERE `question`.`question_id` = :questionId
              ORDER
