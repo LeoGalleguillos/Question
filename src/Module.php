@@ -144,6 +144,11 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Answer\Ip::class => function ($serviceManager) {
+                    return new QuestionTable\Answer\Ip(
+                        $serviceManager->get('question')
+                    );
+                },
                 QuestionTable\Answer\Message::class => function ($serviceManager) {
                     return new QuestionTable\Answer\Message(
                         $serviceManager->get('question')
