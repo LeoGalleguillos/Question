@@ -39,6 +39,7 @@ class AnswerTest extends TestCase
             'user_id'     => 1,
             'message'     => 'message',
             'created'     => '2018-03-12 22:12:23',
+            'ip'          => '1.2.3.4',
             'deleted'     => '2018-09-18 11:23:05',
         ];
 
@@ -47,6 +48,7 @@ class AnswerTest extends TestCase
                      ->setCreated(new DateTime($array['created']))
                      ->setDeleted(new DateTime($array['deleted']))
                      ->setMessage($array['message'])
+                     ->setIp($array['ip'])
                      ->setQuestionId($array['question_id']);
 
         $this->assertEquals(
@@ -62,21 +64,26 @@ class AnswerTest extends TestCase
             'question_id' => 1,
             'user_id'     => 1,
             'message'     => 'message',
+            'ip'          => '1.2.3.4',
             'created'     => '2018-03-12 22:12:23',
         ];
         $this->answerTableMock->method('selectWhereAnswerId')->willReturn(
             $array
+        );
+        $this->answerHistoryTableMock->method('selectWhereAnswerIdOrderByCreatedAscLimit1')->willReturn(
+            null
         );
 
         $answerEntity = new QuestionEntity\Answer();
         $answerEntity->setAnswerId($array['answer_id'])
                      ->setCreated(new DateTime($array['created']))
                      ->setMessage($array['message'])
+                     ->setIp($array['ip'])
                      ->setQuestionId($array['question_id']);
 
         $this->assertEquals(
             $answerEntity,
-            $this->answerFactory->buildFromArray($array)
+            $this->answerFactory->buildFromAnswerId(1)
         );
     }
 }
