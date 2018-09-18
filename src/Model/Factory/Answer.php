@@ -33,11 +33,13 @@ class Answer
         $answerEntity = new QuestionEntity\Answer();
         $answerEntity->setAnswerId($array['answer_id'])
                      ->setCreated(new DateTime($array['created']))
-                     ->setMessage($array['message'])
-                     ->setQuestionId($array['question_id']);
+                     ->setMessage($array['message']);
 
         if (isset($array['deleted'])) {
             $answerEntity->setDeleted(new DateTime($array['deleted']));
+        }
+        if (isset($array['question_id'])) {
+            $answerEntity->setQuestionId($array['question_id']);
         }
 
         return $answerEntity;
