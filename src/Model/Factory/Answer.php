@@ -33,6 +33,10 @@ class Answer
                      ->setMessage($array['message'])
                      ->setQuestionId($array['question_id']);
 
+        if (isset($array['deleted'])) {
+            $answerEntity->setDeleted(new DateTime($array['deleted']));
+        }
+
         return $answerEntity;
     }
 

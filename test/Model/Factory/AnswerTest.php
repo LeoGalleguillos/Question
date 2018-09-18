@@ -35,11 +35,13 @@ class AnswerTest extends TestCase
             'user_id'     => 1,
             'message'     => 'message',
             'created'     => '2018-03-12 22:12:23',
+            'deleted'     => '2018-09-18 11:23:05',
         ];
 
         $answerEntity = new QuestionEntity\Answer();
         $answerEntity->setAnswerId($array['answer_id'])
                      ->setCreated(new DateTime($array['created']))
+                     ->setDeleted(new DateTime($array['deleted']))
                      ->setMessage($array['message'])
                      ->setQuestionId($array['question_id']);
 
