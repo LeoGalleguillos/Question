@@ -15,12 +15,18 @@ class Module
         return [
             'view_helpers' => [
                 'aliases' => [
+                    'getQuestionFromAnswer' => QuestionHelper\QuestionFromAnswer::class,
                     'getQuestionRootRelativeUrl' => QuestionHelper\Question\RootRelativeUrl::class,
                 ],
                 'factories' => [
                     QuestionHelper\Question\RootRelativeUrl::class => function($serviceManager) {
                         return new QuestionHelper\Question\RootRelativeUrl(
                             $serviceManager->get(QuestionService\Question\RootRelativeUrl::class)
+                        );
+                    },
+                    QuestionHelper\QuestionFromAnswer::class => function($serviceManager) {
+                        return new QuestionHelper\QuestionFromAnswer(
+                            $serviceManager->get(QuestionService\QuestionFromAnswer::class)
                         );
                     },
                 ],
