@@ -17,7 +17,7 @@ class Question
     protected $userId;
     protected $views;
 
-    public function getCreated() : DateTime
+    public function getCreated(): DateTime
     {
         return $this->created;
     }
@@ -37,7 +37,7 @@ class Question
         return $this->ip;
     }
 
-    public function getMessage() : string
+    public function getMessage(): string
     {
         return $this->message;
     }
@@ -47,27 +47,27 @@ class Question
         return $this->name;
     }
 
-    public function getQuestionId() : int
+    public function getQuestionId(): int
     {
         return $this->questionId;
     }
 
-    public function getSubject() : string
+    public function getSubject(): string
     {
         return $this->subject;
     }
 
-    public function getUserId() : int
+    public function getUserId(): int
     {
         return $this->userId;
     }
 
-    public function getViews() : int
+    public function getViews(): int
     {
         return $this->views;
     }
 
-    public function setCreated(DateTime $created) : QuestionEntity\Question
+    public function setCreated(DateTime $created): QuestionEntity\Question
     {
         $this->created = $created;
         return $this;
@@ -91,7 +91,7 @@ class Question
         return $this;
     }
 
-    public function setMessage(string $message) : QuestionEntity\Question
+    public function setMessage(string $message): QuestionEntity\Question
     {
         $this->message = $message;
         return $this;
@@ -103,25 +103,25 @@ class Question
         return $this;
     }
 
-    public function setQuestionId(int $questionId) : QuestionEntity\Question
+    public function setQuestionId(int $questionId): QuestionEntity\Question
     {
         $this->questionId = $questionId;
         return $this;
     }
 
-    public function setSubject(string $subject) : QuestionEntity\Question
+    public function setSubject(string $subject): QuestionEntity\Question
     {
         $this->subject = $subject;
         return $this;
     }
 
-    public function setUserId(int $userId) : QuestionEntity\Question
+    public function setUserId(int $userId): QuestionEntity\Question
     {
         $this->userId = $userId;
         return $this;
     }
 
-    public function setViews(int $views) : QuestionEntity\Question
+    public function setViews(int $views): QuestionEntity\Question
     {
         $this->views = $views;
         return $this;
