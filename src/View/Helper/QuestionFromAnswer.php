@@ -7,14 +7,25 @@ use Zend\View\Helper\AbstractHelper;
 
 class QuestionFromAnswer extends AbstractHelper
 {
+    /**
+     * Construct.
+     *
+     * @param QuestionService\QuestionFromAnswer $questionFromAnswerService
+     */
     public function __construct(
         QuestionService\QuestionFromAnswer $questionFromAnswerService
     ) {
         $this->rootRelativeUrlService = $questionFromAnswerService;
     }
 
-    public function __invoke(QuestionEntity\Answer $answerEntity)
-    {
+    /**
+     * Invoke.
+     *
+     * @param QuestionEntity\Answer $answerEntity
+     */
+    public function __invoke(
+        QuestionEntity\Answer $answerEntity
+    ): QuestionEntity\Question {
         return $this->questionFromAnswerService->getQuestionFromAnswer(
             $answerEntity
         );
