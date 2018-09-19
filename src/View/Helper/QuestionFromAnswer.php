@@ -15,7 +15,7 @@ class QuestionFromAnswer extends AbstractHelper
     public function __construct(
         QuestionService\QuestionFromAnswer $questionFromAnswerService
     ) {
-        $this->rootRelativeUrlService = $questionFromAnswerService;
+        $this->questionFromAnswerService = $questionFromAnswerService;
     }
 
     /**
