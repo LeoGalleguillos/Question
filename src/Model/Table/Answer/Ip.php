@@ -31,6 +31,8 @@ class Ip
                          FROM `answer_history`
                         WHERE `answer_history`.`answer_id` = `answer`.`answer_id`
                    )
+             ORDER
+                BY `answer`.`created` DESC
              LIMIT 100
                  ;
         ';
