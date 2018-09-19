@@ -112,6 +112,11 @@ class Module
                         $serviceManager->get(QuestionTable\QuestionEditQueue::class)
                     );
                 },
+                QuestionService\QuestionFromAnswer::class => function ($serviceManager) {
+                    return new QuestionService\QuestionFromAnswer(
+                        $serviceManager->get(QuestionFactory\Question::class)
+                    );
+                },
                 QuestionService\Questions::class => function ($serviceManager) {
                     return new QuestionService\Questions(
                         $serviceManager->get(QuestionFactory\Question::class),
