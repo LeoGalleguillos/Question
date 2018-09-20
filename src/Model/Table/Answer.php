@@ -133,6 +133,7 @@ class Answer
                  , `answer`.`message`
                  , `answer`.`ip`
                  , `answer`.`created`
+                 , `answer`.`deleted`
               FROM `answer`
              WHERE `answer`.`answer_id` = :answerId
                  ;
@@ -159,6 +160,7 @@ class Answer
                  , `answer`.`message`
                  , `answer`.`ip`
                  , `answer`.`created`
+                 , `answer`.`deleted`
               FROM `answer`
              WHERE `answer`.`question_id` = :questionId
              ORDER

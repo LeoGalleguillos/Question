@@ -33,6 +33,7 @@ class Message
                  , `answer`.`message`
                  , `answer`.`ip`
                  , `answer`.`created`
+                 , `answer`.`deleted`
               FROM `answer`
              WHERE `answer`.`message` REGEXP ?
              LIMIT $limitOffset, $limitRowCount
