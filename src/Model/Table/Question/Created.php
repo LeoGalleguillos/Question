@@ -22,14 +22,14 @@ class Created
     }
 
     /**
-     * Select where created is greater than or equal to and less than.
+     * Select where created is between and deleted is null.
      *
      * @param string $createdMin
      * @param string $createdMax
      * @return Generator
      * @yield array
      */
-    public function selectWhereCreatedGreaterThanOrEqualToAndLessThan(
+    public function selectWhereCreatedIsBetweenAndDeletedIsNull(
         string $createdMin,
         string $createdMax
     ): Generator {
@@ -45,6 +45,7 @@ class Created
               FROM `question`
              WHERE `question`.`created` >= ?
                AND `question`.`created` < ?
+               AND `deleted` IS NULL
                  ;
         ';
         $parameters = [
