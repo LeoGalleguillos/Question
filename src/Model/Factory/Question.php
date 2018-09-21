@@ -32,9 +32,12 @@ class Question
     ): QuestionEntity\Question {
         $questionEntity = new QuestionEntity\Question();
         $questionEntity->setCreated(new DateTime($array['created']))
-                       ->setIp($array['ip'])
                        ->setQuestionId($array['question_id'])
                        ->setSubject($array['subject']);
+
+        if (isset($array['ip'])) {
+            $questionEntity->setIp($array['ip']);
+        }
 
         if (isset($array['message'])) {
             $questionEntity->setMessage($array['message']);
