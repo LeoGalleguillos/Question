@@ -33,9 +33,11 @@ class Answer
         $answerEntity = new QuestionEntity\Answer();
         $answerEntity->setAnswerId($array['answer_id'])
                      ->setCreated(new DateTime($array['created']))
-                     ->setIp($array['ip'])
                      ->setMessage($array['message']);
 
+        if (isset($array['ip'])) {
+            $answerEntity->setIp($array['ip']);
+        }
         if (isset($array['deleted'])) {
             $answerEntity->setDeleted(new DateTime($array['deleted']));
         }
