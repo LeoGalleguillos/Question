@@ -12,6 +12,7 @@ class Answer
      * Construct.
      *
      * @param QuestionTable\Question $answerTable
+     * @param QuestionTable\AnswerHistory $answerHistoryTable
      */
     public function __construct(
         QuestionTable\Answer $answerTable,

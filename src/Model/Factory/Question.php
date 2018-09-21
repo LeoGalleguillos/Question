@@ -9,7 +9,7 @@ use TypeError;
 class Question
 {
     /**
-     * Construct
+     * Construct.
      *
      * @param QuestionTable\Question $questionTable
      */
