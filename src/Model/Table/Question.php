@@ -58,49 +58,6 @@ class Question
     }
 
     /**
-     * Insert question ID, name, subject, message, and IP.
-     *
-     * @param int $questionId
-     * @param string $name
-     * @param string $subject
-     * @param string $message
-     * @param string $ip
-     * @return int
-     */
-    public function insertQuestionIdNameSubjectMessageIp(
-        int $questionId,
-        string $name,
-        string $subject,
-        string $message,
-        string $ip
-    ): int {
-        $sql = '
-            INSERT
-              INTO `question` (
-                       `question_id`
-                     , `name`
-                     , `subject`
-                     , `message`
-                     , `ip`
-                     , `created`
-                   )
-            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP())
-                 ;
-        ';
-        $parameters = [
-            $questionId,
-            $name,
-            $subject,
-            $message,
-            $ip,
-        ];
-        return (int) $this->adapter
-                          ->query($sql)
-                          ->execute($parameters)
-                          ->getGeneratedValue();
-    }
-
-    /**
      * Insert question ID, name, subject, message, IP, created name, and created IP.
      *
      * @param int $questionId
