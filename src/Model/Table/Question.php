@@ -101,6 +101,57 @@ class Question
     }
 
     /**
+     * Insert question ID, name, subject, message, IP, created name, and created IP.
+     *
+     * @param int $questionId
+     * @param string $name
+     * @param string $subject
+     * @param string $message
+     * @param string $ip
+     * @param string $createdName
+     * @param string $createdIp
+     * @return int
+     */
+    public function insertQuestionIdNameSubjectMessageIpCreatedNameCreatedIp(
+        int $questionId,
+        string $name,
+        string $subject,
+        string $message,
+        string $ip,
+        string $createdName,
+        string $createdIp
+    ): int {
+        $sql = '
+            INSERT
+              INTO `question` (
+                       `question_id`
+                     , `name`
+                     , `subject`
+                     , `message`
+                     , `ip`
+                     , `created`
+                     , `created_name`
+                     , `created_ip`
+                   )
+            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?)
+                 ;
+        ';
+        $parameters = [
+            $questionId,
+            $name,
+            $subject,
+            $message,
+            $ip,
+            $createdName,
+            $createdIp,
+        ];
+        return (int) $this->adapter
+                          ->query($sql)
+                          ->execute($parameters)
+                          ->getGeneratedValue();
+    }
+
+    /**
      * Select count.
      */
     public function selectCount(): int
