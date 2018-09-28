@@ -1,10 +1,9 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "59dbf95aa5980cd1efa6357641eaa707",
     "content-hash": "17edadde9747ef5a70ea6d332d0e1759",
     "packages": [
         {
@@ -36,7 +35,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
-            "time": "2017-02-14 19:40:03"
+            "time": "2017-02-14T19:40:03+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -90,7 +89,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2018-09-01 02:07:49"
+            "time": "2018-09-01T02:07:49+00:00"
         },
         {
             "name": "leo-galleguillos/flash",
@@ -120,7 +119,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-08-03 00:28:08"
+            "time": "2018-08-03T00:28:08+00:00"
         },
         {
             "name": "leo-galleguillos/string",
@@ -128,12 +127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/String.git",
-                "reference": "0214787c4101c64451c4a5f9f2a542d4d1d5430d"
+                "reference": "7b21e6fbd3b3b45ec863e62a46e1c8b59fe7a668"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/0214787c4101c64451c4a5f9f2a542d4d1d5430d",
-                "reference": "0214787c4101c64451c4a5f9f2a542d4d1d5430d",
+                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/7b21e6fbd3b3b45ec863e62a46e1c8b59fe7a668",
+                "reference": "7b21e6fbd3b3b45ec863e62a46e1c8b59fe7a668",
                 "shasum": ""
             },
             "require": {
@@ -150,7 +149,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-09-21 04:14:07"
+            "time": "2018-09-28T06:47:50+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -195,7 +194,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2017-10-19 19:58:43"
+            "time": "2017-10-19T19:58:43+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -250,7 +249,7 @@
                 }
             ],
             "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)",
-            "time": "2017-03-05 18:14:27"
+            "time": "2017-03-05T18:14:27+00:00"
         },
         {
             "name": "phar-io/version",
@@ -297,7 +296,7 @@
                 }
             ],
             "description": "Library for handling version information and constraints",
-            "time": "2017-03-05 17:38:23"
+            "time": "2017-03-05T17:38:23+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -351,7 +350,7 @@
                 "reflection",
                 "static analysis"
             ],
-            "time": "2017-09-11 18:02:19"
+            "time": "2017-09-11T18:02:19+00:00"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -402,7 +401,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2017-11-30 07:14:17"
+            "time": "2017-11-30T07:14:17+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -449,7 +448,7 @@
                     "email": "me@mikevanriel.com"
                 }
             ],
-            "time": "2017-07-14 14:27:02"
+            "time": "2017-07-14T14:27:02+00:00"
         },
         {
             "name": "phpspec/prophecy",
@@ -512,7 +511,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2018-08-05 17:53:17"
+            "time": "2018-08-05T17:53:17+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -575,7 +574,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-04-07 12:06:18"
+            "time": "2018-04-07T12:06:18+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -622,7 +621,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2017-11-27 13:52:08"
+            "time": "2017-11-27T13:52:08+00:00"
         },
         {
             "name": "phpunit/php-text-template",
@@ -663,7 +662,7 @@
             "keywords": [
                 "template"
             ],
-            "time": "2015-06-21 13:50:34"
+            "time": "2015-06-21T13:50:34+00:00"
         },
         {
             "name": "phpunit/php-timer",
@@ -712,7 +711,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2018-01-06 05:27:16"
+            "time": "2018-01-06T05:27:16+00:00"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -761,7 +760,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2017-11-27 08:47:38"
+            "time": "2017-11-27T08:47:38+00:00"
         },
         {
             "name": "phpunit/phpunit",
@@ -845,7 +844,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-09-10 09:25:48"
+            "time": "2018-09-10T09:25:48+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -904,7 +903,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2018-09-09 05:48:43"
+            "time": "2018-09-09T05:48:43+00:00"
         },
         {
             "name": "psr/container",
@@ -953,7 +952,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2017-06-28 15:35:32"
+            "time": "2017-06-28T15:35:32+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -998,7 +997,7 @@
             ],
             "description": "Looks up which function or method a line of code belongs to",
             "homepage": "https://github.com/sebastianbergmann/code-unit-reverse-lookup/",
-            "time": "2018-05-15 05:52:48"
+            "time": "2018-05-15T05:52:48+00:00"
         },
         {
             "name": "sebastian/comparator",
@@ -1062,7 +1061,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2018-02-01 13:46:46"
+            "time": "2018-02-01T13:46:46+00:00"
         },
         {
             "name": "sebastian/diff",
@@ -1114,7 +1113,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2017-12-14 11:32:19"
+            "time": "2017-12-14T11:32:19+00:00"
         },
         {
             "name": "sebastian/environment",
@@ -1164,7 +1163,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2018-05-15 05:48:40"
+            "time": "2018-05-15T05:48:40+00:00"
         },
         {
             "name": "sebastian/exporter",
@@ -1231,7 +1230,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2018-06-28 14:22:04"
+            "time": "2018-06-28T14:22:04+00:00"
         },
         {
             "name": "sebastian/global-state",
@@ -1282,7 +1281,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2018-05-15 05:52:33"
+            "time": "2018-05-15T05:52:33+00:00"
         },
         {
             "name": "sebastian/object-enumerator",
@@ -1329,7 +1328,7 @@
             ],
             "description": "Traverses array structures and object graphs to enumerate all referenced objects",
             "homepage": "https://github.com/sebastianbergmann/object-enumerator/",
-            "time": "2018-05-15 05:52:18"
+            "time": "2018-05-15T05:52:18+00:00"
         },
         {
             "name": "sebastian/object-reflector",
@@ -1374,7 +1373,7 @@
             ],
             "description": "Allows reflection of object attributes, including inherited and non-public ones",
             "homepage": "https://github.com/sebastianbergmann/object-reflector/",
-            "time": "2018-05-15 05:50:44"
+            "time": "2018-05-15T05:50:44+00:00"
         },
         {
             "name": "sebastian/recursion-context",
@@ -1427,20 +1426,20 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-            "time": "2018-05-15 05:52:05"
+            "time": "2018-05-15T05:52:05+00:00"
         },
         {
             "name": "sebastian/resource-operations",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/resource-operations.git",
-                "reference": "0f9911fea026d9737c9b357ddda0916ea3beaf1d"
+                "reference": "ce990bb21759f94aeafd30209e8cfcdfa8bc3f52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/resource-operations/zipball/0f9911fea026d9737c9b357ddda0916ea3beaf1d",
-                "reference": "0f9911fea026d9737c9b357ddda0916ea3beaf1d",
+                "url": "https://api.github.com/repos/sebastianbergmann/resource-operations/zipball/ce990bb21759f94aeafd30209e8cfcdfa8bc3f52",
+                "reference": "ce990bb21759f94aeafd30209e8cfcdfa8bc3f52",
                 "shasum": ""
             },
             "require": {
@@ -1469,7 +1468,7 @@
             ],
             "description": "Provides a list of PHP built-in functions that operate on resources",
             "homepage": "https://www.github.com/sebastianbergmann/resource-operations",
-            "time": "2018-05-15 05:53:02"
+            "time": "2015-07-28T20:34:47+00:00"
         },
         {
             "name": "sebastian/version",
@@ -1512,7 +1511,7 @@
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
-            "time": "2016-10-03 07:35:21"
+            "time": "2016-10-03T07:35:21+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -1552,7 +1551,7 @@
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
-            "time": "2017-04-07 12:08:54"
+            "time": "2017-04-07T12:08:54+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -1602,7 +1601,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2018-05-29 14:25:02"
+            "time": "2018-05-29T14:25:02+00:00"
         },
         {
             "name": "zendframework/zend-config",
@@ -1662,7 +1661,7 @@
                 "config",
                 "zf"
             ],
-            "time": "2018-06-04 17:01:48"
+            "time": "2018-06-04T17:01:48+00:00"
         },
         {
             "name": "zendframework/zend-console",
@@ -1715,7 +1714,7 @@
                 "console",
                 "zf"
             ],
-            "time": "2018-01-25 19:09:44"
+            "time": "2018-01-25T19:09:44+00:00"
         },
         {
             "name": "zendframework/zend-db",
@@ -1773,7 +1772,7 @@
                 "db",
                 "zf"
             ],
-            "time": "2018-08-08 13:53:08"
+            "time": "2018-08-08T13:53:08+00:00"
         },
         {
             "name": "zendframework/zend-dom",
@@ -1818,7 +1817,7 @@
                 "dom",
                 "zf"
             ],
-            "time": "2018-04-09 20:24:15"
+            "time": "2018-04-09T20:24:15+00:00"
         },
         {
             "name": "zendframework/zend-escaper",
@@ -1863,7 +1862,7 @@
                 "escaper",
                 "zf"
             ],
-            "time": "2018-04-25 15:50:09"
+            "time": "2018-04-25T15:50:09+00:00"
         },
         {
             "name": "zendframework/zend-eventmanager",
@@ -1917,7 +1916,7 @@
                 "events",
                 "zf2"
             ],
-            "time": "2018-04-25 15:35:22"
+            "time": "2018-04-25T15:35:22+00:00"
         },
         {
             "name": "zendframework/zend-http",
@@ -1972,7 +1971,7 @@
                 "zend",
                 "zf"
             ],
-            "time": "2018-08-13 18:49:07"
+            "time": "2018-08-13T18:49:07+00:00"
         },
         {
             "name": "zendframework/zend-loader",
@@ -2017,7 +2016,7 @@
                 "loader",
                 "zf"
             ],
-            "time": "2018-04-30 15:21:52"
+            "time": "2018-04-30T15:21:52+00:00"
         },
         {
             "name": "zendframework/zend-modulemanager",
@@ -2077,7 +2076,7 @@
                 "modulemanager",
                 "zf"
             ],
-            "time": "2017-12-02 06:11:18"
+            "time": "2017-12-02T06:11:18+00:00"
         },
         {
             "name": "zendframework/zend-mvc",
@@ -2149,7 +2148,7 @@
                 "mvc",
                 "zf"
             ],
-            "time": "2018-01-05 07:28:48"
+            "time": "2018-01-05T07:28:48+00:00"
         },
         {
             "name": "zendframework/zend-router",
@@ -2211,7 +2210,7 @@
                 "zend",
                 "zf"
             ],
-            "time": "2018-08-01 22:25:40"
+            "time": "2018-08-01T22:25:40+00:00"
         },
         {
             "name": "zendframework/zend-servicemanager",
@@ -2279,7 +2278,7 @@
                 "servicemanager",
                 "zf"
             ],
-            "time": "2018-02-26 16:15:29"
+            "time": "2018-02-26T16:15:29+00:00"
         },
         {
             "name": "zendframework/zend-stdlib",
@@ -2325,7 +2324,7 @@
                 "stdlib",
                 "zf"
             ],
-            "time": "2018-08-29 10:55:46"
+            "time": "2018-08-29T10:55:46+00:00"
         },
         {
             "name": "zendframework/zend-test",
@@ -2396,7 +2395,7 @@
                 "test",
                 "zf"
             ],
-            "time": "2018-04-10 20:57:53"
+            "time": "2018-04-10T20:57:53+00:00"
         },
         {
             "name": "zendframework/zend-uri",
@@ -2443,7 +2442,7 @@
                 "uri",
                 "zf"
             ],
-            "time": "2018-04-30 13:42:19"
+            "time": "2018-04-30T13:42:19+00:00"
         },
         {
             "name": "zendframework/zend-validator",
@@ -2514,7 +2513,7 @@
                 "validator",
                 "zf2"
             ],
-            "time": "2018-02-01 17:07:06"
+            "time": "2018-02-01T17:07:06+00:00"
         },
         {
             "name": "zendframework/zend-view",
@@ -2601,7 +2600,7 @@
                 "view",
                 "zf2"
             ],
-            "time": "2018-01-17 22:23:05"
+            "time": "2018-01-17T22:23:05+00:00"
         }
     ],
     "packages-dev": [],
