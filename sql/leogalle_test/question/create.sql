@@ -16,5 +16,5 @@ CREATE TABLE `question` (
     KEY `ip` (`ip`),
     KEY `created_deleted` (`created`, `deleted`),
     KEY `created_name_deleted_created` (`created_name`, `deleted`, `created`),
-    KEY `created_ip_created` (`created_ip`, `created`)
+    KEY `created_ip_created_datetime` (`created_ip`, `created_datetime`)
 ) CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
