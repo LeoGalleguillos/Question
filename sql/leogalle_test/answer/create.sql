@@ -13,5 +13,6 @@ CREATE TABLE `answer` (
     PRIMARY KEY (`answer_id`),
     KEY `question_id` (`question_id`),
     KEY `user_id` (`user_id`),
-    KEY `ip` (`ip`)
+    KEY `ip` (`ip`),
+    KEY `created_ip_created_datetime` (`created_ip`, `created_datetime`)
 ) CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
