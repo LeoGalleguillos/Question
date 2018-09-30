@@ -84,6 +84,49 @@ class Answer
     }
 
     /**
+     * @return int
+     */
+    public function insertAnswerIdQuestionIdNameMessageIpCreatedNameCreatedIp(
+        int $answerId,
+        int $questionId,
+        string $name,
+        string $message,
+        string $ip,
+        string $createdName,
+        string $createdIp
+    ): int {
+        $sql = '
+            INSERT
+              INTO `answer` (
+                      `answer_id`
+                    , `question_id`
+                    , `name`
+                    , `message`
+                    , `ip`
+                    , `created`
+                    , `created_datetime`
+                    , `created_name`
+                    , `created_ip`
+                   )
+            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP(), ?, ?)
+                 ;
+        ';
+        $parameters = [
+            $answerId,
+            $questionId,
+            $name,
+            $message,
+            $ip,
+            $createdName,
+            $createdIp,
+        ];
+        return (int) $this->adapter
+                          ->query($sql)
+                          ->execute($parameters)
+                          ->getGeneratedValue();
+    }
+
+    /**
      * Select count.
      *
      * @return int

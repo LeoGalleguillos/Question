@@ -1,9 +1,6 @@
 <?php
 namespace LeoGalleguillos\AnswerTest\Model\Table;
 
-use ArrayObject;
-use Exception;
-use Generator;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use LeoGalleguillos\QuestionTest\TableTestCase;
 use Zend\Db\Adapter\Adapter;
@@ -72,6 +69,23 @@ class AnswerTest extends TableTestCase
             54321,
             'name',
             'message',
+            'ip'
+        );
+        $this->assertSame(
+            $answerId,
+            12345
+        );
+    }
+
+    public function testInsertAnswerIdQuestionIdNameMessageIpCreatedNameCreatedIp()
+    {
+        $answerId = $this->answerTable->insertAnswerIdQuestionIdNameMessageIpCreatedNameCreatedIp(
+            12345,
+            54321,
+            'name',
+            'message',
+            'ip',
+            'name',
             'ip'
         );
         $this->assertSame(
