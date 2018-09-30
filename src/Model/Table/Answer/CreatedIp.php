@@ -35,7 +35,7 @@ class CreatedIp
             $createdIp,
         ];
         foreach ($this->adapter->query($sql)->execute($parameters) as $array) {
-            yield $array['question_id'];
+            yield $array['answer_id'];
         }
     }
 }
