@@ -186,6 +186,11 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Question\CreatedIp::class => function ($serviceManager) {
+                    return new QuestionTable\Question\CreatedIp(
+                        $serviceManager->get('question')
+                    );
+                },
                 QuestionTable\Question\Deleted::class => function ($serviceManager) {
                     return new QuestionTable\Question\Deleted(
                         $serviceManager->get('question')
