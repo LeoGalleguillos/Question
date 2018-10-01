@@ -134,6 +134,12 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionService\Question\Questions\Newest\CreatedName::class => function ($serviceManager) {
+                    return new QuestionService\Question\Questions\Newest\CreatedName(
+                        $serviceManager->get(QuestionFactory\Question::class),
+                        $serviceManager->get(QuestionTable\Question\CreatedName::class)
+                    );
+                },
                 QuestionService\Question\RootRelativeUrl::class => function ($serviceManager) {
                     return new QuestionService\Question\RootRelativeUrl(
                         $serviceManager->get(StringService\UrlFriendly::class)
