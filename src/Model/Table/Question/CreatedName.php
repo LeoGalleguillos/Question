@@ -2,6 +2,7 @@
 namespace LeoGalleguillos\Question\Model\Table\Question;
 
 use Generator;
+use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use Zend\Db\Adapter\Adapter;
 
 class CreatedName
@@ -11,9 +12,12 @@ class CreatedName
      */
     protected $adapter;
 
-    public function __construct(Adapter $adapter)
-    {
-        $this->adapter = $adapter;
+    public function __construct(
+        Adapter $adapter,
+        QuestionTable\Question $questionTable
+    ) {
+        $this->adapter       = $adapter;
+        $this->questionTable = $questionTable;
     }
 
     /**
@@ -25,19 +29,8 @@ class CreatedName
         int $limitOffset,
         int $limitRowCount
     ): Generator {
-        $sql = "
-            SELECT `question`.`question_id`
-                 , `question`.`user_id`
-                 , `question`.`name`
-                 , `question`.`subject`
-                 , `question`.`message`
-                 , `question`.`ip`
-                 , `question`.`views`
-                 , `question`.`created`
-                 , `question`.`created_datetime`
-                 , `question`.`created_name`
-                 , `question`.`created_ip`
-                 , `question`.`deleted`
+        $sql = $this->questionTable->getSelect()
+             . "
               FROM `question`
              WHERE `question`.`created_name` = ?
                AND `question`.`deleted` = NULL

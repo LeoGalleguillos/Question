@@ -23,6 +23,29 @@ class Question
     }
 
     /**
+     * Get select.
+     *
+     * @return string
+     */
+    public function getSelect(): string
+    {
+        return '
+            SELECT `question`.`question_id`
+                 , `question`.`user_id`
+                 , `question`.`name`
+                 , `question`.`subject`
+                 , `question`.`message`
+                 , `question`.`ip`
+                 , `question`.`views`
+                 , `question`.`created`
+                 , `question`.`created_datetime`
+                 , `question`.`created_name`
+                 , `question`.`created_ip`
+                 , `question`.`deleted`
+        ';
+    }
+
+    /**
      * Insert.
      *
      * @param int|null $userId
