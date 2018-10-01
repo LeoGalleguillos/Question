@@ -6,6 +6,7 @@ use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use LeoGalleguillos\Question\View\Helper as QuestionHelper;
+use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\String\Model\Service as StringService;
 
 class Module
@@ -230,6 +231,12 @@ class Module
                 },
                 QuestionTable\QuestionHistory::class => function ($serviceManager) {
                     return new QuestionTable\QuestionHistory(
+                        $serviceManager->get('question')
+                    );
+                },
+                QuestionTable\QuestionSearchMessage::class => function ($serviceManager) {
+                    return new QuestionTable\QuestionSearchMessage(
+                        $serviceManager->get(MemcachedService\Memcached::class),
                         $serviceManager->get('question')
                     );
                 },

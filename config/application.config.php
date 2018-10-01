@@ -3,6 +3,7 @@
 return [
     'modules' => [
         'LeoGalleguillos\Flash',
+        'LeoGalleguillos\Memcached',
         'LeoGalleguillos\Question',
         'LeoGalleguillos\String',
         'Zend\Db',
