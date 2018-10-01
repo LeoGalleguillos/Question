@@ -20,6 +20,25 @@ class CreatedName
         $this->questionTable = $questionTable;
     }
 
+    public function selectCountWhereCreatedName(
+        string $createdName
+    ): int {
+        $sql = '
+            SELECT COUNT(*) AS `count`
+              FROM `question`
+             WHERE `question`.`created_name` = ?
+               AND `question`.`deleted` = NULL
+                 ;
+        ';
+        $parameters = [
+            $createdName,
+        ];
+        return (int) $this->adapter
+                          ->query($sql)
+                          ->execute($parameters)
+                          ->current()['count'];
+    }
+
     /**
      * @return Generator
      * @yield array
