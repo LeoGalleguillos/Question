@@ -52,7 +52,7 @@ class CreatedName
              . "
               FROM `question`
              WHERE `question`.`created_name` = ?
-               AND `question`.`deleted` = NULL
+               AND `question`.`deleted` IS NULL
              ORDER
                 BY `question`.`created_datetime` DESC
              LIMIT $limitOffset, $limitRowCount
