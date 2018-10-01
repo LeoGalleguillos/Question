@@ -196,6 +196,11 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Question\CreatedName::class => function ($serviceManager) {
+                    return new QuestionTable\Question\CreatedName(
+                        $serviceManager->get('question')
+                    );
+                },
                 QuestionTable\Question\Deleted::class => function ($serviceManager) {
                     return new QuestionTable\Question\Deleted(
                         $serviceManager->get('question')
