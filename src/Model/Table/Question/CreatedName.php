@@ -27,7 +27,7 @@ class CreatedName
             SELECT COUNT(*) AS `count`
               FROM `question`
              WHERE `question`.`created_name` = ?
-               AND `question`.`deleted` = NULL
+               AND `question`.`deleted` IS NULL
                  ;
         ';
         $parameters = [
