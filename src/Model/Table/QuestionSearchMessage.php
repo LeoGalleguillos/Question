@@ -41,7 +41,7 @@ class QuestionSearchMessage
 
         $questionIds = [];
         foreach ($result as $row) {
-            $questionIds[] = $row['id_delete'];
+            $questionIds[] = $row['question_id'];
         }
 
         $this->memcachedService->setForDays($cacheKey, $questionIds, 28);
