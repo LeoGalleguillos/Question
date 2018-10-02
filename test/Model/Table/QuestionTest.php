@@ -82,7 +82,7 @@ class QuestionTest extends TableTestCase
         );
     }
 
-    public function testSelectWhereUserId()
+    public function testSelectWhereQuestionId()
     {
         $this->questionTable->insert(1, 'name', 'subject', 'message');
         $array = $this->questionTable->selectWhereQuestionId(1);

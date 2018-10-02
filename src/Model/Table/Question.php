@@ -176,16 +176,8 @@ class Question
      */
     public function selectWhereQuestionId(int $questionId) : array
     {
-        $sql = '
-            SELECT `question`.`question_id`
-                 , `question`.`user_id`
-                 , `question`.`name`
-                 , `question`.`subject`
-                 , `question`.`message`
-                 , `question`.`ip`
-                 , `question`.`views`
-                 , `question`.`created`
-                 , `question`.`deleted`
+        $sql = $this->getSelect()
+             . '
               FROM `question`
              WHERE `question`.`question_id` = :questionId
              ORDER
