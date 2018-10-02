@@ -7,6 +7,7 @@ use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 class Question
 {
     protected $created;
+    protected $createdIp;
     protected $deleted;
     protected $history;
     protected $ip;
@@ -20,6 +21,11 @@ class Question
     public function getCreated(): DateTime
     {
         return $this->created;
+    }
+
+    public function getCreatedIp(): string
+    {
+        return $this->createdIp;
     }
 
     public function getDeleted(): DateTime
@@ -70,6 +76,12 @@ class Question
     public function setCreated(DateTime $created): QuestionEntity\Question
     {
         $this->created = $created;
+        return $this;
+    }
+
+    public function setCreatedIp(string $createdIp): QuestionEntity\Question
+    {
+        $this->createdIp = $createdIp;
         return $this;
     }
 

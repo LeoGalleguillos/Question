@@ -35,6 +35,10 @@ class Question
                        ->setQuestionId($array['question_id'])
                        ->setSubject($array['subject']);
 
+        if (isset($array['created_ip'])) {
+            $questionEntity->setCreatedIp($array['created_ip']);
+        }
+
         if (isset($array['ip'])) {
             $questionEntity->setIp($array['ip']);
         }
