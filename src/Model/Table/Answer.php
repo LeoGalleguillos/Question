@@ -18,6 +18,26 @@ class Answer
     }
 
     /**
+     * Get select.
+     *
+     * @return string
+     */
+    public function getSelect(): string
+    {
+        return '
+            SELECT `answer`.`answer_id`
+                 , `answer`.`question_id`
+                 , `answer`.`user_id`
+                 , `answer`.`name`
+                 , `answer`.`message`
+                 , `answer`.`ip`
+                 , `answer`.`created`
+                 , `answer`.`created_ip`
+                 , `answer`.`deleted`
+        ';
+    }
+
+    /**
      * Insert into `answer` table.
      *
      * @param int $questionId
@@ -168,21 +188,14 @@ class Answer
      */
     public function selectWhereAnswerId(int $answerId) : array
     {
-        $sql = '
-            SELECT `answer`.`answer_id`
-                 , `answer`.`question_id`
-                 , `answer`.`user_id`
-                 , `answer`.`name`
-                 , `answer`.`message`
-                 , `answer`.`ip`
-                 , `answer`.`created`
-                 , `answer`.`deleted`
+        $sql = $this->getSelect()
+             . '
               FROM `answer`
-             WHERE `answer`.`answer_id` = :answerId
+             WHERE `answer`.`answer_id` = ?
                  ;
         ';
         $parameters = [
-            'answerId' => $answerId,
+            $answerId,
         ];
         return $this->adapter->query($sql)->execute($parameters)->current();
     }
