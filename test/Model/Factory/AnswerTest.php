@@ -39,6 +39,7 @@ class AnswerTest extends TestCase
             'user_id'     => 1,
             'message'     => 'message',
             'created'     => '2018-03-12 22:12:23',
+            'created_ip'  => '5.6.7.8',
             'ip'          => '1.2.3.4',
             'deleted'     => '2018-09-18 11:23:05',
         ];
@@ -46,6 +47,7 @@ class AnswerTest extends TestCase
         $answerEntity = new QuestionEntity\Answer();
         $answerEntity->setAnswerId($array['answer_id'])
                      ->setCreated(new DateTime($array['created']))
+                     ->setCreatedIp($array['created_ip'])
                      ->setDeleted(new DateTime($array['deleted']))
                      ->setMessage($array['message'])
                      ->setIp($array['ip'])

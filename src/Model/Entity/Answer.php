@@ -8,6 +8,7 @@ class Answer
 {
     protected $answerId;
     protected $created;
+    protected $createdIp;
     protected $deleted;
     protected $history;
     protected $ip;
@@ -24,6 +25,11 @@ class Answer
     public function getCreated(): DateTime
     {
         return $this->created;
+    }
+
+    public function getCreatedIp(): string
+    {
+        return $this->createdIp;
     }
 
     public function getDeleted(): DateTime
@@ -75,6 +81,12 @@ class Answer
     public function setCreated(DateTime $created): QuestionEntity\Answer
     {
         $this->created = $created;
+        return $this;
+    }
+
+    public function setCreatedIp(string $createdIp): QuestionEntity\Answer
+    {
+        $this->createdIp = $createdIp;
         return $this;
     }
 
