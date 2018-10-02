@@ -12,14 +12,11 @@ class Answer
      * Construct.
      *
      * @param QuestionTable\Question $answerTable
-     * @param QuestionTable\AnswerHistory $answerHistoryTable
      */
     public function __construct(
-        QuestionTable\Answer $answerTable,
-        QuestionTable\AnswerHistory $answerHistoryTable
+        QuestionTable\Answer $answerTable
     ) {
-        $this->answerTable        = $answerTable;
-        $this->answerHistoryTable = $answerHistoryTable;
+        $this->answerTable = $answerTable;
     }
 
     /**
@@ -64,18 +61,6 @@ class Answer
         $answerEntity = $this->buildFromArray(
             $this->answerTable->selectWhereAnswerId($answerId)
         );
-
-        try {
-            $array = $this->answerHistoryTable->selectWhereAnswerIdOrderByCreatedAscLimit1(
-                $answerId
-            );
-            $history = [
-                0 => $this->buildFromArray($array),
-            ];
-            $answerEntity->setHistory($history);
-        } catch (TypeError $typeError) {
-            // Do nothing.
-        }
 
         return $answerEntity;
     }

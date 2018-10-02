@@ -14,11 +14,9 @@ class Question
      * @param QuestionTable\Question $questionTable
      */
     public function __construct(
-        QuestionTable\Question $questionTable,
-        QuestionTable\QuestionHistory $questionHistoryTable
+        QuestionTable\Question $questionTable
     ) {
-        $this->questionTable        = $questionTable;
-        $this->questionHistoryTable = $questionHistoryTable;
+        $this->questionTable = $questionTable;
     }
 
     /**
@@ -74,18 +72,6 @@ class Question
         $questionEntity = $this->buildFromArray(
             $this->questionTable->selectWhereQuestionId($questionId)
         );
-
-        try {
-            $array = $this->questionHistoryTable->selectWhereQuestionIdOrderByCreatedAscLimit1(
-                $questionId
-            );
-            $history = [
-                0 => $this->buildFromArray($array),
-            ];
-            $questionEntity->setHistory($history);
-        } catch (TypeError $typeError) {
-            // Do nothing.
-        }
 
         return $questionEntity;
     }

@@ -41,14 +41,12 @@ class Module
             'factories' => [
                 QuestionFactory\Answer::class => function ($serviceManager) {
                     return new QuestionFactory\Answer(
-                        $serviceManager->get(QuestionTable\Answer::class),
-                        $serviceManager->get(QuestionTable\AnswerHistory::class)
+                        $serviceManager->get(QuestionTable\Answer::class)
                     );
                 },
                 QuestionFactory\Question::class => function ($serviceManager) {
                     return new QuestionFactory\Question(
-                        $serviceManager->get(QuestionTable\Question::class),
-                        $serviceManager->get(QuestionTable\QuestionHistory::class)
+                        $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
                 QuestionService\Answer\Answers::class => function ($serviceManager) {
