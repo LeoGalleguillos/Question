@@ -91,4 +91,22 @@ class QuestionTest extends TableTestCase
             $array
         );
     }
+
+    public function testSelectWhereQuestionIdInAndDeletedIsNull()
+    {
+        $this->questionTable->insert(1, 'name', 'subject', 'message');
+        $this->questionTable->insert(2, 'name', 'subject', 'message');
+        $generator = $this->questionTable->selectWhereQuestionIdInAndDeletedIsNull(
+            [1, 2, 3, 'string']
+        );
+        $this->assertInstanceOf(
+            Generator::class,
+            $generator
+        );
+        $array = iterator_to_array($generator);
+        $this->assertSame(
+            2,
+            count($array)
+        );
+    }
 }
