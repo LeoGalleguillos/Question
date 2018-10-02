@@ -97,7 +97,7 @@ class QuestionTest extends TableTestCase
         $this->questionTable->insert(1, 'name', 'subject', 'message');
         $this->questionTable->insert(2, 'name', 'subject', 'message');
         $generator = $this->questionTable->selectWhereQuestionIdInAndDeletedIsNull(
-            [1, 2, 3, 'string']
+            [1, 2, 3, 'string', 'injection' => 'attempt']
         );
         $this->assertInstanceOf(
             Generator::class,
