@@ -36,8 +36,14 @@ class Answer
         if (isset($array['ip'])) {
             $answerEntity->setIp($array['ip']);
         }
+        if (isset($array['created_datetime'])) {
+            $answerEntity->setCreatedDateTime($array['created_datetime']);
+        }
         if (isset($array['created_ip'])) {
             $answerEntity->setCreatedIp($array['created_ip']);
+        }
+        if (isset($array['created_name'])) {
+            $answerEntity->setCreatedName($array['created_name']);
         }
         if (isset($array['deleted'])) {
             $answerEntity->setDeleted(new DateTime($array['deleted']));
