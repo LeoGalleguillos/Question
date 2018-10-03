@@ -33,26 +33,27 @@ class Question
                        ->setQuestionId($array['question_id'])
                        ->setSubject($array['subject']);
 
+        if (isset($array['created_datetime'])) {
+            $questionEntity->setCreatedDateTime($array['created_datetime']);
+        }
         if (isset($array['created_ip'])) {
             $questionEntity->setCreatedIp($array['created_ip']);
         }
-
+        if (isset($array['created_name'])) {
+            $questionEntity->setCreatedName($array['created_name']);
+        }
         if (isset($array['ip'])) {
             $questionEntity->setIp($array['ip']);
         }
-
         if (isset($array['message'])) {
             $questionEntity->setMessage($array['message']);
         }
-
         if (isset($array['name'])) {
             $questionEntity->setName($array['name']);
         }
-
         if (isset($array['views'])) {
             $questionEntity->setViews((int) $array['views']);
         }
-
         if (isset($array['deleted'])) {
             $questionEntity->setDeleted(new DateTime($array['deleted']));
         }
