@@ -10,9 +10,13 @@ use LeoGalleguillos\Question\Model\Table as QuestionTable;
 class WithAnswers
 {
     public function __construct(
-        QuestionService\Questions $questionsService
+        QuestionFactory\Answer $answerFactory,
+        QuestionService\Questions $questionsService,
+        QuestionTable\Answer $answerTable
     ) {
+        $this->answerFactory    = $answerFactory;
         $this->questionsService = $questionsService;
+        $this->answerTable      = $answerTable;
     }
 
     /**
@@ -30,7 +34,7 @@ class WithAnswers
         foreach ($questionEntities as $questionEntity) {
             $answerEntities = [];
             $answerArrays = $this->answerTable
-                ->selectWhereQuestionIdAndDeletedIsNullOrderByCreatedDateTimeDesc(
+                ->selectWhereQuestionIdAndDeletedIsNullOrderByCreatedDateTimeAsc(
                     $questionEntity->getQuestionId()
                 );
             foreach ($answerArrays as $answerArray) {

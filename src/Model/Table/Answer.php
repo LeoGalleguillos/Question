@@ -231,6 +231,34 @@ class Answer
         }
     }
 
+    /**
+     * Select where question_id and deleted is null order by created_date_time asc.
+     *
+     * @param int $questionId
+     * @return Generator
+     * @yield $array
+     */
+    public function selectWhereQuestionIdAndDeletedIsNullOrderByCreatedDateTimeAsc(
+        int $questionId
+    ): Generator {
+
+        $sql = $this->getSelect()
+             . '
+              FROM `answer`
+             WHERE `answer`.`question_id` = ?
+               AND `answer`.`deleted` IS NULL
+             ORDER
+                BY `answer`.`created_datetime` ASC
+                 ;
+        ';
+        $parameters = [
+            $questionId,
+        ];
+        foreach ($this->adapter->query($sql)->execute($parameters) as $array) {
+            yield $array;
+        }
+    }
+
     public function updateWhereAnswerId(
         int $userId,
         string $name = null,

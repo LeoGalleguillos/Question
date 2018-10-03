@@ -141,7 +141,9 @@ class Module
                 },
                 QuestionService\Question\Questions\Newest\WithAnswers::class => function ($serviceManager) {
                     return new QuestionService\Question\Questions\Newest\WithAnswers(
-                        $serviceManager->get(QuestionService\Questions::class)
+                        $serviceManager->get(QuestionFactory\Answer::class),
+                        $serviceManager->get(QuestionService\Questions::class),
+                        $serviceManager->get(QuestionTable\Answer::class)
                     );
                 },
                 QuestionService\Question\RootRelativeUrl::class => function ($serviceManager) {
