@@ -18,14 +18,24 @@ class Questions
     }
 
     /**
-     * Get quesstions.
+     * Get questions.
      *
-     * @yield QuestionEntity\Question
+     * @param int $page
      * @return Generator
+     * @yield QuestionEntity\Question
      */
-    public function getQuestions() : Generator
-    {
-        $generator = $this->questionTable->selectOrderByCreatedDesc();
+    public function getQuestions(
+        int $page
+    ): Generator {
+        if ($page > 50) {
+            throw new Exception('Invalid page number.');
+        }
+
+        $generator = $this->questionTable
+            ->selectWhereDeletedIsNullOrderByCreatedDateTimeDesc(
+                ($page - 1) * 100,
+                100
+            );
         foreach ($generator as $array) {
             yield $this->questionFactory->buildFromArray($array);
         }

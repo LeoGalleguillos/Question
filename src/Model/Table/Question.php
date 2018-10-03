@@ -146,25 +146,28 @@ class Question
         return (int) $row['count'];
     }
 
-    public function selectOrderByCreatedDesc(): Generator
-    {
-        $sql = '
-            SELECT `question`.`question_id`
-                 , `question`.`user_id`
-                 , `question`.`name`
-                 , `question`.`subject`
-                 , `question`.`message`
-                 , `question`.`views`
-                 , `question`.`created`
-                 , `question`.`deleted`
+    /**
+     * Select where deleted is null order by created_datetime desc.
+     *
+     * @param int $limitOffset
+     * @param int $limitRowCount
+     * @return Generator
+     */
+    public function selectWhereDeletedIsNullOrderByCreatedDateTimeDesc(
+        int $limitOffset,
+        int $limitRowCount
+    ): Generator {
+        $sql = $this->getSelect()
+             . "
               FROM `question`
+             WHERE `deleted` IS NULL
              ORDER
-                BY `question`.`created` DESC
-             LIMIT 100
+                BY `question`.`created_datetime` DESC
+             LIMIT $limitOffset, $limitRowCount
                  ;
-        ';
-        foreach ($this->adapter->query($sql)->execute() as $row) {
-            yield($row);
+        ";
+        foreach ($this->adapter->query($sql)->execute() as $array) {
+            yield($array);
         }
     }
 
