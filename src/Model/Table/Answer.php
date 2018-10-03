@@ -32,6 +32,8 @@ class Answer
                  , `answer`.`message`
                  , `answer`.`ip`
                  , `answer`.`created`
+                 , `answer`.`created_datetime`
+                 , `answer`.`created_name`
                  , `answer`.`created_ip`
                  , `answer`.`deleted`
         ';
