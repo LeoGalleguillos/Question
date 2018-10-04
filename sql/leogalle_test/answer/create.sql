@@ -11,7 +11,7 @@ CREATE TABLE `answer` (
     `created_ip` varchar(45) default null,
     `deleted` datetime default null,
     PRIMARY KEY (`answer_id`),
-    KEY `question_id` (`question_id`),
+    KEY `question_id_deleted_created_datetime` (question_id, deleted, created_datetime),
     KEY `user_id` (`user_id`),
     KEY `ip` (`ip`),
     KEY `created_ip_created_datetime` (`created_ip`, `created_datetime`)
