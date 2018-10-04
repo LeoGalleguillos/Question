@@ -1,6 +1,7 @@
 <?php
 namespace LeoGalleguillos\Question\Model\Service\Question\Questions;
 
+use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 
