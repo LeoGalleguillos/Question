@@ -148,6 +148,7 @@ class Module
                 },
                 QuestionService\Question\RootRelativeUrl::class => function ($serviceManager) {
                     return new QuestionService\Question\RootRelativeUrl(
+                        $serviceManager->get(QuestionService\Question\Title::class),
                         $serviceManager->get(StringService\UrlFriendly::class)
                     );
                 },

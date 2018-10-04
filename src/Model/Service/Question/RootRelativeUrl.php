@@ -8,8 +8,10 @@ use LeoGalleguillos\String\Model\Service as StringService;
 class RootRelativeUrl
 {
     public function __construct(
+        QuestionService\Question\Title $titleService,
         StringService\UrlFriendly $urlFriendlyService
     ) {
+        $this->titleService       = $titleService;
         $this->urlFriendlyService = $urlFriendlyService;
     }
 
@@ -21,9 +23,11 @@ class RootRelativeUrl
      */
     public function getRootRelativeUrl($questionEntity) : string
     {
+        $title = $this->titleService->getTitle($questionEntity);
+
         return '/questions/'
              . $questionEntity->getQuestionId()
              . '/'
-             . $this->urlFriendlyService->getUrlFriendly($questionEntity->getSubject());
+             . $this->urlFriendlyService->getUrlFriendly($title);
     }
 }

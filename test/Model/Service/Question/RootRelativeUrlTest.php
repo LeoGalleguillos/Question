@@ -10,10 +10,14 @@ class RootRelativeUrlTest extends TestCase
 {
     protected function setUp()
     {
+        $this->titleServiceMock = $this->createMock(
+            QuestionService\Question\Title::class
+        );
         $this->urlFriendlyServiceMock   = $this->createMock(
             StringService\UrlFriendly::class
         );
         $this->rootRelativeUrlService = new QuestionService\Question\RootRelativeUrl(
+            $this->titleServiceMock,
             $this->urlFriendlyServiceMock
         );
     }
