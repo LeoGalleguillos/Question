@@ -146,6 +146,13 @@ class Module
                         $serviceManager->get(QuestionTable\Answer::class)
                     );
                 },
+                QuestionService\Question\Questions\Similar::class => function ($serviceManager) {
+                    return new QuestionService\Question\Questions\Similar(
+                        $serviceManager->get(QuestionFactory\Question::class),
+                        $serviceManager->get(QuestionTable\Question::class),
+                        $serviceManager->get(QuestionTable\QuestionSearchMessage::class)
+                    );
+                },
                 QuestionService\Question\RootRelativeUrl::class => function ($serviceManager) {
                     return new QuestionService\Question\RootRelativeUrl(
                         $serviceManager->get(QuestionService\Question\Title::class),
