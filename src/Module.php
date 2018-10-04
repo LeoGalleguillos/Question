@@ -158,6 +158,9 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionService\Question\Title::class => function ($serviceManager) {
+                    return new QuestionService\Question\Title();
+                },
                 QuestionTable\Answer::class => function ($serviceManager) {
                     return new QuestionTable\Answer(
                         $serviceManager->get('question')
