@@ -18,11 +18,17 @@ class Module
                 'aliases' => [
                     'getQuestionFromAnswer' => QuestionHelper\QuestionFromAnswer::class,
                     'getQuestionRootRelativeUrl' => QuestionHelper\Question\RootRelativeUrl::class,
+                    'getQuestionTitle' => QuestionHelper\Question\Title::class,
                 ],
                 'factories' => [
                     QuestionHelper\Question\RootRelativeUrl::class => function($serviceManager) {
                         return new QuestionHelper\Question\RootRelativeUrl(
                             $serviceManager->get(QuestionService\Question\RootRelativeUrl::class)
+                        );
+                    },
+                    QuestionHelper\Question\Title::class => function($serviceManager) {
+                        return new QuestionHelper\Question\Title(
+                            $serviceManager->get(QuestionService\Question\Title::class)
                         );
                     },
                     QuestionHelper\QuestionFromAnswer::class => function($serviceManager) {
