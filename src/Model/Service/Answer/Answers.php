@@ -21,13 +21,13 @@ class Answers
      * Get answers.
      *
      * @param QuestionEntity\Question $questionEntity
-     * @yield QuestionEntity\Answer
      * @return Generator
+     * @yield QuestionEntity\Answer
      */
     public function getAnswers(
         QuestionEntity\Question $questionEntity
     ) : Generator {
-        $arrays = $this->answerTable->selectWhereQuestionId(
+        $arrays = $this->answerTable->selectWhereQuestionIdAndDeletedIsNullOrderByCreatedDateTimeAsc(
             $questionEntity->getQuestionId()
         );
         foreach ($arrays as $array) {
