@@ -21,11 +21,13 @@ class Questions
      * Get questions.
      *
      * @param int $page
+     * @param int $questionsPerPage
      * @return Generator
      * @yield QuestionEntity\Question
      */
     public function getQuestions(
-        int $page
+        int $page,
+        int $questionsPerPage = 100
     ): Generator {
         if ($page > 50) {
             throw new Exception('Invalid page number.');
@@ -33,8 +35,8 @@ class Questions
 
         $generator = $this->questionTable
             ->selectWhereDeletedIsNullOrderByCreatedDateTimeDesc(
-                ($page - 1) * 100,
-                100
+                ($page - 1) * $questionsPerPage,
+                $questionsPerPage
             );
         foreach ($generator as $array) {
             yield $this->questionFactory->buildFromArray($array);

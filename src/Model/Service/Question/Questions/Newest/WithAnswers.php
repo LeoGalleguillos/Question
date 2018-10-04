@@ -29,7 +29,10 @@ class WithAnswers
     public function getQuestionsWithAnswers(
         int $page
     ): Generator {
-        $questionEntities = $this->questionsService->getQuestions($page);
+        $questionEntities = $this->questionsService->getQuestions(
+            $page,
+            50
+        );
 
         foreach ($questionEntities as $questionEntity) {
             $answerEntities = [];
