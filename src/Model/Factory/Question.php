@@ -34,7 +34,7 @@ class Question
                        ->setSubject($array['subject']);
 
         if (isset($array['created_datetime'])) {
-            $questionEntity->setCreatedDateTime($array['created_datetime']);
+            $questionEntity->setCreatedDateTime(new DateTime($array['created_datetime']));
         }
         if (isset($array['created_ip'])) {
             $questionEntity->setCreatedIp($array['created_ip']);

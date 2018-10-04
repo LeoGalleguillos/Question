@@ -33,11 +33,8 @@ class Answer
                      ->setCreated(new DateTime($array['created']))
                      ->setMessage($array['message']);
 
-        if (isset($array['ip'])) {
-            $answerEntity->setIp($array['ip']);
-        }
         if (isset($array['created_datetime'])) {
-            $answerEntity->setCreatedDateTime($array['created_datetime']);
+            $answerEntity->setCreatedDateTime(new DateTime($array['created_datetime']));
         }
         if (isset($array['created_ip'])) {
             $answerEntity->setCreatedIp($array['created_ip']);
@@ -47,6 +44,9 @@ class Answer
         }
         if (isset($array['deleted'])) {
             $answerEntity->setDeleted(new DateTime($array['deleted']));
+        }
+        if (isset($array['ip'])) {
+            $answerEntity->setIp($array['ip']);
         }
         if (isset($array['question_id'])) {
             $answerEntity->setQuestionId($array['question_id']);
