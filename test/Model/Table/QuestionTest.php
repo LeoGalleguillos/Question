@@ -56,9 +56,9 @@ class QuestionTest extends TableTestCase
             0,
             $this->questionTable->selectCount()
         );
-        $this->questionTable->insert(1, 'name', 'subject', 'message');
-        $this->questionTable->insert(2, null, 'subject', 'message');
-        $this->questionTable->insert(3, null, 'subject', 'message');
+        $this->questionTable->insert(1, 'name', 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4');
+        $this->questionTable->insert(2, null, 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4');
+        $this->questionTable->insert(3, null, 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4');
         $this->assertSame(
             3,
             $this->questionTable->selectCount()
@@ -84,7 +84,9 @@ class QuestionTest extends TableTestCase
 
     public function testSelectWhereQuestionId()
     {
-        $this->questionTable->insert(1, 'name', 'subject', 'message');
+        $this->questionTable->insert(
+            1, 'name', 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4'
+        );
         $array = $this->questionTable->selectWhereQuestionId(1);
         $this->assertInternalType(
             'array',
@@ -94,8 +96,12 @@ class QuestionTest extends TableTestCase
 
     public function testSelectWhereQuestionIdInAndDeletedIsNull()
     {
-        $this->questionTable->insert(1, 'name', 'subject', 'message');
-        $this->questionTable->insert(2, 'name', 'subject', 'message');
+        $this->questionTable->insert(
+            1, 'name', 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4'
+        );
+        $this->questionTable->insert(
+            2, 'name', 'subject', 'message', '5.6.7.8', 'name', '5.6.7.8'
+        );
         $generator = $this->questionTable->selectWhereQuestionIdInAndDeletedIsNull(
             [1, 2, 3, 'string', 'injection' => 'attempt']
         );

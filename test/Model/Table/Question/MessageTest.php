@@ -69,13 +69,19 @@ class MessageTest extends TableTestCase
             1,
             'name',
             'subject',
-            'foobarbaz'
+            'foobarbaz',
+            '1.2.3.4',
+            'name',
+            '1.2.3.4'
         );
         $this->questionTable->insert(
             1,
             'name',
             'subject',
-            '&lt;b&gt;'
+            '&lt;b&gt;',
+            '1.2.3.4',
+            'name',
+            '1.2.3.4'
         );
 
         $result = $this->questionMessageTable->selectWhereMessageRegularExpression(
@@ -137,7 +143,10 @@ class MessageTest extends TableTestCase
             1,
             'name',
             'subject',
-            'foobarbaz'
+            'foobarbaz',
+            '1.2.3.4',
+            'name',
+            '1.2.3.4'
         );
 
         $this->assertFalse(

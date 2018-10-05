@@ -40,6 +40,7 @@ class SubmitTest extends TestCase
     public function testSubmit()
     {
         $_POST = [];
+        $_SERVER['REMOTE_ADDR'] = '1.2.3.4';
         try {
             $this->submitQuestionService->submit();
             $this->fail();

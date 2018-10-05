@@ -49,7 +49,10 @@ class Submit
             $userId ?? null,
             $_POST['name'] ?? null,
             $_POST['subject'],
-            $_POST['message'] ?? null
+            $_POST['message'] ?? null,
+            $_SERVER['REMOTE_ADDR'],
+            $_POST['name'] ?? null,
+            $_SERVER['REMOTE_ADDR']
         );
 
         return $this->questionFactory->buildFromQuestionId($questionId);

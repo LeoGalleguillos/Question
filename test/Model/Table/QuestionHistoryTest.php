@@ -86,7 +86,10 @@ class QuestionHistoryTest extends TableTestCase
             12345,
             'name',
             'subject',
-            'message'
+            'message',
+            '1.2.3.4',
+            'name',
+            '1.2.3.4'
         );
         $questionHistoryId = $this->questionHistoryTable->insertSelectFromQuestion(
             'reason',
