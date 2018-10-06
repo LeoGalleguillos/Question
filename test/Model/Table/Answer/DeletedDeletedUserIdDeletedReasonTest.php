@@ -52,10 +52,10 @@ class DeletedDeletedUserIdDeletedReasonTest extends TableTestCase
         );
     }
 
-    public function testUpdateSetToUtcTimestampWhereAnswerId()
+    public function testUpdateWhereAnswerId()
     {
         $this->assertFalse(
-            $this->answerDeletedDeletedUserIdDeletedReasonTable->updateSetToUtcTimestampWhereAnswerId(
+            $this->answerDeletedDeletedUserIdDeletedReasonTable->updateWhereAnswerId(
                 1,
                 'reason',
                 1

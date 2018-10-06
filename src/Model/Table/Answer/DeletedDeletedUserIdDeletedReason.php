@@ -18,7 +18,7 @@ class DeletedDeletedUserIdDeletedReason
     /**
      * @return bool
      */
-    public function updateSetToUtcTimestampWhereAnswerId(
+    public function updateWhereAnswerId(
         int $deletedUserId,
         string $deletedReason,
         int $answerId
