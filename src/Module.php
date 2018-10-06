@@ -190,6 +190,11 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Answer\DeletedDeletedUserIdDeletedReason::class => function ($serviceManager) {
+                    return new QuestionTable\Answer\DeletedDeletedUserIdDeletedReason(
+                        $serviceManager->get('question')
+                    );
+                },
                 QuestionTable\Answer\Message::class => function ($serviceManager) {
                     return new QuestionTable\Answer\Message(
                         $serviceManager->get('question')
