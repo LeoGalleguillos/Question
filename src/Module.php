@@ -139,6 +139,11 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionService\Question\Delete::class => function ($serviceManager) {
+                    return new QuestionService\Question\Delete(
+                        $serviceManager->get(QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class)
+                    );
+                },
                 QuestionService\Question\IncrementViews::class => function ($serviceManager) {
                     return new QuestionService\Question\IncrementViews(
                         $serviceManager->get(QuestionTable\Question::class)
@@ -238,6 +243,11 @@ class Module
                 },
                 QuestionTable\Question\Deleted::class => function ($serviceManager) {
                     return new QuestionTable\Question\Deleted(
+                        $serviceManager->get('question')
+                    );
+                },
+                QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class => function ($serviceManager) {
+                    return new QuestionTable\Question\DeletedDeletedUserIdDeletedReason(
                         $serviceManager->get('question')
                     );
                 },
