@@ -10,6 +10,8 @@ CREATE TABLE `answer` (
     `created_name` varchar(255) default null,
     `created_ip` varchar(45) default null,
     `deleted` datetime default null,
+    `deleted_user_id` int(10) default null,
+    `deleted_reason` varchar(255) default null,
     PRIMARY KEY (`answer_id`),
     KEY `question_id_deleted_created_datetime` (question_id, deleted, created_datetime),
     KEY `user_id` (`user_id`),
