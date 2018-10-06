@@ -66,6 +66,11 @@ class Module
                         $serviceManager->get(QuestionTable\Answer::class)
                     );
                 },
+                QuestionService\Answer\Delete::class => function ($serviceManager) {
+                    return new QuestionService\Answer\Delete(
+                        $serviceManager->get(QuestionTable\Answer\DeletedDeletedUserIdDeletedReason::class)
+                    );
+                },
                 QuestionService\Answer\Edit::class => function ($serviceManager) {
                     return new QuestionService\Answer\Edit(
                         $serviceManager->get('question'),
