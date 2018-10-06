@@ -11,6 +11,8 @@ CREATE TABLE `question` (
     `created_name` varchar(255) default null,
     `created_ip` varchar(45) default null,
     `deleted` datetime default null,
+    `deleted_user_id` int(10) default null,
+    `deleted_reason` varchar(255) default null,
     PRIMARY KEY (`question_id`),
     KEY `user_id` (`user_id`),
     KEY `ip` (`ip`),
