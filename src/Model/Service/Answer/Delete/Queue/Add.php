@@ -15,8 +15,8 @@ class Add
 
     public function add(
         UserEntity\User $userEntity,
-        string $reason,
-        QuestionEntity\Answer $answerEntity
+        QuestionEntity\Answer $answerEntity,
+        string $reason
     ) {
         $this->answerDeleteQueueTable->insert(
             $answerEntity->getAnswerId(),
