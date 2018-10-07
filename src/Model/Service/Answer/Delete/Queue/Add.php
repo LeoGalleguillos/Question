@@ -17,8 +17,8 @@ class Add
         UserEntity\User $userEntity,
         QuestionEntity\Answer $answerEntity,
         string $reason
-    ) {
-        $this->answerDeleteQueueTable->insert(
+    ): bool {
+        return (bool) $this->answerDeleteQueueTable->insert(
             $answerEntity->getAnswerId(),
             $userEntity->getUserId(),
             $reason
