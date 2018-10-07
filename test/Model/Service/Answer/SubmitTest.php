@@ -39,6 +39,7 @@ class SubmitTest extends TestCase
 
     public function testSubmit()
     {
+        $_SERVER['REMOTE_ADDR'] = '1.2.3.4';
         $_POST = [];
         try {
             $this->submitQuestionService->submit();

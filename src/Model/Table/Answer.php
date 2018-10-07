@@ -52,14 +52,25 @@ class Answer
         int $questionId,
         int $userId = null,
         string $name = null,
-        string $message
+        string $message,
+        string $ip,
+        string $createdName = null,
+        string $createdIp
     ): int {
         $sql = '
             INSERT
               INTO `answer` (
-                   `question_id`, `user_id`, `name`, `message`, `created`
+                       `question_id`
+                     , `user_id`
+                     , `name`
+                     , `message`
+                     , `ip`
+                     , `created`
+                     , `created_datetime`
+                     , `created_name`
+                     , `created_ip`
                    )
-            VALUES (?, ?, ?, ?, UTC_TIMESTAMP())
+            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP(), ?, ?)
                  ;
         ';
         $parameters = [
@@ -67,6 +78,9 @@ class Answer
             $userId,
             $name,
             $message,
+            $ip,
+            $createdName,
+            $createdIp,
         ];
         return $this->adapter
                     ->query($sql)
