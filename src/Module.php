@@ -71,6 +71,11 @@ class Module
                         $serviceManager->get(QuestionTable\Answer\DeletedDeletedUserIdDeletedReason::class)
                     );
                 },
+                QuestionService\Answer\Delete\Queue\Add::class => function ($serviceManager) {
+                    return new QuestionService\Answer\Delete\Queue\Add(
+                        $serviceManager->get(QuestionTable\AnswerDeleteQueue::class)
+                    );
+                },
                 QuestionService\Answer\Edit::class => function ($serviceManager) {
                     return new QuestionService\Answer\Edit(
                         $serviceManager->get('question'),
@@ -207,6 +212,11 @@ class Module
                 },
                 QuestionTable\Answer\Message::class => function ($serviceManager) {
                     return new QuestionTable\Answer\Message(
+                        $serviceManager->get('question')
+                    );
+                },
+                QuestionTable\AnswerDeleteQueue::class => function ($serviceManager) {
+                    return new QuestionTable\AnswerDeleteQueue(
                         $serviceManager->get('question')
                     );
                 },
