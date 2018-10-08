@@ -72,6 +72,26 @@ class QuestionDeleteQueue
         }
     }
 
+    public function selectWhereQuestionDeleteQueueId(
+        int $questionDeleteQueueId
+    ): array {
+        $sql = '
+            SELECT `question_delete_queue_id`
+                 , `question_id`
+                 , `user_id`
+                 , `reason`
+                 , `created`
+                 , `queue_status_id`
+                 , `modified`
+              FROM `question_delete_queue`
+             WHERE `question_delete_queue_id` = ?
+        ';
+        $parameters = [
+            $questionDeleteQueueId,
+        ];
+        return $this->adapter->query($sql)->execute($parameters)->current();
+    }
+
     public function updateSetQueueStatusIdWhereQuestionDeleteQueueId(
         int $queueStatusId,
         int $questionDeleteQueueId
