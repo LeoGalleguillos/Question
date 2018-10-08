@@ -8,6 +8,7 @@ use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use LeoGalleguillos\Question\View\Helper as QuestionHelper;
 use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\String\Model\Service as StringService;
+use LeoGalleguillos\User\Model\Factory as UserFactory;
 
 class Module
 {
@@ -158,6 +159,14 @@ class Module
                 QuestionService\Question\Delete\Queue\Add::class => function ($serviceManager) {
                     return new QuestionService\Question\Delete\Queue\Add(
                         $serviceManager->get(QuestionTable\QuestionDeleteQueue::class)
+                    );
+                },
+                QuestionService\Question\Delete\Queue\Approve::class => function ($serviceManager) {
+                    return new QuestionService\Question\Delete\Queue\Approve(
+                        $serviceManager->get(QuestionFactory\Question::class),
+                        $serviceManager->get(QuestionService\Question\Delete::class),
+                        $serviceManager->get(QuestionTable\QuestionEditQueue::class),
+                        $serviceManager->get(UserFactory\User::class)
                     );
                 },
                 QuestionService\Question\Delete\Queue\Pending::class => function ($serviceManager) {
