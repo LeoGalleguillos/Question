@@ -119,6 +119,11 @@ class Module
                         $serviceManager->get(QuestionTable\AnswerEditQueue::class)
                     );
                 },
+                QuestionService\Answer\Edit\Queue\Decline::class => function ($serviceManager) {
+                    return new QuestionService\Answer\Edit\Queue\Decline(
+                        $serviceManager->get(QuestionTable\AnswerEditQueue::class)
+                    );
+                },
                 QuestionService\Answer\Edit\Queue\Pending::class => function ($serviceManager) {
                     return new QuestionService\Answer\Edit\Queue\Pending(
                         $serviceManager->get(QuestionFactory\Answer::class),
