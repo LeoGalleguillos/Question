@@ -47,6 +47,31 @@ class AnswerDeleteQueue
                     ->getGeneratedValue();
     }
 
+    public function selectWhereQueueStatusId(
+        int $queueStatusId
+    ): Generator {
+        $sql = '
+            SELECT `answer_delete_queue_id`
+                 , `answer_id`
+                 , `user_id`
+                 , `reason`
+                 , `created`
+                 , `queue_status_id`
+                 , `modified`
+              FROM `answer_delete_queue`
+             WHERE `queue_status_id` = ?
+             ORDER
+                BY `created` ASC
+                 ;
+        ';
+        $parameters = [
+            $queueStatusId,
+        ];
+        foreach ($this->adapter->query($sql)->execute($parameters) as $array) {
+            yield $array;
+        }
+    }
+
     public function updateSetQueueStatusIdWhereAnswerDeleteQueueId(
         int $queueStatusId,
         int $answerDeleteQueueId

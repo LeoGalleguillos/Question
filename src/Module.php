@@ -83,6 +83,11 @@ class Module
                         $serviceManager->get(QuestionTable\AnswerDeleteQueue::class)
                     );
                 },
+                QuestionService\Answer\Delete\Queue\Pending::class => function ($serviceManager) {
+                    return new QuestionService\Answer\Delete\Queue\Pending(
+                        $serviceManager->get(QuestionTable\AnswerDeleteQueue::class)
+                    );
+                },
                 QuestionService\Answer\Edit::class => function ($serviceManager) {
                     return new QuestionService\Answer\Edit(
                         $serviceManager->get('question'),
