@@ -165,7 +165,7 @@ class Module
                     return new QuestionService\Question\Delete\Queue\Approve(
                         $serviceManager->get(QuestionFactory\Question::class),
                         $serviceManager->get(QuestionService\Question\Delete::class),
-                        $serviceManager->get(QuestionTable\QuestionEditQueue::class),
+                        $serviceManager->get(QuestionTable\QuestionDeleteQueue::class),
                         $serviceManager->get(UserFactory\User::class)
                     );
                 },

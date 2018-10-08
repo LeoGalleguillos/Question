@@ -11,7 +11,7 @@ class Approve
     public function __construct(
         QuestionFactory\Question $questionFactory,
         QuestionService\Question\Delete $deleteService,
-        QuestionTable\QuestionEditQueue $questionDeleteQueueTable,
+        QuestionTable\QuestionDeleteQueue $questionDeleteQueueTable,
         UserFactory\User $userFactory
     ) {
         $this->questionFactory          = $questionFactory;
