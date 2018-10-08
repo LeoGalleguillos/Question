@@ -16,11 +16,17 @@ class Module
         return [
             'view_helpers' => [
                 'aliases' => [
+                    'getQuestionFactory' => QuestionHelper\Question\Factory::class,
                     'getQuestionFromAnswer' => QuestionHelper\QuestionFromAnswer::class,
                     'getQuestionRootRelativeUrl' => QuestionHelper\Question\RootRelativeUrl::class,
                     'getQuestionTitle' => QuestionHelper\Question\Title::class,
                 ],
                 'factories' => [
+                    QuestionHelper\Question\Factory::class => function($serviceManager) {
+                        return new QuestionHelper\Question\Factory(
+                            $serviceManager->get(QuestionFactory\Question::class)
+                        );
+                    },
                     QuestionHelper\Question\RootRelativeUrl::class => function($serviceManager) {
                         return new QuestionHelper\Question\RootRelativeUrl(
                             $serviceManager->get(QuestionService\Question\RootRelativeUrl::class)
