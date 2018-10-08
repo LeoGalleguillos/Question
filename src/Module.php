@@ -163,10 +163,8 @@ class Module
                 },
                 QuestionService\Question\Delete\Queue\Approve::class => function ($serviceManager) {
                     return new QuestionService\Question\Delete\Queue\Approve(
-                        $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionService\Question\Delete::class),
-                        $serviceManager->get(QuestionTable\QuestionDeleteQueue::class),
-                        $serviceManager->get(UserFactory\User::class)
+                        $serviceManager->get(QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class),
+                        $serviceManager->get(QuestionTable\QuestionDeleteQueue::class)
                     );
                 },
                 QuestionService\Question\Delete\Queue\Pending::class => function ($serviceManager) {

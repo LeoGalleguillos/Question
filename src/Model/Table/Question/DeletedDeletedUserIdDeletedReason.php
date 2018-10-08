@@ -41,4 +41,30 @@ class DeletedDeletedUserIdDeletedReason
                            ->execute($parameters)
                            ->getAffectedRows();
     }
+
+    public function updateSetDeletedDeletedUserIdDeletedReasonWhereQuestionId(
+        string $deleted,
+        int $deletedUserId,
+        string $deletedReason,
+        int $questionId
+    ): bool {
+        $sql = '
+            UPDATE `question`
+               SET `question`.`deleted` = ?
+                 , `question`.`deleted_user_id` = ?
+                 , `question`.`deleted_reason` = ?
+             WHERE `question`.`question_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $deleted,
+            $deletedUserId,
+            $deletedReason,
+            $questionId,
+        ];
+        return (bool) $this->adapter
+                           ->query($sql)
+                           ->execute($parameters)
+                           ->getAffectedRows();
+    }
 }

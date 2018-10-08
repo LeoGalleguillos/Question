@@ -9,15 +9,11 @@ use LeoGalleguillos\User\Model\Factory as UserFactory;
 class Approve
 {
     public function __construct(
-        QuestionFactory\Question $questionFactory,
-        QuestionService\Question\Delete $deleteService,
-        QuestionTable\QuestionDeleteQueue $questionDeleteQueueTable,
-        UserFactory\User $userFactory
+        QuestionTable\Question\DeletedDeletedUserIdDeletedReason $deletedDeletedUserIdDeletedReasonTable,
+        QuestionTable\QuestionDeleteQueue $questionDeleteQueueTable
     ) {
-        $this->questionFactory          = $questionFactory;
-        $this->deleteService            = $deleteService;
-        $this->questionDeleteQueueTable = $questionDeleteQueueTable;
-        $this->userFactory              = $userFactory;
+        $this->deletedDeletedUserIdDeletedReasonTable = $deletedDeletedUserIdDeletedReasonTable;
+        $this->questionDeleteQueueTable               = $questionDeleteQueueTable;
     }
 
     public function approve(
@@ -26,10 +22,12 @@ class Approve
         $array = $this->questionDeleteQueueTable->selectWhereQuestionDeleteQueueId(
             $questionDeleteQueueId
         );
-        $this->deleteService->delete(
-            $this->userFactory->buildFromUserId($array['user_id']),
+
+        $this->deletedDeletedUserIdDeletedReasonTable->updateSetDeletedDeletedUserIdDeletedReasonWhereQuestionId(
+            $array['created'],
+            $array['user_id'],
             $array['reason'],
-            $this->questionFactory->buildFromQuestionId($array['question_id'])
+            $array['question_id']
         );
 
         $this->questionDeleteQueueTable->updateSetQueueStatusIdWhereQuestionDeleteQueueId(
