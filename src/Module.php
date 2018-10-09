@@ -308,7 +308,8 @@ class Module
                 },
                 QuestionTable\Question\Message::class => function ($serviceManager) {
                     return new QuestionTable\Question\Message(
-                        $serviceManager->get('question')
+                        $serviceManager->get('question'),
+                        $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
                 QuestionTable\Question\Subject::class => function ($serviceManager) {

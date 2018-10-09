@@ -28,7 +28,8 @@ class MessageTest extends TableTestCase
             $this->adapter
         );
         $this->questionMessageTable = new QuestionTable\Question\Message(
-            $this->adapter
+            $this->adapter,
+            $this->questionTable
         );
 
         $this->dropTable();
