@@ -32,7 +32,7 @@ class MessageCreatedDatetimeDeleted
         string $createdDateTime
     ): array {
         $sql = $this->questionTable->getSelect()
-             .  "
+             .  '
               FROM `question`
              WHERE `question`.`message` = ?
                AND `question`.`created_datetime` >= ?
@@ -40,7 +40,7 @@ class MessageCreatedDatetimeDeleted
              ORDER
                 BY `question`.`created_datetime` DESC
              LIMIT 1
-        ";
+        ';
         $parameters = [
             $message,
             $createdDateTime,
