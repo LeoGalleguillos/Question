@@ -194,6 +194,12 @@ class Module
                         $serviceManager->get(QuestionTable\QuestionDeleteQueue::class)
                     );
                 },
+                QuestionService\Question\Duplicate::class => function ($serviceManager) {
+                    return new QuestionService\Question\Duplicate(
+                        $serviceManager->get(QuestionFactory\Question::class),
+                        $serviceManager->get(QuestionTable\Question\MessageCreatedDatetimeDeleted::class)
+                    );
+                },
                 QuestionService\Question\IncrementViews::class => function ($serviceManager) {
                     return new QuestionService\Question\IncrementViews(
                         $serviceManager->get(QuestionTable\Question::class)
@@ -312,8 +318,8 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\MessageDeleted::class => function ($serviceManager) {
-                    return new QuestionTable\Question\MessageDeleted(
+                QuestionTable\Question\MessageCreatedDatetimeDeleted::class => function ($serviceManager) {
+                    return new QuestionTable\Question\MessageCreatedDatetimeDeleted(
                         $serviceManager->get('question'),
                         $serviceManager->get(QuestionTable\Question::class)
                     );
