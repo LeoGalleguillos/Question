@@ -3,6 +3,7 @@ namespace LeoGalleguillos\Question\Model\Service\Question;
 
 use DateInterval;
 use DateTime;
+use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
