@@ -312,6 +312,12 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionTable\Question\MessageDeleted::class => function ($serviceManager) {
+                    return new QuestionTable\Question\MessageDeleted(
+                        $serviceManager->get('question'),
+                        $serviceManager->get(QuestionTable\Question::class)
+                    );
+                },
                 QuestionTable\Question\Subject::class => function ($serviceManager) {
                     return new QuestionTable\Question\Subject(
                         $serviceManager->get('question')
