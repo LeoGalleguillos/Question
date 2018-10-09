@@ -30,7 +30,7 @@ class Duplicate
         /* @throws TypeError */
         $array = $this->messageCreatedDatetimeDeletedTable->selectWhereMessageAndCreatedDateTimeIsGreaterThanOrEqualToAndDeletedIsNull(
             $message,
-            $dateTime->format('Y-m-d H:i:s');
+            $dateTime->format('Y-m-d H:i:s')
         );
 
         return $this->questionFactory->buildFromArray(
