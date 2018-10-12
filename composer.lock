@@ -189,12 +189,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/String.git",
-                "reference": "b08f81da49afb677b88c588320d91fbd71511119"
+                "reference": "093832dbd4bf98d58fb276a9954c3011af4cfa78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/b08f81da49afb677b88c588320d91fbd71511119",
-                "reference": "b08f81da49afb677b88c588320d91fbd71511119",
+                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/093832dbd4bf98d58fb276a9954c3011af4cfa78",
+                "reference": "093832dbd4bf98d58fb276a9954c3011af4cfa78",
                 "shasum": ""
             },
             "require": {
@@ -211,7 +211,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-10-04T22:39:57+00:00"
+            "time": "2018-10-08T18:27:44+00:00"
         },
         {
             "name": "leo-galleguillos/user",
@@ -864,12 +864,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "488da461e009d207680921f2915d4da032292db3"
+                "reference": "538d4cebaca0a2eb7ec756278b6b5761ee1740c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/488da461e009d207680921f2915d4da032292db3",
-                "reference": "488da461e009d207680921f2915d4da032292db3",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/538d4cebaca0a2eb7ec756278b6b5761ee1740c0",
+                "reference": "538d4cebaca0a2eb7ec756278b6b5761ee1740c0",
                 "shasum": ""
             },
             "require": {
@@ -940,7 +940,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-09-10T09:25:48+00:00"
+            "time": "2018-10-10T05:14:22+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
