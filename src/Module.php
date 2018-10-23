@@ -189,6 +189,11 @@ class Module
                         $serviceManager->get(QuestionTable\QuestionDeleteQueue::class)
                     );
                 },
+                QuestionService\Question\Delete\Queue\Decline::class => function ($serviceManager) {
+                    return new QuestionService\Question\Delete\Queue\Decline(
+                        $serviceManager->get(QuestionTable\QuestionDeleteQueue::class)
+                    );
+                },
                 QuestionService\Question\Delete\Queue\Pending::class => function ($serviceManager) {
                     return new QuestionService\Question\Delete\Queue\Pending(
                         $serviceManager->get(QuestionTable\QuestionDeleteQueue::class)
