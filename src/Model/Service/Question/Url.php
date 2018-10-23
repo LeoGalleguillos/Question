@@ -22,6 +22,6 @@ class Url
     {
         return 'https://'
              . $_SERVER['HTTP_HOST']
-             . $this->rootRelativeUrlService($questionEntity);
+             . $this->rootRelativeUrlService->getRootRelativeUrl($questionEntity);
     }
 }
