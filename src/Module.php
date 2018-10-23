@@ -251,6 +251,11 @@ class Module
                 QuestionService\Question\Title::class => function ($serviceManager) {
                     return new QuestionService\Question\Title();
                 },
+                QuestionService\Question\Url::class => function ($serviceManager) {
+                    return new QuestionService\Question\Url(
+                        $serviceManager->get(QuestionService\Question\RootRelativeUrl::class)
+                    );
+                },
                 QuestionTable\Answer::class => function ($serviceManager) {
                     return new QuestionTable\Answer(
                         $serviceManager->get('question')
