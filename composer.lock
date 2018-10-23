@@ -219,12 +219,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/User.git",
-                "reference": "a02ddfa081cf9662bfe9f2e282202087d6f2e9d1"
+                "reference": "6cd0fc3ffbb7feaf9ce3389da8e6c5918b0860b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/a02ddfa081cf9662bfe9f2e282202087d6f2e9d1",
-                "reference": "a02ddfa081cf9662bfe9f2e282202087d6f2e9d1",
+                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/6cd0fc3ffbb7feaf9ce3389da8e6c5918b0860b2",
+                "reference": "6cd0fc3ffbb7feaf9ce3389da8e6c5918b0860b2",
                 "shasum": ""
             },
             "require": {
@@ -245,7 +245,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-09-26T00:03:11+00:00"
+            "time": "2018-10-22T21:02:45+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -864,12 +864,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "538d4cebaca0a2eb7ec756278b6b5761ee1740c0"
+                "reference": "27f782132fe6af0d0950bc635a6c51c7fc3fa7f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/538d4cebaca0a2eb7ec756278b6b5761ee1740c0",
-                "reference": "538d4cebaca0a2eb7ec756278b6b5761ee1740c0",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/27f782132fe6af0d0950bc635a6c51c7fc3fa7f4",
+                "reference": "27f782132fe6af0d0950bc635a6c51c7fc3fa7f4",
                 "shasum": ""
             },
             "require": {
@@ -940,7 +940,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-10-10T05:14:22+00:00"
+            "time": "2018-10-23T05:11:21+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1307,16 +1307,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "dev-master",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "32c5cba90f7db47b1c10a777b36eccfd44ef8bd7"
+                "reference": "cd0871b3975fb7fc44d11314fd1ee20925fce4f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/32c5cba90f7db47b1c10a777b36eccfd44ef8bd7",
-                "reference": "32c5cba90f7db47b1c10a777b36eccfd44ef8bd7",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/cd0871b3975fb7fc44d11314fd1ee20925fce4f5",
+                "reference": "cd0871b3975fb7fc44d11314fd1ee20925fce4f5",
                 "shasum": ""
             },
             "require": {
@@ -1353,7 +1353,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2018-05-15T05:48:40+00:00"
+            "time": "2017-07-01T08:51:00+00:00"
         },
         {
             "name": "sebastian/exporter",
