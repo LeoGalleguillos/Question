@@ -8,6 +8,7 @@ use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use LeoGalleguillos\Question\View\Helper as QuestionHelper;
 use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\String\Model\Service as StringService;
+use LeoGalleguillos\Superglobal\Model\Service as SuperglobalService;
 use LeoGalleguillos\User\Model\Factory as UserFactory;
 
 class Module
@@ -165,6 +166,12 @@ class Module
                     return new QuestionService\Edit\Queue\Pending(
                         $serviceManager->get(QuestionFactory\Question::class),
                         $serviceManager->get(QuestionTable\QuestionEditQueue::class)
+                    );
+                },
+                QuestionService\QuestionBrowserLog::class => function ($serviceManager) {
+                    return new QuestionService\QuestionBrowserLog(
+                        $serviceManager->get(QuestionTable\QuestionBrowserLog::class),
+                        $serviceManager->get(SuperglobalService\Server\HttpUserAgent\Browser::class)
                     );
                 },
                 QuestionService\QuestionFromAnswer::class => function ($serviceManager) {
@@ -341,6 +348,11 @@ class Module
                 },
                 QuestionTable\Question\Subject::class => function ($serviceManager) {
                     return new QuestionTable\Question\Subject(
+                        $serviceManager->get('question')
+                    );
+                },
+                QuestionTable\QuestionBrowserLog::class => function ($serviceManager) {
+                    return new QuestionTable\QuestionBrowserLog(
                         $serviceManager->get('question')
                     );
                 },

@@ -6,6 +6,7 @@ return [
         'LeoGalleguillos\Memcached',
         'LeoGalleguillos\Question',
         'LeoGalleguillos\String',
+        'LeoGalleguillos\Superglobal',
         'LeoGalleguillos\User',
         'Zend\Db',
         'Zend\Router',
