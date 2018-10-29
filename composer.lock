@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd039fd780e5d5b7fa46a5f4d47a89db",
+    "content-hash": "b45e471527ba56b76b794402b252513c",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -127,12 +127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/Memcached.git",
-                "reference": "c23a88ae0b6c3c15f0e5c985e934a2e8a9f1312f"
+                "reference": "b139aab7ca6c2841226c1bf8058e1f0ba11967eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/Memcached/zipball/c23a88ae0b6c3c15f0e5c985e934a2e8a9f1312f",
-                "reference": "c23a88ae0b6c3c15f0e5c985e934a2e8a9f1312f",
+                "url": "https://api.github.com/repos/LeoGalleguillos/Memcached/zipball/b139aab7ca6c2841226c1bf8058e1f0ba11967eb",
+                "reference": "b139aab7ca6c2841226c1bf8058e1f0ba11967eb",
                 "shasum": ""
             },
             "require": {
@@ -150,7 +150,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2017-12-30T01:07:16+00:00"
+            "time": "2018-10-26T00:44:12+00:00"
         },
         {
             "name": "leo-galleguillos/re-captcha",
@@ -212,6 +212,67 @@
                 "MIT"
             ],
             "time": "2018-10-08T18:27:44+00:00"
+        },
+        {
+            "name": "leo-galleguillos/superglobal",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LeoGalleguillos/Superglobal.git",
+                "reference": "1bc67e9a24cfc01b3ca00cdeddc37229cfa88063"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LeoGalleguillos/Superglobal/zipball/1bc67e9a24cfc01b3ca00cdeddc37229cfa88063",
+                "reference": "1bc67e9a24cfc01b3ca00cdeddc37229cfa88063",
+                "shasum": ""
+            },
+            "require": {
+                "zendframework/zend-test": "^3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LeoGalleguillos\\Superglobal\\": "src/",
+                    "LeoGalleguillos\\SuperglobalTest\\": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2018-10-29T16:11:49+00:00"
+        },
+        {
+            "name": "leo-galleguillos/test",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LeoGalleguillos/Test.git",
+                "reference": "8629e4b7c7c100da64634687c3967184657e6c27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LeoGalleguillos/Test/zipball/8629e4b7c7c100da64634687c3967184657e6c27",
+                "reference": "8629e4b7c7c100da64634687c3967184657e6c27",
+                "shasum": ""
+            },
+            "require": {
+                "zendframework/zend-db": "^2.9",
+                "zendframework/zend-test": "^3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LeoGalleguillos\\Test\\": "src/",
+                    "LeoGalleguillos\\TestTest\\": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2018-10-24T21:57:22+00:00"
         },
         {
             "name": "leo-galleguillos/user",
@@ -2883,6 +2944,8 @@
         "leo-galleguillos/flash": 20,
         "leo-galleguillos/memcached": 20,
         "leo-galleguillos/string": 20,
+        "leo-galleguillos/superglobal": 20,
+        "leo-galleguillos/test": 20,
         "leo-galleguillos/user": 20
     },
     "prefer-stable": false,
