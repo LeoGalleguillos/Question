@@ -189,12 +189,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/String.git",
-                "reference": "093832dbd4bf98d58fb276a9954c3011af4cfa78"
+                "reference": "eebfcfec9053201faa72656621d1c419b1ed6840"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/093832dbd4bf98d58fb276a9954c3011af4cfa78",
-                "reference": "093832dbd4bf98d58fb276a9954c3011af4cfa78",
+                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/eebfcfec9053201faa72656621d1c419b1ed6840",
+                "reference": "eebfcfec9053201faa72656621d1c419b1ed6840",
                 "shasum": ""
             },
             "require": {
@@ -211,7 +211,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-10-08T18:27:44+00:00"
+            "time": "2018-10-29T18:29:53+00:00"
         },
         {
             "name": "leo-galleguillos/superglobal",
@@ -249,12 +249,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/Test.git",
-                "reference": "8629e4b7c7c100da64634687c3967184657e6c27"
+                "reference": "287da595ae3dd7c75e1a52355453e8ca1c54189a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/Test/zipball/8629e4b7c7c100da64634687c3967184657e6c27",
-                "reference": "8629e4b7c7c100da64634687c3967184657e6c27",
+                "url": "https://api.github.com/repos/LeoGalleguillos/Test/zipball/287da595ae3dd7c75e1a52355453e8ca1c54189a",
+                "reference": "287da595ae3dd7c75e1a52355453e8ca1c54189a",
                 "shasum": ""
             },
             "require": {
@@ -272,7 +272,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-10-24T21:57:22+00:00"
+            "time": "2018-11-07T17:47:04+00:00"
         },
         {
             "name": "leo-galleguillos/user",
@@ -613,12 +613,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "4ba436b55987b4bf311cb7c6ba82aa528aac0a06"
+                "reference": "3660b2eed90abdf92ac2e9dae9a238d2701bfa77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/4ba436b55987b4bf311cb7c6ba82aa528aac0a06",
-                "reference": "4ba436b55987b4bf311cb7c6ba82aa528aac0a06",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/3660b2eed90abdf92ac2e9dae9a238d2701bfa77",
+                "reference": "3660b2eed90abdf92ac2e9dae9a238d2701bfa77",
                 "shasum": ""
             },
             "require": {
@@ -668,7 +668,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2018-08-05T17:53:17+00:00"
+            "time": "2018-11-04T18:50:11+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -925,12 +925,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "27f782132fe6af0d0950bc635a6c51c7fc3fa7f4"
+                "reference": "3cf20d2185f3e092510f32019ffc3761d7b3aa0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/27f782132fe6af0d0950bc635a6c51c7fc3fa7f4",
-                "reference": "27f782132fe6af0d0950bc635a6c51c7fc3fa7f4",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3cf20d2185f3e092510f32019ffc3761d7b3aa0f",
+                "reference": "3cf20d2185f3e092510f32019ffc3761d7b3aa0f",
                 "shasum": ""
             },
             "require": {
@@ -1001,7 +1001,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-10-23T05:11:21+00:00"
+            "time": "2018-11-06T20:48:53+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1540,12 +1540,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/object-enumerator.git",
-                "reference": "06d95dc84f06fc6cc246b8bf48facebcf0fe8069"
+                "reference": "e6be0a5481aff88f29262c331eab5b3ea939f55f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/object-enumerator/zipball/06d95dc84f06fc6cc246b8bf48facebcf0fe8069",
-                "reference": "06d95dc84f06fc6cc246b8bf48facebcf0fe8069",
+                "url": "https://api.github.com/repos/sebastianbergmann/object-enumerator/zipball/e6be0a5481aff88f29262c331eab5b3ea939f55f",
+                "reference": "e6be0a5481aff88f29262c331eab5b3ea939f55f",
                 "shasum": ""
             },
             "require": {
@@ -1579,7 +1579,7 @@
             ],
             "description": "Traverses array structures and object graphs to enumerate all referenced objects",
             "homepage": "https://github.com/sebastianbergmann/object-enumerator/",
-            "time": "2018-05-15T05:52:18+00:00"
+            "time": "2018-10-30T05:41:47+00:00"
         },
         {
             "name": "sebastian/object-reflector",
