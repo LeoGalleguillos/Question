@@ -68,38 +68,6 @@ class AnswerTest extends TableTestCase
         );
     }
 
-    public function testInsertAnswerIdQuestionIdMessageIp()
-    {
-        $answerId = $this->answerTable->insertAnswerIdQuestionIdNameMessageIp(
-            12345,
-            54321,
-            'name',
-            'message',
-            'ip'
-        );
-        $this->assertSame(
-            $answerId,
-            12345
-        );
-    }
-
-    public function testInsertAnswerIdQuestionIdNameMessageIpCreatedNameCreatedIp()
-    {
-        $answerId = $this->answerTable->insertAnswerIdQuestionIdNameMessageIpCreatedNameCreatedIp(
-            12345,
-            54321,
-            'name',
-            'message',
-            'ip',
-            'name',
-            'ip'
-        );
-        $this->assertSame(
-            $answerId,
-            12345
-        );
-    }
-
     public function testSelectWhereAnswerId()
     {
         $this->answerTable->insert(
