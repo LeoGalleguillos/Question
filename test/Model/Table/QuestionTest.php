@@ -65,23 +65,6 @@ class QuestionTest extends TableTestCase
         );
     }
 
-    public function testInsertQuestionIdNameSubjectMessageIpCreatedNameCreatedIp()
-    {
-        $questionId = $this->questionTable->insertQuestionIdNameSubjectMessageIpCreatedNameCreatedIp(
-            12345,
-            'name',
-            'subject',
-            'message',
-            '123.123.123.123',
-            'name',
-            '123.123.123.123'
-        );
-        $this->assertSame(
-            12345,
-            $questionId
-        );
-    }
-
     public function testSelectWhereQuestionId()
     {
         $this->questionTable->insert(

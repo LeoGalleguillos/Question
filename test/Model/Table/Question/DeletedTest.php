@@ -58,11 +58,11 @@ class DeletedTest extends TableTestCase
     public function testInsertAndSelectCount()
     {
         $this->assertFalse(
-            $this->questionDeletedTable->updateSetToUtcTimestampWhereQuestionId(12345)
+            $this->questionDeletedTable->updateSetToUtcTimestampWhereQuestionId(1)
         );
 
-        $this->questionTable->insertQuestionIdNameSubjectMessageIpCreatedNameCreatedIp(
-            12345,
+        $this->questionTable->insert(
+            null,
             'name',
             'subject',
             'message',
@@ -72,7 +72,7 @@ class DeletedTest extends TableTestCase
         );
 
         $this->assertTrue(
-            $this->questionDeletedTable->updateSetToUtcTimestampWhereQuestionId(12345)
+            $this->questionDeletedTable->updateSetToUtcTimestampWhereQuestionId(1)
         );
     }
 }
