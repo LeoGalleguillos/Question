@@ -68,6 +68,35 @@ class AnswerTest extends TableTestCase
         );
     }
 
+    public function testInsertDeleted()
+    {
+        $answerId = $this->answerTable->insertDeleted(
+            12345,
+            null,
+            'name',
+            'message',
+            '1.2.3.4',
+            'name',
+            '1.2.3.4',
+            '0',
+            'foul language'
+        );
+        $this->assertSame(
+            1,
+            $answerId
+        );
+
+        $array = $this->answerTable->selectWhereAnswerId(1);
+        $this->assertSame(
+            '0',
+            $array['deleted_user_id']
+        );
+        $this->assertSame(
+            'foul language',
+            $array['deleted_reason']
+        );
+    }
+
     public function testSelectWhereAnswerId()
     {
         $this->answerTable->insert(

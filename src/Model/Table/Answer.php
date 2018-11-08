@@ -36,18 +36,11 @@ class Answer
                  , `answer`.`created_name`
                  , `answer`.`created_ip`
                  , `answer`.`deleted`
+                 , `answer`.`deleted_user_id`
+                 , `answer`.`deleted_reason`
         ';
     }
 
-    /**
-     * Insert into `answer` table.
-     *
-     * @param int $questionId
-     * @param int|null $userId
-     * @param string|null $name
-     * @param string $message
-     * @return int
-     */
     public function insert(
         int $questionId,
         int $userId = null,
@@ -86,6 +79,53 @@ class Answer
                     ->query($sql)
                     ->execute($parameters)
                     ->getGeneratedValue();
+    }
+
+    public function insertDeleted(
+        int $questionId,
+        int $userId = null,
+        string $name,
+        string $message,
+        string $ip,
+        string $createdName,
+        string $createdIp,
+        int $deletedUserId,
+        string $deletedReason
+    ): int {
+        $sql = '
+            INSERT
+              INTO `answer` (
+                       `question_id`
+                     , `user_id`
+                     , `name`
+                     , `message`
+                     , `ip`
+                     , `created`
+                     , `created_datetime`
+                     , `created_name`
+                     , `created_ip`
+                     , `deleted`
+                     , `deleted_user_id`
+                     , `deleted_reason`
+                   )
+            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), ?, ?)
+                 ;
+        ';
+        $parameters = [
+            $questionId,
+            $userId,
+            $name,
+            $message,
+            $ip,
+            $createdName,
+            $createdIp,
+            $deletedUserId,
+            $deletedReason,
+        ];
+        return (int) $this->adapter
+                          ->query($sql)
+                          ->execute($parameters)
+                          ->getGeneratedValue();
     }
 
     /**
