@@ -65,6 +65,29 @@ class QuestionTest extends TableTestCase
         );
     }
 
+    public function testInsertDeleted()
+    {
+        $questionId = $this->questionTable->insertDeleted(
+            null, 'name', 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4',
+            0,
+            'foul language'
+        );
+        $this->assertSame(
+            1,
+            $questionId
+        );
+
+        $array = $this->questionTable->selectWhereQuestionId(1);
+        $this->assertSame(
+            '0',
+            $array['deleted_user_id']
+        );
+        $this->assertSame(
+            'foul language',
+            $array['deleted_reason']
+        );
+    }
+
     public function testSelectWhereQuestionId()
     {
         $this->questionTable->insert(

@@ -42,6 +42,8 @@ class Question
                  , `question`.`created_name`
                  , `question`.`created_ip`
                  , `question`.`deleted`
+                 , `question`.`deleted_user_id`
+                 , `question`.`deleted_reason`
         ';
     }
 
@@ -83,6 +85,53 @@ class Question
                     ->query($sql)
                     ->execute($parameters)
                     ->getGeneratedValue();
+    }
+
+    public function insertDeleted(
+        int $userId = null,
+        string $name,
+        string $subject,
+        string $message,
+        string $ip,
+        string $createdName,
+        string $createdIp,
+        string $deletedUserId,
+        string $deletedReason
+    ): int {
+        $sql = '
+            INSERT
+              INTO `question` (
+                       `user_id`
+                     , `name`
+                     , `subject`
+                     , `message`
+                     , `ip`
+                     , `created`
+                     , `created_datetime`
+                     , `created_name`
+                     , `created_ip`
+                     , `deleted`
+                     , `deleted_user_id`
+                     , `deleted_reason`
+                   )
+            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), ?, ?)
+                 ;
+        ';
+        $parameters = [
+            $userId,
+            $name,
+            $subject,
+            $message,
+            $ip,
+            $createdName,
+            $createdIp,
+            $deletedUserId,
+            $deletedReason,
+        ];
+        return (int) $this->adapter
+                          ->query($sql)
+                          ->execute($parameters)
+                          ->getGeneratedValue();
     }
 
     /**
