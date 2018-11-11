@@ -2,46 +2,27 @@
 namespace LeoGalleguillos\Question\Model\Table\Question;
 
 use Generator;
+use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use Zend\Db\Adapter\Adapter;
 
 class Created
 {
-    /**
-     * @var Adapter
-     */
     protected $adapter;
 
-    /**
-     * Construct.
-     *
-     * @param Adapter $adapter
-     */
-    public function __construct(Adapter $adapter)
-    {
-        $this->adapter = $adapter;
+    public function __construct(
+        Adapter $adapter,
+        QuestionTable\Question $questionTable
+    ) {
+        $this->adapter       = $adapter;
+        $this->questionTable = $questionTable;
     }
 
-    /**
-     * Select where created is between and deleted is null.
-     *
-     * @param string $createdMin
-     * @param string $createdMax
-     * @return Generator
-     * @yield array
-     */
     public function selectWhereCreatedIsBetweenAndDeletedIsNull(
         string $createdMin,
         string $createdMax
     ): Generator {
-        $sql = '
-            SELECT `question`.`question_id`
-                 , `question`.`user_id`
-                 , `question`.`name`
-                 , `question`.`subject`
-                 , `question`.`message`
-                 , `question`.`views`
-                 , `question`.`created`
-                 , `question`.`deleted`
+        $sql = $this->questionTable->getSelect()
+             . '
               FROM `question`
              WHERE `question`.`created` >= ?
                AND `question`.`created` < ?

@@ -310,7 +310,8 @@ class Module
                 },
                 QuestionTable\Question\Created::class => function ($serviceManager) {
                     return new QuestionTable\Question\Created(
-                        $serviceManager->get('question')
+                        $serviceManager->get('question'),
+                        $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
                 QuestionTable\Question\CreatedIp::class => function ($serviceManager) {
