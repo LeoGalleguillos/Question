@@ -75,6 +75,12 @@ class Module
                         $serviceManager->get(QuestionTable\Answer::class)
                     );
                 },
+                QuestionService\Answer\Answers\Newest\CreatedName::class => function ($serviceManager) {
+                    return new QuestionService\Answer\Answers\Newest\CreatedName(
+                        $serviceManager->get(QuestionFactory\Answer::class),
+                        $serviceManager->get(QuestionTable\Answer\CreatedName::class)
+                    );
+                },
                 QuestionService\Answer\Count::class => function ($serviceManager) {
                     return new QuestionService\Answer\Count(
                         $serviceManager->get(QuestionTable\Answer::class)
@@ -266,6 +272,12 @@ class Module
                 QuestionTable\Answer::class => function ($serviceManager) {
                     return new QuestionTable\Answer(
                         $serviceManager->get('question')
+                    );
+                },
+                QuestionTable\Answer\CreatedName::class => function ($serviceManager) {
+                    return new QuestionTable\Answer\CreatedName(
+                        $serviceManager->get('question'),
+                        $serviceManager->get(QuestionTable\Answer::class)
                     );
                 },
                 QuestionTable\Answer\CreatedIp::class => function ($serviceManager) {
