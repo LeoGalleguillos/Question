@@ -18,7 +18,7 @@ class QuestionFromAnswer
     }
 
     /**
-     * Get quesstion from answer.
+     * Get question from answer.
      *
      * @return QuestionEntity\Question
      */

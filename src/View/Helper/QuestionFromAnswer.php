@@ -22,6 +22,8 @@ class QuestionFromAnswer extends AbstractHelper
      * Invoke.
      *
      * @param QuestionEntity\Answer $answerEntity
+     * @throws TypeError If question entity cannot be found
+     * @return QuestionEntity\Question
      */
     public function __invoke(
         QuestionEntity\Answer $answerEntity
