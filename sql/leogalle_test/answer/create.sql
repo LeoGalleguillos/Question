@@ -16,5 +16,6 @@ CREATE TABLE `answer` (
     KEY `question_id_deleted_created_datetime` (question_id, deleted, created_datetime),
     KEY `user_id` (`user_id`),
     KEY `ip` (`ip`),
+    KEY `created_name_deleted_created_datetime` (created_name, deleted, created_datetime),
     KEY `created_ip_created_datetime` (`created_ip`, `created_datetime`)
 ) CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
