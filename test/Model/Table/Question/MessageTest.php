@@ -1,8 +1,6 @@
 <?php
 namespace LeoGalleguillos\QuestionTest\Model\Table\Question;
 
-use ArrayObject;
-use Exception;
 use Generator;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use LeoGalleguillos\QuestionTest\TableTestCase;
