@@ -46,10 +46,10 @@ class Answer
             $answerEntity->setDeleted(new DateTime($array['deleted']));
         }
         if (isset($array['deleted_user_id'])) {
-            $questionEntity->setDeletedUserId($array['deleted_user_id']);
+            $answerEntity->setDeletedUserId($array['deleted_user_id']);
         }
         if (isset($array['deleted_reason'])) {
-            $questionEntity->setDeletedReason($array['deleted_reason']);
+            $answerEntity->setDeletedReason($array['deleted_reason']);
         }
         if (isset($array['ip'])) {
             $answerEntity->setIp($array['ip']);
