@@ -57,6 +57,12 @@ class Question
         if (isset($array['deleted'])) {
             $questionEntity->setDeleted(new DateTime($array['deleted']));
         }
+        if (isset($array['deleted_user_id'])) {
+            $questionEntity->setDeletedUserId($array['deleted_user_id']);
+        }
+        if (isset($array['deleted_reason'])) {
+            $questionEntity->setDeletedReason($array['deleted_reason']);
+        }
 
         return $questionEntity;
     }
