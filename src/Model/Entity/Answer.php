@@ -12,6 +12,8 @@ class Answer
     protected $createdIp;
     protected $createdName;
     protected $deleted;
+    protected $deletedUserId;
+    protected $deletedReason;
     protected $history;
     protected $ip;
     protected $message;
@@ -47,6 +49,16 @@ class Answer
     public function getDeleted(): DateTime
     {
         return $this->deleted;
+    }
+
+    public function getDeletedUserId(): int
+    {
+        return $this->deletedUserId;
+    }
+
+    public function getDeletedReason(): string
+    {
+        return $this->deletedReason;
     }
 
     public function getHistory(): array
@@ -117,6 +129,18 @@ class Answer
     public function setDeleted(DateTime $deleted): QuestionEntity\Answer
     {
         $this->deleted = $deleted;
+        return $this;
+    }
+
+    public function setDeletedUserId(int $deletedUserId): QuestionEntity\Answer
+    {
+        $this->deletedUserId = $deletedUserId;
+        return $this;
+    }
+
+    public function setDeletedReason(string $deletedReason): QuestionEntity\Answer
+    {
+        $this->deletedReason = $deletedReason;
         return $this;
     }
 
