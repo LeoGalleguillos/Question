@@ -35,5 +35,25 @@ class QuestionTest extends TestCase
             $created,
             $this->questionEntity->getCreated()
         );
+
+        $deletedUserId = 123;
+        $this->assertSame(
+            $this->questionEntity,
+            $this->questionEntity->setDeletedUserId($deletedUserId)
+        );
+        $this->assertSame(
+            $deletedUserId,
+            $this->questionEntity->getDeletedUserId()
+        );
+
+        $deletedReason = 'this is the reason';
+        $this->assertSame(
+            $this->questionEntity,
+            $this->questionEntity->setDeletedReason($deletedReason)
+        );
+        $this->assertSame(
+            $deletedReason,
+            $this->questionEntity->getDeletedReason()
+        );
     }
 }
