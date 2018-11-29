@@ -189,12 +189,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/String.git",
-                "reference": "4170f2321ea1329108ba2dc6074ec12ea06c85c4"
+                "reference": "1d62fe5966132914bd239c08598d1ecf81c1d4a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/4170f2321ea1329108ba2dc6074ec12ea06c85c4",
-                "reference": "4170f2321ea1329108ba2dc6074ec12ea06c85c4",
+                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/1d62fe5966132914bd239c08598d1ecf81c1d4a2",
+                "reference": "1d62fe5966132914bd239c08598d1ecf81c1d4a2",
                 "shasum": ""
             },
             "require": {
@@ -211,7 +211,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-11-11T02:21:27+00:00"
+            "time": "2018-11-28T06:06:20+00:00"
         },
         {
             "name": "leo-galleguillos/superglobal",
@@ -280,12 +280,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/User.git",
-                "reference": "3f978d168035a3f36043d2ec9f188942bba45f7e"
+                "reference": "f9d343819b8f9012ca9f23214bf92fdce24553aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/3f978d168035a3f36043d2ec9f188942bba45f7e",
-                "reference": "3f978d168035a3f36043d2ec9f188942bba45f7e",
+                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/f9d343819b8f9012ca9f23214bf92fdce24553aa",
+                "reference": "f9d343819b8f9012ca9f23214bf92fdce24553aa",
                 "shasum": ""
             },
             "require": {
@@ -306,7 +306,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-10-23T19:31:32+00:00"
+            "time": "2018-11-13T17:51:31+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -925,12 +925,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "9f149b9b9a89e76be4296de81d7bcf486dedff84"
+                "reference": "ef10fcb8c62460661761145e7742708c2862f016"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9f149b9b9a89e76be4296de81d7bcf486dedff84",
-                "reference": "9f149b9b9a89e76be4296de81d7bcf486dedff84",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ef10fcb8c62460661761145e7742708c2862f016",
+                "reference": "ef10fcb8c62460661761145e7742708c2862f016",
                 "shasum": ""
             },
             "require": {
@@ -1001,7 +1001,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-11-08T11:40:15+00:00"
+            "time": "2018-11-12T10:55:12+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1485,16 +1485,16 @@
         },
         {
             "name": "sebastian/global-state",
-            "version": "dev-master",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/global-state.git",
-                "reference": "30367ea06c5cc3bf684457ac793fb2b863d783c6"
+                "reference": "e8ba02eed7bbbb9e59e43dedd3dddeff4a56b0c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/30367ea06c5cc3bf684457ac793fb2b863d783c6",
-                "reference": "30367ea06c5cc3bf684457ac793fb2b863d783c6",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/e8ba02eed7bbbb9e59e43dedd3dddeff4a56b0c4",
+                "reference": "e8ba02eed7bbbb9e59e43dedd3dddeff4a56b0c4",
                 "shasum": ""
             },
             "require": {
@@ -1532,7 +1532,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2018-05-15T05:52:33+00:00"
+            "time": "2017-04-27T15:39:26+00:00"
         },
         {
             "name": "sebastian/object-enumerator",
