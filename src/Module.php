@@ -295,6 +295,12 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Answer\DeletedUserId::class => function ($serviceManager) {
+                    return new QuestionTable\Answer\DeletedUserId(
+                        $serviceManager->get('question'),
+                        $serviceManager->get(QuestionTable\Answer::class)
+                    );
+                },
                 QuestionTable\Answer\Message::class => function ($serviceManager) {
                     return new QuestionTable\Answer\Message(
                         $serviceManager->get('question')
