@@ -353,6 +353,12 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Question\DeletedUserId::class => function ($serviceManager) {
+                    return new QuestionTable\Question\DeletedUserId(
+                        $serviceManager->get('question'),
+                        $serviceManager->get(QuestionTable\Question::class)
+                    );
+                },
                 QuestionTable\Question\Message::class => function ($serviceManager) {
                     return new QuestionTable\Question\Message(
                         $serviceManager->get('question'),
