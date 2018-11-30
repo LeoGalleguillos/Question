@@ -12,7 +12,7 @@ class Undelete
         $this->deletedDeletedUserIdDeletedReasonTable = $deletedDeletedUserIdDeletedReasonTable;
     }
 
-    public function delete(
+    public function undelete(
         QuestionEntity\Question $questionEntity
     ): bool {
         return (bool) $this->deletedDeletedUserIdDeletedReasonTable->updateToNullWhereQuestionId(
