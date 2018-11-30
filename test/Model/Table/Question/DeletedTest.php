@@ -28,7 +28,8 @@ class DeletedTest extends TableTestCase
             $this->adapter
         );
         $this->questionDeletedTable = new QuestionTable\Question\Deleted(
-            $this->adapter
+            $this->adapter,
+            $this->questionTable
         );
 
         $this->dropTable();

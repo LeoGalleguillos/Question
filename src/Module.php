@@ -345,7 +345,8 @@ class Module
                 },
                 QuestionTable\Question\Deleted::class => function ($serviceManager) {
                     return new QuestionTable\Question\Deleted(
-                        $serviceManager->get('question')
+                        $serviceManager->get('question'),
+                        $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
                 QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class => function ($serviceManager) {
