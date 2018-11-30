@@ -264,6 +264,11 @@ class Module
                 QuestionService\Question\Title::class => function ($serviceManager) {
                     return new QuestionService\Question\Title();
                 },
+                QuestionService\Question\Undelete::class => function ($serviceManager) {
+                    return new QuestionService\Question\Undelete(
+                        $serviceManager->get(QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class)
+                    );
+                },
                 QuestionService\Question\Url::class => function ($serviceManager) {
                     return new QuestionService\Question\Url(
                         $serviceManager->get(QuestionService\Question\RootRelativeUrl::class)
