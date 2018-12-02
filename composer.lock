@@ -189,12 +189,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/String.git",
-                "reference": "1d62fe5966132914bd239c08598d1ecf81c1d4a2"
+                "reference": "daca79614bbf980fc1b5e929313acee0ca734114"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/1d62fe5966132914bd239c08598d1ecf81c1d4a2",
-                "reference": "1d62fe5966132914bd239c08598d1ecf81c1d4a2",
+                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/daca79614bbf980fc1b5e929313acee0ca734114",
+                "reference": "daca79614bbf980fc1b5e929313acee0ca734114",
                 "shasum": ""
             },
             "require": {
@@ -211,7 +211,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-11-28T06:06:20+00:00"
+            "time": "2018-11-30T07:02:19+00:00"
         },
         {
             "name": "leo-galleguillos/superglobal",
