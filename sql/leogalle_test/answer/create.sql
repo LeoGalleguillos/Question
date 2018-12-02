@@ -18,5 +18,6 @@ CREATE TABLE `answer` (
     KEY `ip` (`ip`),
     KEY `created_name_deleted_created_datetime` (created_name, deleted, created_datetime),
     KEY `created_ip_created_datetime` (`created_ip`, `created_datetime`),
+    KEY `deleted_created_datetime` (`deleted`, `created_datetime`),
     KEY `deleted_user_id_deleted` (`deleted_user_id`, `deleted`)
 ) CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
