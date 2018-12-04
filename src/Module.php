@@ -343,6 +343,11 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Question\CreatedIpCreatedDatetime::class => function ($sm) {
+                    return new QuestionTable\Question\CreatedIpCreatedDatetime(
+                        $sm->get('question')
+                    );
+                },
                 QuestionTable\Question\CreatedName::class => function ($serviceManager) {
                     return new QuestionTable\Question\CreatedName(
                         $serviceManager->get('question'),
