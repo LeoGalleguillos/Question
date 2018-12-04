@@ -290,6 +290,11 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Answer\CreatedIpCreatedDatetime::class => function ($sm) {
+                    return new QuestionTable\Answer\CreatedIpCreatedDatetime(
+                        $sm->get('question')
+                    );
+                },
                 QuestionTable\Answer\Deleted::class => function ($serviceManager) {
                     return new QuestionTable\Answer\Deleted(
                         $serviceManager->get('question'),
