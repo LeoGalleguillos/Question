@@ -16,9 +16,6 @@ class CreatedIp
         $this->adapter = $adapter;
     }
 
-    /**
-     * @return bool
-     */
     public function selectQuestionIdWhereCreatedIp(
         string $createdIp
     ): Generator {
