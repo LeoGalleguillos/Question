@@ -241,6 +241,11 @@ class Module
                         $serviceManager->get(QuestionTable\Answer::class)
                     );
                 },
+                QuestionService\Question\Questions\NumberOfPages::class => function ($sm) {
+                    return new QuestionService\Question\Questions\NumberOfPages(
+                        $sm->get(QuestionTable\Question::class)
+                    );
+                },
                 QuestionService\Question\Questions\Similar::class => function ($serviceManager) {
                     return new QuestionService\Question\Questions\Similar(
                         $serviceManager->get(QuestionFactory\Question::class),
