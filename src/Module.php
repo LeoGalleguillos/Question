@@ -368,6 +368,7 @@ class Module
                 QuestionTable\Question\Deleted::class => function ($serviceManager) {
                     return new QuestionTable\Question\Deleted(
                         $serviceManager->get('question'),
+                        $serviceManager->get(MemcachedService\Memcached::class),
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },

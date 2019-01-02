@@ -20,14 +20,19 @@ class DeletedTest extends TableTestCase
 
         $configArray   = require($_SERVER['PWD'] . '/config/autoload/local.php');
         $configArray   = $configArray['db']['adapters']['leogalle_test'];
+
         $this->adapter = new Adapter($configArray);
+        $this->memcachedServiceMock = $this->createMock(
+            MemcachedService\Memcached::class
+        );
 
         $this->questionTable = new QuestionTable\Question(
             $this->adapter,
-            new MemcachedService\Memcached()
+            $this->memcachedServiceMock
         );
         $this->questionDeletedTable = new QuestionTable\Question\Deleted(
             $this->adapter,
+            $this->memcachedServiceMock,
             $this->questionTable
         );
 
