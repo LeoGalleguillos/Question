@@ -1,9 +1,8 @@
 <?php
 namespace LeoGalleguillos\QuestionTest\Model\Table;
 
-use ArrayObject;
-use Exception;
 use Generator;
+use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use LeoGalleguillos\QuestionTest\TableTestCase;
 use Zend\Db\Adapter\Adapter;
@@ -22,7 +21,10 @@ class QuestionTest extends TableTestCase
         $configArray     = $configArray['db']['adapters']['leogalle_test'];
         $this->adapter   = new Adapter($configArray);
 
-        $this->questionTable      = new QuestionTable\Question($this->adapter);
+        $this->questionTable = new QuestionTable\Question(
+            $this->adapter,
+            new MemcachedService\Memcached()
+        );
 
         $this->setForeignKeyChecks0();
         $this->dropTable();

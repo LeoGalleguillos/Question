@@ -1,8 +1,8 @@
 <?php
 namespace LeoGalleguillos\Question\Model\Table;
 
-use Exception;
 use Generator;
+use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use Zend\Db\Adapter\Adapter;
 
 class Question
@@ -12,14 +12,12 @@ class Question
      */
     protected $adapter;
 
-    /**
-     * Construct.
-     *
-     * @param Adapter $adapter
-     */
-    public function __construct(Adapter $adapter)
-    {
-        $this->adapter = $adapter;
+    public function __construct(
+        Adapter $adapter,
+        MemcachedService\Memcached $memcachedService
+    ) {
+        $this->adapter          = $adapter;
+        $this->memcachedService = $memcachedService;
     }
 
     /**

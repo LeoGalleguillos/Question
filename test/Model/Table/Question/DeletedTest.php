@@ -1,6 +1,7 @@
 <?php
 namespace LeoGalleguillos\QuestionTest\Model\Table\Question;
 
+use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use LeoGalleguillos\QuestionTest\TableTestCase;
 use Zend\Db\Adapter\Adapter;
@@ -22,7 +23,8 @@ class DeletedTest extends TableTestCase
         $this->adapter = new Adapter($configArray);
 
         $this->questionTable = new QuestionTable\Question(
-            $this->adapter
+            $this->adapter,
+            new MemcachedService\Memcached()
         );
         $this->questionDeletedTable = new QuestionTable\Question\Deleted(
             $this->adapter,

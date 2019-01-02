@@ -334,7 +334,8 @@ class Module
                 },
                 QuestionTable\Question::class => function ($serviceManager) {
                     return new QuestionTable\Question(
-                        $serviceManager->get('question')
+                        $serviceManager->get('question'),
+                        $serviceManager->get(MemcachedService\Memcached::class)
                     );
                 },
                 QuestionTable\Question\Created::class => function ($serviceManager) {
