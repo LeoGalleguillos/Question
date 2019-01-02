@@ -6,13 +6,15 @@ use LeoGalleguillos\Question\Model\Table as QuestionTable;
 class NumberOfPages
 {
     public function __construct(
-        QuestionTable\Question $questionTable
+        QuestionTable\Question\Deleted $deletedTable
     ) {
-        $this->questionTable = $questionTable;
+        $this->deletedTable = $deletedTable;
     }
 
     public function getNumberOfPages(): int
     {
-        return ceil($this->questionTable->selectCount() / 1000);
+        return ceil(
+            $this->deletedTable->selectCountWhereDeletedIsNull() / 1000
+        );
     }
 }
