@@ -19,11 +19,15 @@ class QuestionTest extends TableTestCase
     {
         $configArray     = require(__DIR__ . '/../../../config/autoload/local.php');
         $configArray     = $configArray['db']['adapters']['leogalle_test'];
+
         $this->adapter   = new Adapter($configArray);
+        $this->memcachedServiceMock = $this->createMock(
+            MemcachedService\Memcached::class
+        );
 
         $this->questionTable = new QuestionTable\Question(
             $this->adapter,
-            new MemcachedService\Memcached()
+            $this->memcachedServiceMock
         );
 
         $this->setForeignKeyChecks0();
@@ -54,8 +58,9 @@ class QuestionTest extends TableTestCase
 
     public function testInsertAndSelectCount()
     {
+        $this->memcachedServiceMock->method('get')->will($this->onConsecutiveCalls(5, null));
         $this->assertSame(
-            0,
+            5,
             $this->questionTable->selectCount()
         );
         $this->questionTable->insert(1, 'name', 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4');

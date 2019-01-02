@@ -132,18 +132,22 @@ class Question
                           ->getGeneratedValue();
     }
 
-    /**
-     * Select count.
-     */
     public function selectCount(): int
     {
+        $cacheKey = md5(__METHOD__);
+        if (null !== ($count = $this->memcachedService->get($cacheKey))) {
+            return $count;
+        }
+
         $sql = '
             SELECT COUNT(*) AS `count`
               FROM `question`
                  ;
         ';
-        $row = $this->adapter->query($sql)->execute()->current();
-        return (int) $row['count'];
+        $count = (int) $this->adapter->query($sql)->execute()->current()['count'];
+
+        $this->memcachedService->setForDays($cacheKey, $count, 7);
+        return $count;
     }
 
     /**
