@@ -12,12 +12,6 @@ class Url
         $this->rootRelativeUrlService = $rootRelativeUrlService;
     }
 
-    /**
-     * Get URL.
-     *
-     * @param QuestionEntity\Question $questionEntity
-     * @return string
-     */
     public function getUrl(QuestionEntity\Question $questionEntity): string
     {
         return 'https://'

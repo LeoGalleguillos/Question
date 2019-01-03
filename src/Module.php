@@ -23,6 +23,7 @@ class Module
                     'getQuestionFromAnswer' => QuestionHelper\QuestionFromAnswer::class,
                     'getQuestionRootRelativeUrl' => QuestionHelper\Question\RootRelativeUrl::class,
                     'getQuestionTitle' => QuestionHelper\Question\Title::class,
+                    'getQuestionUrl' => QuestionHelper\Question\Url::class,
                 ],
                 'factories' => [
                     QuestionHelper\Answer\Factory::class => function($serviceManager) {
@@ -43,6 +44,11 @@ class Module
                     QuestionHelper\Question\Title::class => function($serviceManager) {
                         return new QuestionHelper\Question\Title(
                             $serviceManager->get(QuestionService\Question\Title::class)
+                        );
+                    },
+                    QuestionHelper\Question\Url::class => function($serviceManager) {
+                        return new QuestionHelper\Question\Url(
+                            $serviceManager->get(QuestionService\Question\Url::class)
                         );
                     },
                     QuestionHelper\QuestionFromAnswer::class => function($serviceManager) {
