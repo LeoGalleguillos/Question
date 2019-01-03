@@ -25,7 +25,7 @@ class Questions
             $limitRowCount
         );
         foreach ($generator as $array) {
-            yield $this->questionFactory->buildFromArray();
+            yield $this->questionFactory->buildFromArray($array);
         }
     }
 }
