@@ -22,14 +22,14 @@ class DeletedCreatedDatetime
         int $limitRowCount
     ): Generator {
         $sql = $this->questionTable->getSelect()
-             . "
+             . '
               FROM `question`
              WHERE `question`.`deleted` IS NULL
              ORDER
                 BY `question`.`created_datetime` ASC
-             LIMIT $limitOffset, $limitRowCount
+             LIMIT ?, ?
                  ;
-        ";
+        ';
         $parameters = [
             $limitOffset,
             $limitRowCount,
