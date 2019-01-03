@@ -27,6 +27,8 @@ class Created
              WHERE `question`.`created` >= ?
                AND `question`.`created` < ?
                AND `deleted` IS NULL
+             ORDER
+                BY `question`.`created` ASC
                  ;
         ';
         $parameters = [
