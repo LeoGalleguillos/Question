@@ -43,7 +43,7 @@ class CreatedDeleted
         ';
         $parameters = [
             "$year-01-01 05:00:00",
-            "{$year + 1}-01-01 05:00:00",
+            "{($year + 1)}-01-01 05:00:00",
         ];
         $questionIds = [];
         foreach ($this->adapter->query($sql)->execute($parameters)->current() as $array) {

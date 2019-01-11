@@ -367,6 +367,12 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionTable\Question\CreatedDeleted::class => function ($serviceManager) {
+                    return new QuestionTable\Question\CreatedDeleted(
+                        $serviceManager->get('question'),
+                        $serviceManager->get(MemcachedService\Memcached::class)
+                    );
+                },
                 QuestionTable\Question\CreatedIp::class => function ($serviceManager) {
                     return new QuestionTable\Question\CreatedIp(
                         $serviceManager->get('question')
