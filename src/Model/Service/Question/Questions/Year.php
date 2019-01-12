@@ -23,8 +23,8 @@ class Year
             $year
         );
 
-        foreach ($questionsIds as $questionId) {
-            $questionEntity = $this->questionFactory->buildFromQuestionId($questionIds);
+        foreach ($questionIds as $questionId) {
+            $questionEntity = $this->questionFactory->buildFromQuestionId($questionId);
             try {
                 $questionEntity->getDeleted();
             } catch (TypeError $typeError) {

@@ -46,7 +46,7 @@ class CreatedDeleted
             ($year + 1) . "-01-01 05:00:00",
         ];
         $questionIds = [];
-        foreach ($this->adapter->query($sql)->execute($parameters)->current() as $array) {
+        foreach ($this->adapter->query($sql)->execute($parameters) as $array) {
             $questionIds[] = (int) $array['question_id'];
         }
 
