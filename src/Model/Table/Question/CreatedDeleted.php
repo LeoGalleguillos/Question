@@ -23,7 +23,7 @@ class CreatedDeleted
 
     public function selectQuestionIdWhereCreatedInYearAndDeletedIsNull(int $year): array
     {
-        $cacheKey = md5(__METHOD__);
+        $cacheKey = md5(__METHOD__ . $year);
         if (null !== ($questionIds = $this->memcachedService->get($cacheKey))) {
             return $questionIds;
         }
