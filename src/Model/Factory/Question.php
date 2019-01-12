@@ -67,19 +67,11 @@ class Question
         return $questionEntity;
     }
 
-    /**
-     * Build from question ID.
-     *
-     * @param int $questionId
-     * @return QuestionEntity\Question
-     */
     public function buildFromQuestionId(
         int $questionId
     ): QuestionEntity\Question {
-        $questionEntity = $this->buildFromArray(
+        return $this->buildFromArray(
             $this->questionTable->selectWhereQuestionId($questionId)
         );
-
-        return $questionEntity;
     }
 }

@@ -265,6 +265,12 @@ class Module
                         $serviceManager->get(QuestionTable\QuestionSearchMessage::class)
                     );
                 },
+                QuestionService\Question\Questions\Year::class => function ($serviceManager) {
+                    return new QuestionService\Question\Questions\Year(
+                        $serviceManager->get(QuestionFactory\Question::class),
+                        $serviceManager->get(QuestionTable\Question\CreatedDeleted::class)
+                    );
+                },
                 QuestionService\Question\RootRelativeUrl::class => function ($serviceManager) {
                     return new QuestionService\Question\RootRelativeUrl(
                         $serviceManager->get(QuestionService\Question\Title::class),
