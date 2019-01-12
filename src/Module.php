@@ -375,8 +375,7 @@ class Module
                 },
                 QuestionTable\Question\CreatedDeleted::class => function ($serviceManager) {
                     return new QuestionTable\Question\CreatedDeleted(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(MemcachedService\Memcached::class)
+                        $serviceManager->get('question')
                     );
                 },
                 QuestionTable\Question\CreatedIp::class => function ($serviceManager) {

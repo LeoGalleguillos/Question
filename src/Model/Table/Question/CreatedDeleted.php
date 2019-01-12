@@ -13,21 +13,14 @@ class CreatedDeleted
     protected $adapter;
 
     public function __construct(
-        Adapter $adapter,
-        MemcachedService\Memcached $memcachedService
+        Adapter $adapter
     ) {
         $this->adapter          = $adapter;
-        $this->memcachedService = $memcachedService;
     }
 
 
-    public function selectQuestionIdWhereCreatedInYearAndDeletedIsNull(int $year): array
+    public function selectQuestionIdWhereCreatedInYearAndDeletedIsNull(int $year): Generator
     {
-        $cacheKey = md5(__METHOD__ . $year);
-        if (null !== ($questionIds = $this->memcachedService->get($cacheKey))) {
-            return $questionIds;
-        }
-
         $sql = '
             SELECT `question_id`
               from question
@@ -47,10 +40,7 @@ class CreatedDeleted
         ];
         $questionIds = [];
         foreach ($this->adapter->query($sql)->execute($parameters) as $array) {
-            $questionIds[] = (int) $array['question_id'];
+            yield (int) $array['question_id'];
         }
-
-        $this->memcachedService->setForDays($cacheKey, $questionIds, 14);
-        return $questionIds;
     }
 }
