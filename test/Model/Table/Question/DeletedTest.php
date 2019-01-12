@@ -3,9 +3,7 @@ namespace LeoGalleguillos\QuestionTest\Model\Table\Question;
 
 use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\QuestionTest\TableTestCase;
-use Zend\Db\Adapter\Adapter;
-use PHPUnit\Framework\TestCase;
+use LeoGalleguillos\Test\TableTestCase;
 
 class DeletedTest extends TableTestCase
 {
@@ -16,40 +14,22 @@ class DeletedTest extends TableTestCase
 
     protected function setUp()
     {
-        $this->sqlPath = $_SERVER['PWD'] . '/sql/leogalle_test/question/';
-
-        $configArray   = require($_SERVER['PWD'] . '/config/autoload/local.php');
-        $configArray   = $configArray['db']['adapters']['leogalle_test'];
-
-        $this->adapter = new Adapter($configArray);
         $this->memcachedServiceMock = $this->createMock(
             MemcachedService\Memcached::class
         );
 
         $this->questionTable = new QuestionTable\Question(
-            $this->adapter,
+            $this->getAdapter(),
             $this->memcachedServiceMock
         );
         $this->questionDeletedTable = new QuestionTable\Question\Deleted(
-            $this->adapter,
+            $this->getAdapter(),
             $this->memcachedServiceMock,
             $this->questionTable
         );
 
-        $this->dropTable();
-        $this->createTable();
-    }
-
-    protected function dropTable()
-    {
-        $sql = file_get_contents($this->sqlPath . 'drop.sql');
-        $result = $this->adapter->query($sql)->execute();
-    }
-
-    protected function createTable()
-    {
-        $sql = file_get_contents($this->sqlPath . 'create.sql');
-        $result = $this->adapter->query($sql)->execute();
+        $this->dropTable('question');
+        $this->createTable('question');
     }
 
     public function testInitialize()
