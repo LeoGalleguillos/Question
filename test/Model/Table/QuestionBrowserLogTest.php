@@ -3,6 +3,7 @@ namespace LeoGalleguillos\QuestionTest\Model\Table;
 
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use LeoGalleguillos\Test\TableTestCase;
+use TypeError;
 
 class QuestionBrowserLogTest extends TableTestCase
 {
@@ -14,14 +15,6 @@ class QuestionBrowserLogTest extends TableTestCase
 
         $this->dropTable('question_browser_log');
         $this->createTable('question_browser_log');
-    }
-
-    public function testInitialize()
-    {
-        $this->assertInstanceOf(
-            QuestionTable\QuestionBrowserLog::class,
-            $this->questionBrowserLogTable
-        );
     }
 
     public function testInsert()
@@ -44,6 +37,44 @@ class QuestionBrowserLogTest extends TableTestCase
         $this->assertSame(
             2,
             $questionBrowserLogId
+        );
+    }
+
+    public function testSelectQuestionIdCountOrderByCountDescLimit1()
+    {
+        try {
+            $this->questionBrowserLogTable->selectQuestionIdCountOrderByCountDescLimit1();
+            $this->fail();
+        } catch (TypeError $typeError) {
+            $this->assertSame(
+                'Return value of',
+                substr($typeError->getMessage(), 0, 15)
+            );
+        }
+
+        $this->questionBrowserLogTable->insert(
+            12345,
+            'ip',
+            'http_user_agent'
+        );
+        $this->questionBrowserLogTable->insert(
+            56789,
+            'ip',
+            'http_user_agent'
+        );
+        $this->questionBrowserLogTable->insert(
+            12345,
+            'ip',
+            'http_user_agent'
+        );
+
+        $array = $this->questionBrowserLogTable->selectQuestionIdCountOrderByCountDescLimit1();
+        $this->assertSame(
+            [
+                'question_id' => '12345',
+                'count'       => '2',
+            ],
+            $array
         );
     }
 }

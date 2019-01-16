@@ -46,4 +46,23 @@ class QuestionBrowserLog
                     ->execute($parameters)
                     ->getGeneratedValue();
     }
+
+    public function selectQuestionIdCountOrderByCountDescLimit1(): array
+    {
+        $sql = '
+            select question_id
+                 , count(*) as `count`
+              from question_browser_log
+             group
+                by question_id
+             order
+                by `count` desc
+             limit 1
+                 ;
+        ';
+        return $this->adapter
+                    ->query($sql)
+                    ->execute()
+                    ->current();
+    }
 }
