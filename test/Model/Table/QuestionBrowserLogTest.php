@@ -17,6 +17,32 @@ class QuestionBrowserLogTest extends TableTestCase
         $this->createTable('question_browser_log');
     }
 
+    public function testDeleteWhereQuestionId()
+    {
+        $this->assertSame(
+            0,
+            $this->questionBrowserLogTable->deleteWhereQuestionId(12345)
+        );
+
+        for ($x = 0; $x < 4; $x++) {
+            $this->questionBrowserLogTable->insert(
+                12345,
+                'ip',
+                'http_user_agent'
+            );
+        }
+        $this->questionBrowserLogTable->insert(
+            56789,
+            'ip',
+            'http_user_agent'
+        );
+
+        $this->assertSame(
+            4,
+            $this->questionBrowserLogTable->deleteWhereQuestionId(12345)
+        );
+    }
+
     public function testInsert()
     {
         $questionBrowserLogId = $this->questionBrowserLogTable->insert(

@@ -20,6 +20,24 @@ class QuestionBrowserLog
         $this->adapter = $adapter;
     }
 
+    public function deleteWhereQuestionId(
+        int $questionId
+    ): int {
+        $sql = '
+            DELETE
+              FROM `question_browser_log`
+             WHERE `question_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $questionId,
+        ];
+        return (int) $this->adapter
+            ->query($sql)
+            ->execute($parameters)
+            ->getAffectedRows();
+    }
+
     public function insert(
         int $questionId,
         string $ip,
