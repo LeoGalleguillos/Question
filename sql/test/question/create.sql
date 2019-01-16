@@ -6,6 +6,7 @@ CREATE TABLE `question` (
     `message` text,
     `ip` varchar(45) default null,
     `views` int(10) unsigned NOT NULL DEFAULT '0',
+    `views_browser` int(10) unsigned NOT NULL DEFAULT '0',
     `created` datetime not null,
     `created_datetime` datetime default null,
     `created_name` varchar(255) default null,
