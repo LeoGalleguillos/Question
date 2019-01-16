@@ -412,6 +412,11 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionTable\Question\QuestionId::class => function ($serviceManager) {
+                    return new QuestionTable\Question\QuestionId(
+                        $serviceManager->get('question')
+                    );
+                },
                 QuestionTable\Question\Message::class => function ($serviceManager) {
                     return new QuestionTable\Question\Message(
                         $serviceManager->get('question'),
