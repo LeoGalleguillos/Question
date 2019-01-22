@@ -28,12 +28,7 @@ class Year
         );
 
         foreach ($questionIds as $questionId) {
-            $questionEntity = $this->questionFactory->buildFromQuestionId($questionId);
-            try {
-                $questionEntity->getDeleted();
-            } catch (TypeError $typeError) {
-                yield $questionEntity;
-            }
+            yield $this->questionFactory->buildFromQuestionId($questionId);
         }
     }
 }

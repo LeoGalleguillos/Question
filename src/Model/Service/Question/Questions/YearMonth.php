@@ -36,9 +36,6 @@ class YearMonth
         $dateTimeMin->setTimezone(new DateTimeZone('UTC'));
         $dateTimeMax->setTimezone(new DateTimeZone('UTC'));
 
-        var_dump($dateTimeMin, $dateTimeMax);
-
-
         $questionIds = $this->createdDeletedViewsBrowserTable->selectQuestionIdWhereCreatedBetweenAndDeletedIsNull(
             $dateTimeMin->format('Y-m-d H:i:s'),
             $dateTimeMax->format('Y-m-d H:i:s')
