@@ -19,8 +19,12 @@ class Year
     public function getQuestions(
         int $year
     ): Generator {
-        $questionIds = $this->createdDeletedViewsBrowserTable->selectQuestionIdWhereCreatedInYearAndDeletedIsNull(
-            $year
+        $betweenMin = "$year-01-01 05:00:00";
+        $betweenMax = ($year + 1) . "-01-01 04:59:59";
+
+        $questionIds = $this->createdDeletedViewsBrowserTable->selectQuestionIdWhereCreatedBetweenAndDeletedIsNull(
+            $betweenMin,
+            $betweenMax
         );
 
         foreach ($questionIds as $questionId) {
