@@ -24,8 +24,7 @@ class CreatedDeleted
         $sql = '
             SELECT `question_id`
               from question
-             where created >= ?
-               and created < ?
+             where created between ? and ?
                AND deleted IS NULL
 
              ORDER
@@ -36,7 +35,7 @@ class CreatedDeleted
         ';
         $parameters = [
             "$year-01-01 05:00:00",
-            ($year + 1) . "-01-01 05:00:00",
+            ($year + 1) . "-01-01 04:59:59",
         ];
         $questionIds = [];
         foreach ($this->adapter->query($sql)->execute($parameters) as $array) {
