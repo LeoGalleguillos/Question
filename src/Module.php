@@ -268,7 +268,7 @@ class Module
                 QuestionService\Question\Questions\Year::class => function ($serviceManager) {
                     return new QuestionService\Question\Questions\Year(
                         $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionTable\Question\CreatedDeleted::class)
+                        $serviceManager->get(QuestionTable\Question\CreatedDeletedViewsBrowser::class)
                     );
                 },
                 QuestionService\Question\RootRelativeUrl::class => function ($serviceManager) {
@@ -373,8 +373,8 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\CreatedDeleted::class => function ($serviceManager) {
-                    return new QuestionTable\Question\CreatedDeleted(
+                QuestionTable\Question\CreatedDeletedViewsBrowser::class => function ($serviceManager) {
+                    return new QuestionTable\Question\CreatedDeletedViewsBrowser(
                         $serviceManager->get('question')
                     );
                 },

@@ -10,16 +10,16 @@ class Year
 {
     public function __construct(
         QuestionFactory\Question $questionFactory,
-        QuestionTable\Question\CreatedDeleted $createdDeletedTable
+        QuestionTable\Question\CreatedDeletedViewsBrowser $createdDeletedViewsBrowserTable
     ) {
-        $this->questionFactory     = $questionFactory;
-        $this->createdDeletedTable = $createdDeletedTable;
+        $this->questionFactory                 = $questionFactory;
+        $this->createdDeletedViewsBrowserTable = $createdDeletedViewsBrowserTable;
     }
 
     public function getQuestions(
         int $year
     ): Generator {
-        $questionIds = $this->createdDeletedTable->selectQuestionIdWhereCreatedInYearAndDeletedIsNull(
+        $questionIds = $this->createdDeletedViewsBrowserTable->selectQuestionIdWhereCreatedInYearAndDeletedIsNull(
             $year
         );
 

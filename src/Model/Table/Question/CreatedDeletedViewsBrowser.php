@@ -5,7 +5,7 @@ use Generator;
 use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use Zend\Db\Adapter\Adapter;
 
-class CreatedDeleted
+class CreatedDeletedViewsBrowser
 {
     /**
      * @var Adapter
@@ -28,7 +28,7 @@ class CreatedDeleted
                AND deleted IS NULL
 
              ORDER
-                BY views DESC
+                BY views_browser DESC
 
              LIMIT 100
                  ;
