@@ -265,6 +265,12 @@ class Module
                         $serviceManager->get(QuestionTable\QuestionSearchMessage::class)
                     );
                 },
+                QuestionService\Question\Questions\YearMonth::class => function ($serviceManager) {
+                    return new QuestionService\Question\Questions\YearMonth(
+                        $serviceManager->get(QuestionFactory\Question::class),
+                        $serviceManager->get(QuestionTable\Question\CreatedDeletedViewsBrowser::class)
+                    );
+                },
                 QuestionService\Question\Questions\Year::class => function ($serviceManager) {
                     return new QuestionService\Question\Questions\Year(
                         $serviceManager->get(QuestionFactory\Question::class),
