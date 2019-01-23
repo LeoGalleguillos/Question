@@ -15,6 +15,24 @@ class QuestionId
         $this->adapter = $adapter;
     }
 
+    public function updateIncrementViewsBrowserWhereQuestionId(
+        int $questionId
+    ): int {
+        $sql = '
+            UPDATE `question`
+               SET `question`.`views_browser` = `question`.`views_browser` + 1
+             WHERE `question`.`question_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $questionId,
+        ];
+        return (int) $this->adapter
+            ->query($sql)
+            ->execute($parameters)
+            ->getAffectedRows();
+    }
+
     public function updateSetViewsBrowserWhereQuestionId(
         int $viewsBrowser,
         int $questionId
