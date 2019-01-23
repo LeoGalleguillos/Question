@@ -308,6 +308,11 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Answer\AnswerId::class => function ($serviceManager) {
+                    return new QuestionTable\Answer\AnswerId(
+                        $serviceManager->get('question')
+                    );
+                },
                 QuestionTable\Answer\CreatedName::class => function ($serviceManager) {
                     return new QuestionTable\Answer\CreatedName(
                         $serviceManager->get('question'),
