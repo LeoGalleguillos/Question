@@ -180,9 +180,9 @@ class Module
                         $serviceManager->get(QuestionTable\QuestionEditQueue::class)
                     );
                 },
-                QuestionService\QuestionBrowserLog::class => function ($serviceManager) {
-                    return new QuestionService\QuestionBrowserLog(
-                        $serviceManager->get(QuestionTable\QuestionBrowserLog::class),
+                QuestionService\Question\ViewsBrowser\ConditionallyIncrement::class => function ($serviceManager) {
+                    return new QuestionService\Question\ViewsBrowser\ConditionallyIncrement(
+                        $serviceManager->get(QuestionTable\Question\QuestionId::class),
                         $serviceManager->get(SuperglobalService\Server\HttpUserAgent\Browser::class)
                     );
                 },
