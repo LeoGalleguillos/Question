@@ -50,7 +50,7 @@ class Deleted
               FROM `question`
              WHERE `question`.`deleted` IS NOT NULL
              ORDER
-                BY `question`.`created_datetime` DESC
+                BY `question`.`deleted` DESC
              LIMIT $limitRowCount
                  ;
         ";

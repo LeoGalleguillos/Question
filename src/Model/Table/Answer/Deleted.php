@@ -29,7 +29,7 @@ class Deleted
               FROM `answer`
              WHERE `answer`.`deleted` IS NOT NULL
              ORDER
-                BY `answer`.`created_datetime` DESC
+                BY `answer`.`deleted` DESC
              LIMIT $limitRowCount
                  ;
         ";
