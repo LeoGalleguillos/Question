@@ -155,6 +155,11 @@ class Module
                         $serviceManager->get(QuestionTable\Answer::class)
                     );
                 },
+                QuestionService\Answer\Undelete::class => function ($serviceManager) {
+                    return new QuestionService\Answer\Undelete(
+                        $serviceManager->get(QuestionTable\Answer\AnswerId::class)
+                    );
+                },
                 QuestionService\Edit::class => function ($serviceManager) {
                     return new QuestionService\Edit(
                         $serviceManager->get('question'),
