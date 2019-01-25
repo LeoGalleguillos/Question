@@ -196,6 +196,12 @@ class Module
                         $serviceManager->get(QuestionFactory\Question::class)
                     );
                 },
+                QuestionService\NumberOfPostsDeletedByUserId0InLast24Hours::class => function ($sm) {
+                    return new QuestionService\NumberOfPostsDeletedByUserId0InLast24Hours(
+                        $sm->get(QuestionTable\Answer\CreatedIpDeletedDeletedUserId::class),
+                        $sm->get(QuestionTable\Question\CreatedIpDeletedDeletedUserId::class)
+                    );
+                },
                 QuestionService\Questions::class => function ($serviceManager) {
                     return new QuestionService\Questions(
                         $serviceManager->get(QuestionFactory\Question::class),
