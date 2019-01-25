@@ -11,8 +11,8 @@ class NumberOfPostsDeletedByUserId0InLast24Hours
         QuestionTable\Answer\CreatedIpDeletedDeletedUserId $answerCreatedIpDeletedDeletedUserIdTable,
         QuestionTable\Question\CreatedIpDeletedDeletedUserId $questionCreatedIpDeletedDeletedUserIdTable
     ) {
-        $this->answerTable   = $answerCreatedIpDeletedDeletedUserIdTable;
-        $this->questionTable = $questionCreatedIpDeletedDeletedUserIdTable;
+        $this->answerCreatedIpDeletedDeletedUserIdTable   = $answerCreatedIpDeletedDeletedUserIdTable;
+        $this->questionCreatedIpDeletedDeletedUserIdTable = $questionCreatedIpDeletedDeletedUserIdTable;
     }
 
     public function getNumberOfPostsDeletedByUserInLast24Hours(
