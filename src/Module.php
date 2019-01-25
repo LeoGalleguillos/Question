@@ -394,6 +394,11 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Question\CreatedIpDeletedDeletedUserId::class => function ($serviceManager) {
+                    return new QuestionTable\Question\CreatedIpDeletedDeletedUserId(
+                        $serviceManager->get('question')
+                    );
+                },
                 QuestionTable\Question\CreatedIp::class => function ($serviceManager) {
                     return new QuestionTable\Question\CreatedIp(
                         $serviceManager->get('question')
