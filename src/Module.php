@@ -394,6 +394,12 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionTable\Question\CreatedDatetime::class => function ($serviceManager) {
+                    return new QuestionTable\Question\CreatedDatetime(
+                        $serviceManager->get('question'),
+                        $serviceManager->get(QuestionTable\Question::class)
+                    );
+                },
                 QuestionTable\Question\DeletedCreatedDatetime::class => function ($serviceManager) {
                     return new QuestionTable\Question\DeletedCreatedDatetime(
                         $serviceManager->get('question'),
