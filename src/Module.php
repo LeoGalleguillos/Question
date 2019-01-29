@@ -282,6 +282,11 @@ class Module
                         $serviceManager->get(QuestionTable\Question\SubjectDeletedViewsBrowser::class)
                     );
                 },
+                QuestionService\Question\Questions\Subject\NumberOfPages::class => function ($sm) {
+                    return new QuestionService\Question\Questions\Subject\NumberOfPages(
+                        $sm->get(QuestionTable\Question\SubjectDeletedViewsBrowser::class)
+                    );
+                },
                 QuestionService\Question\Questions\YearMonth::class => function ($serviceManager) {
                     return new QuestionService\Question\Questions\YearMonth(
                         $serviceManager->get(QuestionFactory\Question::class),
