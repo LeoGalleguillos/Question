@@ -16,6 +16,7 @@ CREATE TABLE `question` (
     `deleted_reason` varchar(255) default null,
     PRIMARY KEY (`question_id`),
     KEY `user_id` (`user_id`),
+    KEY `subject_deleted_views_browser` (`subject`, `deleted`, `views_browser`),
     KEY `ip` (`ip`),
     KEY `created_deleted_views` (`created`, `deleted`, `views`),
     KEY `created_deleted_views_browser` (`created`, `deleted`, `views_browser`),
