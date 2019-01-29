@@ -17,6 +17,23 @@ class SubjectDeletedViewsBrowser
         $this->questionTable = $questionTable;
     }
 
+    public function selectCountWhereSubjectEqualsAndDeletedIsNull(
+        string $subject
+    ): int {
+        $sql = '
+             SELECT COUNT(*) AS `count`
+              FROM `question`
+             WHERE `question`.`subject` = ?
+               AND `question`.`deleted` IS NULL
+                 ;
+        ';
+        $parameters = [
+            $subject,
+        ];
+        $array = $this->adapter->query($sql)->execute($parameters)->current();
+        return (int) $array['count'];
+    }
+
     public function selectWhereSubjectEqualsAndDeletedIsNullOrderByViewsBrowser(
         string $subject,
         int $limitOffset,
