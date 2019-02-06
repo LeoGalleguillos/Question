@@ -478,9 +478,10 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\Subject::class => function ($serviceManager) {
+                QuestionTable\Question\Subject::class => function ($sm) {
                     return new QuestionTable\Question\Subject(
-                        $serviceManager->get('question')
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
                 QuestionTable\Question\SubjectDeletedViewsBrowser::class => function ($sm) {
