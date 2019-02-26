@@ -26,6 +26,12 @@ class SubjectTest extends TableTestCase
         $this->createTable('question');
     }
 
+    public function testSelectSubjectCount()
+    {
+        $generator = $this->questionSubjectTable->selectSubjectCount(50);
+        $this->assertEmpty(iterator_to_array($generator));
+    }
+
     public function testSelectWhereRegExpression()
     {
         $result = $this->questionSubjectTable->selectWhereRegularExpression(

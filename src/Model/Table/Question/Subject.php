@@ -20,6 +20,23 @@ class Subject
         $this->questionTable = $questionTable;
     }
 
+    public function selectSubjectCount(int $limitRowCount): Generator
+    {
+        $sql = "
+            select subject
+                 , count(*) as count
+              from question
+             group
+                by subject
+             order
+                by `count` desc
+             limit $limitRowCount;
+        ";
+        foreach ($this->adapter->query($sql)->execute() as $array) {
+            yield $array;
+        }
+    }
+
     public function selectWhereRegularExpression(
         string $regularExpression,
         int $limitOffset,
