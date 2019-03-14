@@ -118,6 +118,11 @@ class Module
                         $serviceManager->get(QuestionTable\AnswerDeleteQueue::class)
                     );
                 },
+                QuestionService\Answer\Duplicate::class => function ($sm) {
+                    return new QuestionService\Answer\Duplicate(
+                        $sm->get(QuestionTable\Answer\QuestionIdDeletedCreatedDatetime::class)
+                    );
+                },
                 QuestionService\Answer\Edit::class => function ($serviceManager) {
                     return new QuestionService\Answer\Edit(
                         $serviceManager->get('question'),
