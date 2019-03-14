@@ -189,12 +189,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/String.git",
-                "reference": "6414184b1489e73f4b69d2577cce7560bb8a7ebd"
+                "reference": "b12c9262dd89dea958f13e3f1b4f8a5a24708c82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/6414184b1489e73f4b69d2577cce7560bb8a7ebd",
-                "reference": "6414184b1489e73f4b69d2577cce7560bb8a7ebd",
+                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/b12c9262dd89dea958f13e3f1b4f8a5a24708c82",
+                "reference": "b12c9262dd89dea958f13e3f1b4f8a5a24708c82",
                 "shasum": ""
             },
             "require": {
@@ -211,7 +211,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2019-02-14T16:30:54+00:00"
+            "time": "2019-02-26T08:31:18+00:00"
         },
         {
             "name": "leo-galleguillos/superglobal",
@@ -249,12 +249,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/Test.git",
-                "reference": "287da595ae3dd7c75e1a52355453e8ca1c54189a"
+                "reference": "0ea1f67f70d706f08e9e382bea8ae178001e051b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/Test/zipball/287da595ae3dd7c75e1a52355453e8ca1c54189a",
-                "reference": "287da595ae3dd7c75e1a52355453e8ca1c54189a",
+                "url": "https://api.github.com/repos/LeoGalleguillos/Test/zipball/0ea1f67f70d706f08e9e382bea8ae178001e051b",
+                "reference": "0ea1f67f70d706f08e9e382bea8ae178001e051b",
                 "shasum": ""
             },
             "require": {
@@ -272,7 +272,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-11-07T17:47:04+00:00"
+            "time": "2019-03-11T11:59:50+00:00"
         },
         {
             "name": "leo-galleguillos/user",
@@ -280,12 +280,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/User.git",
-                "reference": "c56976541dc09bfc329abe55480fb09e5eb2cc12"
+                "reference": "a3e5cc001cd1074fdc5e3af7250844a9aabd3c44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/c56976541dc09bfc329abe55480fb09e5eb2cc12",
-                "reference": "c56976541dc09bfc329abe55480fb09e5eb2cc12",
+                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/a3e5cc001cd1074fdc5e3af7250844a9aabd3c44",
+                "reference": "a3e5cc001cd1074fdc5e3af7250844a9aabd3c44",
                 "shasum": ""
             },
             "require": {
@@ -306,7 +306,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2019-01-09T23:55:44+00:00"
+            "time": "2019-02-28T18:09:39+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -2600,12 +2600,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-router.git",
-                "reference": "e2151a72e9d00b1962c26469bab50db66cf7ef14"
+                "reference": "5ce5ff9630c4467e3eaf7cf06d78dbb2296a41b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-router/zipball/e2151a72e9d00b1962c26469bab50db66cf7ef14",
-                "reference": "e2151a72e9d00b1962c26469bab50db66cf7ef14",
+                "url": "https://api.github.com/repos/zendframework/zend-router/zipball/5ce5ff9630c4467e3eaf7cf06d78dbb2296a41b4",
+                "reference": "5ce5ff9630c4467e3eaf7cf06d78dbb2296a41b4",
                 "shasum": ""
             },
             "require": {
@@ -2613,7 +2613,7 @@
                 "php": "^5.6 || ^7.0",
                 "zendframework/zend-http": "^2.8.1",
                 "zendframework/zend-servicemanager": "^2.7.8 || ^3.3",
-                "zendframework/zend-stdlib": "^2.7.7 || ^3.1"
+                "zendframework/zend-stdlib": "^3.2.1"
             },
             "conflict": {
                 "zendframework/zend-mvc": "<3.0.0"
@@ -2629,8 +2629,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev",
-                    "dev-develop": "3.3.x-dev"
+                    "dev-master": "3.3.x-dev",
+                    "dev-develop": "4.0.x-dev"
                 },
                 "zf": {
                     "component": "Zend\\Router",
@@ -2654,7 +2654,7 @@
                 "zend",
                 "zf"
             ],
-            "time": "2019-02-09T15:33:11+00:00"
+            "time": "2019-02-26T20:28:40+00:00"
         },
         {
             "name": "zendframework/zend-servicemanager",
@@ -2847,12 +2847,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-uri.git",
-                "reference": "998ea438cc66efaa298c9527ff06895e56187737"
+                "reference": "b511ac0047a5b90ffa4903f8f3d66c326eab8ae0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-uri/zipball/998ea438cc66efaa298c9527ff06895e56187737",
-                "reference": "998ea438cc66efaa298c9527ff06895e56187737",
+                "url": "https://api.github.com/repos/zendframework/zend-uri/zipball/b511ac0047a5b90ffa4903f8f3d66c326eab8ae0",
+                "reference": "b511ac0047a5b90ffa4903f8f3d66c326eab8ae0",
                 "shasum": ""
             },
             "require": {
@@ -2867,8 +2867,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6.x-dev",
-                    "dev-develop": "2.7.x-dev"
+                    "dev-master": "2.7.x-dev",
+                    "dev-develop": "2.8.x-dev"
                 }
             },
             "autoload": {
@@ -2886,7 +2886,7 @@
                 "uri",
                 "zf"
             ],
-            "time": "2018-04-30T13:42:19+00:00"
+            "time": "2019-02-28T20:01:10+00:00"
         },
         {
             "name": "zendframework/zend-validator",
