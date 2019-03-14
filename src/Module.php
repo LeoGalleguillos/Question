@@ -330,6 +330,11 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Answer\QuestionIdDeletedCreatedDatetime::class => function ($sm) {
+                    return new QuestionTable\Answer\QuestionIdDeletedCreatedDatetime(
+                        $sm->get('question')
+                    );
+                },
                 QuestionTable\Answer\AnswerId::class => function ($serviceManager) {
                     return new QuestionTable\Answer\AnswerId(
                         $serviceManager->get('question')
