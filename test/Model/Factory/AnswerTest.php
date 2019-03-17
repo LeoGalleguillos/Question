@@ -36,7 +36,7 @@ class AnswerTest extends TestCase
         $array = [
             'answer_id'   => 1,
             'question_id' => 1,
-            'user_id'     => 1,
+            'user_id'     => null,
             'message'     => 'message',
             'created'     => '2018-03-12 22:12:23',
             'created_ip'  => '5.6.7.8',
@@ -81,7 +81,8 @@ class AnswerTest extends TestCase
                      ->setCreated(new DateTime($array['created']))
                      ->setMessage($array['message'])
                      ->setIp($array['ip'])
-                     ->setQuestionId($array['question_id']);
+                     ->setQuestionId($array['question_id'])
+                     ->setUserId($array['user_id']);
 
         $this->assertEquals(
             $answerEntity,

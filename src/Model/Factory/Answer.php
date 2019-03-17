@@ -57,6 +57,9 @@ class Answer
         if (isset($array['question_id'])) {
             $answerEntity->setQuestionId($array['question_id']);
         }
+        if (isset($array['user_id'])) {
+            $answerEntity->setUserId($array['user_id']);
+        }
 
         return $answerEntity;
     }
