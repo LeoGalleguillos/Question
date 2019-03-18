@@ -52,7 +52,8 @@ class QuestionTest extends TestCase
                        ->setMessage($array['message'])
                        ->setName($array['name'])
                        ->setQuestionId($array['question_id'])
-                       ->setSubject($array['subject']);
+                       ->setSubject($array['subject'])
+                       ->setUserId((int) $array['user_id']);
         $this->assertEquals(
             $questionEntity,
             $this->questionFactory->buildFromArray($array)
