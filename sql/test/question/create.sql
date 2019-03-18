@@ -11,6 +11,8 @@ CREATE TABLE `question` (
     `created_datetime` datetime default null,
     `created_name` varchar(255) default null,
     `created_ip` varchar(45) default null,
+    `modified_datetime` DATETIME DEFAULT NULL,
+    `modified_user_id` INT(10) UNSIGNED DEFAULT NULL,
     `deleted` datetime default null,
     `deleted_user_id` int(10) default null,
     `deleted_reason` varchar(255) default null,
