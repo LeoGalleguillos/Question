@@ -19,10 +19,9 @@ class Edit
 
     public function edit(
         QuestionEntity\Answer $answerEntity,
-        $userId,
         $name,
         $message,
-        $ip,
+        $modifiedUserId,
         $reason
     ) {
         $this->adapter->getDriver()->getConnection()->beginTransaction();
@@ -31,10 +30,9 @@ class Edit
             $answerEntity->getAnswerId()
         );
         $this->answerTable->updateWhereAnswerId(
-            $userId,
             $name,
             $message,
-            $ip,
+            $modifiedUserId,
             $answerEntity->getAnswerId()
         );
         $this->adapter->getDriver()->getConnection()->commit();
