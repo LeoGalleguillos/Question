@@ -234,30 +234,27 @@ class Question
     }
 
     public function updateWhereQuestionId(
-        int $userId,
         string $name = null,
         string $subject,
         string $message,
-        string $ip,
+        int $modifiedUserId,
         int $questionId
     ): bool {
         $sql = '
             UPDATE `question`
-               SET `question`.`user_id` = ?
-                 , `question`.`name` = ?
+               SET `question`.`name` = ?
                  , `question`.`subject` = ?
                  , `question`.`message` = ?
-                 , `question`.`ip` = ?
-                 , `question`.`created` = UTC_TIMESTAMP()
+                 , `question`.`modified_datetime` = UTC_TIMESTAMP()
+                 , `question`.`modified_user_id` = ?
              WHERE `question`.`question_id` = ?
                  ;
         ';
         $parameters = [
-            $userId,
             $name,
             $subject,
             $message,
-            $ip,
+            $modifiedUserId,
             $questionId,
         ];
         return (bool) $this->adapter

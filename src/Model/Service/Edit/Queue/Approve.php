@@ -26,11 +26,10 @@ class Approve
         );
         $this->editService->edit(
             $this->questionFactory->buildFromQuestionId($array['question_id']),
-            $array['user_id'],
             $array['name'],
             $array['subject'],
             $array['message'],
-            $array['ip'],
+            $array['user_id'],
             $array['reason']
         );
         $this->questionEditQueueTable->updateSetQueueStatusIdWhereQuestionEditQueueId(

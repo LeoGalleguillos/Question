@@ -21,11 +21,10 @@ class Edit
 
     public function edit(
         QuestionEntity\Question $questionEntity,
-        $userId,
         $name,
         $subject,
         $message,
-        $ip,
+        $modifiedUserId,
         $reason
     ) {
         $this->adapter->getDriver()->getConnection()->beginTransaction();
@@ -34,11 +33,10 @@ class Edit
             $questionEntity->getQuestionId()
         );
         $this->questionTable->updateWhereQuestionId(
-            $userId,
             $name,
             $subject,
             $message,
-            $ip,
+            $modifiedUserId,
             $questionEntity->getQuestionId()
         );
         $this->adapter->getDriver()->getConnection()->commit();
