@@ -17,6 +17,9 @@ class DeletedCreatedDatetime
         $this->questionTable = $questionTable;
     }
 
+    /**
+     * @yield int
+     */
     public function selectQuestionIdWhereDeletedIsNullOrderByCreatedDatetimeAsc(
         int $limitOffset,
         int $limitRowCount
@@ -35,7 +38,7 @@ class DeletedCreatedDatetime
             $limitRowCount,
         ];
         foreach ($this->adapter->query($sql)->execute($parameters) as $array) {
-            yield $array;
+            yield (int) $array['question_id'];
         }
     }
 
