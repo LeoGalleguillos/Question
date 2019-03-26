@@ -22,13 +22,14 @@ class Year
         $betweenMin = "$year-01-01 05:00:00";
         $betweenMax = ($year + 1) . "-01-01 04:59:59";
 
-        $questionIds = $this->createdDeletedViewsBrowserTable->selectQuestionIdWhereCreatedBetweenAndDeletedIsNull(
-            $betweenMin,
-            $betweenMax
-        );
+        $arrays = $this->createdDeletedViewsBrowserTable
+            ->selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDesc(
+                $dateTimeMin->format('Y-m-d H:i:s'),
+                $dateTimeMax->format('Y-m-d H:i:s')
+            );
 
-        foreach ($questionIds as $questionId) {
-            yield $this->questionFactory->buildFromQuestionId($questionId);
+        foreach ($arrays as $array) {
+            yield $this->questionFactory->buildFromArray($array);
         }
     }
 }

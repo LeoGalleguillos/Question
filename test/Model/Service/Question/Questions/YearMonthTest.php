@@ -26,16 +26,16 @@ class YearMonthTest extends TestCase
     public function testGetQuestions()
     {
         $this->createdDeletedViewsBrowserTableMock
-            ->method('selectQuestionIdWhereCreatedBetweenAndDeletedIsNull')
+            ->method('selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDesc')
             ->will(
                 $this->onConsecutiveCalls(
-                    $this->yieldQuestionIds(),
-                    $this->yieldQuestionIds2()
+                    $this->yieldArrays(),
+                    $this->yieldArrays2()
                 )
             );
         $this->createdDeletedViewsBrowserTableMock
             ->expects($this->exactly(2))
-            ->method('selectQuestionIdWhereCreatedBetweenAndDeletedIsNull')
+            ->method('selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDesc')
             ->withConsecutive(
             ['2017-07-01 04:00:00', '2017-08-01 03:59:59'],
             ['2006-11-01 05:00:00', '2006-12-01 04:59:59']
@@ -54,17 +54,17 @@ class YearMonthTest extends TestCase
         iterator_to_array($generator);
     }
 
-    protected function yieldQuestionIds()
+    protected function yieldArrays()
     {
-        yield 1;
-        yield 22;
-        yield 333;
+        yield [];
+        yield [];
+        yield [];
     }
 
-    protected function yieldQuestionIds2()
+    protected function yieldArrays2()
     {
-        yield 1;
-        yield 22;
-        yield 333;
+        yield [];
+        yield [];
+        yield [];
     }
 }
