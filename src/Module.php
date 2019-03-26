@@ -292,16 +292,22 @@ class Module
                         $sm->get(QuestionTable\Question\SubjectDeletedViewsBrowser::class)
                     );
                 },
+                QuestionService\Question\Questions\Year::class => function ($serviceManager) {
+                    return new QuestionService\Question\Questions\Year(
+                        $serviceManager->get(QuestionFactory\Question::class),
+                        $serviceManager->get(QuestionTable\Question\CreatedDeletedViewsBrowser::class)
+                    );
+                },
                 QuestionService\Question\Questions\YearMonth::class => function ($serviceManager) {
                     return new QuestionService\Question\Questions\YearMonth(
                         $serviceManager->get(QuestionFactory\Question::class),
                         $serviceManager->get(QuestionTable\Question\CreatedDeletedViewsBrowser::class)
                     );
                 },
-                QuestionService\Question\Questions\Year::class => function ($serviceManager) {
-                    return new QuestionService\Question\Questions\Year(
-                        $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionTable\Question\CreatedDeletedViewsBrowser::class)
+                QuestionService\Question\Questions\YearMonthDay::class => function ($sm) {
+                    return new QuestionService\Question\Questions\YearMonthDay(
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question\CreatedDeletedViewsBrowser::class)
                     );
                 },
                 QuestionService\Question\RootRelativeUrl::class => function ($serviceManager) {
