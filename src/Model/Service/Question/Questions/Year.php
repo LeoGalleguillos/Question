@@ -24,8 +24,8 @@ class Year
 
         $arrays = $this->createdDeletedViewsBrowserTable
             ->selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDesc(
-                $dateTimeMin->format('Y-m-d H:i:s'),
-                $dateTimeMax->format('Y-m-d H:i:s')
+                $betweenMin,
+                $betweenMax
             );
 
         foreach ($arrays as $array) {
