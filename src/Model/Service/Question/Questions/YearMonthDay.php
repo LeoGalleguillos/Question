@@ -35,13 +35,14 @@ class YearMonthDay
         $dateTimeMax->add(new DateInterval('P1D'))
             ->sub(new DateInterval('PT1S'));
 
-        $questionIds = $this->createdDeletedViewsBrowserTable->selectQuestionIdWhereCreatedBetweenAndDeletedIsNull(
-            $dateTimeMin->format('Y-m-d H:i:s'),
-            $dateTimeMax->format('Y-m-d H:i:s')
-        );
+        $arrays = $this->createdDeletedViewsBrowserTable
+            ->selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDesc(
+                $dateTimeMin->format('Y-m-d H:i:s'),
+                $dateTimeMax->format('Y-m-d H:i:s')
+            );
 
-        foreach ($questionIds as $questionId) {
-            yield $this->questionFactory->buildFromQuestionId($questionId);
+        foreach ($arrays as $array) {
+            yield $this->questionFactory->buildFromArray($array);
         }
     }
 }
