@@ -52,6 +52,10 @@ class CreatedDeletedViewsBrowser
              . '
 
               FROM `question`
+
+             FORCE
+             INDEX (`created_deleted_views_browser`)
+
              WHERE `created` between ? and ?
                AND `deleted` IS NULL
 

@@ -26,7 +26,7 @@ class YearMonthTest extends TestCase
     public function testGetQuestions()
     {
         $this->createdDeletedViewsBrowserTableMock
-            ->method('selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDesc')
+            ->method('selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDescLimit100')
             ->will(
                 $this->onConsecutiveCalls(
                     $this->yieldArrays(),
@@ -35,7 +35,7 @@ class YearMonthTest extends TestCase
             );
         $this->createdDeletedViewsBrowserTableMock
             ->expects($this->exactly(2))
-            ->method('selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDesc')
+            ->method('selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDescLimit100')
             ->withConsecutive(
             ['2017-07-01 04:00:00', '2017-08-01 03:59:59'],
             ['2006-11-01 05:00:00', '2006-12-01 04:59:59']
