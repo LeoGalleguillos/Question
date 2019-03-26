@@ -37,7 +37,7 @@ class YearMonth
         $dateTimeMax->setTimezone(new DateTimeZone('UTC'));
 
         $arrays = $this->createdDeletedViewsBrowserTable
-            ->selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDesc(
+            ->selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDescLimit100(
                 $dateTimeMin->format('Y-m-d H:i:s'),
                 $dateTimeMax->format('Y-m-d H:i:s')
             );

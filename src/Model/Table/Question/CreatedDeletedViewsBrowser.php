@@ -43,4 +43,30 @@ class CreatedDeletedViewsBrowser
             yield $array;
         }
     }
+
+    public function selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDescLimit100(
+        string $betweenMin,
+        string $betweenMax
+    ): Generator {
+        $sql = $this->questionTable->getSelect()
+             . '
+
+              FROM `question`
+             WHERE `created` between ? and ?
+               AND `deleted` IS NULL
+
+             ORDER
+                BY `views_browser` DESC
+
+             LIMIT 100
+                 ;
+        ';
+        $parameters = [
+            $betweenMin,
+            $betweenMax,
+        ];
+        foreach ($this->adapter->query($sql)->execute($parameters) as $array) {
+            yield $array;
+        }
+    }
 }

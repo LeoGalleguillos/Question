@@ -23,7 +23,7 @@ class Year
         $betweenMax = ($year + 1) . "-01-01 04:59:59";
 
         $arrays = $this->createdDeletedViewsBrowserTable
-            ->selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDesc(
+            ->selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDescLimit100(
                 $betweenMin,
                 $betweenMax
             );
