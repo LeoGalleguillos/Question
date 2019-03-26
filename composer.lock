@@ -280,12 +280,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/User.git",
-                "reference": "c693cce95236820d5517dc4ae26bd25fb2f84646"
+                "reference": "fc485fc38838b2e155ba5e472a5ecb58ce62535b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/c693cce95236820d5517dc4ae26bd25fb2f84646",
-                "reference": "c693cce95236820d5517dc4ae26bd25fb2f84646",
+                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/fc485fc38838b2e155ba5e472a5ecb58ce62535b",
+                "reference": "fc485fc38838b2e155ba5e472a5ecb58ce62535b",
                 "shasum": ""
             },
             "require": {
@@ -306,7 +306,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2019-03-18T12:16:50+00:00"
+            "time": "2019-03-22T15:25:35+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -1920,12 +1920,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-cache.git",
-                "reference": "1e9b57c9f1a213811a53155419e00244db95b34c"
+                "reference": "2ab7fac923334af7846c302062e706d7d8c2ec9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-cache/zipball/1e9b57c9f1a213811a53155419e00244db95b34c",
-                "reference": "1e9b57c9f1a213811a53155419e00244db95b34c",
+                "url": "https://api.github.com/repos/zendframework/zend-cache/zipball/2ab7fac923334af7846c302062e706d7d8c2ec9b",
+                "reference": "2ab7fac923334af7846c302062e706d7d8c2ec9b",
                 "shasum": ""
             },
             "require": {
@@ -1995,7 +1995,7 @@
                 "psr-6",
                 "zf"
             ],
-            "time": "2018-05-01T22:00:09+00:00"
+            "time": "2019-03-26T14:21:30+00:00"
         },
         {
             "name": "zendframework/zend-config",
