@@ -26,13 +26,13 @@ class YearMonthDay
         $monthPadded = sprintf('%02d', $month);
         $dayPadded   = sprintf('%02d', $day);
 
-        $dateTime = new DateTime(
+        $dateTimeMin = new DateTime(
             "$year-$month-$day",
             new DateTimeZone('America/New_York')
         );
-        $dateTime->setTimezone(new DateTimeZone('UTC'));
-        $dateTime2 = clone($dateTime);
-        $dateTime2->add(new DateInterval('P1D'))
+        $dateTimeMin->setTimezone(new DateTimeZone('UTC'));
+        $dateTimeMax = clone($dateTimeMin);
+        $dateTimeMax->add(new DateInterval('P1D'))
             ->sub(new DateInterval('PT1S'));
 
         $questionIds = $this->createdDeletedViewsBrowserTable->selectQuestionIdWhereCreatedBetweenAndDeletedIsNull(
