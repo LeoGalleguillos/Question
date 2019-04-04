@@ -30,7 +30,7 @@ class QuestionIdDeletedCreatedDatetime
         ';
         $parameters = [
             $questionId,
-            $createdDateTime->format('Y-m-d h:i:s'),
+            $createdDateTime->format('Y-m-d H:i:s'),
             $message,
         ];
         $array = $this->adapter->query($sql)->execute($parameters)->current();
