@@ -256,6 +256,12 @@ class Module
                         $serviceManager->get(QuestionTable\Question\DeletedCreatedDatetime::class)
                     );
                 },
+                QuestionService\Question\Questions\MostPopular\CreatedName::class => function ($serviceManager) {
+                    return new QuestionService\Question\Questions\MostPopular\CreatedName(
+                        $serviceManager->get(QuestionFactory\Question::class),
+                        $serviceManager->get(QuestionTable\Question\CreatedNameDeletedViewsBrowser::class)
+                    );
+                },
                 QuestionService\Question\Questions\Newest\CreatedName::class => function ($serviceManager) {
                     return new QuestionService\Question\Questions\Newest\CreatedName(
                         $serviceManager->get(QuestionFactory\Question::class),
