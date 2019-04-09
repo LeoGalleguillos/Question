@@ -23,6 +23,7 @@ CREATE TABLE `question` (
     KEY `created_deleted_views` (`created`, `deleted`, `views`),
     KEY `created_deleted_views_browser` (`created`, `deleted`, `views_browser`),
     KEY `created_name_deleted_created_datetime` (`created_name`, `deleted`, `created_datetime`),
+    KEY `created_name_deleted_views_browser` (`created_name`, `deleted`, `views_browser`),
     KEY `created_ip_created_datetime` (`created_ip`, `created_datetime`),
     KEY `deleted_created_datetime` (`deleted`, `created_datetime`),
     KEY `deleted_user_id_deleted` (`deleted_user_id`, `deleted`)
