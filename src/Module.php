@@ -460,6 +460,12 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionTable\Question\CreatedNameDeletedViewsBrowser::class => function ($serviceManager) {
+                    return new QuestionTable\Question\CreatedNameDeletedViewsBrowser(
+                        $serviceManager->get('question'),
+                        $serviceManager->get(QuestionTable\Question::class)
+                    );
+                },
                 QuestionTable\Question\Deleted::class => function ($serviceManager) {
                     return new QuestionTable\Question\Deleted(
                         $serviceManager->get('question'),
