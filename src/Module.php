@@ -378,6 +378,12 @@ class Module
                         $serviceManager->get('question')
                     );
                 },
+                QuestionTable\Answer\CreatedNameDeletedCreatedDatetime::class => function ($serviceManager) {
+                    return new QuestionTable\Answer\CreatedNameDeletedCreatedDatetime(
+                        $serviceManager->get('question'),
+                        $serviceManager->get(QuestionTable\Answer::class)
+                    );
+                },
                 QuestionTable\Answer\Deleted::class => function ($serviceManager) {
                     return new QuestionTable\Answer\Deleted(
                         $serviceManager->get('question'),
@@ -429,6 +435,12 @@ class Module
                 },
                 QuestionTable\Question\CreatedDatetime::class => function ($serviceManager) {
                     return new QuestionTable\Question\CreatedDatetime(
+                        $serviceManager->get('question'),
+                        $serviceManager->get(QuestionTable\Question::class)
+                    );
+                },
+                QuestionTable\Question\CreatedNameDeletedCreatedDatetime::class => function ($serviceManager) {
+                    return new QuestionTable\Question\CreatedNameDeletedCreatedDatetime(
                         $serviceManager->get('question'),
                         $serviceManager->get(QuestionTable\Question::class)
                     );
