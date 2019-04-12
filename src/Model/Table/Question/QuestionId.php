@@ -33,6 +33,26 @@ class QuestionId
             ->getAffectedRows();
     }
 
+    public function updateSetCreatedNameWhereQuestionId(
+        string $createdName,
+        int $questionId
+    ): int {
+        $sql = '
+            UPDATE `question`
+               SET `question`.`created_name` = ?
+             WHERE `question`.`question_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $createdName,
+            $questionId,
+        ];
+        return (int) $this->adapter
+            ->query($sql)
+            ->execute($parameters)
+            ->getAffectedRows();
+    }
+
     public function updateSetViewsBrowserWhereQuestionId(
         int $viewsBrowser,
         int $questionId
