@@ -34,4 +34,24 @@ class AnswerId
                           ->execute($parameters)
                           ->getAffectedRows();
     }
+
+    public function updateSetCreatedNameWhereAnswerId(
+        string $createdName,
+        int $answerId
+    ): int {
+        $sql = '
+            UPDATE `answer`
+               SET `answer`.`created_name` = ?
+             WHERE `answer`.`answer_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $createdName,
+            $answerId,
+        ];
+        return (int) $this->adapter
+            ->query($sql)
+            ->execute($parameters)
+            ->getAffectedRows();
+    }
 }
