@@ -1,5 +1,5 @@
 <?php
-namespace LeoGalleguillos\Question\Model\Service;
+namespace LeoGalleguillos\Question\Model\Service\Question;
 
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;

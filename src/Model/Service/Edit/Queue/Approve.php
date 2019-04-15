@@ -10,7 +10,7 @@ class Approve
 {
     public function __construct(
         QuestionFactory\Question $questionFactory,
-        QuestionService\Edit $editService,
+        QuestionService\Question\Edit $editService,
         QuestionTable\QuestionEditQueue $questionEditQueueTable
     ) {
         $this->questionFactory        = $questionFactory;

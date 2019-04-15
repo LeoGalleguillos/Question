@@ -165,8 +165,8 @@ class Module
                         $serviceManager->get(QuestionTable\Answer\AnswerId::class)
                     );
                 },
-                QuestionService\Edit::class => function ($serviceManager) {
-                    return new QuestionService\Edit(
+                QuestionService\Question\Edit::class => function ($serviceManager) {
+                    return new QuestionService\Question\Edit(
                         $serviceManager->get('question'),
                         $serviceManager->get(QuestionTable\Question::class),
                         $serviceManager->get(QuestionTable\QuestionHistory::class)
@@ -180,7 +180,7 @@ class Module
                 QuestionService\Edit\Queue\Approve::class => function ($serviceManager) {
                     return new QuestionService\Edit\Queue\Approve(
                         $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionService\Edit::class),
+                        $serviceManager->get(QuestionService\Question\Edit::class),
                         $serviceManager->get(QuestionTable\QuestionEditQueue::class)
                     );
                 },
