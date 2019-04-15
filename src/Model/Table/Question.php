@@ -234,7 +234,6 @@ class Question
     }
 
     public function updateWhereQuestionId(
-        string $name = null,
         string $subject,
         string $message,
         int $modifiedUserId,
@@ -242,8 +241,7 @@ class Question
     ): bool {
         $sql = '
             UPDATE `question`
-               SET `question`.`name` = ?
-                 , `question`.`subject` = ?
+               SET `question`.`subject` = ?
                  , `question`.`message` = ?
                  , `question`.`modified_datetime` = UTC_TIMESTAMP()
                  , `question`.`modified_user_id` = ?
@@ -251,15 +249,14 @@ class Question
                  ;
         ';
         $parameters = [
-            $name,
             $subject,
             $message,
             $modifiedUserId,
             $questionId,
         ];
-        return (bool) $this->adapter
-                           ->query($sql)
-                           ->execute($parameters)
-                           ->getAffectedRows();
+        return (int) $this->adapter
+            ->query($sql)
+            ->execute($parameters)
+            ->getAffectedRows();
     }
 }
