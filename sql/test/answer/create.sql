@@ -12,6 +12,7 @@ CREATE TABLE `answer` (
     `modified_datetime` DATETIME DEFAULT NULL,
     `modified_user_id` INT(10) UNSIGNED DEFAULT NULL,
     `deleted` datetime default null,
+    `deleted_datetime` datetime default null,
     `deleted_user_id` int(10) default null,
     `deleted_reason` varchar(255) default null,
     PRIMARY KEY (`answer_id`),
