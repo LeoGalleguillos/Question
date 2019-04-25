@@ -5,7 +5,7 @@ use Generator;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use Zend\Db\Adapter\Adapter;
 
-class CreatedDatetime
+class CreatedDatetimeDeleted
 {
     protected $adapter;
 
@@ -17,22 +17,23 @@ class CreatedDatetime
         $this->questionTable = $questionTable;
     }
 
-    public function selectWhereCreatedIsBetweenAndDeletedIsNull(
-        string $createdMin,
-        string $createdMax
+    public function selectWhereCreatedDatetimeIsBetweenAndDeletedIsNull(
+        string $createdDatetimeMin,
+        string $createdDatetimeMax
     ): Generator {
         $sql = $this->questionTable->getSelect()
              . '
               FROM `question`
-             WHERE `question`.`created` >= ?
-               AND `question`.`created` < ?
+             WHERE `question`.`created_datetime` >= ?
+               AND `question`.`created_datetime` < ?
+               AND `question`.`deleted` IS NULL
              ORDER
-                BY `question`.`created` ASC
+                BY `question`.`created_datetime` ASC
                  ;
         ';
         $parameters = [
-            $createdMin,
-            $createdMax,
+            $createdDatetimeMin,
+            $createdDatetimeMax,
         ];
         foreach ($this->adapter->query($sql)->execute($parameters) as $array) {
             yield $array;

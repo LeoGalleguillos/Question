@@ -433,10 +433,10 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\CreatedDatetime::class => function ($serviceManager) {
-                    return new QuestionTable\Question\CreatedDatetime(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(QuestionTable\Question::class)
+                QuestionTable\Question\CreatedDatetimeDeleted::class => function ($sm) {
+                    return new QuestionTable\Question\CreatedDatetimeDeleted(
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
                 QuestionTable\Question\CreatedNameDeletedCreatedDatetime::class => function ($serviceManager) {
