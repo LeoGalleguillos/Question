@@ -189,12 +189,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/String.git",
-                "reference": "b12c9262dd89dea958f13e3f1b4f8a5a24708c82"
+                "reference": "7daafc404cec65cca859e469dc1c85111a76ef07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/b12c9262dd89dea958f13e3f1b4f8a5a24708c82",
-                "reference": "b12c9262dd89dea958f13e3f1b4f8a5a24708c82",
+                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/7daafc404cec65cca859e469dc1c85111a76ef07",
+                "reference": "7daafc404cec65cca859e469dc1c85111a76ef07",
                 "shasum": ""
             },
             "require": {
@@ -211,7 +211,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2019-02-26T08:31:18+00:00"
+            "time": "2019-04-10T20:34:32+00:00"
         },
         {
             "name": "leo-galleguillos/superglobal",
@@ -280,18 +280,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/User.git",
-                "reference": "fc485fc38838b2e155ba5e472a5ecb58ce62535b"
+                "reference": "9917ecfe85ccf06f67815928858b24de89e1b611"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/fc485fc38838b2e155ba5e472a5ecb58ce62535b",
-                "reference": "fc485fc38838b2e155ba5e472a5ecb58ce62535b",
+                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/9917ecfe85ccf06f67815928858b24de89e1b611",
+                "reference": "9917ecfe85ccf06f67815928858b24de89e1b611",
                 "shasum": ""
             },
             "require": {
                 "leo-galleguillos/flash": "dev-master",
                 "leo-galleguillos/re-captcha": "dev-master",
                 "leo-galleguillos/string": "dev-master",
+                "leo-galleguillos/test": "dev-master",
                 "zendframework/zend-db": "^2.9",
                 "zendframework/zend-test": "^3.1"
             },
@@ -306,7 +307,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2019-03-22T15:25:35+00:00"
+            "time": "2019-04-24T19:55:49+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -1825,16 +1826,16 @@
         },
         {
             "name": "theseer/tokenizer",
-            "version": "1.1.0",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theseer/tokenizer.git",
-                "reference": "cb2f008f3f05af2893a87208fe6a6c4985483f8b"
+                "reference": "1c42705be2b6c1de5904f8afacef5895cab44bf8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/cb2f008f3f05af2893a87208fe6a6c4985483f8b",
-                "reference": "cb2f008f3f05af2893a87208fe6a6c4985483f8b",
+                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/1c42705be2b6c1de5904f8afacef5895cab44bf8",
+                "reference": "1c42705be2b6c1de5904f8afacef5895cab44bf8",
                 "shasum": ""
             },
             "require": {
@@ -1861,7 +1862,7 @@
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
-            "time": "2017-04-07T12:08:54+00:00"
+            "time": "2019-04-04T09:56:43+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -2264,12 +2265,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-eventmanager.git",
-                "reference": "27eb1489df583456fac8c77c95059dde09ff38d8"
+                "reference": "627f3e821fbfd6cebf9cccaa017b7fe7ae13c05b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-eventmanager/zipball/27eb1489df583456fac8c77c95059dde09ff38d8",
-                "reference": "27eb1489df583456fac8c77c95059dde09ff38d8",
+                "url": "https://api.github.com/repos/zendframework/zend-eventmanager/zipball/627f3e821fbfd6cebf9cccaa017b7fe7ae13c05b",
+                "reference": "627f3e821fbfd6cebf9cccaa017b7fe7ae13c05b",
                 "shasum": ""
             },
             "require": {
@@ -2310,7 +2311,7 @@
                 "events",
                 "zf2"
             ],
-            "time": "2018-04-25T15:35:22+00:00"
+            "time": "2019-04-10T14:21:50+00:00"
         },
         {
             "name": "zendframework/zend-http",
@@ -2894,12 +2895,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-validator.git",
-                "reference": "85554f135963fcaf4dd2dda08c5e1da0cf54dac6"
+                "reference": "4625d36e04a8ab363322a20359a0c16b5ec66091"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-validator/zipball/85554f135963fcaf4dd2dda08c5e1da0cf54dac6",
-                "reference": "85554f135963fcaf4dd2dda08c5e1da0cf54dac6",
+                "url": "https://api.github.com/repos/zendframework/zend-validator/zipball/4625d36e04a8ab363322a20359a0c16b5ec66091",
+                "reference": "4625d36e04a8ab363322a20359a0c16b5ec66091",
                 "shasum": ""
             },
             "require": {
@@ -2959,7 +2960,7 @@
                 "validator",
                 "zf2"
             ],
-            "time": "2019-01-30T14:27:30+00:00"
+            "time": "2019-04-15T15:56:47+00:00"
         },
         {
             "name": "zendframework/zend-view",
