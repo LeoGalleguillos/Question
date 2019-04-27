@@ -20,7 +20,9 @@ class LinkToQuestionHtml extends AbstractHelper
 
     public function __invoke(QuestionEntity\Question $questionEntity)
     {
-        $rru = $rootRelativeUrlService->getRootRelativeUrl($questionEntity);
+        $rru = $this->rootRelativeUrlService->getRootRelativeUrl(
+            $questionEntity
+        );
 
         $subjectEscaped = $this->escapeService->escape(
             $questionEntity->getSubject()
