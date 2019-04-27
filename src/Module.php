@@ -19,6 +19,7 @@ class Module
             'view_helpers' => [
                 'aliases' => [
                     'getAnswerFactory' => QuestionHelper\Answer\Factory::class,
+                    'getLinkToQuestionHtml' => QuestionHelper\Question\Subject\LinkToQuestionHtml::class,
                     'getQuestionFactory' => QuestionHelper\Question\Factory::class,
                     'getQuestionFromAnswer' => QuestionHelper\QuestionFromAnswer::class,
                     'getQuestionRootRelativeUrl' => QuestionHelper\Question\RootRelativeUrl::class,
@@ -39,6 +40,14 @@ class Module
                     QuestionHelper\Question\RootRelativeUrl::class => function($serviceManager) {
                         return new QuestionHelper\Question\RootRelativeUrl(
                             $serviceManager->get(QuestionService\Question\RootRelativeUrl::class)
+                        );
+                    },
+                    QuestionHelper\Question\Subject\LinkToQuestionHtml::class => function($sm) {
+                        return new QuestionHelper\Question\Subject\LinkToQuestionHtml(
+                            $sm->get(QuestionService\Question\RootRelativeUrl::class),
+                            $sm->get(StringService\CleanUpSpaces::class),
+                            $sm->get(StringService\Escape::class)
+
                         );
                     },
                     QuestionHelper\Question\Title::class => function($serviceManager) {
