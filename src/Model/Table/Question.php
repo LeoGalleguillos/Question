@@ -3,6 +3,7 @@ namespace LeoGalleguillos\Question\Model\Table;
 
 use Generator;
 use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
+use TypeError;
 use Zend\Db\Adapter\Adapter;
 
 class Question
@@ -181,19 +182,18 @@ class Question
      *
      * @param int $questionId
      * @return array
+     * @throws TypeError
      */
-    public function selectWhereQuestionId(int $questionId) : array
+    public function selectWhereQuestionId(int $questionId): array
     {
         $sql = $this->getSelect()
              . '
               FROM `question`
-             WHERE `question`.`question_id` = :questionId
-             ORDER
-                BY `question`.`created` ASC
+             WHERE `question`.`question_id` = ?
                  ;
         ';
         $parameters = [
-            'questionId' => $questionId,
+            $questionId,
         ];
         return $this->adapter->query($sql)->execute($parameters)->current();
     }

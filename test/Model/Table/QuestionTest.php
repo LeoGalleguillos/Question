@@ -98,12 +98,30 @@ class QuestionTest extends TableTestCase
     public function testSelectWhereQuestionId()
     {
         $this->questionTable->insert(
-            1, 'name', 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4'
+            3,
+            'name',
+            'this is the subject',
+            'message',
+            '1.2.3.4',
+            'name',
+            '1.2.3.4'
         );
         $array = $this->questionTable->selectWhereQuestionId(1);
         $this->assertInternalType(
             'array',
             $array
+        );
+        $this->assertSame(
+            '1',
+            $array['question_id']
+        );
+        $this->assertSame(
+            '3',
+            $array['user_id']
+        );
+        $this->assertSame(
+            'this is the subject',
+            $array['subject']
         );
     }
 
