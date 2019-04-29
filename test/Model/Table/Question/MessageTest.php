@@ -4,56 +4,25 @@ namespace LeoGalleguillos\QuestionTest\Model\Table\Question;
 use Generator;
 use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\QuestionTest\TableTestCase;
+use LeoGalleguillos\Test\TableTestCase;
 use Zend\Db\Adapter\Adapter;
 use PHPUnit\Framework\TestCase;
 
 class MessageTest extends TableTestCase
 {
-    /**
-     * @var string
-     */
-    protected $sqlPath;
-
     protected function setUp()
     {
-        $this->sqlPath = $_SERVER['PWD'] . '/sql/leogalle_test/question/';
-
-        $configArray   = require($_SERVER['PWD'] . '/config/autoload/local.php');
-        $configArray   = $configArray['db']['adapters']['leogalle_test'];
-        $this->adapter = new Adapter($configArray);
-
         $this->questionTable = new QuestionTable\Question(
-            $this->adapter,
+            $this->getAdapter(),
             new MemcachedService\Memcached()
         );
         $this->questionMessageTable = new QuestionTable\Question\Message(
-            $this->adapter,
+            $this->getAdapter(),
             $this->questionTable
         );
 
-        $this->dropTable();
-        $this->createTable();
-    }
-
-    protected function dropTable()
-    {
-        $sql = file_get_contents($this->sqlPath . 'drop.sql');
-        $result = $this->adapter->query($sql)->execute();
-    }
-
-    protected function createTable()
-    {
-        $sql = file_get_contents($this->sqlPath . 'create.sql');
-        $result = $this->adapter->query($sql)->execute();
-    }
-
-    public function testInitialize()
-    {
-        $this->assertInstanceOf(
-            QuestionTable\Question\Message::class,
-            $this->questionMessageTable
-        );
+        $this->dropTable('question');
+        $this->createTable('question');
     }
 
     public function testSelectWhereMessageRegularExpression()
