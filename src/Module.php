@@ -540,11 +540,6 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\QuestionBrowserLog::class => function ($serviceManager) {
-                    return new QuestionTable\QuestionBrowserLog(
-                        $serviceManager->get('question')
-                    );
-                },
                 QuestionTable\QuestionDeleteQueue::class => function ($serviceManager) {
                     return new QuestionTable\QuestionDeleteQueue(
                         $serviceManager->get('question')
