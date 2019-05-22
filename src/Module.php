@@ -181,20 +181,20 @@ class Module
                         $serviceManager->get(QuestionTable\QuestionHistory::class)
                     );
                 },
-                QuestionService\Edit\Queue::class => function ($serviceManager) {
-                    return new QuestionService\Edit\Queue(
+                QuestionService\Question\Edit\Queue::class => function ($serviceManager) {
+                    return new QuestionService\Question\Edit\Queue(
                         $serviceManager->get(QuestionTable\QuestionEditQueue::class)
                     );
                 },
-                QuestionService\Edit\Queue\Approve::class => function ($serviceManager) {
-                    return new QuestionService\Edit\Queue\Approve(
+                QuestionService\Question\Edit\Queue\Approve::class => function ($serviceManager) {
+                    return new QuestionService\Question\Edit\Queue\Approve(
                         $serviceManager->get(QuestionFactory\Question::class),
                         $serviceManager->get(QuestionService\Question\Edit::class),
                         $serviceManager->get(QuestionTable\QuestionEditQueue::class)
                     );
                 },
-                QuestionService\Edit\Queue\Pending::class => function ($serviceManager) {
-                    return new QuestionService\Edit\Queue\Pending(
+                QuestionService\Question\Edit\Queue\Pending::class => function ($serviceManager) {
+                    return new QuestionService\Question\Edit\Queue\Pending(
                         $serviceManager->get(QuestionFactory\Question::class),
                         $serviceManager->get(QuestionTable\QuestionEditQueue::class)
                     );

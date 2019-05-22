@@ -1,5 +1,5 @@
 <?php
-namespace LeoGalleguillos\Question\Model\Service\Edit\Queue;
+namespace LeoGalleguillos\Question\Model\Service\Question\Edit\Queue;
 
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;

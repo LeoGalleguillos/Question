@@ -1,5 +1,5 @@
 <?php
-namespace LeoGalleguillos\Question\Model\Service\Edit;
+namespace LeoGalleguillos\Question\Model\Service\Question\Edit;
 
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
