@@ -30,12 +30,9 @@ class Answer
     ): QuestionEntity\Answer {
         $answerEntity = new QuestionEntity\Answer();
         $answerEntity->setAnswerId($array['answer_id'])
-                     ->setCreated(new DateTime($array['created']))
+                     ->setCreatedDateTime(new DateTime($array['created_datetime']))
                      ->setMessage($array['message']);
 
-        if (isset($array['created_datetime'])) {
-            $answerEntity->setCreatedDateTime(new DateTime($array['created_datetime']));
-        }
         if (isset($array['created_ip'])) {
             $answerEntity->setCreatedIp($array['created_ip']);
         }

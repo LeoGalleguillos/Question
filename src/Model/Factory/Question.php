@@ -29,13 +29,10 @@ class Question
         array $array
     ): QuestionEntity\Question {
         $questionEntity = new QuestionEntity\Question();
-        $questionEntity->setCreated(new DateTime($array['created']))
+        $questionEntity->setCreatedDateTime(new DateTime($array['created_datetime']))
                        ->setQuestionId($array['question_id'])
                        ->setSubject($array['subject']);
 
-        if (isset($array['created_datetime'])) {
-            $questionEntity->setCreatedDateTime(new DateTime($array['created_datetime']));
-        }
         if (isset($array['created_ip'])) {
             $questionEntity->setCreatedIp($array['created_ip']);
         }

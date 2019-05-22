@@ -29,11 +29,11 @@ class QuestionTest extends TestCase
             $this->questionEntity->getUserId()
         );
 
-        $created = new DateTime();
-        $this->questionEntity->setCreated($created);
+        $createdDateTime = new DateTime();
+        $this->questionEntity->setCreatedDateTime($createdDateTime);
         $this->assertSame(
-            $created,
-            $this->questionEntity->getCreated()
+            $createdDateTime,
+            $this->questionEntity->getCreatedDateTime()
         );
 
         $deletedUserId = 123;

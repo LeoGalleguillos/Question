@@ -38,7 +38,7 @@ class AnswerTest extends TestCase
             'question_id' => 1,
             'user_id'     => null,
             'message'     => 'message',
-            'created'     => '2018-03-12 22:12:23',
+            'created_datetime'     => '2018-03-12 22:12:23',
             'created_ip'  => '5.6.7.8',
             'ip'          => '1.2.3.4',
             'deleted'     => '2018-09-18 11:23:05',
@@ -46,7 +46,7 @@ class AnswerTest extends TestCase
 
         $answerEntity = new QuestionEntity\Answer();
         $answerEntity->setAnswerId($array['answer_id'])
-                     ->setCreated(new DateTime($array['created']))
+                     ->setCreatedDateTime(new DateTime($array['created_datetime']))
                      ->setCreatedIp($array['created_ip'])
                      ->setDeleted(new DateTime($array['deleted']))
                      ->setMessage($array['message'])
@@ -67,7 +67,7 @@ class AnswerTest extends TestCase
             'user_id'     => 1,
             'message'     => 'message',
             'ip'          => '1.2.3.4',
-            'created'     => '2018-03-12 22:12:23',
+            'created_datetime'     => '2018-03-12 22:12:23',
         ];
         $this->answerTableMock->method('selectWhereAnswerId')->willReturn(
             $array
@@ -78,7 +78,7 @@ class AnswerTest extends TestCase
 
         $answerEntity = new QuestionEntity\Answer();
         $answerEntity->setAnswerId($array['answer_id'])
-                     ->setCreated(new DateTime($array['created']))
+                     ->setCreatedDateTime(new DateTime($array['created_datetime']))
                      ->setMessage($array['message'])
                      ->setIp($array['ip'])
                      ->setQuestionId($array['question_id'])

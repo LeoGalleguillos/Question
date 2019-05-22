@@ -40,12 +40,12 @@ class QuestionTest extends TestCase
             'subject'     => 'subject',
             'message'     => 'message',
             'ip'          => '1.2.3.4',
-            'created'     => '2018-03-12 22:12:23',
+            'created_datetime'     => '2018-03-12 22:12:23',
             'created_ip'  => '5.6.7.8',
             'deleted'     => '2018-09-17 21:42:45',
         ];
         $questionEntity = new QuestionEntity\Question();
-        $questionEntity->setCreated(new DateTime($array['created']))
+        $questionEntity->setCreatedDateTime(new DateTime($array['created_datetime']))
                        ->setCreatedIp($array['created_ip'])
                        ->setDeleted(new DateTime($array['deleted']))
                        ->setIp($array['ip'])
@@ -65,10 +65,10 @@ class QuestionTest extends TestCase
             'subject'     => 'subject',
             'ip'          => '1.2.3.4',
             'views'       => '123',
-            'created'     => '2018-03-12 22:12:23',
+            'created_datetime'     => '2018-03-12 22:12:23',
         ];
         $questionEntity = new QuestionEntity\Question();
-        $questionEntity->setCreated(new DateTime($array['created']))
+        $questionEntity->setCreatedDateTime(new DateTime($array['created_datetime']))
                        ->setIp($array['ip'])
                        ->setQuestionId($array['question_id'])
                        ->setSubject($array['subject'])
@@ -88,7 +88,7 @@ class QuestionTest extends TestCase
                 'name'        => 'name',
                 'subject'     => 'subject',
                 'message'     => 'message',
-                'created'     => '2018-03-12 22:12:23',
+                'created_datetime'     => '2018-03-12 22:12:23',
                 'ip'          => '1.2.3.4',
                 'views'       => '123',
             ]
@@ -100,7 +100,7 @@ class QuestionTest extends TestCase
                 'name'        => 'name',
                 'subject'     => 'subject',
                 'message'     => 'message',
-                'created'     => '2018-02-12 22:12:23',
+                'created_datetime'     => '2018-02-12 22:12:23',
                 'ip'          => '1.2.3.4',
                 'views'       => '123',
             ]

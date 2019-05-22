@@ -7,7 +7,6 @@ use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 class Question
 {
     protected $answers;
-    protected $created;
     protected $createdDateTime;
     protected $createdIp;
     protected $createdName;
@@ -26,11 +25,6 @@ class Question
     public function getAnswers(): array
     {
         return $this->answers;
-    }
-
-    public function getCreated(): DateTime
-    {
-        return $this->created;
     }
 
     public function getCreatedDateTime(): DateTime
@@ -106,12 +100,6 @@ class Question
     public function setAnswers(array $answers): QuestionEntity\Question
     {
         $this->answers = $answers;
-        return $this;
-    }
-
-    public function setCreated(DateTime $created): QuestionEntity\Question
-    {
-        $this->created = $created;
         return $this;
     }
 

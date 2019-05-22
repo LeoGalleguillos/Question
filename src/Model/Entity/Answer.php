@@ -7,7 +7,6 @@ use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 class Answer
 {
     protected $answerId;
-    protected $created;
     protected $createdDateTime;
     protected $createdIp;
     protected $createdName;
@@ -24,11 +23,6 @@ class Answer
     public function getAnswerId(): int
     {
         return $this->answerId;
-    }
-
-    public function getCreated(): DateTime
-    {
-        return $this->created;
     }
 
     public function getCreatedDateTime(): DateTime
@@ -99,12 +93,6 @@ class Answer
     public function setAnswerId(int $answerId): QuestionEntity\Answer
     {
         $this->answerId = $answerId;
-        return $this;
-    }
-
-    public function setCreated(DateTime $created): QuestionEntity\Answer
-    {
-        $this->created = $created;
         return $this;
     }
 
