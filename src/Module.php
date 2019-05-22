@@ -193,6 +193,11 @@ class Module
                         $serviceManager->get(QuestionTable\QuestionEditQueue::class)
                     );
                 },
+                QuestionService\Question\Edit\Queue\Decline::class => function ($serviceManager) {
+                    return new QuestionService\Question\Edit\Queue\Decline(
+                        $serviceManager->get(QuestionTable\QuestionEditQueue::class)
+                    );
+                },
                 QuestionService\Question\Edit\Queue\Pending::class => function ($serviceManager) {
                     return new QuestionService\Question\Edit\Queue\Pending(
                         $serviceManager->get(QuestionFactory\Question::class),
