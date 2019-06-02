@@ -37,7 +37,6 @@ class Question
                  , `question`.`ip`
                  , `question`.`views`
                  , `question`.`views_browser`
-                 , `question`.`created`
                  , `question`.`created_datetime`
                  , `question`.`created_name`
                  , `question`.`created_ip`
