@@ -102,7 +102,7 @@ class QuestionEditQueue
               FROM `question_edit_queue`
              WHERE `queue_status_id` = ?
              ORDER
-                BY `created` ASC
+                BY `created_datetime` ASC
                  ;
         ';
         $parameters = [
