@@ -5,7 +5,7 @@ use Generator;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use Zend\Db\Adapter\Adapter;
 
-class CreatedDeletedViewsBrowser
+class CreatedDatetimeDeletedViewsBrowser
 {
     /**
      * @var Adapter
@@ -20,7 +20,7 @@ class CreatedDeletedViewsBrowser
         $this->questionTable = $questionTable;
     }
 
-    public function selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDesc(
+    public function selectWhereCreatedDatetimeBetweenAndDeletedIsNullOrderByViewsBrowserDesc(
         string $betweenMin,
         string $betweenMax
     ): Generator {
@@ -28,7 +28,7 @@ class CreatedDeletedViewsBrowser
              . '
 
               FROM `question`
-             WHERE `created` between ? and ?
+             WHERE `created_datetime` between ? and ?
                AND `deleted` IS NULL
 
              ORDER
@@ -44,7 +44,7 @@ class CreatedDeletedViewsBrowser
         }
     }
 
-    public function selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDescLimit100(
+    public function selectWhereCreatedDatetimeBetweenAndDeletedIsNullOrderByViewsBrowserDescLimit100(
         string $betweenMin,
         string $betweenMax
     ): Generator {
@@ -56,7 +56,7 @@ class CreatedDeletedViewsBrowser
              FORCE
              INDEX (`created_deleted_views_browser`)
 
-             WHERE `created` between ? and ?
+             WHERE `created_datetime` between ? and ?
                AND `deleted` IS NULL
 
              ORDER

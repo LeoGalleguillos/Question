@@ -14,28 +14,28 @@ class YearMonthTest extends TestCase
         $this->questionFactoryMock = $this->createMock(
             QuestionFactory\Question::class
         );
-        $this->createdDeletedViewsBrowserTableMock = $this->createMock(
-            QuestionTable\Question\CreatedDeletedViewsBrowser::class
+        $this->createdDatetimeDeletedViewsBrowserTableMock = $this->createMock(
+            QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser::class
         );
         $this->yearMonthService = new QuestionService\Question\Questions\YearMonth(
             $this->questionFactoryMock,
-            $this->createdDeletedViewsBrowserTableMock
+            $this->createdDatetimeDeletedViewsBrowserTableMock
         );
     }
 
     public function testGetQuestions()
     {
-        $this->createdDeletedViewsBrowserTableMock
-            ->method('selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDescLimit100')
+        $this->createdDatetimeDeletedViewsBrowserTableMock
+            ->method('selectWhereCreatedDatetimeBetweenAndDeletedIsNullOrderByViewsBrowserDescLimit100')
             ->will(
                 $this->onConsecutiveCalls(
                     $this->yieldArrays(),
                     $this->yieldArrays2()
                 )
             );
-        $this->createdDeletedViewsBrowserTableMock
+        $this->createdDatetimeDeletedViewsBrowserTableMock
             ->expects($this->exactly(2))
-            ->method('selectWhereCreatedBetweenAndDeletedIsNullOrderByViewsBrowserDescLimit100')
+            ->method('selectWhereCreatedDatetimeBetweenAndDeletedIsNullOrderByViewsBrowserDescLimit100')
             ->withConsecutive(
             ['2017-07-01 04:00:00', '2017-08-01 03:59:59'],
             ['2006-11-01 05:00:00', '2006-12-01 04:59:59']

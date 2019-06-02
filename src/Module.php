@@ -315,19 +315,19 @@ class Module
                 QuestionService\Question\Questions\Year::class => function ($serviceManager) {
                     return new QuestionService\Question\Questions\Year(
                         $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionTable\Question\CreatedDeletedViewsBrowser::class)
+                        $serviceManager->get(QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser::class)
                     );
                 },
                 QuestionService\Question\Questions\YearMonth::class => function ($serviceManager) {
                     return new QuestionService\Question\Questions\YearMonth(
                         $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionTable\Question\CreatedDeletedViewsBrowser::class)
+                        $serviceManager->get(QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser::class)
                     );
                 },
                 QuestionService\Question\Questions\YearMonthDay::class => function ($sm) {
                     return new QuestionService\Question\Questions\YearMonthDay(
                         $sm->get(QuestionFactory\Question::class),
-                        $sm->get(QuestionTable\Question\CreatedDeletedViewsBrowser::class)
+                        $sm->get(QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser::class)
                     );
                 },
                 QuestionService\Question\RootRelativeUrl::class => function ($serviceManager) {
@@ -459,8 +459,8 @@ class Module
                         $serviceManager->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\CreatedDeletedViewsBrowser::class => function ($sm) {
-                    return new QuestionTable\Question\CreatedDeletedViewsBrowser(
+                QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser::class => function ($sm) {
+                    return new QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser(
                         $sm->get('question'),
                         $sm->get(QuestionTable\Question::class)
                     );
