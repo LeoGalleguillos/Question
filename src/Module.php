@@ -27,19 +27,19 @@ class Module
                     'getQuestionUrl' => QuestionHelper\Question\Url::class,
                 ],
                 'factories' => [
-                    QuestionHelper\Answer\Factory::class => function($serviceManager) {
+                    QuestionHelper\Answer\Factory::class => function($sm) {
                         return new QuestionHelper\Answer\Factory(
-                            $serviceManager->get(QuestionFactory\Answer::class)
+                            $sm->get(QuestionFactory\Answer::class)
                         );
                     },
-                    QuestionHelper\Question\Factory::class => function($serviceManager) {
+                    QuestionHelper\Question\Factory::class => function($sm) {
                         return new QuestionHelper\Question\Factory(
-                            $serviceManager->get(QuestionFactory\Question::class)
+                            $sm->get(QuestionFactory\Question::class)
                         );
                     },
-                    QuestionHelper\Question\RootRelativeUrl::class => function($serviceManager) {
+                    QuestionHelper\Question\RootRelativeUrl::class => function($sm) {
                         return new QuestionHelper\Question\RootRelativeUrl(
-                            $serviceManager->get(QuestionService\Question\RootRelativeUrl::class)
+                            $sm->get(QuestionService\Question\RootRelativeUrl::class)
                         );
                     },
                     QuestionHelper\Question\Subject\LinkToQuestionHtml::class => function($sm) {
@@ -50,19 +50,19 @@ class Module
 
                         );
                     },
-                    QuestionHelper\Question\Title::class => function($serviceManager) {
+                    QuestionHelper\Question\Title::class => function($sm) {
                         return new QuestionHelper\Question\Title(
-                            $serviceManager->get(QuestionService\Question\Title::class)
+                            $sm->get(QuestionService\Question\Title::class)
                         );
                     },
-                    QuestionHelper\Question\Url::class => function($serviceManager) {
+                    QuestionHelper\Question\Url::class => function($sm) {
                         return new QuestionHelper\Question\Url(
-                            $serviceManager->get(QuestionService\Question\Url::class)
+                            $sm->get(QuestionService\Question\Url::class)
                         );
                     },
-                    QuestionHelper\QuestionFromAnswer::class => function($serviceManager) {
+                    QuestionHelper\QuestionFromAnswer::class => function($sm) {
                         return new QuestionHelper\QuestionFromAnswer(
-                            $serviceManager->get(QuestionService\QuestionFromAnswer::class)
+                            $sm->get(QuestionService\QuestionFromAnswer::class)
                         );
                     },
                 ],
@@ -74,57 +74,57 @@ class Module
     {
         return [
             'factories' => [
-                QuestionFactory\Answer::class => function ($serviceManager) {
+                QuestionFactory\Answer::class => function ($sm) {
                     return new QuestionFactory\Answer(
-                        $serviceManager->get(QuestionTable\Answer::class)
+                        $sm->get(QuestionTable\Answer::class)
                     );
                 },
-                QuestionFactory\Question::class => function ($serviceManager) {
+                QuestionFactory\Question::class => function ($sm) {
                     return new QuestionFactory\Question(
-                        $serviceManager->get(QuestionTable\Question::class)
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionService\Answer\Answers::class => function ($serviceManager) {
+                QuestionService\Answer\Answers::class => function ($sm) {
                     return new QuestionService\Answer\Answers(
-                        $serviceManager->get(QuestionFactory\Answer::class),
-                        $serviceManager->get(QuestionTable\Answer::class)
+                        $sm->get(QuestionFactory\Answer::class),
+                        $sm->get(QuestionTable\Answer::class)
                     );
                 },
-                QuestionService\Answer\Answers\Newest\CreatedName::class => function ($serviceManager) {
+                QuestionService\Answer\Answers\Newest\CreatedName::class => function ($sm) {
                     return new QuestionService\Answer\Answers\Newest\CreatedName(
-                        $serviceManager->get(QuestionFactory\Answer::class),
-                        $serviceManager->get(QuestionTable\Answer\CreatedName::class)
+                        $sm->get(QuestionFactory\Answer::class),
+                        $sm->get(QuestionTable\Answer\CreatedName::class)
                     );
                 },
-                QuestionService\Answer\Count::class => function ($serviceManager) {
+                QuestionService\Answer\Count::class => function ($sm) {
                     return new QuestionService\Answer\Count(
-                        $serviceManager->get(QuestionTable\Answer::class)
+                        $sm->get(QuestionTable\Answer::class)
                     );
                 },
-                QuestionService\Answer\Delete::class => function ($serviceManager) {
+                QuestionService\Answer\Delete::class => function ($sm) {
                     return new QuestionService\Answer\Delete(
-                        $serviceManager->get(QuestionTable\Answer\DeletedDeletedUserIdDeletedReason::class)
+                        $sm->get(QuestionTable\Answer\DeletedDeletedUserIdDeletedReason::class)
                     );
                 },
-                QuestionService\Answer\Delete\Queue\Add::class => function ($serviceManager) {
+                QuestionService\Answer\Delete\Queue\Add::class => function ($sm) {
                     return new QuestionService\Answer\Delete\Queue\Add(
-                        $serviceManager->get(QuestionTable\AnswerDeleteQueue::class)
+                        $sm->get(QuestionTable\AnswerDeleteQueue::class)
                     );
                 },
-                QuestionService\Answer\Delete\Queue\Approve::class => function ($serviceManager) {
+                QuestionService\Answer\Delete\Queue\Approve::class => function ($sm) {
                     return new QuestionService\Answer\Delete\Queue\Approve(
-                        $serviceManager->get(QuestionTable\Answer\DeletedDeletedUserIdDeletedReason::class),
-                        $serviceManager->get(QuestionTable\AnswerDeleteQueue::class)
+                        $sm->get(QuestionTable\Answer\DeletedDeletedUserIdDeletedReason::class),
+                        $sm->get(QuestionTable\AnswerDeleteQueue::class)
                     );
                 },
-                QuestionService\Answer\Delete\Queue\Decline::class => function ($serviceManager) {
+                QuestionService\Answer\Delete\Queue\Decline::class => function ($sm) {
                     return new QuestionService\Answer\Delete\Queue\Decline(
-                        $serviceManager->get(QuestionTable\AnswerDeleteQueue::class)
+                        $sm->get(QuestionTable\AnswerDeleteQueue::class)
                     );
                 },
-                QuestionService\Answer\Delete\Queue\Pending::class => function ($serviceManager) {
+                QuestionService\Answer\Delete\Queue\Pending::class => function ($sm) {
                     return new QuestionService\Answer\Delete\Queue\Pending(
-                        $serviceManager->get(QuestionTable\AnswerDeleteQueue::class)
+                        $sm->get(QuestionTable\AnswerDeleteQueue::class)
                     );
                 },
                 QuestionService\Answer\Duplicate::class => function ($sm) {
@@ -132,87 +132,87 @@ class Module
                         $sm->get(QuestionTable\Answer\QuestionIdDeletedCreatedDatetime::class)
                     );
                 },
-                QuestionService\Answer\Edit::class => function ($serviceManager) {
+                QuestionService\Answer\Edit::class => function ($sm) {
                     return new QuestionService\Answer\Edit(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(QuestionTable\Answer::class),
-                        $serviceManager->get(QuestionTable\AnswerHistory::class)
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Answer::class),
+                        $sm->get(QuestionTable\AnswerHistory::class)
                     );
                 },
-                QuestionService\Answer\Edit\Queue::class => function ($serviceManager) {
+                QuestionService\Answer\Edit\Queue::class => function ($sm) {
                     return new QuestionService\Answer\Edit\Queue(
-                        $serviceManager->get(QuestionTable\AnswerEditQueue::class)
+                        $sm->get(QuestionTable\AnswerEditQueue::class)
                     );
                 },
-                QuestionService\Answer\Edit\Queue\Approve::class => function ($serviceManager) {
+                QuestionService\Answer\Edit\Queue\Approve::class => function ($sm) {
                     return new QuestionService\Answer\Edit\Queue\Approve(
-                        $serviceManager->get(QuestionFactory\Answer::class),
-                        $serviceManager->get(QuestionService\Answer\Edit::class),
-                        $serviceManager->get(QuestionTable\AnswerEditQueue::class)
+                        $sm->get(QuestionFactory\Answer::class),
+                        $sm->get(QuestionService\Answer\Edit::class),
+                        $sm->get(QuestionTable\AnswerEditQueue::class)
                     );
                 },
-                QuestionService\Answer\Edit\Queue\Decline::class => function ($serviceManager) {
+                QuestionService\Answer\Edit\Queue\Decline::class => function ($sm) {
                     return new QuestionService\Answer\Edit\Queue\Decline(
-                        $serviceManager->get(QuestionTable\AnswerEditQueue::class)
+                        $sm->get(QuestionTable\AnswerEditQueue::class)
                     );
                 },
-                QuestionService\Answer\Edit\Queue\Pending::class => function ($serviceManager) {
+                QuestionService\Answer\Edit\Queue\Pending::class => function ($sm) {
                     return new QuestionService\Answer\Edit\Queue\Pending(
-                        $serviceManager->get(QuestionFactory\Answer::class),
-                        $serviceManager->get(QuestionTable\AnswerEditQueue::class)
+                        $sm->get(QuestionFactory\Answer::class),
+                        $sm->get(QuestionTable\AnswerEditQueue::class)
                     );
                 },
-                QuestionService\Answer\Submit::class => function ($serviceManager) {
+                QuestionService\Answer\Submit::class => function ($sm) {
                     return new QuestionService\Answer\Submit(
-                        $serviceManager->get(FlashService\Flash::class),
-                        $serviceManager->get(QuestionFactory\Answer::class),
-                        $serviceManager->get(QuestionTable\Answer::class)
+                        $sm->get(FlashService\Flash::class),
+                        $sm->get(QuestionFactory\Answer::class),
+                        $sm->get(QuestionTable\Answer::class)
                     );
                 },
-                QuestionService\Answer\Undelete::class => function ($serviceManager) {
+                QuestionService\Answer\Undelete::class => function ($sm) {
                     return new QuestionService\Answer\Undelete(
-                        $serviceManager->get(QuestionTable\Answer\AnswerId::class)
+                        $sm->get(QuestionTable\Answer\AnswerId::class)
                     );
                 },
-                QuestionService\Question\Edit::class => function ($serviceManager) {
+                QuestionService\Question\Edit::class => function ($sm) {
                     return new QuestionService\Question\Edit(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(QuestionTable\Question::class),
-                        $serviceManager->get(QuestionTable\QuestionHistory::class)
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Question::class),
+                        $sm->get(QuestionTable\QuestionHistory::class)
                     );
                 },
-                QuestionService\Question\Edit\Queue::class => function ($serviceManager) {
+                QuestionService\Question\Edit\Queue::class => function ($sm) {
                     return new QuestionService\Question\Edit\Queue(
-                        $serviceManager->get(QuestionTable\QuestionEditQueue::class)
+                        $sm->get(QuestionTable\QuestionEditQueue::class)
                     );
                 },
-                QuestionService\Question\Edit\Queue\Approve::class => function ($serviceManager) {
+                QuestionService\Question\Edit\Queue\Approve::class => function ($sm) {
                     return new QuestionService\Question\Edit\Queue\Approve(
-                        $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionService\Question\Edit::class),
-                        $serviceManager->get(QuestionTable\QuestionEditQueue::class)
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionService\Question\Edit::class),
+                        $sm->get(QuestionTable\QuestionEditQueue::class)
                     );
                 },
-                QuestionService\Question\Edit\Queue\Decline::class => function ($serviceManager) {
+                QuestionService\Question\Edit\Queue\Decline::class => function ($sm) {
                     return new QuestionService\Question\Edit\Queue\Decline(
-                        $serviceManager->get(QuestionTable\QuestionEditQueue::class)
+                        $sm->get(QuestionTable\QuestionEditQueue::class)
                     );
                 },
-                QuestionService\Question\Edit\Queue\Pending::class => function ($serviceManager) {
+                QuestionService\Question\Edit\Queue\Pending::class => function ($sm) {
                     return new QuestionService\Question\Edit\Queue\Pending(
-                        $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionTable\QuestionEditQueue::class)
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\QuestionEditQueue::class)
                     );
                 },
-                QuestionService\Question\ViewsBrowser\ConditionallyIncrement::class => function ($serviceManager) {
+                QuestionService\Question\ViewsBrowser\ConditionallyIncrement::class => function ($sm) {
                     return new QuestionService\Question\ViewsBrowser\ConditionallyIncrement(
-                        $serviceManager->get(QuestionTable\Question\QuestionId::class),
-                        $serviceManager->get(SuperglobalService\Server\HttpUserAgent\Browser::class)
+                        $sm->get(QuestionTable\Question\QuestionId::class),
+                        $sm->get(SuperglobalService\Server\HttpUserAgent\Browser::class)
                     );
                 },
-                QuestionService\QuestionFromAnswer::class => function ($serviceManager) {
+                QuestionService\QuestionFromAnswer::class => function ($sm) {
                     return new QuestionService\QuestionFromAnswer(
-                        $serviceManager->get(QuestionFactory\Question::class)
+                        $sm->get(QuestionFactory\Question::class)
                     );
                 },
                 QuestionService\NumberOfPostsDeletedByUserId0InLast24Hours::class => function ($sm) {
@@ -221,72 +221,72 @@ class Module
                         $sm->get(QuestionTable\Question\CreatedIpDeletedDeletedUserId::class)
                     );
                 },
-                QuestionService\Questions::class => function ($serviceManager) {
+                QuestionService\Questions::class => function ($sm) {
                     return new QuestionService\Questions(
-                        $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionTable\Question::class)
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionService\Question\Delete::class => function ($serviceManager) {
+                QuestionService\Question\Delete::class => function ($sm) {
                     return new QuestionService\Question\Delete(
-                        $serviceManager->get(QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class)
+                        $sm->get(QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class)
                     );
                 },
-                QuestionService\Question\Delete\Queue\Add::class => function ($serviceManager) {
+                QuestionService\Question\Delete\Queue\Add::class => function ($sm) {
                     return new QuestionService\Question\Delete\Queue\Add(
-                        $serviceManager->get(QuestionTable\QuestionDeleteQueue::class)
+                        $sm->get(QuestionTable\QuestionDeleteQueue::class)
                     );
                 },
-                QuestionService\Question\Delete\Queue\Approve::class => function ($serviceManager) {
+                QuestionService\Question\Delete\Queue\Approve::class => function ($sm) {
                     return new QuestionService\Question\Delete\Queue\Approve(
-                        $serviceManager->get(QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class),
-                        $serviceManager->get(QuestionTable\QuestionDeleteQueue::class)
+                        $sm->get(QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class),
+                        $sm->get(QuestionTable\QuestionDeleteQueue::class)
                     );
                 },
-                QuestionService\Question\Delete\Queue\Decline::class => function ($serviceManager) {
+                QuestionService\Question\Delete\Queue\Decline::class => function ($sm) {
                     return new QuestionService\Question\Delete\Queue\Decline(
-                        $serviceManager->get(QuestionTable\QuestionDeleteQueue::class)
+                        $sm->get(QuestionTable\QuestionDeleteQueue::class)
                     );
                 },
-                QuestionService\Question\Delete\Queue\Pending::class => function ($serviceManager) {
+                QuestionService\Question\Delete\Queue\Pending::class => function ($sm) {
                     return new QuestionService\Question\Delete\Queue\Pending(
-                        $serviceManager->get(QuestionTable\QuestionDeleteQueue::class)
+                        $sm->get(QuestionTable\QuestionDeleteQueue::class)
                     );
                 },
-                QuestionService\Question\Duplicate::class => function ($serviceManager) {
+                QuestionService\Question\Duplicate::class => function ($sm) {
                     return new QuestionService\Question\Duplicate(
-                        $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionTable\Question\MessageCreatedDatetimeDeleted::class)
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question\MessageCreatedDatetimeDeleted::class)
                     );
                 },
-                QuestionService\Question\IncrementViews::class => function ($serviceManager) {
+                QuestionService\Question\IncrementViews::class => function ($sm) {
                     return new QuestionService\Question\IncrementViews(
-                        $serviceManager->get(QuestionTable\Question::class)
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionService\Question\Questions::class => function ($serviceManager) {
+                QuestionService\Question\Questions::class => function ($sm) {
                     return new QuestionService\Question\Questions(
-                        $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionTable\Question\DeletedCreatedDatetime::class)
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question\DeletedCreatedDatetime::class)
                     );
                 },
-                QuestionService\Question\Questions\MostPopular\CreatedName::class => function ($serviceManager) {
+                QuestionService\Question\Questions\MostPopular\CreatedName::class => function ($sm) {
                     return new QuestionService\Question\Questions\MostPopular\CreatedName(
-                        $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionTable\Question\CreatedNameDeletedViewsBrowser::class)
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question\CreatedNameDeletedViewsBrowser::class)
                     );
                 },
-                QuestionService\Question\Questions\Newest\CreatedName::class => function ($serviceManager) {
+                QuestionService\Question\Questions\Newest\CreatedName::class => function ($sm) {
                     return new QuestionService\Question\Questions\Newest\CreatedName(
-                        $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionTable\Question\CreatedName::class)
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question\CreatedName::class)
                     );
                 },
-                QuestionService\Question\Questions\Newest\WithAnswers::class => function ($serviceManager) {
+                QuestionService\Question\Questions\Newest\WithAnswers::class => function ($sm) {
                     return new QuestionService\Question\Questions\Newest\WithAnswers(
-                        $serviceManager->get(QuestionFactory\Answer::class),
-                        $serviceManager->get(QuestionService\Questions::class),
-                        $serviceManager->get(QuestionTable\Answer::class)
+                        $sm->get(QuestionFactory\Answer::class),
+                        $sm->get(QuestionService\Questions::class),
+                        $sm->get(QuestionTable\Answer::class)
                     );
                 },
                 QuestionService\Question\Questions\NumberOfPages::class => function ($sm) {
@@ -294,17 +294,17 @@ class Module
                         $sm->get(QuestionTable\Question\Deleted::class)
                     );
                 },
-                QuestionService\Question\Questions\Similar::class => function ($serviceManager) {
+                QuestionService\Question\Questions\Similar::class => function ($sm) {
                     return new QuestionService\Question\Questions\Similar(
-                        $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionTable\Question::class),
-                        $serviceManager->get(QuestionTable\QuestionSearchMessage::class)
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question::class),
+                        $sm->get(QuestionTable\QuestionSearchMessage::class)
                     );
                 },
-                QuestionService\Question\Questions\Subject::class => function ($serviceManager) {
+                QuestionService\Question\Questions\Subject::class => function ($sm) {
                     return new QuestionService\Question\Questions\Subject(
-                        $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionTable\Question\SubjectDeletedViewsBrowser::class)
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question\SubjectDeletedViewsBrowser::class)
                     );
                 },
                 QuestionService\Question\Questions\Subject\NumberOfPages::class => function ($sm) {
@@ -312,16 +312,16 @@ class Module
                         $sm->get(QuestionTable\Question\SubjectDeletedViewsBrowser::class)
                     );
                 },
-                QuestionService\Question\Questions\Year::class => function ($serviceManager) {
+                QuestionService\Question\Questions\Year::class => function ($sm) {
                     return new QuestionService\Question\Questions\Year(
-                        $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser::class)
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser::class)
                     );
                 },
-                QuestionService\Question\Questions\YearMonth::class => function ($serviceManager) {
+                QuestionService\Question\Questions\YearMonth::class => function ($sm) {
                     return new QuestionService\Question\Questions\YearMonth(
-                        $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser::class)
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser::class)
                     );
                 },
                 QuestionService\Question\Questions\YearMonthDay::class => function ($sm) {
@@ -330,35 +330,35 @@ class Module
                         $sm->get(QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser::class)
                     );
                 },
-                QuestionService\Question\RootRelativeUrl::class => function ($serviceManager) {
+                QuestionService\Question\RootRelativeUrl::class => function ($sm) {
                     return new QuestionService\Question\RootRelativeUrl(
-                        $serviceManager->get(QuestionService\Question\Title::class),
-                        $serviceManager->get(StringService\UrlFriendly::class)
+                        $sm->get(QuestionService\Question\Title::class),
+                        $sm->get(StringService\UrlFriendly::class)
                     );
                 },
-                QuestionService\Question\Submit::class => function ($serviceManager) {
+                QuestionService\Question\Submit::class => function ($sm) {
                     return new QuestionService\Question\Submit(
-                        $serviceManager->get(FlashService\Flash::class),
-                        $serviceManager->get(QuestionFactory\Question::class),
-                        $serviceManager->get(QuestionTable\Question::class)
+                        $sm->get(FlashService\Flash::class),
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionService\Question\Title::class => function ($serviceManager) {
+                QuestionService\Question\Title::class => function ($sm) {
                     return new QuestionService\Question\Title();
                 },
-                QuestionService\Question\Undelete::class => function ($serviceManager) {
+                QuestionService\Question\Undelete::class => function ($sm) {
                     return new QuestionService\Question\Undelete(
-                        $serviceManager->get(QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class)
+                        $sm->get(QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class)
                     );
                 },
-                QuestionService\Question\Url::class => function ($serviceManager) {
+                QuestionService\Question\Url::class => function ($sm) {
                     return new QuestionService\Question\Url(
-                        $serviceManager->get(QuestionService\Question\RootRelativeUrl::class)
+                        $sm->get(QuestionService\Question\RootRelativeUrl::class)
                     );
                 },
-                QuestionTable\Answer::class => function ($serviceManager) {
+                QuestionTable\Answer::class => function ($sm) {
                     return new QuestionTable\Answer(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
                 QuestionTable\Answer\QuestionIdDeletedCreatedDatetime::class => function ($sm) {
@@ -366,20 +366,20 @@ class Module
                         $sm->get('question')
                     );
                 },
-                QuestionTable\Answer\AnswerId::class => function ($serviceManager) {
+                QuestionTable\Answer\AnswerId::class => function ($sm) {
                     return new QuestionTable\Answer\AnswerId(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
-                QuestionTable\Answer\CreatedName::class => function ($serviceManager) {
+                QuestionTable\Answer\CreatedName::class => function ($sm) {
                     return new QuestionTable\Answer\CreatedName(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(QuestionTable\Answer::class)
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Answer::class)
                     );
                 },
-                QuestionTable\Answer\CreatedIp::class => function ($serviceManager) {
+                QuestionTable\Answer\CreatedIp::class => function ($sm) {
                     return new QuestionTable\Answer\CreatedIp(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
                 QuestionTable\Answer\CreatedIpCreatedDatetime::class => function ($sm) {
@@ -387,58 +387,58 @@ class Module
                         $sm->get('question')
                     );
                 },
-                QuestionTable\Answer\CreatedIpDeletedDeletedUserId::class => function ($serviceManager) {
+                QuestionTable\Answer\CreatedIpDeletedDeletedUserId::class => function ($sm) {
                     return new QuestionTable\Answer\CreatedIpDeletedDeletedUserId(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
-                QuestionTable\Answer\CreatedNameDeletedCreatedDatetime::class => function ($serviceManager) {
+                QuestionTable\Answer\CreatedNameDeletedCreatedDatetime::class => function ($sm) {
                     return new QuestionTable\Answer\CreatedNameDeletedCreatedDatetime(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(QuestionTable\Answer::class)
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Answer::class)
                     );
                 },
-                QuestionTable\Answer\Deleted::class => function ($serviceManager) {
+                QuestionTable\Answer\Deleted::class => function ($sm) {
                     return new QuestionTable\Answer\Deleted(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(QuestionTable\Answer::class)
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Answer::class)
                     );
                 },
-                QuestionTable\Answer\DeletedDeletedUserIdDeletedReason::class => function ($serviceManager) {
+                QuestionTable\Answer\DeletedDeletedUserIdDeletedReason::class => function ($sm) {
                     return new QuestionTable\Answer\DeletedDeletedUserIdDeletedReason(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
-                QuestionTable\Answer\DeletedUserId::class => function ($serviceManager) {
+                QuestionTable\Answer\DeletedUserId::class => function ($sm) {
                     return new QuestionTable\Answer\DeletedUserId(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(QuestionTable\Answer::class)
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Answer::class)
                     );
                 },
-                QuestionTable\Answer\Message::class => function ($serviceManager) {
+                QuestionTable\Answer\Message::class => function ($sm) {
                     return new QuestionTable\Answer\Message(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
-                QuestionTable\AnswerDeleteQueue::class => function ($serviceManager) {
+                QuestionTable\AnswerDeleteQueue::class => function ($sm) {
                     return new QuestionTable\AnswerDeleteQueue(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
-                QuestionTable\AnswerEditQueue::class => function ($serviceManager) {
+                QuestionTable\AnswerEditQueue::class => function ($sm) {
                     return new QuestionTable\AnswerEditQueue(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
-                QuestionTable\AnswerHistory::class => function ($serviceManager) {
+                QuestionTable\AnswerHistory::class => function ($sm) {
                     return new QuestionTable\AnswerHistory(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
-                QuestionTable\Question::class => function ($serviceManager) {
+                QuestionTable\Question::class => function ($sm) {
                     return new QuestionTable\Question(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(MemcachedService\Memcached::class)
+                        $sm->get('question'),
+                        $sm->get(MemcachedService\Memcached::class)
                     );
                 },
                 QuestionTable\Question\CreatedDatetimeDeleted::class => function ($sm) {
@@ -447,16 +447,16 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\CreatedNameDeletedCreatedDatetime::class => function ($serviceManager) {
+                QuestionTable\Question\CreatedNameDeletedCreatedDatetime::class => function ($sm) {
                     return new QuestionTable\Question\CreatedNameDeletedCreatedDatetime(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(QuestionTable\Question::class)
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\DeletedCreatedDatetime::class => function ($serviceManager) {
+                QuestionTable\Question\DeletedCreatedDatetime::class => function ($sm) {
                     return new QuestionTable\Question\DeletedCreatedDatetime(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(QuestionTable\Question::class)
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
                 QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser::class => function ($sm) {
@@ -465,14 +465,14 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\CreatedIpDeletedDeletedUserId::class => function ($serviceManager) {
+                QuestionTable\Question\CreatedIpDeletedDeletedUserId::class => function ($sm) {
                     return new QuestionTable\Question\CreatedIpDeletedDeletedUserId(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
-                QuestionTable\Question\CreatedIp::class => function ($serviceManager) {
+                QuestionTable\Question\CreatedIp::class => function ($sm) {
                     return new QuestionTable\Question\CreatedIp(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
                 QuestionTable\Question\CreatedIpCreatedDatetime::class => function ($sm) {
@@ -480,51 +480,51 @@ class Module
                         $sm->get('question')
                     );
                 },
-                QuestionTable\Question\CreatedName::class => function ($serviceManager) {
+                QuestionTable\Question\CreatedName::class => function ($sm) {
                     return new QuestionTable\Question\CreatedName(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(QuestionTable\Question::class)
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\CreatedNameDeletedViewsBrowser::class => function ($serviceManager) {
+                QuestionTable\Question\CreatedNameDeletedViewsBrowser::class => function ($sm) {
                     return new QuestionTable\Question\CreatedNameDeletedViewsBrowser(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(QuestionTable\Question::class)
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\Deleted::class => function ($serviceManager) {
+                QuestionTable\Question\Deleted::class => function ($sm) {
                     return new QuestionTable\Question\Deleted(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(MemcachedService\Memcached::class),
-                        $serviceManager->get(QuestionTable\Question::class)
+                        $sm->get('question'),
+                        $sm->get(MemcachedService\Memcached::class),
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class => function ($serviceManager) {
+                QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class => function ($sm) {
                     return new QuestionTable\Question\DeletedDeletedUserIdDeletedReason(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
-                QuestionTable\Question\DeletedUserId::class => function ($serviceManager) {
+                QuestionTable\Question\DeletedUserId::class => function ($sm) {
                     return new QuestionTable\Question\DeletedUserId(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(QuestionTable\Question::class)
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\QuestionId::class => function ($serviceManager) {
+                QuestionTable\Question\QuestionId::class => function ($sm) {
                     return new QuestionTable\Question\QuestionId(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
-                QuestionTable\Question\Message::class => function ($serviceManager) {
+                QuestionTable\Question\Message::class => function ($sm) {
                     return new QuestionTable\Question\Message(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(QuestionTable\Question::class)
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\MessageCreatedDatetimeDeleted::class => function ($serviceManager) {
+                QuestionTable\Question\MessageCreatedDatetimeDeleted::class => function ($sm) {
                     return new QuestionTable\Question\MessageCreatedDatetimeDeleted(
-                        $serviceManager->get('question'),
-                        $serviceManager->get(QuestionTable\Question::class)
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
                 QuestionTable\Question\Subject::class => function ($sm) {
@@ -539,25 +539,25 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\QuestionDeleteQueue::class => function ($serviceManager) {
+                QuestionTable\QuestionDeleteQueue::class => function ($sm) {
                     return new QuestionTable\QuestionDeleteQueue(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
-                QuestionTable\QuestionEditQueue::class => function ($serviceManager) {
+                QuestionTable\QuestionEditQueue::class => function ($sm) {
                     return new QuestionTable\QuestionEditQueue(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
-                QuestionTable\QuestionHistory::class => function ($serviceManager) {
+                QuestionTable\QuestionHistory::class => function ($sm) {
                     return new QuestionTable\QuestionHistory(
-                        $serviceManager->get('question')
+                        $sm->get('question')
                     );
                 },
-                QuestionTable\QuestionSearchMessage::class => function ($serviceManager) {
+                QuestionTable\QuestionSearchMessage::class => function ($sm) {
                     return new QuestionTable\QuestionSearchMessage(
-                        $serviceManager->get(MemcachedService\Memcached::class),
-                        $serviceManager->get('question')
+                        $sm->get(MemcachedService\Memcached::class),
+                        $sm->get('question')
                     );
                 },
             ],
