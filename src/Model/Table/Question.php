@@ -63,12 +63,11 @@ class Question
                      , `subject`
                      , `message`
                      , `ip`
-                     , `created`
                      , `created_datetime`
                      , `created_name`
                      , `created_ip`
                    )
-            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP(), ?, ?)
+            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?)
                  ;
         ';
         $parameters = [
@@ -105,7 +104,6 @@ class Question
                      , `subject`
                      , `message`
                      , `ip`
-                     , `created`
                      , `created_datetime`
                      , `created_name`
                      , `created_ip`
@@ -113,7 +111,7 @@ class Question
                      , `deleted_user_id`
                      , `deleted_reason`
                    )
-            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), ?, ?)
+            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), ?, ?)
                  ;
         ';
         $parameters = [
