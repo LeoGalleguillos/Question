@@ -38,7 +38,7 @@ class QuestionEditQueue
                     , `subject`
                     , `message`
                     , `ip`
-                    , `created`
+                    , `created_datetime`
                     , `reason`
                  )
             VALUES (?, ?, ?, ?, ?, ?, UTC_TIMESTAMP(), ?)
@@ -51,12 +51,12 @@ class QuestionEditQueue
             $subject,
             $message,
             $ip,
-            $reason
+            $reason,
         ];
-        return $this->adapter
-                    ->query($sql)
-                    ->execute($parameters)
-                    ->getGeneratedValue();
+        return (int) $this->adapter
+            ->query($sql)
+            ->execute($parameters)
+            ->getGeneratedValue();
     }
 
     public function selectWhereQuestionEditQueueId(
@@ -70,7 +70,7 @@ class QuestionEditQueue
                  , `subject`
                  , `message`
                  , `ip`
-                 , `created`
+                 , `created_datetime`
                  , `reason`
                  , `queue_status_id`
                  , `modified`
@@ -95,7 +95,7 @@ class QuestionEditQueue
                  , `subject`
                  , `message`
                  , `ip`
-                 , `created`
+                 , `created_datetime`
                  , `reason`
                  , `queue_status_id`
                  , `modified`
