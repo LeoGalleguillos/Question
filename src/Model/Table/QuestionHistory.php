@@ -41,7 +41,10 @@ class QuestionHistory
                  , `question`.`subject`
                  , `question`.`message`
                  , `question`.`ip`
-                 , `question`.`created`
+                 , IFNULL(
+                       `question`.`modified_datetime`
+                     , `question`.`created_datetime`
+                   )
                  , ?
               FROM `question`
              WHERE `question`.`question_id` = ?
