@@ -7,12 +7,6 @@ use LeoGalleguillos\Question\Model\Table as QuestionTable;
 
 class Pending
 {
-    /**
-     * Construct.
-     *
-     * @param QuestionFactory\Question $questionFactory
-     * @param QuestionTable\QuestionEditQueue $questionEditQueueTable
-     */
     public function __construct(
         QuestionFactory\Question $questionFactory,
         QuestionTable\QuestionEditQueue $questionEditQueueTable
@@ -22,9 +16,6 @@ class Pending
     }
 
     /**
-     * Get pending.
-     *
-     * @return Generator
      * @yield array
      */
     public function getPending(
