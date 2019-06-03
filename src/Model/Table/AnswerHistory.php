@@ -15,9 +15,6 @@ class AnswerHistory
         $this->adapter = $adapter;
     }
 
-    /**
-     * @return int
-     */
     public function insertSelectFromAnswer(
         string $reason,
         int $answerId
@@ -39,7 +36,7 @@ class AnswerHistory
                  , `answer`.`name`
                  , `answer`.`message`
                  , `answer`.`ip`
-                 , `answer`.`created`
+                 , IFNULL(`answer`.`modified_datetime`, `answer`.`created_datetime`)
                  , ?
               FROM `answer`
              WHERE `answer`.`answer_id` = ?
@@ -49,10 +46,10 @@ class AnswerHistory
             $reason,
             $answerId,
         ];
-        return $this->adapter
-                    ->query($sql)
-                    ->execute($parameters)
-                    ->getGeneratedValue();
+        return (int) $this->adapter
+            ->query($sql)
+            ->execute($parameters)
+            ->getGeneratedValue();
     }
 
     public function selectWhereAnswerIdOrderByCreatedAscLimit1(

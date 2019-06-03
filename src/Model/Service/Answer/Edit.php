@@ -25,7 +25,7 @@ class Edit
         $reason
     ) {
         $this->adapter->getDriver()->getConnection()->beginTransaction();
-        $answerHistoryId = $this->answerHistoryTable->insertSelectFromAnswer(
+        $this->answerHistoryTable->insertSelectFromAnswer(
             $reason,
             $answerEntity->getAnswerId()
         );
