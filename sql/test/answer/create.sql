@@ -5,7 +5,6 @@ CREATE TABLE `answer` (
     `name` varchar(255) default null,
     `message` text,
     `ip` varchar(45) default null,
-    `created` datetime DEFAULT NULL,
     `created_datetime` datetime NOT NULL,
     `created_name` varchar(255) default null,
     `created_ip` varchar(45) default null,
