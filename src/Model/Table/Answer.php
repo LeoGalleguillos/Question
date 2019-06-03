@@ -57,12 +57,11 @@ class Answer
                      , `name`
                      , `message`
                      , `ip`
-                     , `created`
                      , `created_datetime`
                      , `created_name`
                      , `created_ip`
                    )
-            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP(), ?, ?)
+            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?)
                  ;
         ';
         $parameters = [
@@ -74,10 +73,10 @@ class Answer
             $createdName,
             $createdIp,
         ];
-        return $this->adapter
-                    ->query($sql)
-                    ->execute($parameters)
-                    ->getGeneratedValue();
+        return (int) $this->adapter
+            ->query($sql)
+            ->execute($parameters)
+            ->getGeneratedValue();
     }
 
     public function insertDeleted(
@@ -99,7 +98,6 @@ class Answer
                      , `name`
                      , `message`
                      , `ip`
-                     , `created`
                      , `created_datetime`
                      , `created_name`
                      , `created_ip`
@@ -107,7 +105,7 @@ class Answer
                      , `deleted_user_id`
                      , `deleted_reason`
                    )
-            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), ?, ?)
+            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), ?, ?)
                  ;
         ';
         $parameters = [
@@ -122,9 +120,9 @@ class Answer
             $deletedReason,
         ];
         return (int) $this->adapter
-                          ->query($sql)
-                          ->execute($parameters)
-                          ->getGeneratedValue();
+            ->query($sql)
+            ->execute($parameters)
+            ->getGeneratedValue();
     }
 
     /**
