@@ -31,7 +31,6 @@ class Answer
                  , `answer`.`name`
                  , `answer`.`message`
                  , `answer`.`ip`
-                 , `answer`.`created`
                  , `answer`.`created_datetime`
                  , `answer`.`created_name`
                  , `answer`.`created_ip`
@@ -182,12 +181,6 @@ class Answer
         return $this->adapter->query($sql)->execute($parameters)->current();
     }
 
-    /**
-     * Select where question ID.
-     *
-     * @param int $questionId
-     * @return Generator
-     */
     public function selectWhereQuestionId(int $questionId) : Generator
     {
         $sql = '
@@ -197,12 +190,12 @@ class Answer
                  , `answer`.`name`
                  , `answer`.`message`
                  , `answer`.`ip`
-                 , `answer`.`created`
+                 , `answer`.`created_datetime`
                  , `answer`.`deleted`
               FROM `answer`
              WHERE `answer`.`question_id` = :questionId
              ORDER
-                BY `answer`.`created` ASC
+                BY `answer`.`created_datetime` ASC
                  ;
         ';
         $parameters = [
