@@ -6,7 +6,7 @@ CREATE TABLE `answer_edit_queue` (
     `name` varchar(255) default null,
     `message` text,
     `ip` varchar(45) default null,
-    `created` datetime not null,
+    `created_datetime` datetime not null,
     `reason` varchar(255) default null,
     `queue_status_id` tinyint(1) default 0,
     `modified` datetime default null,

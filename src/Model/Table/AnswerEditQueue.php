@@ -38,7 +38,7 @@ class AnswerEditQueue
                     , `name`
                     , `message`
                     , `ip`
-                    , `created`
+                    , `created_datetime`
                     , `reason`
                  )
             VALUES (?, ?, ?, ?, ?, ?, UTC_TIMESTAMP(), ?)
@@ -70,7 +70,7 @@ class AnswerEditQueue
                  , `name`
                  , `message`
                  , `ip`
-                 , `created`
+                 , `created_datetime`
                  , `reason`
                  , `queue_status_id`
                  , `modified`
@@ -95,14 +95,14 @@ class AnswerEditQueue
                  , `name`
                  , `message`
                  , `ip`
-                 , `created`
+                 , `created_datetime`
                  , `reason`
                  , `queue_status_id`
                  , `modified`
               FROM `answer_edit_queue`
              WHERE `queue_status_id` = ?
              ORDER
-                BY `created` ASC
+                BY `created_datetime` ASC
                  ;
         ';
         $parameters = [
