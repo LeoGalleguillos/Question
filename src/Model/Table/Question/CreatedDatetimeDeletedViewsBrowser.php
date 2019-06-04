@@ -54,7 +54,7 @@ class CreatedDatetimeDeletedViewsBrowser
               FROM `question`
 
              FORCE
-             INDEX (`created_deleted_views_browser`)
+             INDEX (`created_datetime_deleted_views_browser`)
 
              WHERE `created_datetime` between ? and ?
                AND `deleted` IS NULL
