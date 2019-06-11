@@ -232,6 +232,39 @@ class Answer
         }
     }
 
+    public function selectWhereUserId(
+        int $userId,
+        int $limitOffset,
+        int $limitRowCount
+    ): Generator {
+
+        $sql = $this->getSelect()
+             . "
+              FROM `answer`
+
+              JOIN `question`
+             USING (`question_id)
+
+             WHERE `answer`.`user_id` = ?
+               AND `answer`.`deleted` IS NULL
+               AND `question`.`deleted` IS NULL
+
+             ORDER
+                BY `question`.`views_browser` DESC
+
+             LIMIT ?, ?
+                 ;
+        ";
+        $parameters = [
+            $questionId,
+            $limitOffset,
+            $limitRowCount,
+        ];
+        foreach ($this->adapter->query($sql)->execute($parameters) as $array) {
+            yield $array;
+        }
+    }
+
     public function updateWhereAnswerId(
         string $message,
         int $modifiedUserId,

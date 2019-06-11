@@ -96,6 +96,12 @@ class Module
                         $sm->get(QuestionTable\Answer\CreatedName::class)
                     );
                 },
+                QuestionService\Answer\Answers\User\MostPopular::class => function ($sm) {
+                    return new QuestionService\Answer\Answers\User\MostPopular(
+                        $sm->get(QuestionFactory\Answer::class),
+                        $sm->get(QuestionTable\Answer::class)
+                    );
+                },
                 QuestionService\Answer\Count::class => function ($sm) {
                     return new QuestionService\Answer\Count(
                         $sm->get(QuestionTable\Answer::class)
