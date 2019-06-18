@@ -17,11 +17,6 @@ class Answer
         $this->adapter = $adapter;
     }
 
-    /**
-     * Get select.
-     *
-     * @return string
-     */
     public function getSelect(): string
     {
         return '
@@ -125,11 +120,6 @@ class Answer
             ->getGeneratedValue();
     }
 
-    /**
-     * Select count.
-     *
-     * @return int
-     */
     public function selectCount(): int
     {
         $sql = '
@@ -141,12 +131,6 @@ class Answer
         return (int) $row['count'];
     }
 
-    /**
-     * Select count where question ID.
-     *
-     * @param int $questionId
-     * @return int
-     */
     public function selectCountWhereQuestionId(int $questionId): int
     {
         $sql = '
@@ -159,12 +143,6 @@ class Answer
         return (int) $row['count'];
     }
 
-    /**
-     * Select where answer ID.
-     *
-     * @param int $answerId
-     * @return array
-     */
     public function selectWhereAnswerId(int $answerId) : array
     {
         $sql = $this->getSelect()
@@ -204,13 +182,6 @@ class Answer
         }
     }
 
-    /**
-     * Select where question_id and deleted is null order by created_date_time asc.
-     *
-     * @param int $questionId
-     * @return Generator
-     * @yield $array
-     */
     public function selectWhereQuestionIdAndDeletedIsNullOrderByCreatedDateTimeAsc(
         int $questionId
     ): Generator {
@@ -239,7 +210,7 @@ class Answer
     ): Generator {
 
         $sql = $this->getSelect()
-             . "
+             . '
               FROM `answer`
 
               JOIN `question`
@@ -254,7 +225,7 @@ class Answer
 
              LIMIT ?, ?
                  ;
-        ";
+        ';
         $parameters = [
             $questionId,
             $limitOffset,
