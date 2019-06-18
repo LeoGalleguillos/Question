@@ -4,6 +4,7 @@ namespace LeoGalleguillos\Question\Model\Service\Answer\Answers\User;
 use Generator;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
+use LeoGalleguillos\User\Model\Entity as UserEntity;
 
 class MostPopular
 {
