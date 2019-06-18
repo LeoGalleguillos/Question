@@ -189,12 +189,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/String.git",
-                "reference": "745163fd83a924b030ac95445d6933431ee2e4ed"
+                "reference": "ee89880bc3196f4c4def3da91385c4c833beb95b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/745163fd83a924b030ac95445d6933431ee2e4ed",
-                "reference": "745163fd83a924b030ac95445d6933431ee2e4ed",
+                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/ee89880bc3196f4c4def3da91385c4c833beb95b",
+                "reference": "ee89880bc3196f4c4def3da91385c4c833beb95b",
                 "shasum": ""
             },
             "require": {
@@ -211,7 +211,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2019-06-07T01:42:17+00:00"
+            "time": "2019-06-17T11:03:44+00:00"
         },
         {
             "name": "leo-galleguillos/superglobal",
@@ -648,12 +648,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "7e272180527c34a97680de85eb5aba0847a664e0"
+                "reference": "1927e75f4ed19131ec9bcc3b002e07fb1173ee76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/7e272180527c34a97680de85eb5aba0847a664e0",
-                "reference": "7e272180527c34a97680de85eb5aba0847a664e0",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/1927e75f4ed19131ec9bcc3b002e07fb1173ee76",
+                "reference": "1927e75f4ed19131ec9bcc3b002e07fb1173ee76",
                 "shasum": ""
             },
             "require": {
@@ -703,7 +703,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2018-12-18T15:40:51+00:00"
+            "time": "2019-06-13T12:50:23+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -1860,16 +1860,16 @@
         },
         {
             "name": "theseer/tokenizer",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theseer/tokenizer.git",
-                "reference": "1c42705be2b6c1de5904f8afacef5895cab44bf8"
+                "reference": "11336f6f84e16a720dae9d8e6ed5019efa85a0f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/1c42705be2b6c1de5904f8afacef5895cab44bf8",
-                "reference": "1c42705be2b6c1de5904f8afacef5895cab44bf8",
+                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/11336f6f84e16a720dae9d8e6ed5019efa85a0f9",
+                "reference": "11336f6f84e16a720dae9d8e6ed5019efa85a0f9",
                 "shasum": ""
             },
             "require": {
@@ -1896,7 +1896,7 @@
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
-            "time": "2019-04-04T09:56:43+00:00"
+            "time": "2019-06-13T22:48:21+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -2209,12 +2209,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-dom.git",
-                "reference": "cf65074fbf1464869493f9d69130b29844a90239"
+                "reference": "671cd6e5b4d341a8a392d019ac1ba6aa64404de6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-dom/zipball/cf65074fbf1464869493f9d69130b29844a90239",
-                "reference": "cf65074fbf1464869493f9d69130b29844a90239",
+                "url": "https://api.github.com/repos/zendframework/zend-dom/zipball/671cd6e5b4d341a8a392d019ac1ba6aa64404de6",
+                "reference": "671cd6e5b4d341a8a392d019ac1ba6aa64404de6",
                 "shasum": ""
             },
             "require": {
@@ -2246,7 +2246,7 @@
                 "dom",
                 "zf"
             ],
-            "time": "2018-04-09T20:24:15+00:00"
+            "time": "2019-06-18T10:38:49+00:00"
         },
         {
             "name": "zendframework/zend-escaper",
@@ -2408,12 +2408,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-json.git",
-                "reference": "cecc5d9a44d2e4b7c63e5b6237e6284c874ebd0a"
+                "reference": "3b0fe1a2b78b3aa6c96540f34949c63f2c086332"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-json/zipball/cecc5d9a44d2e4b7c63e5b6237e6284c874ebd0a",
-                "reference": "cecc5d9a44d2e4b7c63e5b6237e6284c874ebd0a",
+                "url": "https://api.github.com/repos/zendframework/zend-json/zipball/3b0fe1a2b78b3aa6c96540f34949c63f2c086332",
+                "reference": "3b0fe1a2b78b3aa6c96540f34949c63f2c086332",
                 "shasum": ""
             },
             "require": {
@@ -2450,7 +2450,7 @@
                 "json",
                 "zf"
             ],
-            "time": "2018-01-04T17:53:00+00:00"
+            "time": "2019-06-18T10:58:02+00:00"
         },
         {
             "name": "zendframework/zend-loader",
@@ -2811,17 +2811,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-test.git",
-                "reference": "3f9b3a41eedcd70e0924ceaeedba73f5df0965b5"
+                "reference": "a174e1996c170fdb10960de9033ed245f2c5a385"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-test/zipball/3f9b3a41eedcd70e0924ceaeedba73f5df0965b5",
-                "reference": "3f9b3a41eedcd70e0924ceaeedba73f5df0965b5",
+                "url": "https://api.github.com/repos/zendframework/zend-test/zipball/a174e1996c170fdb10960de9033ed245f2c5a385",
+                "reference": "a174e1996c170fdb10960de9033ed245f2c5a385",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.6 || ^7.0",
-                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0",
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0 || ^8.0",
                 "sebastian/version": "^1.0.4 || ^2.0",
                 "zendframework/zend-console": "^2.6",
                 "zendframework/zend-dom": "^2.6",
@@ -2852,8 +2852,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1.x-dev",
-                    "dev-develop": "3.2.x-dev"
+                    "dev-master": "3.3.x-dev",
+                    "dev-develop": "3.4.x-dev"
                 }
             },
             "autoload": {
@@ -2874,7 +2874,7 @@
                 "test",
                 "zf"
             ],
-            "time": "2019-01-08T17:08:37+00:00"
+            "time": "2019-06-11T19:40:55+00:00"
         },
         {
             "name": "zendframework/zend-uri",
