@@ -15,7 +15,7 @@ class MostPopular
         $this->answerTable   = $answerTable;
     }
 
-    public function getQuestions(
+    public function getAnswers(
         UserEntity\User $userEntity,
         int $page
     ): Generator {
