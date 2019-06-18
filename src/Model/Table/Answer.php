@@ -214,7 +214,7 @@ class Answer
               FROM `answer`
 
               JOIN `question`
-             USING (`question_id)
+             USING (`question_id`)
 
              WHERE `answer`.`user_id` = ?
                AND `answer`.`deleted` IS NULL
@@ -227,7 +227,7 @@ class Answer
                  ;
         ';
         $parameters = [
-            $questionId,
+            $userId,
             $limitOffset,
             $limitRowCount,
         ];
