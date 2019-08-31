@@ -90,6 +90,12 @@ class Module
                         $sm->get(QuestionTable\Answer::class)
                     );
                 },
+                QuestionService\Answer\Answers\Newest::class => function ($sm) {
+                    return new QuestionService\Answer\Answers\Newest(
+                        $sm->get(QuestionFactory\Answer::class),
+                        $sm->get(QuestionTable\Answer\DeletedCreatedDatetime::class)
+                    );
+                },
                 QuestionService\Answer\Answers\Newest\CreatedName::class => function ($sm) {
                     return new QuestionService\Answer\Answers\Newest\CreatedName(
                         $sm->get(QuestionFactory\Answer::class),
