@@ -14,20 +14,8 @@ class QuestionTest extends TestCase
         $this->questionTableMock = $this->createMock(
             QuestionTable\Question::class
         );
-        $this->questionHistoryTableMock = $this->createMock(
-            QuestionTable\QuestionHistory::class
-        );
         $this->questionFactory = new QuestionFactory\Question(
-            $this->questionTableMock,
-            $this->questionHistoryTableMock
-        );
-    }
-
-    public function testInitialize()
-    {
-        $this->assertInstanceOf(
-            QuestionFactory\Question::class,
-            $this->questionFactory
+            $this->questionTableMock
         );
     }
 
@@ -45,15 +33,16 @@ class QuestionTest extends TestCase
             'deleted'     => '2018-09-17 21:42:45',
         ];
         $questionEntity = new QuestionEntity\Question();
-        $questionEntity->setCreatedDateTime(new DateTime($array['created_datetime']))
-                       ->setCreatedIp($array['created_ip'])
-                       ->setDeleted(new DateTime($array['deleted']))
-                       ->setIp($array['ip'])
-                       ->setMessage($array['message'])
-                       ->setName($array['name'])
-                       ->setQuestionId($array['question_id'])
-                       ->setSubject($array['subject'])
-                       ->setUserId((int) $array['user_id']);
+        $questionEntity
+            ->setCreatedDateTime(new DateTime($array['created_datetime']))
+            ->setCreatedIp($array['created_ip'])
+            ->setDeleted(new DateTime($array['deleted']))
+            ->setIp($array['ip'])
+            ->setMessage($array['message'])
+            ->setName($array['name'])
+            ->setQuestionId($array['question_id'])
+            ->setSubject($array['subject'])
+            ->setUserId((int) $array['user_id']);
         $this->assertEquals(
             $questionEntity,
             $this->questionFactory->buildFromArray($array)
@@ -89,18 +78,6 @@ class QuestionTest extends TestCase
                 'subject'     => 'subject',
                 'message'     => 'message',
                 'created_datetime'     => '2018-03-12 22:12:23',
-                'ip'          => '1.2.3.4',
-                'views'       => '123',
-            ]
-        );
-        $this->questionHistoryTableMock->method('selectWhereQuestionIdOrderByCreatedAscLimit1')->willReturn(
-            [
-                'question_id' => 123,
-                'user_id'     => 2,
-                'name'        => 'name',
-                'subject'     => 'subject',
-                'message'     => 'message',
-                'created_datetime'     => '2018-02-12 22:12:23',
                 'ip'          => '1.2.3.4',
                 'views'       => '123',
             ]
