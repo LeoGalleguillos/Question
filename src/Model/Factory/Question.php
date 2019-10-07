@@ -4,31 +4,19 @@ namespace LeoGalleguillos\Question\Model\Factory;
 use DateTime;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use TypeError;
 
 class Question
 {
-    /**
-     * Construct.
-     *
-     * @param QuestionTable\Question $questionTable
-     */
     public function __construct(
         QuestionTable\Question $questionTable
     ) {
         $this->questionTable = $questionTable;
     }
 
-    /**
-     * Build from array.
-     *
-     * @param array $array
-     * @return QuestionEntity\Question
-     */
     public function buildFromArray(
         array $array
     ): QuestionEntity\Question {
-        $questionEntity = new QuestionEntity\Question();
+        $questionEntity = static::getNewInstance();
         $questionEntity->setCreatedDateTime(new DateTime($array['created_datetime']))
                        ->setQuestionId($array['question_id'])
                        ->setSubject($array['subject']);
@@ -73,5 +61,10 @@ class Question
         return $this->buildFromArray(
             $this->questionTable->selectWhereQuestionId($questionId)
         );
+    }
+
+    protected function getNewInstance(): QuestionEntity\Question
+    {
+        return new QuestionEntity\Question();
     }
 }
