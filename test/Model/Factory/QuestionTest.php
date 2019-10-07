@@ -6,6 +6,7 @@ use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 class QuestionTest extends TestCase
 {
@@ -86,6 +87,18 @@ class QuestionTest extends TestCase
         $this->assertSame(
             $questionEntity->getQuestionId(),
             123
+        );
+    }
+
+    public function testGetNewInstance()
+    {
+        $reflectionClass = new ReflectionClass(QuestionFactory\Question::class);
+        $method = $reflectionClass->getMethod('getNewInstance');
+        $method->setAccessible(true);
+
+        $this->assertInstanceOf(
+            QuestionEntity\Question::class,
+            $method->invoke($this->questionFactory)
         );
     }
 }
