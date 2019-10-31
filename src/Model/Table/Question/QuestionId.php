@@ -53,6 +53,31 @@ class QuestionId
             ->getAffectedRows();
     }
 
+    public function updateSetDeletedColumnsWhereQuestionId(
+        int $deletedUserId,
+        string $deletedReason,
+        int $questionId
+    ): int {
+        $sql = '
+            UPDATE `question`
+               SET `question`.`deleted` = UTC_TIMESTAMP()
+                 , `question`.`deleted_datetime` = UTC_TIMESTAMP()
+                 , `question`.`deleted_user_id` = ?
+                 , `question`.`deleted_reason` = ?
+             WHERE `question`.`question_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $deletedUserId,
+            $deletedReason,
+            $questionId,
+        ];
+        return (int) $this->adapter
+            ->query($sql)
+            ->execute($parameters)
+            ->getAffectedRows();
+    }
+
     public function updateSetViewsBrowserWhereQuestionId(
         int $viewsBrowser,
         int $questionId

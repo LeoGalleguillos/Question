@@ -24,6 +24,54 @@ class QuestionIdTest extends TableTestCase
         $this->createTable('question');
     }
 
+    public function testUpdateSetDeletedColumnsWhereQuestionId()
+    {
+        $rowsAffected = $this->questionIdTable->updateSetDeletedColumnsWhereQuestionId(
+            3,
+            'deleted reason',
+            1
+        );
+        $this->assertSame(
+            0,
+            $rowsAffected
+        );
+
+        $this->questionTable->insert(
+            null,
+            'name',
+            'subject',
+            'message',
+            'ip',
+            'name',
+            'ip'
+        );
+
+        $rowsAffected = $this->questionIdTable->updateSetDeletedColumnsWhereQuestionId(
+            3,
+            'deleted reason',
+            1
+        );
+        $this->assertSame(
+            1,
+            $rowsAffected
+        );
+        $array = $this->questionTable->selectWhereQuestionId(1);
+        $this->assertNotNull(
+            $array['deleted']
+        );
+        $this->assertNotNull(
+            $array['deleted_datetime']
+        );
+        $this->assertSame(
+            '3',
+            $array['deleted_user_id']
+        );
+        $this->assertSame(
+            'deleted reason',
+            $array['deleted_reason']
+        );
+    }
+
     public function testUpdateIncrementViewsBrowserWhereQuestionId()
     {
         $rowsAffected = $this->questionIdTable->updateIncrementViewsBrowserWhereQuestionId(
