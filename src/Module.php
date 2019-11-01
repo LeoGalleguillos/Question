@@ -517,11 +517,6 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class => function ($sm) {
-                    return new QuestionTable\Question\DeletedDeletedUserIdDeletedReason(
-                        $sm->get('question')
-                    );
-                },
                 QuestionTable\Question\DeletedUserId::class => function ($sm) {
                     return new QuestionTable\Question\DeletedUserId(
                         $sm->get('question'),
