@@ -36,6 +36,16 @@ class QuestionTest extends TestCase
             $this->questionEntity->getCreatedDateTime()
         );
 
+        $deletedDateTime = new DateTime();
+        $this->assertSame(
+            $this->questionEntity,
+            $this->questionEntity->setDeletedDateTime($deletedDateTime)
+        );
+        $this->assertSame(
+            $deletedDateTime,
+            $this->questionEntity->getDeletedDateTime()
+        );
+
         $deletedUserId = 123;
         $this->assertSame(
             $this->questionEntity,
