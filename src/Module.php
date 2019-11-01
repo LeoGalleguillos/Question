@@ -360,7 +360,7 @@ class Module
                 },
                 QuestionService\Question\Undelete::class => function ($sm) {
                     return new QuestionService\Question\Undelete(
-                        $sm->get(QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class)
+                        $sm->get(QuestionTable\Question\QuestionId::class)
                     );
                 },
                 QuestionService\Question\Url::class => function ($sm) {

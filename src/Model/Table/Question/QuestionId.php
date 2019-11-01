@@ -78,6 +78,27 @@ class QuestionId
             ->getAffectedRows();
     }
 
+    public function updateSetDeletedColumnsToNullWhereQuestionId(
+        int $questionId
+    ): int {
+        $sql = '
+            UPDATE `question`
+               SET `question`.`deleted` = NULL
+                 , `question`.`deleted_datetime` = NULL
+                 , `question`.`deleted_user_id` = NULL
+                 , `question`.`deleted_reason` = NULL
+             WHERE `question`.`question_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $questionId,
+        ];
+        return (int) $this->adapter
+            ->query($sql)
+            ->execute($parameters)
+            ->getAffectedRows();
+    }
+
     public function updateSetViewsBrowserWhereQuestionId(
         int $viewsBrowser,
         int $questionId

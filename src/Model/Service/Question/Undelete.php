@@ -7,15 +7,15 @@ use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 class Undelete
 {
     public function __construct(
-        QuestionTable\Question\DeletedDeletedUserIdDeletedReason $deletedDeletedUserIdDeletedReasonTable
+        QuestionTable\Question\QuestionId $questionIdTable
     ) {
-        $this->deletedDeletedUserIdDeletedReasonTable = $deletedDeletedUserIdDeletedReasonTable;
+        $this->questionIdTable = $questionIdTable;
     }
 
     public function undelete(
         QuestionEntity\Question $questionEntity
     ): bool {
-        return (bool) $this->deletedDeletedUserIdDeletedReasonTable->updateToNullWhereQuestionId(
+        return (bool) $this->questionIdTable->updateSetDeletedColumnsToNullWhereQuestionId(
             $questionEntity->getQuestionId()
         );
     }
