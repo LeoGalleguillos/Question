@@ -1,19 +1,16 @@
 <?php
 namespace LeoGalleguillos\Question\Model\Service\Question\Delete\Queue;
 
-use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
-use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\User\Model\Factory as UserFactory;
 
 class Approve
 {
     public function __construct(
-        QuestionTable\Question\DeletedDeletedUserIdDeletedReason $deletedDeletedUserIdDeletedReasonTable,
+        QuestionTable\Question\QuestionId $questionIdTable,
         QuestionTable\QuestionDeleteQueue $questionDeleteQueueTable
     ) {
-        $this->deletedDeletedUserIdDeletedReasonTable = $deletedDeletedUserIdDeletedReasonTable;
-        $this->questionDeleteQueueTable               = $questionDeleteQueueTable;
+        $this->questionIdTable          = $questionIdTable;
+        $this->questionDeleteQueueTable = $questionDeleteQueueTable;
     }
 
     public function approve(
@@ -23,8 +20,7 @@ class Approve
             $questionDeleteQueueId
         );
 
-        $this->deletedDeletedUserIdDeletedReasonTable->updateSetDeletedDeletedUserIdDeletedReasonWhereQuestionId(
-            $array['created'],
+        $this->questionIdTable->updateSetDeletedColumnsWhereQuestionId(
             $array['user_id'],
             $array['reason'],
             $array['question_id']

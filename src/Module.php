@@ -251,7 +251,7 @@ class Module
                 },
                 QuestionService\Question\Delete\Queue\Approve::class => function ($sm) {
                     return new QuestionService\Question\Delete\Queue\Approve(
-                        $sm->get(QuestionTable\Question\DeletedDeletedUserIdDeletedReason::class),
+                        $sm->get(QuestionTable\Question\QuestionId::class),
                         $sm->get(QuestionTable\QuestionDeleteQueue::class)
                     );
                 },
