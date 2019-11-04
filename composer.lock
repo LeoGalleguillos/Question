@@ -189,12 +189,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/String.git",
-                "reference": "9b7789fe03e4d772bbaf7bd16c00843c1b2375f4"
+                "reference": "dc2487bb39acba1140c490fd97be319d90514e6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/9b7789fe03e4d772bbaf7bd16c00843c1b2375f4",
-                "reference": "9b7789fe03e4d772bbaf7bd16c00843c1b2375f4",
+                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/dc2487bb39acba1140c490fd97be319d90514e6f",
+                "reference": "dc2487bb39acba1140c490fd97be319d90514e6f",
                 "shasum": ""
             },
             "require": {
@@ -211,7 +211,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2019-10-29T06:23:27+00:00"
+            "time": "2019-11-03T23:33:05+00:00"
         },
         {
             "name": "leo-galleguillos/superglobal",
@@ -2061,12 +2061,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-console.git",
-                "reference": "8a96783cb25f1504b55d33190702db8e9bef58af"
+                "reference": "215ac6b39c406d463899c33d29239f2ebd849155"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-console/zipball/8a96783cb25f1504b55d33190702db8e9bef58af",
-                "reference": "8a96783cb25f1504b55d33190702db8e9bef58af",
+                "url": "https://api.github.com/repos/zendframework/zend-console/zipball/215ac6b39c406d463899c33d29239f2ebd849155",
+                "reference": "215ac6b39c406d463899c33d29239f2ebd849155",
                 "shasum": ""
             },
             "require": {
@@ -2106,7 +2106,7 @@
                 "console",
                 "zf"
             ],
-            "time": "2019-02-04T19:49:26+00:00"
+            "time": "2019-11-03T09:03:33+00:00"
         },
         {
             "name": "zendframework/zend-db",
@@ -2371,12 +2371,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-json.git",
-                "reference": "5651c7a88e4c24825820cd2f816aaa7746207060"
+                "reference": "b7b53ac36056cedfff020fe89139d264c20993b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-json/zipball/5651c7a88e4c24825820cd2f816aaa7746207060",
-                "reference": "5651c7a88e4c24825820cd2f816aaa7746207060",
+                "url": "https://api.github.com/repos/zendframework/zend-json/zipball/b7b53ac36056cedfff020fe89139d264c20993b0",
+                "reference": "b7b53ac36056cedfff020fe89139d264c20993b0",
                 "shasum": ""
             },
             "require": {
@@ -2413,7 +2413,7 @@
                 "json",
                 "zf"
             ],
-            "time": "2019-10-09T13:59:10+00:00"
+            "time": "2019-11-02T11:41:55+00:00"
         },
         {
             "name": "zendframework/zend-loader",
