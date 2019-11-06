@@ -9,11 +9,11 @@ use LeoGalleguillos\User\Model\Factory as UserFactory;
 class Approve
 {
     public function __construct(
-        QuestionTable\Answer\DeletedDeletedUserIdDeletedReason $deletedDeletedUserIdDeletedReasonTable,
+        QuestionTable\Answer\AnswerId $answerIdTable,
         QuestionTable\AnswerDeleteQueue $answerDeleteQueueTable
     ) {
-        $this->deletedDeletedUserIdDeletedReasonTable = $deletedDeletedUserIdDeletedReasonTable;
-        $this->answerDeleteQueueTable                 = $answerDeleteQueueTable;
+        $this->answerIdTable          = $answerIdTable;
+        $this->answerDeleteQueueTable = $answerDeleteQueueTable;
     }
 
     public function approve(
@@ -23,8 +23,7 @@ class Approve
             $answerDeleteQueueId
         );
 
-        $this->deletedDeletedUserIdDeletedReasonTable->updateSetDeletedDeletedUserIdDeletedReasonWhereAnswerId(
-            $array['created'],
+        $this->answerIdTable->updateSetDeletedColumnsWhereAnswerId(
             $array['user_id'],
             $array['reason'],
             $array['answer_id']
