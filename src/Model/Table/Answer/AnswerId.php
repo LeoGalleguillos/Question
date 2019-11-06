@@ -15,6 +15,31 @@ class AnswerId
         $this->adapter = $adapter;
     }
 
+    public function updateSetDeletedColumnsWhereAnswerId(
+        int $deletedUserId,
+        string $deletedReason,
+        int $answerId
+    ): int {
+        $sql = '
+            UPDATE `answer`
+               SET `answer`.`deleted` = UTC_TIMESTAMP()
+                 , `answer`.`deleted_datetime` = UTC_TIMESTAMP()
+                 , `answer`.`deleted_user_id` = ?
+                 , `answer`.`deleted_reason` = ?
+             WHERE `answer`.`answer_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $deletedUserId,
+            $deletedReason,
+            $answerId,
+        ];
+        return (bool) $this->adapter
+                           ->query($sql)
+                           ->execute($parameters)
+                           ->getAffectedRows();
+    }
+
     public function updateSetDeletedDeletedUserIdDeletedReasonToNullWhereAnswerId(
         int $answerId
     ): int {
