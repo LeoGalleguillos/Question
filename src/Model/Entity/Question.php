@@ -43,11 +43,6 @@ class Question
         return $this->createdName;
     }
 
-    public function getDeleted(): DateTime
-    {
-        return $this->deleted;
-    }
-
     public function getDeletedDateTime(): DateTime
     {
         return $this->deletedDateTime;
