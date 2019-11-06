@@ -31,13 +31,13 @@ class QuestionTest extends TestCase
             'ip'          => '1.2.3.4',
             'created_datetime'     => '2018-03-12 22:12:23',
             'created_ip'  => '5.6.7.8',
-            'deleted'     => '2018-09-17 21:42:45',
+            'deleted_datetime'     => '2018-09-17 21:42:45',
         ];
         $questionEntity = new QuestionEntity\Question();
         $questionEntity
             ->setCreatedDateTime(new DateTime($array['created_datetime']))
             ->setCreatedIp($array['created_ip'])
-            ->setDeleted(new DateTime($array['deleted']))
+            ->setDeletedDateTime(new DateTime($array['deleted_datetime']))
             ->setIp($array['ip'])
             ->setMessage($array['message'])
             ->setName($array['name'])

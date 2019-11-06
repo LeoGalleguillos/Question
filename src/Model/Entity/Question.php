@@ -122,12 +122,6 @@ class Question
         return $this;
     }
 
-    public function setDeleted(DateTime $deleted): QuestionEntity\Question
-    {
-        $this->deleted = $deleted;
-        return $this;
-    }
-
     public function setDeletedDateTime(DateTime $deletedDateTime): QuestionEntity\Question
     {
         $this->deletedDateTime = $deletedDateTime;

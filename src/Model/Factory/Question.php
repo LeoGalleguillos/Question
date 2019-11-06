@@ -39,9 +39,6 @@ class Question
         if (isset($array['views'])) {
             $questionEntity->setViews((int) $array['views']);
         }
-        if (isset($array['deleted'])) {
-            $questionEntity->setDeleted(new DateTime($array['deleted']));
-        }
         if (isset($array['deleted_datetime'])) {
             $questionEntity->setDeletedDateTime(new DateTime($array['deleted_datetime']));
         }
