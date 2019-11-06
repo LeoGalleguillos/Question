@@ -13,19 +13,11 @@ class DeleteTest extends TestCase
 {
     protected function setUp()
     {
-        $this->deletedDeletedUserIdDeletedReasonTableMock = $this->createMock(
-            QuestionTable\Answer\DeletedDeletedUserIdDeletedReason::class
+        $this->answerIdTableMock = $this->createMock(
+            QuestionTable\Answer\AnswerId::class
         );
         $this->deleteService = new QuestionService\Answer\Delete(
-            $this->deletedDeletedUserIdDeletedReasonTableMock
-        );
-    }
-
-    public function testInitialize()
-    {
-        $this->assertInstanceOf(
-            QuestionService\Answer\Delete::class,
-            $this->deleteService
+            $this->answerIdTableMock
         );
     }
 

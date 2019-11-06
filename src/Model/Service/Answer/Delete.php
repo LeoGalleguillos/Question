@@ -8,9 +8,9 @@ use LeoGalleguillos\User\Model\Entity as UserEntity;
 class Delete
 {
     public function __construct(
-        QuestionTable\Answer\DeletedDeletedUserIdDeletedReason $deletedDeletedUserIdDeletedReasonTable
+        QuestionTable\Answer\AnswerId $answerIdTable
     ) {
-        $this->deletedDeletedUserIdDeletedReasonTable = $deletedDeletedUserIdDeletedReasonTable;
+        $this->answerIdTable = $answerIdTable;
     }
 
     public function delete(
@@ -18,7 +18,7 @@ class Delete
         string $reason,
         QuestionEntity\Answer $answerEntity
     ): bool {
-        return $this->deletedDeletedUserIdDeletedReasonTable->updateWhereAnswerId(
+        return (bool) $this->answerIdTable->updateSetDeletedColumnsWhereAnswerId(
             $userEntity->getUserId(),
             $reason,
             $answerEntity->getAnswerId()

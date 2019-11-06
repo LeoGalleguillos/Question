@@ -115,7 +115,7 @@ class Module
                 },
                 QuestionService\Answer\Delete::class => function ($sm) {
                     return new QuestionService\Answer\Delete(
-                        $sm->get(QuestionTable\Answer\DeletedDeletedUserIdDeletedReason::class)
+                        $sm->get(QuestionTable\Answer\AnswerId::class)
                     );
                 },
                 QuestionService\Answer\Delete\Queue\Add::class => function ($sm) {
