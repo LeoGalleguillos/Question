@@ -98,10 +98,11 @@ class Answer
                      , `created_name`
                      , `created_ip`
                      , `deleted`
+                     , `deleted_datetime`
                      , `deleted_user_id`
                      , `deleted_reason`
                    )
-            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), ?, ?)
+            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP(), ?, ?)
                  ;
         ';
         $parameters = [
