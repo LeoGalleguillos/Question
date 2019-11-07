@@ -28,9 +28,6 @@ class Answer
         if (isset($array['created_name'])) {
             $answerEntity->setCreatedName($array['created_name']);
         }
-        if (isset($array['deleted'])) {
-            $answerEntity->setDeleted(new DateTime($array['deleted']));
-        }
         if (isset($array['deleted_datetime'])) {
             $answerEntity->setDeletedDateTime(new DateTime($array['deleted_datetime']));
         }

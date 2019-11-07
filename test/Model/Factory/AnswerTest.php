@@ -42,7 +42,6 @@ class AnswerTest extends TestCase
                      ->setCreatedDateTime(new DateTime($array['created_datetime']))
                      ->setCreatedIp($array['created_ip'])
                      ->setDeletedDateTime(new DateTime($array['deleted']))
-                     ->setDeleted(new DateTime($array['deleted']))
                      ->setMessage($array['message'])
                      ->setIp($array['ip'])
                      ->setQuestionId($array['question_id']);
