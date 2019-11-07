@@ -23,31 +23,25 @@ class AnswerTest extends TestCase
         );
     }
 
-    public function testInitialize()
-    {
-        $this->assertInstanceOf(
-            QuestionFactory\Answer::class,
-            $this->answerFactory
-        );
-    }
-
     public function testBuildFromArray()
     {
         $array = [
-            'answer_id'   => 1,
-            'question_id' => 1,
-            'user_id'     => null,
-            'message'     => 'message',
-            'created_datetime'     => '2018-03-12 22:12:23',
-            'created_ip'  => '5.6.7.8',
-            'ip'          => '1.2.3.4',
-            'deleted'     => '2018-09-18 11:23:05',
+            'answer_id'        => 1,
+            'question_id'      => 1,
+            'user_id'          => null,
+            'message'          => 'message',
+            'created_datetime' => '2018-03-12 22:12:23',
+            'created_ip'       => '5.6.7.8',
+            'ip'               => '1.2.3.4',
+            'deleted'          => '2018-09-18 11:23:05',
+            'deleted_datetime' => '2018-09-18 11:23:05',
         ];
 
         $answerEntity = new QuestionEntity\Answer();
         $answerEntity->setAnswerId($array['answer_id'])
                      ->setCreatedDateTime(new DateTime($array['created_datetime']))
                      ->setCreatedIp($array['created_ip'])
+                     ->setDeletedDateTime(new DateTime($array['deleted']))
                      ->setDeleted(new DateTime($array['deleted']))
                      ->setMessage($array['message'])
                      ->setIp($array['ip'])

@@ -8,23 +8,12 @@ use TypeError;
 
 class Answer
 {
-    /**
-     * Construct.
-     *
-     * @param QuestionTable\Question $answerTable
-     */
     public function __construct(
         QuestionTable\Answer $answerTable
     ) {
         $this->answerTable = $answerTable;
     }
 
-    /**
-     * Build from array.
-     *
-     * @param array $array
-     * @return QuestionEntity\Answer
-     */
     public function buildFromArray(
         array $array
     ): QuestionEntity\Answer {
@@ -41,6 +30,9 @@ class Answer
         }
         if (isset($array['deleted'])) {
             $answerEntity->setDeleted(new DateTime($array['deleted']));
+        }
+        if (isset($array['deleted_datetime'])) {
+            $answerEntity->setDeletedDateTime(new DateTime($array['deleted_datetime']));
         }
         if (isset($array['deleted_user_id'])) {
             $answerEntity->setDeletedUserId($array['deleted_user_id']);
@@ -61,12 +53,6 @@ class Answer
         return $answerEntity;
     }
 
-    /**
-     * Build from answer ID.
-     *
-     * @param int $answerId
-     * @return QuestionEntity\Answer
-     */
     public function buildFromAnswerId(
         int $answerId
     ): QuestionEntity\Answer {
