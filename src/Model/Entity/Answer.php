@@ -11,6 +11,7 @@ class Answer
     protected $createdIp;
     protected $createdName;
     protected $deleted;
+    protected $deletedDateTime;
     protected $deletedUserId;
     protected $deletedReason;
     protected $history;
@@ -43,6 +44,11 @@ class Answer
     public function getDeleted(): DateTime
     {
         return $this->deleted;
+    }
+
+    public function getDeletedDateTime(): DateTime
+    {
+        return $this->deletedDateTime;
     }
 
     public function getDeletedUserId(): int
@@ -117,6 +123,12 @@ class Answer
     public function setDeleted(DateTime $deleted): QuestionEntity\Answer
     {
         $this->deleted = $deleted;
+        return $this;
+    }
+
+    public function setDeletedDateTime(DateTime $deletedDateTime): QuestionEntity\Answer
+    {
+        $this->deletedDateTime = $deletedDateTime;
         return $this;
     }
 
