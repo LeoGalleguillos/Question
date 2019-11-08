@@ -2,49 +2,15 @@
 namespace LeoGalleguillos\AnswerTest\Model\Table;
 
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\QuestionTest\TableTestCase;
-use Zend\Db\Adapter\Adapter;
-use PHPUnit\Framework\TestCase;
+use LeoGalleguillos\Test\TableTestCase;
 
 class AnswerTest extends TableTestCase
 {
-    /**
-     * @var string
-     */
-    protected $sqlPath = __DIR__ . '/../../..' . '/sql/leogalle_test/answer/';
-
     protected function setUp()
     {
-        $configArray     = require(__DIR__ . '/../../../config/autoload/local.php');
-        $configArray     = $configArray['db']['adapters']['leogalle_test'];
-        $this->adapter   = new Adapter($configArray);
-
-        $this->answerTable = new QuestionTable\Answer($this->adapter);
-
-        $this->setForeignKeyChecks0();
-        $this->dropTable();
-        $this->createTable();
-        $this->setForeignKeyChecks1();
-    }
-
-    protected function dropTable()
-    {
-        $sql = file_get_contents($this->sqlPath . 'drop.sql');
-        $result = $this->adapter->query($sql)->execute();
-    }
-
-    protected function createTable()
-    {
-        $sql = file_get_contents($this->sqlPath . 'create.sql');
-        $result = $this->adapter->query($sql)->execute();
-    }
-
-    public function testInitialize()
-    {
-        $this->assertInstanceOf(
-            QuestionTable\Answer::class,
-            $this->answerTable
-        );
+        $this->dropTable('answer');
+        $this->createTable('answer');
+        $this->answerTable = new QuestionTable\Answer($this->getAdapter());
     }
 
     public function testInsertAndSelectCount()
