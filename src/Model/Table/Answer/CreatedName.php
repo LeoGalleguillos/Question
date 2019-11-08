@@ -25,7 +25,7 @@ class CreatedName
              . "
               FROM `answer`
              WHERE `answer`.`created_name` = ?
-               AND `answer`.`deleted` IS NULL
+               AND `answer`.`deleted_datetime` IS NULL
              ORDER
                 BY `answer`.`created_datetime` DESC
              LIMIT $limitRowCount
