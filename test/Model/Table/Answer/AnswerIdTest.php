@@ -24,7 +24,7 @@ class AnswerIdTest extends TableTestCase
         $this->createTable('answer');
     }
 
-    public function testUpdateSetDeletedColumns()
+    public function testUpdateSetDeletedColumnsWhereAnswerId()
     {
         $rowsAffected = $this->answerIdTable->updateSetDeletedColumnsWhereAnswerId(
             2,
