@@ -10,7 +10,6 @@ class Answer
     protected $createdDateTime;
     protected $createdIp;
     protected $createdName;
-    protected $deleted;
     protected $deletedDateTime;
     protected $deletedUserId;
     protected $deletedReason;
@@ -39,11 +38,6 @@ class Answer
     public function getCreatedName(): string
     {
         return $this->createdName;
-    }
-
-    public function getDeleted(): DateTime
-    {
-        return $this->deleted;
     }
 
     public function getDeletedDateTime(): DateTime
@@ -117,12 +111,6 @@ class Answer
     public function setCreatedName(string $createdName): QuestionEntity\Answer
     {
         $this->createdName = $createdName;
-        return $this;
-    }
-
-    public function setDeleted(DateTime $deleted): QuestionEntity\Answer
-    {
-        $this->deleted = $deleted;
         return $this;
     }
 
