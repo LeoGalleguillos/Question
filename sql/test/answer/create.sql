@@ -19,6 +19,7 @@ CREATE TABLE `answer` (
     KEY `user_id` (`user_id`),
     KEY `ip` (`ip`),
     KEY `created_name_deleted_created_datetime` (created_name, deleted, created_datetime),
+    KEY `created_name_deleted_datetime_created_datetime` (created_name, deleted_datetime, created_datetime),
     KEY `created_ip_created_datetime` (`created_ip`, `created_datetime`),
     KEY `deleted_created_datetime` (`deleted`, `created_datetime`),
     KEY `deleted_user_id_deleted` (`deleted_user_id`, `deleted`)
