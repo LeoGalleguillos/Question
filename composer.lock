@@ -2421,12 +2421,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-loader.git",
-                "reference": "35748b3618e833808c2ebb0fcef02e5482f157a9"
+                "reference": "322aea16161fcdaa61b3a293145742f46c715b51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-loader/zipball/35748b3618e833808c2ebb0fcef02e5482f157a9",
-                "reference": "35748b3618e833808c2ebb0fcef02e5482f157a9",
+                "url": "https://api.github.com/repos/zendframework/zend-loader/zipball/322aea16161fcdaa61b3a293145742f46c715b51",
+                "reference": "322aea16161fcdaa61b3a293145742f46c715b51",
                 "shasum": ""
             },
             "require": {
@@ -2458,7 +2458,7 @@
                 "loader",
                 "zf"
             ],
-            "time": "2019-09-04T19:43:14+00:00"
+            "time": "2019-11-08T14:25:39+00:00"
         },
         {
             "name": "zendframework/zend-modulemanager",
