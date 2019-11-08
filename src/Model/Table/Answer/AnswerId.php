@@ -40,12 +40,13 @@ class AnswerId
                            ->getAffectedRows();
     }
 
-    public function updateSetDeletedDeletedUserIdDeletedReasonToNullWhereAnswerId(
+    public function updateSetDeletedColumnsToNullWhereAnswerId(
         int $answerId
     ): int {
         $sql = '
             UPDATE `answer`
                SET `answer`.`deleted` = NULL
+                 , `answer`.`deleted_datetime` = NULL
                  , `answer`.`deleted_user_id` = NULL
                  , `answer`.`deleted_reason` = NULL
              WHERE `answer`.`answer_id` = ?

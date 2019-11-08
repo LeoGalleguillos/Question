@@ -15,7 +15,7 @@ class Undelete
     public function undelete(
         QuestionEntity\Answer $answerEntity
     ): bool {
-        return (bool) $this->answerIdTable->updateSetDeletedDeletedUserIdDeletedReasonToNullWhereAnswerId(
+        return (bool) $this->answerIdTable->updateSetDeletedColumnsToNullWhereAnswerId(
             $answerEntity->getAnswerId()
         );
     }
