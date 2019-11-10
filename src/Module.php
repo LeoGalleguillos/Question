@@ -540,6 +540,12 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionTable\Question\MessageCreatedDatetimeDeletedDatetime::class => function ($sm) {
+                    return new QuestionTable\Question\MessageCreatedDatetimeDeletedDatetime(
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Question::class)
+                    );
+                },
                 QuestionTable\Question\Subject::class => function ($sm) {
                     return new QuestionTable\Question\Subject(
                         $sm->get('question'),
