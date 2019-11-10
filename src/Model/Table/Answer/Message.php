@@ -33,7 +33,7 @@ class Message
                  , `answer`.`message`
                  , `answer`.`ip`
                  , `answer`.`created_datetime`
-                 , `answer`.`deleted`
+                 , `answer`.`deleted_datetime`
               FROM `answer`
              WHERE `answer`.`message` REGEXP ?
              LIMIT $limitOffset, $limitRowCount
