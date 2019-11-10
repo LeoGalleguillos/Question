@@ -24,6 +24,6 @@ CREATE TABLE `answer` (
     KEY `created_ip_created_datetime` (`created_ip`, `created_datetime`),
     KEY `deleted_created_datetime` (`deleted`, `created_datetime`),
     KEY `deleted_datetime_created_datetime` (`deleted_datetime`, `created_datetime`),
-    KEY `deleted_user_id_deleted` (`deleted_user_id`, `deleted`)
+    KEY `deleted_user_id_deleted` (`deleted_user_id`, `deleted`),
     KEY `deleted_user_id_deleted_datetime` (`deleted_user_id`, `deleted_datetime`)
 ) CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
