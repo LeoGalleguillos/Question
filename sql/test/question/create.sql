@@ -19,11 +19,17 @@ CREATE TABLE `question` (
     PRIMARY KEY (`question_id`),
     KEY `user_id` (`user_id`),
     KEY `subject_deleted_views_browser` (`subject`, `deleted`, `views_browser`),
+    KEY `subject_deleted_datetime_views_browser` (`subject`, `deleted_datetime`, `views_browser`),
     KEY `ip` (`ip`),
     KEY `created_datetime_deleted_views_browser` (`created_datetime`, `deleted`, `views_browser`),
+    KEY `created_datetime_deleted_datetime_views_browser` (`created_datetime`, `deleted_datetime`, `views_browser`),
     KEY `created_name_deleted_created_datetime` (`created_name`, `deleted`, `created_datetime`),
+    KEY `created_name_deleted_datetime_created_datetime` (`created_name`, `deleted_datetime`, `created_datetime`),
     KEY `created_name_deleted_views_browser` (`created_name`, `deleted`, `views_browser`),
+    KEY `created_name_deleted_datetime_views_browser` (`created_name`, `deleted_datetime`, `views_browser`),
     KEY `created_ip_created_datetime` (`created_ip`, `created_datetime`),
     KEY `deleted_created_datetime` (`deleted`, `created_datetime`),
-    KEY `deleted_user_id_deleted` (`deleted_user_id`, `deleted`)
+    KEY `deleted_datetime_created_datetime` (`deleted_datetime`, `created_datetime`),
+    KEY `deleted_user_id_deleted` (`deleted_user_id`, `deleted`),
+    KEY `deleted_user_id_deleted_datetime` (`deleted_user_id`, `deleted_datetime`)
 ) CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
