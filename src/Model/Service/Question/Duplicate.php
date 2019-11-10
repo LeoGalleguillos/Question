@@ -13,10 +13,10 @@ class Duplicate
 {
     public function __construct(
         QuestionFactory\Question $questionFactory,
-        QuestionTable\Question\MessageCreatedDatetimeDeleted $messageCreatedDatetimeDeletedTable
+        QuestionTable\Question\MessageCreatedDatetimeDeletedDatetime $messageCreatedDatetimeDeletedDatetimeTable
     ) {
-        $this->questionFactory     = $questionFactory;
-        $this->messageCreatedDatetimeDeletedTable = $messageCreatedDatetimeDeletedTable;
+        $this->questionFactory                            = $questionFactory;
+        $this->messageCreatedDatetimeDeletedDatetimeTable = $messageCreatedDatetimeDeletedDatetimeTable;
     }
 
     /**
@@ -29,7 +29,7 @@ class Duplicate
         $dateTime->sub(new DateInterval('P3D'));
 
         /* @throws TypeError */
-        $array = $this->messageCreatedDatetimeDeletedTable->selectWhereMessageAndCreatedDateTimeIsGreaterThanOrEqualToAndDeletedIsNull(
+        $array = $this->messageCreatedDatetimeDeletedDatetimeTable->selectWhereMessageAndCreatedDateTimeIsGreaterThanOrEqualToAndDeletedDatetimeIsNull(
             $message,
             $dateTime->format('Y-m-d H:i:s')
         );
