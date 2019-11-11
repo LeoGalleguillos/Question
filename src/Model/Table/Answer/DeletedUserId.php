@@ -26,7 +26,7 @@ class DeletedUserId
               FROM `answer`
              WHERE `answer`.`deleted_user_id` = ?
              ORDER
-                BY `answer`.`deleted_deleted` DESC
+                BY `answer`.`deleted_datetime` DESC
              LIMIT $limitRowCount
                  ;
         ";
