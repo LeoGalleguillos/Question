@@ -518,6 +518,13 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionTable\Question\DeletedDatetime::class => function ($sm) {
+                    return new QuestionTable\Question\DeletedDatetime(
+                        $sm->get('question'),
+                        $sm->get(MemcachedService\Memcached::class),
+                        $sm->get(QuestionTable\Question::class)
+                    );
+                },
                 QuestionTable\Question\DeletedUserId::class => function ($sm) {
                     return new QuestionTable\Question\DeletedUserId(
                         $sm->get('question'),
