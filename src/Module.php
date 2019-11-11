@@ -303,7 +303,7 @@ class Module
                 },
                 QuestionService\Question\Questions\NumberOfPages::class => function ($sm) {
                     return new QuestionService\Question\Questions\NumberOfPages(
-                        $sm->get(QuestionTable\Question\Deleted::class)
+                        $sm->get(QuestionTable\Question\DeletedDatetime::class)
                     );
                 },
                 QuestionService\Question\Questions\Similar::class => function ($sm) {
