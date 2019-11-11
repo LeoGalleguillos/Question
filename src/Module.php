@@ -416,6 +416,12 @@ class Module
                         $sm->get(QuestionTable\Answer::class)
                     );
                 },
+                QuestionTable\Answer\DeletedDatetime::class => function ($sm) {
+                    return new QuestionTable\Answer\DeletedDatetime(
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Answer::class)
+                    );
+                },
                 QuestionTable\Answer\DeletedCreatedDatetime::class => function ($sm) {
                     return new QuestionTable\Answer\DeletedCreatedDatetime(
                         $sm->get('question'),
