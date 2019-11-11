@@ -24,7 +24,7 @@ class DeletedDatetimeCreatedDatetime
         $sql = $this->answerTable->getSelect()
              . '
               FROM `answer`
-             WHERE `answer`.`deleted` IS NULL
+             WHERE `answer`.`deleted_datetime` IS NULL
              ORDER
                 BY `answer`.`created_datetime` DESC
              LIMIT 100
