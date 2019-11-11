@@ -27,16 +27,16 @@ class CreatedName
             SELECT COUNT(*) AS `count`
               FROM `question`
              WHERE `question`.`created_name` = ?
-               AND `question`.`deleted` IS NULL
+               AND `question`.`deleted_datetime` IS NULL
                  ;
         ';
         $parameters = [
             $createdName,
         ];
         return (int) $this->adapter
-                          ->query($sql)
-                          ->execute($parameters)
-                          ->current()['count'];
+            ->query($sql)
+            ->execute($parameters)
+            ->current()['count'];
     }
 
     /**
@@ -52,7 +52,7 @@ class CreatedName
              . "
               FROM `question`
              WHERE `question`.`created_name` = ?
-               AND `question`.`deleted` IS NULL
+               AND `question`.`deleted_datetime` IS NULL
              ORDER
                 BY `question`.`created_datetime` DESC
              LIMIT $limitOffset, $limitRowCount
