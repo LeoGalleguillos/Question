@@ -301,11 +301,6 @@ class Module
                         $sm->get(QuestionTable\Answer::class)
                     );
                 },
-                QuestionService\Question\Questions\NumberOfPages::class => function ($sm) {
-                    return new QuestionService\Question\Questions\NumberOfPages(
-                        $sm->get(QuestionTable\Question\DeletedDatetime::class)
-                    );
-                },
                 QuestionService\Question\Questions\Similar::class => function ($sm) {
                     return new QuestionService\Question\Questions\Similar(
                         $sm->get(QuestionFactory\Question::class),
