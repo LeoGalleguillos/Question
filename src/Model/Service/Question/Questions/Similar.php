@@ -12,7 +12,7 @@ class Similar
         QuestionTable\Question $questionTable,
         QuestionTable\QuestionSearchMessage $questionSearchMessageTable
     ) {
-        $this->questionFactory                = $questionFactory;
+        $this->questionFactory            = $questionFactory;
         $this->questionTable              = $questionTable;
         $this->questionSearchMessageTable = $questionSearchMessageTable;
     }
@@ -42,7 +42,7 @@ class Similar
             return [];
         }
 
-        $arrays = $this->questionTable->selectWhereQuestionIdInAndDeletedIsNull(
+        $arrays = $this->questionTable->selectWhereQuestionIdInAndDeletedDatetimeIsNull(
             $questionIds
         );
 

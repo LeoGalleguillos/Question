@@ -190,7 +190,7 @@ class Question
         return $this->adapter->query($sql)->execute($parameters)->current();
     }
 
-    public function selectWhereQuestionIdInAndDeletedIsNull(
+    public function selectWhereQuestionIdInAndDeletedDatetimeIsNull(
         array $questionIds
     ): Generator {
         $questionIds = array_map('intval', $questionIds);
@@ -200,7 +200,7 @@ class Question
              . "
               FROM `question`
              WHERE `question`.`question_id` IN ($questionIds)
-               AND `question`.`deleted` IS NULL
+               AND `question`.`deleted_datetime` IS NULL
              ORDER
                 BY FIELD(`question`.`question_id`, $questionIds)
 

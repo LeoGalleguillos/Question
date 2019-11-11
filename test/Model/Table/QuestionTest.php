@@ -125,7 +125,7 @@ class QuestionTest extends TableTestCase
         );
     }
 
-    public function testSelectWhereQuestionIdInAndDeletedIsNull()
+    public function testSelectWhereQuestionIdInAndDeletedDatetimeIsNull()
     {
         $this->questionTable->insert(
             1, 'name', 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4'
@@ -133,7 +133,7 @@ class QuestionTest extends TableTestCase
         $this->questionTable->insert(
             2, 'name', 'subject', 'message', '5.6.7.8', 'name', '5.6.7.8'
         );
-        $generator = $this->questionTable->selectWhereQuestionIdInAndDeletedIsNull(
+        $generator = $this->questionTable->selectWhereQuestionIdInAndDeletedDatetimeIsNull(
             [1, 2, 3, 'string', 'injection' => 'attempt']
         );
         $this->assertInstanceOf(
