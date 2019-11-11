@@ -10,10 +10,10 @@ class Year
 {
     public function __construct(
         QuestionFactory\Question $questionFactory,
-        QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser $createdDatetimeDeletedViewsBrowserTable
+        QuestionTable\Question\CreatedDatetimeDeletedDatetimeViewsBrowser $createdDatetimeDeletedDatetimeViewsBrowserTable
     ) {
-        $this->questionFactory                         = $questionFactory;
-        $this->createdDatetimeDeletedViewsBrowserTable = $createdDatetimeDeletedViewsBrowserTable;
+        $this->questionFactory                                 = $questionFactory;
+        $this->createdDatetimeDeletedDatetimeViewsBrowserTable = $createdDatetimeDeletedDatetimeViewsBrowserTable;
     }
 
     public function getQuestions(
@@ -22,8 +22,8 @@ class Year
         $betweenMin = "$year-01-01 05:00:00";
         $betweenMax = ($year + 1) . "-01-01 04:59:59";
 
-        $arrays = $this->createdDatetimeDeletedViewsBrowserTable
-            ->selectWhereCreatedDatetimeBetweenAndDeletedIsNullOrderByViewsBrowserDescLimit100(
+        $arrays = $this->createdDatetimeDeletedDatetimeViewsBrowserTable
+            ->selectWhereCreatedDatetimeBetweenAndDeletedDatetimeIsNullOrderByViewsBrowserDescLimit100(
                 $betweenMin,
                 $betweenMax
             );

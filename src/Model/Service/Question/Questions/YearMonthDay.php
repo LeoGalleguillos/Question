@@ -12,10 +12,10 @@ class YearMonthDay
 {
     public function __construct(
         QuestionFactory\Question $questionFactory,
-        QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser $createdDatetimeDeletedViewsBrowserTable
+        QuestionTable\Question\CreatedDatetimeDeletedDatetimeViewsBrowser $createdDatetimeDeletedDatetimeViewsBrowserTable
     ) {
-        $this->questionFactory                         = $questionFactory;
-        $this->createdDatetimeDeletedViewsBrowserTable = $createdDatetimeDeletedViewsBrowserTable;
+        $this->questionFactory                                 = $questionFactory;
+        $this->createdDatetimeDeletedDatetimeViewsBrowserTable = $createdDatetimeDeletedDatetimeViewsBrowserTable;
     }
 
     public function getQuestions(
@@ -35,8 +35,8 @@ class YearMonthDay
         $dateTimeMax->add(new DateInterval('P1D'))
             ->sub(new DateInterval('PT1S'));
 
-        $arrays = $this->createdDatetimeDeletedViewsBrowserTable
-            ->selectWhereCreatedDatetimeBetweenAndDeletedIsNullOrderByViewsBrowserDesc(
+        $arrays = $this->createdDatetimeDeletedDatetimeViewsBrowserTable
+            ->selectWhereCreatedDatetimeBetweenAndDeletedDatetimeIsNullOrderByViewsBrowserDesc(
                 $dateTimeMin->format('Y-m-d H:i:s'),
                 $dateTimeMax->format('Y-m-d H:i:s')
             );

@@ -322,19 +322,19 @@ class Module
                 QuestionService\Question\Questions\Year::class => function ($sm) {
                     return new QuestionService\Question\Questions\Year(
                         $sm->get(QuestionFactory\Question::class),
-                        $sm->get(QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser::class)
+                        $sm->get(QuestionTable\Question\CreatedDatetimeDeletedDatetimeViewsBrowser::class)
                     );
                 },
                 QuestionService\Question\Questions\YearMonth::class => function ($sm) {
                     return new QuestionService\Question\Questions\YearMonth(
                         $sm->get(QuestionFactory\Question::class),
-                        $sm->get(QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser::class)
+                        $sm->get(QuestionTable\Question\CreatedDatetimeDeletedDatetimeViewsBrowser::class)
                     );
                 },
                 QuestionService\Question\Questions\YearMonthDay::class => function ($sm) {
                     return new QuestionService\Question\Questions\YearMonthDay(
                         $sm->get(QuestionFactory\Question::class),
-                        $sm->get(QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser::class)
+                        $sm->get(QuestionTable\Question\CreatedDatetimeDeletedDatetimeViewsBrowser::class)
                     );
                 },
                 QuestionService\Question\RootRelativeUrl::class => function ($sm) {

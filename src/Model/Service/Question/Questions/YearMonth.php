@@ -13,10 +13,10 @@ class YearMonth
 {
     public function __construct(
         QuestionFactory\Question $questionFactory,
-        QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser $createdDatetimeDeletedViewsBrowserTable
+        QuestionTable\Question\CreatedDatetimeDeletedDatetimeViewsBrowser $createdDatetimeDeletedDatetimeViewsBrowserTable
     ) {
-        $this->questionFactory                         = $questionFactory;
-        $this->createdDatetimeDeletedViewsBrowserTable = $createdDatetimeDeletedViewsBrowserTable;
+        $this->questionFactory                                 = $questionFactory;
+        $this->createdDatetimeDeletedDatetimeViewsBrowserTable = $createdDatetimeDeletedDatetimeViewsBrowserTable;
     }
 
     public function getQuestions(
@@ -36,8 +36,8 @@ class YearMonth
         $dateTimeMin->setTimezone(new DateTimeZone('UTC'));
         $dateTimeMax->setTimezone(new DateTimeZone('UTC'));
 
-        $arrays = $this->createdDatetimeDeletedViewsBrowserTable
-            ->selectWhereCreatedDatetimeBetweenAndDeletedIsNullOrderByViewsBrowserDescLimit100(
+        $arrays = $this->createdDatetimeDeletedDatetimeViewsBrowserTable
+            ->selectWhereCreatedDatetimeBetweenAndDeletedDatetimeIsNullOrderByViewsBrowserDescLimit100(
                 $dateTimeMin->format('Y-m-d H:i:s'),
                 $dateTimeMax->format('Y-m-d H:i:s')
             );
