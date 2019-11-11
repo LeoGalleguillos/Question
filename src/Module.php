@@ -449,12 +449,6 @@ class Module
                         $sm->get(MemcachedService\Memcached::class)
                     );
                 },
-                QuestionTable\Question\CreatedDatetimeDeleted::class => function ($sm) {
-                    return new QuestionTable\Question\CreatedDatetimeDeleted(
-                        $sm->get('question'),
-                        $sm->get(QuestionTable\Question::class)
-                    );
-                },
                 QuestionTable\Question\CreatedDatetimeDeletedDatetime::class => function ($sm) {
                     return new QuestionTable\Question\CreatedDatetimeDeletedDatetime(
                         $sm->get('question'),
