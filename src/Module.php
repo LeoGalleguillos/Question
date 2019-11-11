@@ -546,6 +546,12 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionTable\Question\SubjectDeletedDatetimeViewsBrowser::class => function ($sm) {
+                    return new QuestionTable\Question\SubjectDeletedDatetimeViewsBrowser(
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Question::class)
+                    );
+                },
                 QuestionTable\Question\SubjectDeletedViewsBrowser::class => function ($sm) {
                     return new QuestionTable\Question\SubjectDeletedViewsBrowser(
                         $sm->get('question'),
