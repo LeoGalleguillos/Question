@@ -23,7 +23,7 @@ class DeletedDatetime
         $this->questionTable    = $questionTable;
     }
 
-    public function selectCountWhereDeletedIsNull(): int
+    public function selectCountWhereDeletedDatetimeIsNull(): int
     {
         $cacheKey = md5(__METHOD__);
         if (null !== ($count = $this->memcachedService->get($cacheKey))) {
@@ -42,7 +42,7 @@ class DeletedDatetime
         return $count;
     }
 
-    public function selectWhereDeletedIsNotNull(
+    public function selectWhereDeletedDatetimeIsNotNull(
         int $limitRowCount
     ): Generator {
         $sql = $this->questionTable->getSelect()
