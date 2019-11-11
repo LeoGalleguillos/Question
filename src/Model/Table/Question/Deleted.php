@@ -58,25 +58,4 @@ class Deleted
             yield $array;
         }
     }
-
-    /**
-     * @return bool
-     */
-    public function updateSetToUtcTimestampWhereQuestionId(
-        int $questionId
-    ): bool {
-        $sql = '
-            UPDATE `question`
-               SET `question`.`deleted` = UTC_TIMESTAMP()
-             WHERE `question`.`question_id` = ?
-                 ;
-        ';
-        $parameters = [
-            $questionId,
-        ];
-        return (bool) $this->adapter
-                           ->query($sql)
-                           ->execute($parameters)
-                           ->getAffectedRows();
-    }
 }
