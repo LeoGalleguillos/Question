@@ -17,14 +17,6 @@ class Questions
         $this->questionTable   = $questionTable;
     }
 
-    /**
-     * Get questions.
-     *
-     * @param int $page
-     * @param int $questionsPerPage
-     * @return Generator
-     * @yield QuestionEntity\Question
-     */
     public function getQuestions(
         int $page,
         int $questionsPerPage = 100
@@ -34,7 +26,7 @@ class Questions
         }
 
         $generator = $this->questionTable
-            ->selectWhereDeletedIsNullOrderByCreatedDateTimeDesc(
+            ->selectWhereDeletedDatetimeIsNullOrderByCreatedDateTimeDesc(
                 ($page - 1) * $questionsPerPage,
                 $questionsPerPage
             );

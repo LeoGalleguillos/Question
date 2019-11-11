@@ -151,21 +151,14 @@ class Question
         return $count;
     }
 
-    /**
-     * Select where deleted is null order by created_datetime desc.
-     *
-     * @param int $limitOffset
-     * @param int $limitRowCount
-     * @return Generator
-     */
-    public function selectWhereDeletedIsNullOrderByCreatedDateTimeDesc(
+    public function selectWhereDeletedDatetimeIsNullOrderByCreatedDateTimeDesc(
         int $limitOffset,
         int $limitRowCount
     ): Generator {
         $sql = $this->getSelect()
              . "
               FROM `question`
-             WHERE `deleted` IS NULL
+             WHERE `deleted_datetime` IS NULL
              ORDER
                 BY `question`.`created_datetime` DESC
              LIMIT $limitOffset, $limitRowCount
