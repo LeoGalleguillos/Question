@@ -21,7 +21,7 @@ class DeletedDatetime
         $this->answerTable = $answerTable;
     }
 
-    public function selectWhereDeletedIsNotNull(
+    public function selectWhereDeletedDatetimeIsNotNull(
         int $limitRowCount
     ): Generator {
         $sql = $this->answerTable->getSelect()
