@@ -52,25 +52,4 @@ class DeletedTest extends TableTestCase
             $this->answerDeletedTable
         );
     }
-
-    public function testInsertAndSelectCount()
-    {
-        $this->assertFalse(
-            $this->answerDeletedTable->updateSetToUtcTimestampWhereAnswerId(1)
-        );
-
-        $this->answerTable->insert(
-            12345,
-            54321,
-            'name',
-            'message',
-            'ip',
-            'name',
-            'ip'
-        );
-
-        $this->assertTrue(
-            $this->answerDeletedTable->updateSetToUtcTimestampWhereAnswerId(1)
-        );
-    }
 }
