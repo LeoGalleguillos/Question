@@ -473,12 +473,6 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser::class => function ($sm) {
-                    return new QuestionTable\Question\CreatedDatetimeDeletedViewsBrowser(
-                        $sm->get('question'),
-                        $sm->get(QuestionTable\Question::class)
-                    );
-                },
                 QuestionTable\Question\CreatedIpDeletedDeletedUserId::class => function ($sm) {
                     return new QuestionTable\Question\CreatedIpDeletedDeletedUserId(
                         $sm->get('question')
