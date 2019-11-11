@@ -37,7 +37,7 @@ class WithAnswers
         foreach ($questionEntities as $questionEntity) {
             $answerEntities = [];
             $answerArrays = $this->answerTable
-                ->selectWhereQuestionIdAndDeletedIsNullOrderByCreatedDateTimeAsc(
+                ->selectWhereQuestionIdAndDeletedDatetimeIsNullOrderByCreatedDateTimeAsc(
                     $questionEntity->getQuestionId()
                 );
             foreach ($answerArrays as $answerArray) {

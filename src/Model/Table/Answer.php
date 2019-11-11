@@ -177,7 +177,7 @@ class Answer
         }
     }
 
-    public function selectWhereQuestionIdAndDeletedIsNullOrderByCreatedDateTimeAsc(
+    public function selectWhereQuestionIdAndDeletedDatetimeIsNullOrderByCreatedDateTimeAsc(
         int $questionId
     ): Generator {
 
@@ -185,7 +185,7 @@ class Answer
              . '
               FROM `answer`
              WHERE `answer`.`question_id` = ?
-               AND `answer`.`deleted` IS NULL
+               AND `answer`.`deleted_datetime` IS NULL
              ORDER
                 BY `answer`.`created_datetime` ASC
                  ;

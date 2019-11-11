@@ -17,17 +17,10 @@ class Answers
         $this->answerTable   = $answerTable;
     }
 
-    /**
-     * Get answers.
-     *
-     * @param QuestionEntity\Question $questionEntity
-     * @return Generator
-     * @yield QuestionEntity\Answer
-     */
     public function getAnswers(
         QuestionEntity\Question $questionEntity
     ) : Generator {
-        $arrays = $this->answerTable->selectWhereQuestionIdAndDeletedIsNullOrderByCreatedDateTimeAsc(
+        $arrays = $this->answerTable->selectWhereQuestionIdAndDeletedDatetimeIsNullOrderByCreatedDateTimeAsc(
             $questionEntity->getQuestionId()
         );
         foreach ($arrays as $array) {
