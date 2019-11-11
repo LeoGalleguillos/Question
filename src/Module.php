@@ -93,7 +93,7 @@ class Module
                 QuestionService\Answer\Answers\Newest::class => function ($sm) {
                     return new QuestionService\Answer\Answers\Newest(
                         $sm->get(QuestionFactory\Answer::class),
-                        $sm->get(QuestionTable\Answer\DeletedCreatedDatetime::class)
+                        $sm->get(QuestionTable\Answer\DeletedDatetimeCreatedDatetime::class)
                     );
                 },
                 QuestionService\Answer\Answers\Newest\CreatedName::class => function ($sm) {
@@ -407,12 +407,6 @@ class Module
                 },
                 QuestionTable\Answer\DeletedDatetime::class => function ($sm) {
                     return new QuestionTable\Answer\DeletedDatetime(
-                        $sm->get('question'),
-                        $sm->get(QuestionTable\Answer::class)
-                    );
-                },
-                QuestionTable\Answer\DeletedCreatedDatetime::class => function ($sm) {
-                    return new QuestionTable\Answer\DeletedCreatedDatetime(
                         $sm->get('question'),
                         $sm->get(QuestionTable\Answer::class)
                     );

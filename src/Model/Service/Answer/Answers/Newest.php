@@ -9,16 +9,16 @@ class Newest
 {
     public function __construct(
         QuestionFactory\Answer $answerFactory,
-        QuestionTable\Answer\DeletedCreatedDatetime $deletedCreatedDatetimeTable
+        QuestionTable\Answer\DeletedDatetimeCreatedDatetime $deletedDatetimeCreatedDatetimeTable
     ) {
-        $this->answerFactory               = $answerFactory;
-        $this->deletedCreatedDatetimeTable = $deletedCreatedDatetimeTable;
+        $this->answerFactory                       = $answerFactory;
+        $this->deletedDatetimeCreatedDatetimeTable = $deletedDatetimeCreatedDatetimeTable;
     }
 
     public function getNewestAnswers(): Generator
     {
-        $generator = $this->deletedCreatedDatetimeTable
-            ->selectWhereDeletedIsNullOrderByCreatedDatetimeDesc();
+        $generator = $this->deletedDatetimeCreatedDatetimeTable
+            ->selectWhereDeletedDatetimeIsNullOrderByCreatedDatetimeDesc();
 
         foreach ($generator as $array) {
             yield $this->answerFactory->buildFromArray($array);
