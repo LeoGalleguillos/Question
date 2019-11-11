@@ -410,12 +410,6 @@ class Module
                         $sm->get(QuestionTable\Answer::class)
                     );
                 },
-                QuestionTable\Answer\Deleted::class => function ($sm) {
-                    return new QuestionTable\Answer\Deleted(
-                        $sm->get('question'),
-                        $sm->get(QuestionTable\Answer::class)
-                    );
-                },
                 QuestionTable\Answer\DeletedDatetime::class => function ($sm) {
                     return new QuestionTable\Answer\DeletedDatetime(
                         $sm->get('question'),
