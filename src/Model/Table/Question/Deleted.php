@@ -41,21 +41,4 @@ class Deleted
         $this->memcachedService->setForDays($cacheKey, $count, 7);
         return $count;
     }
-
-    public function selectWhereDeletedIsNotNull(
-        int $limitRowCount
-    ): Generator {
-        $sql = $this->questionTable->getSelect()
-             . "
-              FROM `question`
-             WHERE `question`.`deleted` IS NOT NULL
-             ORDER
-                BY `question`.`deleted` DESC
-             LIMIT $limitRowCount
-                 ;
-        ";
-        foreach ($this->adapter->query($sql)->execute() as $array) {
-            yield $array;
-        }
-    }
 }
