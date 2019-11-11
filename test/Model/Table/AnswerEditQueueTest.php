@@ -3,7 +3,7 @@ namespace LeoGalleguillos\QuestionTest\Model\Table;
 
 use Generator;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\QuestionTest\TableTestCase;
+use LeoGalleguillos\Test\TableTestCase;
 use Zend\Db\Adapter\Adapter;
 use PHPUnit\Framework\TestCase;
 
@@ -16,37 +16,10 @@ class AnswerEditQueueTest extends TableTestCase
 
     protected function setUp()
     {
-        $this->sqlPath = $_SERVER['PWD'] . '/sql/leogalle_test/answer_edit_queue/';
-        $configArray   = require(__DIR__ . '/../../../config/autoload/local.php');
-        $configArray   = $configArray['db']['adapters']['leogalle_test'];
-        $this->adapter = new Adapter($configArray);
+        $this->answerEditQueueTable = new QuestionTable\AnswerEditQueue($this->getAdapter());
 
-        $this->answerEditQueueTable = new QuestionTable\AnswerEditQueue($this->adapter);
-
-        $this->setForeignKeyChecks0();
-        $this->dropTable();
-        $this->createTable();
-        $this->setForeignKeyChecks1();
-    }
-
-    protected function dropTable()
-    {
-        $sql = file_get_contents($this->sqlPath . 'drop.sql');
-        $result = $this->adapter->query($sql)->execute();
-    }
-
-    protected function createTable()
-    {
-        $sql = file_get_contents($this->sqlPath . 'create.sql');
-        $result = $this->adapter->query($sql)->execute();
-    }
-
-    public function testInitialize()
-    {
-        $this->assertInstanceOf(
-            QuestionTable\AnswerEditQueue::class,
-            $this->answerEditQueueTable
-        );
+        $this->dropTable('answer_edit_queue');
+        $this->createTable('answer_edit_queue');
     }
 
     public function testInsert()
