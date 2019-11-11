@@ -84,4 +84,12 @@ class AnswerTest extends TableTestCase
             $this->answerTable->selectWhereAnswerId(3)['message']
         );
     }
+
+    public function testSelectWhereQuestionId()
+    {
+        $generator = $this->answerTable->selectWhereQuestionId(12345);
+        $this->assertEmpty(
+            iterator_to_array($generator)
+        );
+    }
 }

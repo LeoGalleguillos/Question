@@ -159,17 +159,10 @@ class Answer
         return $this->adapter->query($sql)->execute($parameters)->current();
     }
 
-    public function selectWhereQuestionId(int $questionId) : Generator
+    public function selectWhereQuestionId(int $questionId): Generator
     {
-        $sql = '
-            SELECT `answer`.`answer_id`
-                 , `answer`.`question_id`
-                 , `answer`.`user_id`
-                 , `answer`.`name`
-                 , `answer`.`message`
-                 , `answer`.`ip`
-                 , `answer`.`created_datetime`
-                 , `answer`.`deleted`
+        $sql = $this->getSelect()
+             . '
               FROM `answer`
              WHERE `answer`.`question_id` = :questionId
              ORDER
