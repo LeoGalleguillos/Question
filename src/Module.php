@@ -279,7 +279,7 @@ class Module
                 QuestionService\Question\Questions::class => function ($sm) {
                     return new QuestionService\Question\Questions(
                         $sm->get(QuestionFactory\Question::class),
-                        $sm->get(QuestionTable\Question\DeletedCreatedDatetime::class)
+                        $sm->get(QuestionTable\Question\DeletedDatetimeCreatedDatetime::class)
                     );
                 },
                 QuestionService\Question\Questions\MostPopular\CreatedName::class => function ($sm) {
@@ -461,8 +461,8 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\DeletedCreatedDatetime::class => function ($sm) {
-                    return new QuestionTable\Question\DeletedCreatedDatetime(
+                QuestionTable\Question\DeletedDatetimeCreatedDatetime::class => function ($sm) {
+                    return new QuestionTable\Question\DeletedDatetimeCreatedDatetime(
                         $sm->get('question'),
                         $sm->get(QuestionTable\Question::class)
                     );

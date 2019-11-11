@@ -9,10 +9,10 @@ class Questions
 {
     public function __construct(
         QuestionFactory\Question $questionFactory,
-        QuestionTable\Question\DeletedCreatedDatetime $deletedCreatedDatetimeTable
+        QuestionTable\Question\DeletedDatetimeCreatedDatetime $deletedDatetimeCreatedDatetimeTable
     ) {
-        $this->questionFactory             = $questionFactory;
-        $this->deletedCreatedDatetimeTable = $deletedCreatedDatetimeTable;
+        $this->questionFactory                     = $questionFactory;
+        $this->deletedDatetimeCreatedDatetimeTable = $deletedDatetimeCreatedDatetimeTable;
     }
 
     public function getQuestions(int $page): Generator
@@ -20,10 +20,11 @@ class Questions
         $limitOffset   = ($page - 1) * 1000;
         $limitRowCount = 1000;
 
-        $generator = $this->deletedCreatedDatetimeTable->selectWhereDeletedIsNullOrderByCreatedDatetimeAsc(
-            $limitOffset,
-            $limitRowCount
-        );
+        $generator = $this->deletedDatetimeCreatedDatetimeTable
+            ->selectWhereDeletedDatetimeIsNullOrderByCreatedDatetimeAsc(
+                $limitOffset,
+                $limitRowCount
+            );
         foreach ($generator as $array) {
             yield $this->questionFactory->buildFromArray($array);
         }
