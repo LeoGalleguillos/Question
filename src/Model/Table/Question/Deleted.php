@@ -23,7 +23,7 @@ class Deleted
         $this->questionTable    = $questionTable;
     }
 
-    public function selectCountWhereDeletedIsNull(): int
+    public function selectCountWhereDeletedDatetimeIsNull(): int
     {
         $cacheKey = md5(__METHOD__);
         if (null !== ($count = $this->memcachedService->get($cacheKey))) {
@@ -33,7 +33,7 @@ class Deleted
         $sql = '
             SELECT COUNT(*) AS `count`
               FROM `question`
-             WHERE `deleted` IS NULL
+             WHERE `deleted_datetime` IS NULL
                  ;
         ';
         $count = (int) $this->adapter->query($sql)->execute()->current()['count'];
