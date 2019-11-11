@@ -9,17 +9,17 @@ class Subject
 {
     public function __construct(
         QuestionFactory\Question $questionFactory,
-        QuestionTable\Question\SubjectDeletedViewsBrowser $subjectDeletedViewsBrowser
+        QuestionTable\Question\SubjectDeletedDatetimeViewsBrowser $subjectDeletedDatetimeViewsBrowserTable
     ) {
         $this->questionFactory            = $questionFactory;
-        $this->subjectDeletedViewsBrowser = $subjectDeletedViewsBrowser;
+        $this->subjectDeletedDatetimeViewsBrowserTable = $subjectDeletedDatetimeViewsBrowserTable;
     }
 
     public function getQuestions(
         string $subject,
         int $page
     ): Generator {
-        $arrays = $this->subjectDeletedViewsBrowser->selectWhereSubjectEqualsAndDeletedIsNullOrderByViewsBrowser(
+        $arrays = $this->subjectDeletedDatetimeViewsBrowserTable->selectWhereSubjectEqualsAndDeletedIsNullOrderByViewsBrowser(
             $subject,
             ($page - 1) * 100,
             100

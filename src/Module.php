@@ -316,12 +316,12 @@ class Module
                 QuestionService\Question\Questions\Subject::class => function ($sm) {
                     return new QuestionService\Question\Questions\Subject(
                         $sm->get(QuestionFactory\Question::class),
-                        $sm->get(QuestionTable\Question\SubjectDeletedViewsBrowser::class)
+                        $sm->get(QuestionTable\Question\SubjectDeletedDatetimeViewsBrowser::class)
                     );
                 },
                 QuestionService\Question\Questions\Subject\NumberOfPages::class => function ($sm) {
                     return new QuestionService\Question\Questions\Subject\NumberOfPages(
-                        $sm->get(QuestionTable\Question\SubjectDeletedViewsBrowser::class)
+                        $sm->get(QuestionTable\Question\SubjectDeletedDatetimeViewsBrowser::class)
                     );
                 },
                 QuestionService\Question\Questions\Year::class => function ($sm) {

@@ -6,15 +6,15 @@ use LeoGalleguillos\Question\Model\Table as QuestionTable;
 class NumberOfPages
 {
     public function __construct(
-        QuestionTable\Question\SubjectDeletedViewsBrowser $subjectDeletedViewsBrowser
+        QuestionTable\Question\SubjectDeletedDatetimeViewsBrowser $subjectDeletedViewsBrowserTable
     ) {
-        $this->subjectDeletedViewsBrowser = $subjectDeletedViewsBrowser;
+        $this->subjectDeletedViewsBrowserTable = $subjectDeletedViewsBrowserTable;
     }
 
     public function getNumberOfPages(
         string $subject
     ): int {
-        $count = $this->subjectDeletedViewsBrowser->selectCountWhereSubjectEqualsAndDeletedIsNull(
+        $count = $this->subjectDeletedViewsBrowserTable->selectCountWhereSubjectEqualsAndDeletedIsNull(
             $subject
         );
         return ceil($count / 100);
