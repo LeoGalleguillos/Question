@@ -285,7 +285,7 @@ class Module
                 QuestionService\Question\Questions\MostPopular\CreatedName::class => function ($sm) {
                     return new QuestionService\Question\Questions\MostPopular\CreatedName(
                         $sm->get(QuestionFactory\Question::class),
-                        $sm->get(QuestionTable\Question\CreatedNameDeletedViewsBrowser::class)
+                        $sm->get(QuestionTable\Question\CreatedNameDeletedDatetimeViewsBrowser::class)
                     );
                 },
                 QuestionService\Question\Questions\Newest\CreatedName::class => function ($sm) {
@@ -494,8 +494,8 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\CreatedNameDeletedViewsBrowser::class => function ($sm) {
-                    return new QuestionTable\Question\CreatedNameDeletedViewsBrowser(
+                QuestionTable\Question\CreatedNameDeletedDatetimeViewsBrowser::class => function ($sm) {
+                    return new QuestionTable\Question\CreatedNameDeletedDatetimeViewsBrowser(
                         $sm->get('question'),
                         $sm->get(QuestionTable\Question::class)
                     );

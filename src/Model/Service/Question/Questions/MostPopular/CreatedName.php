@@ -9,18 +9,18 @@ class CreatedName
 {
     public function __construct(
         QuestionFactory\Question $questionFactory,
-        QuestionTable\Question\CreatedNameDeletedViewsBrowser $createdNameDeletedViewsBrowserTable
+        QuestionTable\Question\CreatedNameDeletedDatetimeViewsBrowser $createdNameDeletedDatetimeViewsBrowserTable
     ) {
-        $this->questionFactory                     = $questionFactory;
-        $this->createdNameDeletedViewsBrowserTable = $createdNameDeletedViewsBrowserTable;
+        $this->questionFactory                             = $questionFactory;
+        $this->createdNameDeletedDatetimeViewsBrowserTable = $createdNameDeletedDatetimeViewsBrowserTable;
     }
 
     public function getMostPopularQuestions(
         string $createdName,
         int $page
     ): Generator {
-        $generator = $this->createdNameDeletedViewsBrowserTable
-            ->selectWhereCreatedNameAndDeletedIsNullOrderByViewsBrowserDesc(
+        $generator = $this->createdNameDeletedDatetimeViewsBrowserTable
+            ->selectWhereCreatedNameAndDeletedDatetimeIsNullOrderByViewsBrowserDesc(
                 $createdName,
                 ($page - 1) * 100,
                 100

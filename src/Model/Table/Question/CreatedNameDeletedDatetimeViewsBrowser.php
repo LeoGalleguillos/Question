@@ -5,7 +5,7 @@ use Generator;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use Zend\Db\Adapter\Adapter;
 
-class CreatedNameDeletedViewsBrowser
+class CreatedNameDeletedDatetimeViewsBrowser
 {
     /**
      * @var Adapter
@@ -20,11 +20,7 @@ class CreatedNameDeletedViewsBrowser
         $this->questionTable = $questionTable;
     }
 
-    /**
-     * @return Generator
-     * @yield array
-     */
-    public function selectWhereCreatedNameAndDeletedIsNullOrderByViewsBrowserDesc(
+    public function selectWhereCreatedNameAndDeletedDatetimeIsNullOrderByViewsBrowserDesc(
         string $createdName,
         int $limitOffset,
         int $limitRowCount
@@ -33,7 +29,7 @@ class CreatedNameDeletedViewsBrowser
              . "
               FROM `question`
              WHERE `question`.`created_name` = ?
-               AND `question`.`deleted` IS NULL
+               AND `question`.`deleted_datetime` IS NULL
              ORDER
                 BY `question`.`views_browser` DESC
              LIMIT $limitOffset, $limitRowCount
