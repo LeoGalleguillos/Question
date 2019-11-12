@@ -212,8 +212,8 @@ class Answer
              USING (`question_id`)
 
              WHERE `answer`.`user_id` = ?
-               AND `answer`.`deleted` IS NULL
-               AND `question`.`deleted` IS NULL
+               AND `answer`.`deleted_datetime` IS NULL
+               AND `question`.`deleted_datetime` IS NULL
 
              ORDER
                 BY `question`.`views_browser` DESC
