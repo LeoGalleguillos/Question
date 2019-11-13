@@ -10,7 +10,6 @@ class Question
     protected $createdDateTime;
     protected $createdIp;
     protected $createdName;
-    protected $deleted;
     protected $deletedDateTime;
     protected $deletedUserId;
     protected $deletedReason;
