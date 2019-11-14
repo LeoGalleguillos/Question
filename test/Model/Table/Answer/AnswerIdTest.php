@@ -57,9 +57,6 @@ class AnswerIdTest extends TableTestCase
         );
         $array = $this->answerTable->selectWhereAnswerId(1);
         $this->assertNotNull(
-            $array['deleted']
-        );
-        $this->assertNotNull(
             $array['deleted_datetime']
         );
         $this->assertSame(
