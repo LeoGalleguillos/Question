@@ -22,8 +22,7 @@ class AnswerId
     ): int {
         $sql = '
             UPDATE `answer`
-               SET `answer`.`deleted` = UTC_TIMESTAMP()
-                 , `answer`.`deleted_datetime` = UTC_TIMESTAMP()
+               SET `answer`.`deleted_datetime` = UTC_TIMESTAMP()
                  , `answer`.`deleted_user_id` = ?
                  , `answer`.`deleted_reason` = ?
              WHERE `answer`.`answer_id` = ?
@@ -45,8 +44,7 @@ class AnswerId
     ): int {
         $sql = '
             UPDATE `answer`
-               SET `answer`.`deleted` = NULL
-                 , `answer`.`deleted_datetime` = NULL
+               SET `answer`.`deleted_datetime` = NULL
                  , `answer`.`deleted_user_id` = NULL
                  , `answer`.`deleted_reason` = NULL
              WHERE `answer`.`answer_id` = ?
