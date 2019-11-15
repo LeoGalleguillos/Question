@@ -60,8 +60,7 @@ class QuestionId
     ): int {
         $sql = '
             UPDATE `question`
-               SET `question`.`deleted` = UTC_TIMESTAMP()
-                 , `question`.`deleted_datetime` = UTC_TIMESTAMP()
+               SET `question`.`deleted_datetime` = UTC_TIMESTAMP()
                  , `question`.`deleted_user_id` = ?
                  , `question`.`deleted_reason` = ?
              WHERE `question`.`question_id` = ?
@@ -83,8 +82,7 @@ class QuestionId
     ): int {
         $sql = '
             UPDATE `question`
-               SET `question`.`deleted` = NULL
-                 , `question`.`deleted_datetime` = NULL
+               SET `question`.`deleted_datetime` = NULL
                  , `question`.`deleted_user_id` = NULL
                  , `question`.`deleted_reason` = NULL
              WHERE `question`.`question_id` = ?
