@@ -100,7 +100,7 @@ class Answer
                      , `deleted_user_id`
                      , `deleted_reason`
                    )
-            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), UTC_TIMESTAMP(), ?, ?)
+            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), ?, ?)
                  ;
         ';
         $parameters = [
