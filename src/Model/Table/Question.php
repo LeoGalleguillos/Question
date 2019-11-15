@@ -40,7 +40,6 @@ class Question
                  , `question`.`created_datetime`
                  , `question`.`created_name`
                  , `question`.`created_ip`
-                 , `question`.`deleted`
                  , `question`.`deleted_datetime`
                  , `question`.`deleted_user_id`
                  , `question`.`deleted_reason`
