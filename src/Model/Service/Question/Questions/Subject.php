@@ -19,7 +19,7 @@ class Subject
         string $subject,
         int $page
     ): Generator {
-        $arrays = $this->subjectDeletedDatetimeViewsBrowserTable->selectWhereSubjectEqualsAndDeletedIsNullOrderByViewsBrowser(
+        $arrays = $this->subjectDeletedDatetimeViewsBrowserTable->selectWhereSubjectEqualsAndDeletedDatetimeIsNullOrderByViewsBrowser(
             $subject,
             ($page - 1) * 100,
             100

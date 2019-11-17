@@ -17,7 +17,7 @@ class SubjectDeletedDatetimeViewsBrowser
         $this->questionTable = $questionTable;
     }
 
-    public function selectCountWhereSubjectEqualsAndDeletedIsNull(
+    public function selectCountWhereSubjectEqualsAndDeletedDatetimeIsNull(
         string $subject
     ): int {
         $sql = '
@@ -34,7 +34,7 @@ class SubjectDeletedDatetimeViewsBrowser
         return (int) $array['count'];
     }
 
-    public function selectWhereSubjectEqualsAndDeletedIsNullOrderByViewsBrowser(
+    public function selectWhereSubjectEqualsAndDeletedDatetimeIsNullOrderByViewsBrowser(
         string $subject,
         int $limitOffset,
         int $limitRowCount

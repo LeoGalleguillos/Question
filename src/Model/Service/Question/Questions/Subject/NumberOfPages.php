@@ -14,7 +14,7 @@ class NumberOfPages
     public function getNumberOfPages(
         string $subject
     ): int {
-        $count = $this->subjectDeletedViewsBrowserTable->selectCountWhereSubjectEqualsAndDeletedIsNull(
+        $count = $this->subjectDeletedViewsBrowserTable->selectCountWhereSubjectEqualsAndDeletedDatetimeIsNull(
             $subject
         );
         return ceil($count / 100);
