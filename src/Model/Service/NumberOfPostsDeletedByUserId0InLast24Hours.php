@@ -8,20 +8,20 @@ use LeoGalleguillos\User\Model\Entity as UserEntity;
 class NumberOfPostsDeletedByUserId0InLast24Hours
 {
     public function __construct(
-        QuestionTable\Answer\CreatedIpDeletedDeletedUserId $answerCreatedIpDeletedDeletedUserIdTable,
-        QuestionTable\Question\CreatedIpDeletedDeletedUserId $questionCreatedIpDeletedDeletedUserIdTable
+        QuestionTable\Answer\CreatedIpDeletedDatetimeDeletedUserId $answerCreatedIpDeletedDatetimeDeletedUserIdTable,
+        QuestionTable\Question\CreatedIpDeletedDatetimeDeletedUserId $questionCreatedIpDeletedDatetimeDeletedUserIdTable
     ) {
-        $this->answerCreatedIpDeletedDeletedUserIdTable   = $answerCreatedIpDeletedDeletedUserIdTable;
-        $this->questionCreatedIpDeletedDeletedUserIdTable = $questionCreatedIpDeletedDeletedUserIdTable;
+        $this->answerCreatedIpDeletedDatetimeDeletedUserIdTable   = $answerCreatedIpDeletedDatetimeDeletedUserIdTable;
+        $this->questionCreatedIpDeletedDatetimeDeletedUserIdTable = $questionCreatedIpDeletedDatetimeDeletedUserIdTable;
     }
 
     public function getNumberOfPostsDeletedByUserInLast24Hours(
         $ipAddress
     ): int {
-        $answerCount = $this->answerCreatedIpDeletedDeletedUserIdTable->selectCountWhereCreatedIpAndDeletedGreaterThanOneDayAgoAndDeletedUserIdEquals0(
+        $answerCount = $this->answerCreatedIpDeletedDatetimeDeletedUserIdTable->selectCountWhereCreatedIpAndDeletedGreaterThanOneDayAgoAndDeletedUserIdEquals0(
             $ipAddress
         );
-        $questionCount = $this->questionCreatedIpDeletedDeletedUserIdTable->selectCountWhereCreatedIpAndDeletedGreaterThanOneDayAgoAndDeletedUserIdEquals0(
+        $questionCount = $this->questionCreatedIpDeletedDatetimeDeletedUserIdTable->selectCountWhereCreatedIpAndDeletedGreaterThanOneDayAgoAndDeletedUserIdEquals0(
             $ipAddress
         );
         return $answerCount + $questionCount;

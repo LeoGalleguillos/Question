@@ -229,8 +229,8 @@ class Module
                 },
                 QuestionService\NumberOfPostsDeletedByUserId0InLast24Hours::class => function ($sm) {
                     return new QuestionService\NumberOfPostsDeletedByUserId0InLast24Hours(
-                        $sm->get(QuestionTable\Answer\CreatedIpDeletedDeletedUserId::class),
-                        $sm->get(QuestionTable\Question\CreatedIpDeletedDeletedUserId::class)
+                        $sm->get(QuestionTable\Answer\CreatedIpDeletedDatetimeDeletedUserId::class),
+                        $sm->get(QuestionTable\Question\CreatedIpDeletedDatetimeDeletedUserId::class)
                     );
                 },
                 QuestionService\Questions::class => function ($sm) {
@@ -394,8 +394,8 @@ class Module
                         $sm->get('question')
                     );
                 },
-                QuestionTable\Answer\CreatedIpDeletedDeletedUserId::class => function ($sm) {
-                    return new QuestionTable\Answer\CreatedIpDeletedDeletedUserId(
+                QuestionTable\Answer\CreatedIpDeletedDatetimeDeletedUserId::class => function ($sm) {
+                    return new QuestionTable\Answer\CreatedIpDeletedDatetimeDeletedUserId(
                         $sm->get('question')
                     );
                 },
@@ -473,8 +473,8 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\CreatedIpDeletedDeletedUserId::class => function ($sm) {
-                    return new QuestionTable\Question\CreatedIpDeletedDeletedUserId(
+                QuestionTable\Question\CreatedIpDeletedDatetimeDeletedUserId::class => function ($sm) {
+                    return new QuestionTable\Question\CreatedIpDeletedDatetimeDeletedUserId(
                         $sm->get('question')
                     );
                 },

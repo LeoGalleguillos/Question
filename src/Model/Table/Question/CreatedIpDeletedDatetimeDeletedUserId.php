@@ -1,10 +1,10 @@
 <?php
-namespace LeoGalleguillos\Question\Model\Table\Answer;
+namespace LeoGalleguillos\Question\Model\Table\Question;
 
 use Generator;
 use Zend\Db\Adapter\Adapter;
 
-class CreatedIpDeletedDeletedUserId
+class CreatedIpDeletedDatetimeDeletedUserId
 {
     /**
      * @var Adapter
@@ -23,9 +23,9 @@ class CreatedIpDeletedDeletedUserId
     ): int {
         $sql = '
             SELECT COUNT(*) AS `count`
-              FROM `answer`
+              FROM `question`
              WHERE created_ip = ?
-               AND deleted > utc_timestamp() - INTERVAL 1 DAY
+               AND `deleted_datetime` > utc_timestamp() - INTERVAL 1 DAY
                AND deleted_user_id = 0
                  ;
         ';
