@@ -70,11 +70,6 @@ class Answer
         return $this->message;
     }
 
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
     public function getQuestionId(): int
     {
         return $this->questionId;
