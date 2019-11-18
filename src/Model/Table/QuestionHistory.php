@@ -37,7 +37,7 @@ class QuestionHistory
                  )
             SELECT `question`.`question_id`
                  , `question`.`user_id`
-                 , `question`.`name`
+                 , `question`.`created_name`
                  , `question`.`subject`
                  , `question`.`message`
                  , `question`.`ip`
