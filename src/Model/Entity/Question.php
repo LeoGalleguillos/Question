@@ -16,7 +16,6 @@ class Question
     protected $history;
     protected $ip;
     protected $message;
-    protected $name;
     protected $questionId;
     protected $subject;
     protected $userId;
