@@ -31,7 +31,6 @@ class Question
         return '
             SELECT `question`.`question_id`
                  , `question`.`user_id`
-                 , `question`.`name`
                  , `question`.`subject`
                  , `question`.`message`
                  , `question`.`ip`
