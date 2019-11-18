@@ -33,7 +33,7 @@ class AnswerHistory
                  )
             SELECT `answer`.`answer_id`
                  , `answer`.`user_id`
-                 , `answer`.`name`
+                 , `answer`.`created_name`
                  , `answer`.`message`
                  , `answer`.`ip`
                  , IFNULL(`answer`.`modified_datetime`, `answer`.`created_datetime`)
