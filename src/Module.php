@@ -222,6 +222,12 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionService\Question\Insert\Visitor::class => function ($sm) {
+                    return new QuestionService\Question\Insert\Visitor(
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question::class)
+                    );
+                },
                 QuestionService\Question\ViewsBrowser\ConditionallyIncrement::class => function ($sm) {
                     return new QuestionService\Question\ViewsBrowser\ConditionallyIncrement(
                         $sm->get(QuestionTable\Question\QuestionId::class),
