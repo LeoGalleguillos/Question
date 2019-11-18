@@ -29,7 +29,6 @@ class Message
             SELECT `answer`.`answer_id`
                  , `answer`.`question_id`
                  , `answer`.`user_id`
-                 , `answer`.`name`
                  , `answer`.`message`
                  , `answer`.`ip`
                  , `answer`.`created_datetime`
