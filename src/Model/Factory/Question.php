@@ -33,9 +33,6 @@ class Question
         if (isset($array['message'])) {
             $questionEntity->setMessage($array['message']);
         }
-        if (isset($array['name'])) {
-            $questionEntity->setName($array['name']);
-        }
         if (isset($array['views'])) {
             $questionEntity->setViews((int) $array['views']);
         }

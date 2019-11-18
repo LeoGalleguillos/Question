@@ -145,12 +145,6 @@ class Answer
         return $this;
     }
 
-    public function setName(string $name): QuestionEntity\Answer
-    {
-        $this->name = $name;
-        return $this;
-    }
-
     public function setQuestionId(int $questionId): QuestionEntity\Answer
     {
         $this->questionId = $questionId;

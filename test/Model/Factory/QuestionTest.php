@@ -40,7 +40,6 @@ class QuestionTest extends TestCase
             ->setDeletedDateTime(new DateTime($array['deleted_datetime']))
             ->setIp($array['ip'])
             ->setMessage($array['message'])
-            ->setName($array['name'])
             ->setQuestionId($array['question_id'])
             ->setSubject($array['subject'])
             ->setUserId((int) $array['user_id']);
