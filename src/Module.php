@@ -216,6 +216,12 @@ class Module
                         $sm->get(QuestionTable\QuestionEditQueue::class)
                     );
                 },
+                QuestionService\Question\Insert\Deleted::class => function ($sm) {
+                    return new QuestionService\Question\Insert\Deleted(
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question::class)
+                    );
+                },
                 QuestionService\Question\Insert\User::class => function ($sm) {
                     return new QuestionService\Question\Insert\User(
                         $sm->get(QuestionFactory\Question::class),
