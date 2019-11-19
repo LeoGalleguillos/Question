@@ -4,7 +4,6 @@ namespace LeoGalleguillos\Question\Model\Service\Question\Insert;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\User\Model\Entity as UserEntity;
 
 class Deleted
 {
@@ -16,9 +15,7 @@ class Deleted
         $this->questionTable   = $questionTable;
     }
 
-    public function insert(
-        UserEntity\User $userEntity
-    ): QuestionEntity\Question {
+    public function insert(): QuestionEntity\Question {
         $questionId = $this->questionTable->insertDeleted(
             null,
             $_POST['name'],
