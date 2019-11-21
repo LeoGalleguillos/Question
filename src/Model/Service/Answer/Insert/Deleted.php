@@ -19,7 +19,6 @@ class Deleted
         $answerId = $this->answerTable->insertDeleted(
             $_POST['question-id'],
             null,
-            $_POST['name'],
             $_POST['message'],
             $_SERVER['REMOTE_ADDR'],
             $_POST['name'],

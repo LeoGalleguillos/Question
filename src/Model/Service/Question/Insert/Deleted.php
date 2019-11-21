@@ -18,7 +18,6 @@ class Deleted
     public function insert(): QuestionEntity\Question {
         $questionId = $this->questionTable->insertDeleted(
             null,
-            $_POST['name'],
             $_POST['subject'],
             $_POST['message'],
             $_SERVER['REMOTE_ADDR'],
