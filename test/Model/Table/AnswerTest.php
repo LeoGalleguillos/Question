@@ -39,7 +39,6 @@ class AnswerTest extends TableTestCase
         $answerId = $this->answerTable->insertDeleted(
             12345,
             null,
-            'name',
             'message',
             '1.2.3.4',
             'name',
