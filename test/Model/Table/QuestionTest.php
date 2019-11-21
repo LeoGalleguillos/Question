@@ -75,7 +75,12 @@ class QuestionTest extends TableTestCase
     public function testInsertDeleted()
     {
         $questionId = $this->questionTable->insertDeleted(
-            null, 'name', 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4',
+            null,
+            'subject',
+            'message',
+            '1.2.3.4',
+            'name',
+            '1.2.3.4',
             0,
             'foul language'
         );

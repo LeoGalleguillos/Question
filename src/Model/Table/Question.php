@@ -86,7 +86,6 @@ class Question
 
     public function insertDeleted(
         int $userId = null,
-        string $name,
         string $subject,
         string $message,
         string $ip,
@@ -99,7 +98,6 @@ class Question
             INSERT
               INTO `question` (
                        `user_id`
-                     , `name`
                      , `subject`
                      , `message`
                      , `ip`
@@ -110,12 +108,11 @@ class Question
                      , `deleted_user_id`
                      , `deleted_reason`
                    )
-            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), ?, ?)
+            VALUES (?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), ?, ?)
                  ;
         ';
         $parameters = [
             $userId,
-            $name,
             $subject,
             $message,
             $ip,
