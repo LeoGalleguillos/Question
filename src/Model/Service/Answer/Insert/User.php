@@ -20,6 +20,7 @@ class User
         UserEntity\User $userEntity
     ): QuestionEntity\Answer {
         $answerId = $this->answerTable->insert(
+            $_POST['question-id'],
             $userEntity->getUserId(),
             $_POST['name'],
             $_POST['message'],
