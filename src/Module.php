@@ -174,6 +174,24 @@ class Module
                         $sm->get(QuestionTable\AnswerEditQueue::class)
                     );
                 },
+                QuestionService\Answer\Insert\Deleted::class => function ($sm) {
+                    return new QuestionService\Answer\Insert\Deleted(
+                        $sm->get(QuestionFactory\Answer::class),
+                        $sm->get(QuestionTable\Answer::class)
+                    );
+                },
+                QuestionService\Answer\Insert\User::class => function ($sm) {
+                    return new QuestionService\Answer\Insert\User(
+                        $sm->get(QuestionFactory\Answer::class),
+                        $sm->get(QuestionTable\Answer::class)
+                    );
+                },
+                QuestionService\Answer\Insert\Visitor::class => function ($sm) {
+                    return new QuestionService\Answer\Insert\Visitor(
+                        $sm->get(QuestionFactory\Answer::class),
+                        $sm->get(QuestionTable\Answer::class)
+                    );
+                },
                 QuestionService\Answer\Submit::class => function ($sm) {
                     return new QuestionService\Answer\Submit(
                         $sm->get(FlashService\Flash::class),

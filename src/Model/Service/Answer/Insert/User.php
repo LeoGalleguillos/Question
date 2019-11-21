@@ -1,0 +1,33 @@
+<?php
+namespace LeoGalleguillos\Question\Model\Service\Answer\Insert;
+
+use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
+use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
+use LeoGalleguillos\Question\Model\Table as QuestionTable;
+use LeoGalleguillos\User\Model\Entity as UserEntity;
+
+class User
+{
+    public function __construct(
+        QuestionFactory\Answer $answerFactory,
+        QuestionTable\Answer $answerTable
+    ) {
+        $this->answerFactory = $answerFactory;
+        $this->answerTable   = $answerTable;
+    }
+
+    public function insert(
+        UserEntity\User $userEntity
+    ): QuestionEntity\Answer {
+        $answerId = $this->answerTable->insert(
+            $userEntity->getUserId(),
+            $_POST['name'],
+            $_POST['message'],
+            $_SERVER['REMOTE_ADDR'],
+            $_POST['name'],
+            $_SERVER['REMOTE_ADDR']
+        );
+
+        return $this->answerFactory->buildFromAnswerId($answerId);
+    }
+}
