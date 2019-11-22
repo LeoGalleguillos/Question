@@ -47,7 +47,6 @@ class Submit
 
         $questionId = $this->questionTable->insert(
             $userId ?? null,
-            $_POST['name'] ?? null,
             $_POST['subject'],
             $_POST['message'] ?? null,
             $_SERVER['REMOTE_ADDR'],

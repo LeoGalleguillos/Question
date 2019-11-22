@@ -19,7 +19,6 @@ class Visitor
     {
         $questionId = $this->questionTable->insert(
             null,
-            $_POST['name'],
             $_POST['subject'],
             $_POST['message'],
             $_SERVER['REMOTE_ADDR'],

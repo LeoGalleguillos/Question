@@ -37,7 +37,6 @@ class MessageTest extends TableTestCase
 
         $this->questionTable->insert(
             1,
-            'name',
             'subject',
             'foobarbaz',
             '1.2.3.4',
@@ -46,7 +45,6 @@ class MessageTest extends TableTestCase
         );
         $this->questionTable->insert(
             1,
-            'name',
             'subject',
             '&lt;b&gt;',
             '1.2.3.4',
@@ -111,7 +109,6 @@ class MessageTest extends TableTestCase
     {
         $this->questionTable->insert(
             1,
-            'name',
             'subject',
             'foobarbaz',
             '1.2.3.4',

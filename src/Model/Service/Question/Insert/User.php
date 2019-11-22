@@ -21,7 +21,6 @@ class User
     ): QuestionEntity\Question {
         $questionId = $this->questionTable->insert(
             $userEntity->getUserId(),
-            $_POST['name'],
             $_POST['subject'],
             $_POST['message'],
             $_SERVER['REMOTE_ADDR'],

@@ -88,7 +88,6 @@ class QuestionHistoryTest extends TableTestCase
 
         $questionId = $this->questionTable->insert(
             12345,
-            'name',
             'subject',
             'message',
             '1.2.3.4',

@@ -44,7 +44,6 @@ class SubjectTest extends TableTestCase
 
         $this->questionTable->insert(
             1,
-            null,
             'foobarbaz',
             'message',
             '1.2.3.4',
@@ -53,7 +52,6 @@ class SubjectTest extends TableTestCase
         );
         $this->questionTable->insert(
             null,
-            'name',
             '&lt;b&gt;',
             'message',
             '1.2.3.4',

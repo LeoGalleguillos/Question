@@ -63,9 +63,9 @@ class QuestionTest extends TableTestCase
             5,
             $this->questionTable->selectCount()
         );
-        $this->questionTable->insert(1, 'name', 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4');
-        $this->questionTable->insert(2, null, 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4');
-        $this->questionTable->insert(3, null, 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4');
+        $this->questionTable->insert(1, 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4');
+        $this->questionTable->insert(2, 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4');
+        $this->questionTable->insert(3, 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4');
         $this->assertSame(
             3,
             $this->questionTable->selectCount()
@@ -104,7 +104,6 @@ class QuestionTest extends TableTestCase
     {
         $this->questionTable->insert(
             3,
-            'name',
             'this is the subject',
             'message',
             '1.2.3.4',
