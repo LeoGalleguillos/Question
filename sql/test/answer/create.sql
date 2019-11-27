@@ -2,7 +2,6 @@ CREATE TABLE `answer` (
     `answer_id` int(10) unsigned auto_increment,
     `question_id` int(10) unsigned not null,
     `user_id` int(10) unsigned default null,
-    `name` varchar(255) default null,
     `message` text,
     `ip` varchar(45) default null,
     `created_datetime` datetime NOT NULL,
