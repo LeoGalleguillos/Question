@@ -22,7 +22,6 @@ class User
         $answerId = $this->answerTable->insert(
             $_POST['question-id'],
             $userEntity->getUserId(),
-            $_POST['name'],
             $_POST['message'],
             $_SERVER['REMOTE_ADDR'],
             $_POST['name'],

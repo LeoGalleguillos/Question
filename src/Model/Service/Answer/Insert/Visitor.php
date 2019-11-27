@@ -20,7 +20,6 @@ class Visitor
         $answerId = $this->answerTable->insert(
             $_POST['question-id'],
             null,
-            $_POST['name'],
             $_POST['message'],
             $_SERVER['REMOTE_ADDR'],
             $_POST['name'],

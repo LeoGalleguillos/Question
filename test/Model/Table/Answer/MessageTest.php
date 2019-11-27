@@ -68,7 +68,6 @@ class MessageTest extends TableTestCase
         $this->answerTable->insert(
             1,
             23094,
-            'name',
             'foobarbaz',
             '1.2.3.4',
             'name',
@@ -77,7 +76,6 @@ class MessageTest extends TableTestCase
         $this->answerTable->insert(
             1,
             31093,
-            'name',
             '&lt;b&gt;',
             '1.2.3.4',
             'name',
@@ -142,7 +140,6 @@ class MessageTest extends TableTestCase
         $this->answerTable->insert(
             1,
             44422,
-            'name',
             'foobarbaz',
             '1.2.3.4',
             'name',

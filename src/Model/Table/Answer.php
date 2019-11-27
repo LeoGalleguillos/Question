@@ -37,7 +37,6 @@ class Answer
     public function insert(
         int $questionId,
         int $userId = null,
-        string $name = null,
         string $message,
         string $ip,
         string $createdName = null,
@@ -48,20 +47,18 @@ class Answer
               INTO `answer` (
                        `question_id`
                      , `user_id`
-                     , `name`
                      , `message`
                      , `ip`
                      , `created_datetime`
                      , `created_name`
                      , `created_ip`
                    )
-            VALUES (?, ?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?)
+            VALUES (?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?)
                  ;
         ';
         $parameters = [
             $questionId,
             $userId,
-            $name,
             $message,
             $ip,
             $createdName,

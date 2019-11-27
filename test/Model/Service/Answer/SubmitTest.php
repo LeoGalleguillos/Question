@@ -29,14 +29,6 @@ class SubmitTest extends TestCase
         );
     }
 
-    public function testInitialize()
-    {
-        $this->assertInstanceOf(
-            QuestionService\Answer\Submit::class,
-            $this->submitQuestionService
-        );
-    }
-
     public function testSubmit()
     {
         $_SERVER['REMOTE_ADDR'] = '1.2.3.4';

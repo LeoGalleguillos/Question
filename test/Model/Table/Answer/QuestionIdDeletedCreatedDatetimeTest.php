@@ -41,7 +41,6 @@ class QuestionIdDeletedCreatedDatetimeTest extends TableTestCase
         $this->answerTable->insert(
             12345,
             null,
-            'name',
             'message',
             '1.2.3.4',
             'name',
@@ -50,7 +49,6 @@ class QuestionIdDeletedCreatedDatetimeTest extends TableTestCase
         $this->answerTable->insert(
             12345,
             null,
-            'name2',
             'message',
             '1.2.3.4',
             'name2',
@@ -71,7 +69,6 @@ class QuestionIdDeletedCreatedDatetimeTest extends TableTestCase
         $this->answerTable->insert(
             12345,
             null,
-            'name3',
             'message3',
             '1.2.3.4',
             'name3',
