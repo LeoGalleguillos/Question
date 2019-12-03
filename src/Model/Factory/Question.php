@@ -27,9 +27,6 @@ class Question
         if (isset($array['created_name'])) {
             $questionEntity->setCreatedName($array['created_name']);
         }
-        if (isset($array['ip'])) {
-            $questionEntity->setIp($array['ip']);
-        }
         if (isset($array['message'])) {
             $questionEntity->setMessage($array['message']);
         }

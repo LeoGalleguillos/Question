@@ -32,7 +32,6 @@ class AnswerTest extends TestCase
             'message'          => 'message',
             'created_datetime' => '2018-03-12 22:12:23',
             'created_ip'       => '5.6.7.8',
-            'ip'               => '1.2.3.4',
             'deleted'          => '2018-09-18 11:23:05',
             'deleted_datetime' => '2018-09-18 11:23:05',
         ];
@@ -43,7 +42,6 @@ class AnswerTest extends TestCase
                      ->setCreatedIp($array['created_ip'])
                      ->setDeletedDateTime(new DateTime($array['deleted']))
                      ->setMessage($array['message'])
-                     ->setIp($array['ip'])
                      ->setQuestionId($array['question_id']);
 
         $this->assertEquals(
@@ -59,7 +57,6 @@ class AnswerTest extends TestCase
             'question_id' => 1,
             'user_id'     => 1,
             'message'     => 'message',
-            'ip'          => '1.2.3.4',
             'created_datetime'     => '2018-03-12 22:12:23',
         ];
         $this->answerTableMock->method('selectWhereAnswerId')->willReturn(
@@ -73,7 +70,6 @@ class AnswerTest extends TestCase
         $answerEntity->setAnswerId($array['answer_id'])
                      ->setCreatedDateTime(new DateTime($array['created_datetime']))
                      ->setMessage($array['message'])
-                     ->setIp($array['ip'])
                      ->setQuestionId($array['question_id'])
                      ->setUserId($array['user_id']);
 

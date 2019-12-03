@@ -37,9 +37,6 @@ class Answer
         if (isset($array['deleted_reason'])) {
             $answerEntity->setDeletedReason($array['deleted_reason']);
         }
-        if (isset($array['ip'])) {
-            $answerEntity->setIp($array['ip']);
-        }
         if (isset($array['question_id'])) {
             $answerEntity->setQuestionId($array['question_id']);
         }

@@ -28,7 +28,6 @@ class QuestionTest extends TestCase
             'name'        => 'name',
             'subject'     => 'subject',
             'message'     => 'message',
-            'ip'          => '1.2.3.4',
             'created_datetime'     => '2018-03-12 22:12:23',
             'created_ip'  => '5.6.7.8',
             'deleted_datetime'     => '2018-09-17 21:42:45',
@@ -38,7 +37,6 @@ class QuestionTest extends TestCase
             ->setCreatedDateTime(new DateTime($array['created_datetime']))
             ->setCreatedIp($array['created_ip'])
             ->setDeletedDateTime(new DateTime($array['deleted_datetime']))
-            ->setIp($array['ip'])
             ->setMessage($array['message'])
             ->setQuestionId($array['question_id'])
             ->setSubject($array['subject'])
@@ -52,13 +50,11 @@ class QuestionTest extends TestCase
             'question_id' => 1,
             'name'        => null,
             'subject'     => 'subject',
-            'ip'          => '1.2.3.4',
             'views'       => '123',
             'created_datetime'     => '2018-03-12 22:12:23',
         ];
         $questionEntity = new QuestionEntity\Question();
         $questionEntity->setCreatedDateTime(new DateTime($array['created_datetime']))
-                       ->setIp($array['ip'])
                        ->setQuestionId($array['question_id'])
                        ->setSubject($array['subject'])
                        ->setViews($array['views']);
@@ -78,7 +74,6 @@ class QuestionTest extends TestCase
                 'subject'     => 'subject',
                 'message'     => 'message',
                 'created_datetime'     => '2018-03-12 22:12:23',
-                'ip'          => '1.2.3.4',
                 'views'       => '123',
             ]
         );
