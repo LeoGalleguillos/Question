@@ -14,7 +14,6 @@ class Question
     protected $deletedUserId;
     protected $deletedReason;
     protected $history;
-    protected $ip;
     protected $message;
     protected $questionId;
     protected $subject;
@@ -59,11 +58,6 @@ class Question
     public function getHistory(): array
     {
         return $this->history;
-    }
-
-    public function getIp(): string
-    {
-        return $this->ip;
     }
 
     public function getMessage(): string
@@ -136,12 +130,6 @@ class Question
     public function setHistory(array $history): QuestionEntity\Question
     {
         $this->history = $history;
-        return $this;
-    }
-
-    public function setIp(string $ip): QuestionEntity\Question
-    {
-        $this->ip = $ip;
         return $this;
     }
 
