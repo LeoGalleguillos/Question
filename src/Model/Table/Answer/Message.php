@@ -30,7 +30,6 @@ class Message
                  , `answer`.`question_id`
                  , `answer`.`user_id`
                  , `answer`.`message`
-                 , `answer`.`ip`
                  , `answer`.`created_datetime`
                  , `answer`.`deleted_datetime`
               FROM `answer`

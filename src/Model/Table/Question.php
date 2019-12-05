@@ -33,7 +33,6 @@ class Question
                  , `question`.`user_id`
                  , `question`.`subject`
                  , `question`.`message`
-                 , `question`.`ip`
                  , `question`.`views`
                  , `question`.`views_browser`
                  , `question`.`created_datetime`

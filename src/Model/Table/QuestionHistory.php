@@ -40,7 +40,7 @@ class QuestionHistory
                  , `question`.`created_name`
                  , `question`.`subject`
                  , `question`.`message`
-                 , `question`.`ip`
+                 , `question`.`created_ip`
                  , IFNULL(
                        `question`.`modified_datetime`
                      , `question`.`created_datetime`

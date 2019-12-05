@@ -35,7 +35,7 @@ class AnswerHistory
                  , `answer`.`user_id`
                  , `answer`.`created_name`
                  , `answer`.`message`
-                 , `answer`.`ip`
+                 , `answer`.`created_ip`
                  , IFNULL(`answer`.`modified_datetime`, `answer`.`created_datetime`)
                  , ?
               FROM `answer`

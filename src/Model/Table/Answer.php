@@ -24,7 +24,6 @@ class Answer
                  , `answer`.`question_id`
                  , `answer`.`user_id`
                  , `answer`.`message`
-                 , `answer`.`ip`
                  , `answer`.`created_datetime`
                  , `answer`.`created_name`
                  , `answer`.`created_ip`
