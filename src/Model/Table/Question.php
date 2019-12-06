@@ -81,7 +81,6 @@ class Question
         int $userId = null,
         string $subject,
         string $message,
-        string $ip,
         string $createdName,
         string $createdIp,
         string $deletedUserId,
@@ -93,7 +92,6 @@ class Question
                        `user_id`
                      , `subject`
                      , `message`
-                     , `ip`
                      , `created_datetime`
                      , `created_name`
                      , `created_ip`
@@ -101,14 +99,13 @@ class Question
                      , `deleted_user_id`
                      , `deleted_reason`
                    )
-            VALUES (?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), ?, ?)
+            VALUES (?, ?, ?, UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), ?, ?)
                  ;
         ';
         $parameters = [
             $userId,
             $subject,
             $message,
-            $ip,
             $createdName,
             $createdIp,
             $deletedUserId,

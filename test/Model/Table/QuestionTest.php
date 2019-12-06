@@ -78,7 +78,6 @@ class QuestionTest extends TableTestCase
             null,
             'subject',
             'message',
-            '1.2.3.4',
             'name',
             '1.2.3.4',
             0,
