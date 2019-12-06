@@ -387,7 +387,9 @@ class Module
                     );
                 },
                 QuestionService\Question\Title::class => function ($sm) {
-                    return new QuestionService\Question\Title();
+                    return new QuestionService\Question\Title(
+                        $sm->get(StringService\StripTagsAndShorten::class)
+                    );
                 },
                 QuestionService\Question\Undelete::class => function ($sm) {
                     return new QuestionService\Question\Undelete(
