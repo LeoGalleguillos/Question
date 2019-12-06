@@ -36,9 +36,7 @@ class Title
         $replacement = '$1';
         $message = preg_replace($pattern, $replacement, $message);
 
-        if (strlen($message) <= 20) {
-            return $message;
-        }
+        return $message;
 
         /*
         # If there is a question mark after the 20th character,
@@ -48,7 +46,5 @@ class Title
             $message = substr($message, 0, $questionMarkPosition + 1);
         }
          */
-
-        return $message;
     }
 }
