@@ -90,7 +90,6 @@ class QuestionHistoryTest extends TableTestCase
             12345,
             'subject',
             'message',
-            '1.2.3.4',
             'name',
             '1.2.3.4'
         );

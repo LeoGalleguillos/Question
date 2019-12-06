@@ -49,7 +49,6 @@ class Submit
             $userId ?? null,
             $_POST['subject'],
             $_POST['message'] ?? null,
-            $_SERVER['REMOTE_ADDR'],
             $_POST['name'] ?? null,
             $_SERVER['REMOTE_ADDR']
         );
