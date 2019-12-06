@@ -37,7 +37,6 @@ class Answer
         int $questionId,
         int $userId = null,
         string $message,
-        string $ip,
         string $createdName = null,
         string $createdIp
     ): int {
@@ -47,19 +46,17 @@ class Answer
                        `question_id`
                      , `user_id`
                      , `message`
-                     , `ip`
                      , `created_datetime`
                      , `created_name`
                      , `created_ip`
                    )
-            VALUES (?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?)
+            VALUES (?, ?, ?, UTC_TIMESTAMP(), ?, ?)
                  ;
         ';
         $parameters = [
             $questionId,
             $userId,
             $message,
-            $ip,
             $createdName,
             $createdIp,
         ];
@@ -73,7 +70,6 @@ class Answer
         int $questionId,
         int $userId = null,
         string $message,
-        string $ip,
         string $createdName,
         string $createdIp,
         int $deletedUserId,
@@ -85,7 +81,6 @@ class Answer
                        `question_id`
                      , `user_id`
                      , `message`
-                     , `ip`
                      , `created_datetime`
                      , `created_name`
                      , `created_ip`
@@ -93,14 +88,13 @@ class Answer
                      , `deleted_user_id`
                      , `deleted_reason`
                    )
-            VALUES (?, ?, ?, ?, UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), ?, ?)
+            VALUES (?, ?, ?, UTC_TIMESTAMP(), ?, ?, UTC_TIMESTAMP(), ?, ?)
                  ;
         ';
         $parameters = [
             $questionId,
             $userId,
             $message,
-            $ip,
             $createdName,
             $createdIp,
             $deletedUserId,

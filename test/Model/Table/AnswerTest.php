@@ -20,13 +20,13 @@ class AnswerTest extends TableTestCase
             $this->answerTable->selectCount()
         );
         $this->answerTable->insert(
-            1, 2, 'first message', '1.2.3.4', null, '1.2.3.4'
+            1, 2, 'first message', null, '1.2.3.4'
         );
         $this->answerTable->insert(
-            3, null, 'second message', '1.2.3.4', 'name', '1.2.3.4'
+            3, null, 'second message', 'name', '1.2.3.4'
         );
         $this->answerTable->insert(
-            5, 6, 'third message', '5.6.7.8', 'another name', '5.6.7.8'
+            5, 6, 'third message', 'another name', '5.6.7.8'
         );
         $this->assertSame(
             3,
@@ -40,7 +40,6 @@ class AnswerTest extends TableTestCase
             12345,
             null,
             'message',
-            '1.2.3.4',
             'name',
             '1.2.3.4',
             '0',
@@ -65,13 +64,13 @@ class AnswerTest extends TableTestCase
     public function testSelectWhereAnswerId()
     {
         $this->answerTable->insert(
-            1, 2, 'first message', '1.2.3.4', null, '1.2.3.4'
+            1, 2, 'first message', null, '1.2.3.4'
         );
         $this->answerTable->insert(
-            3, null, 'second message', '1.2.3.4', 'name', '1.2.3.4'
+            3, null, 'second message', 'name', '1.2.3.4'
         );
         $this->answerTable->insert(
-            5, 6, 'third message', '5.6.7.8', 'another name', '5.6.7.8'
+            5, 6, 'third message', 'another name', '5.6.7.8'
         );
 
         $this->assertSame(

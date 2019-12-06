@@ -54,7 +54,6 @@ class Submit
             $_POST['question-id'],
             $userId,
             $_POST['message'],
-            $_SERVER['REMOTE_ADDR'],
             $_POST['name'],
             $_SERVER['REMOTE_ADDR']
         );

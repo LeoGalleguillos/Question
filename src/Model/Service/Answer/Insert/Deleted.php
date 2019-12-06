@@ -20,7 +20,6 @@ class Deleted
             $_POST['question-id'],
             null,
             $_POST['message'],
-            $_SERVER['REMOTE_ADDR'],
             $_POST['name'],
             $_SERVER['REMOTE_ADDR'],
             0,
