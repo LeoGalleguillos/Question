@@ -2,7 +2,6 @@
 namespace LeoGalleguillos\Question\Model\Service\Question\Questions\Newest;
 
 use Generator;
-use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
@@ -19,13 +18,6 @@ class WithAnswers
         $this->answerTable      = $answerTable;
     }
 
-    /**
-     * Get questions with answers.
-     *
-     * @param int $page
-     * @return Generator
-     * @yield QuestionEntity\Question
-     */
     public function getQuestionsWithAnswers(
         int $page
     ): Generator {
@@ -47,6 +39,5 @@ class WithAnswers
 
             yield $questionEntity;
         }
-
     }
 }
