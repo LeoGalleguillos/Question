@@ -190,12 +190,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/String.git",
-                "reference": "5517b77ab20348817476c1c5688e7e41135bb6e3"
+                "reference": "cf540a5d82e1593c728ace14f4f7f5a4b4b81846"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/5517b77ab20348817476c1c5688e7e41135bb6e3",
-                "reference": "5517b77ab20348817476c1c5688e7e41135bb6e3",
+                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/cf540a5d82e1593c728ace14f4f7f5a4b4b81846",
+                "reference": "cf540a5d82e1593c728ace14f4f7f5a4b4b81846",
                 "shasum": ""
             },
             "require": {
@@ -212,7 +212,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2019-12-06T05:27:27+00:00"
+            "time": "2019-12-06T08:01:13+00:00"
         },
         {
             "name": "leo-galleguillos/superglobal",
@@ -513,16 +513,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "4.3.2",
+            "version": "4.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "b83ff7cfcfee7827e1e78b637a5904fe6a96698e"
+                "reference": "2ecaa9fef01634c83bfa8dc1fe35fb5cef223a62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/b83ff7cfcfee7827e1e78b637a5904fe6a96698e",
-                "reference": "b83ff7cfcfee7827e1e78b637a5904fe6a96698e",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/2ecaa9fef01634c83bfa8dc1fe35fb5cef223a62",
+                "reference": "2ecaa9fef01634c83bfa8dc1fe35fb5cef223a62",
                 "shasum": ""
             },
             "require": {
@@ -560,7 +560,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2019-09-12T14:27:41+00:00"
+            "time": "2019-12-20T13:40:23+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -609,33 +609,33 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.9.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "f6811d96d97bdf400077a0cc100ae56aa32b9203"
+                "reference": "cbe1df668b3fe136bcc909126a0f529a78d4cbbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/f6811d96d97bdf400077a0cc100ae56aa32b9203",
-                "reference": "f6811d96d97bdf400077a0cc100ae56aa32b9203",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/cbe1df668b3fe136bcc909126a0f529a78d4cbbc",
+                "reference": "cbe1df668b3fe136bcc909126a0f529a78d4cbbc",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
                 "php": "^5.3|^7.0",
                 "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0|^5.0",
-                "sebastian/comparator": "^1.1|^2.0|^3.0",
+                "sebastian/comparator": "^1.2.3|^2.0|^3.0",
                 "sebastian/recursion-context": "^1.0|^2.0|^3.0"
             },
             "require-dev": {
-                "phpspec/phpspec": "^2.5|^3.2",
+                "phpspec/phpspec": "^2.5 || ^3.2",
                 "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5 || ^7.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.8.x-dev"
+                    "dev-master": "1.10.x-dev"
                 }
             },
             "autoload": {
@@ -668,7 +668,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2019-10-03T11:07:50+00:00"
+            "time": "2019-12-22T21:05:45+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -2889,12 +2889,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-validator.git",
-                "reference": "0e27aa020410ee2d8df71b8e64fdde94ab01f620"
+                "reference": "7141938ff2895e21d42ac64789fa181037b3b6ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-validator/zipball/0e27aa020410ee2d8df71b8e64fdde94ab01f620",
-                "reference": "0e27aa020410ee2d8df71b8e64fdde94ab01f620",
+                "url": "https://api.github.com/repos/zendframework/zend-validator/zipball/7141938ff2895e21d42ac64789fa181037b3b6ec",
+                "reference": "7141938ff2895e21d42ac64789fa181037b3b6ec",
                 "shasum": ""
             },
             "require": {
@@ -2954,7 +2954,7 @@
                 "validator",
                 "zf"
             ],
-            "time": "2019-10-29T08:35:38+00:00"
+            "time": "2019-12-21T07:18:37+00:00"
         },
         {
             "name": "zendframework/zend-view",
@@ -2962,12 +2962,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-view.git",
-                "reference": "7316c753940e6ffa81a2701bf2179feeeb42b9de"
+                "reference": "eab055375673ed16912364d4ab459a0a1aebacda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-view/zipball/7316c753940e6ffa81a2701bf2179feeeb42b9de",
-                "reference": "7316c753940e6ffa81a2701bf2179feeeb42b9de",
+                "url": "https://api.github.com/repos/zendframework/zend-view/zipball/eab055375673ed16912364d4ab459a0a1aebacda",
+                "reference": "eab055375673ed16912364d4ab459a0a1aebacda",
                 "shasum": ""
             },
             "require": {
@@ -2978,7 +2978,7 @@
                 "zendframework/zend-stdlib": "^2.7 || ^3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.7.15 || ^6.0.8",
+                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.18",
                 "zendframework/zend-authentication": "^2.5",
                 "zendframework/zend-cache": "^2.6.1",
                 "zendframework/zend-coding-standard": "~1.0.0",
@@ -3041,7 +3041,7 @@
                 "view",
                 "zf"
             ],
-            "time": "2019-12-04T08:44:21+00:00"
+            "time": "2019-12-06T23:53:23+00:00"
         }
     ],
     "packages-dev": [],
