@@ -10,7 +10,7 @@ class WithAnswers
 {
     public function __construct(
         QuestionFactory\Answer $answerFactory,
-        QuestionService\Questions $questionsService,
+        QuestionService\Question\Questions $questionsService,
         QuestionTable\Answer $answerTable
     ) {
         $this->answerFactory    = $answerFactory;

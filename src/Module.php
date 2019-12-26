@@ -333,7 +333,7 @@ class Module
                 QuestionService\Question\Questions\Newest\WithAnswers::class => function ($sm) {
                     return new QuestionService\Question\Questions\Newest\WithAnswers(
                         $sm->get(QuestionFactory\Answer::class),
-                        $sm->get(QuestionService\Questions::class),
+                        $sm->get(QuestionService\Question\Questions::class),
                         $sm->get(QuestionTable\Answer::class)
                     );
                 },
