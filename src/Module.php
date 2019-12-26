@@ -269,12 +269,6 @@ class Module
                         $sm->get(QuestionTable\Question\CreatedIpDeletedDatetimeDeletedUserId::class)
                     );
                 },
-                QuestionService\Questions::class => function ($sm) {
-                    return new QuestionService\Questions(
-                        $sm->get(QuestionFactory\Question::class),
-                        $sm->get(QuestionTable\Question::class)
-                    );
-                },
                 QuestionService\Question\Delete::class => function ($sm) {
                     return new QuestionService\Question\Delete(
                         $sm->get(QuestionTable\Question\QuestionId::class)
