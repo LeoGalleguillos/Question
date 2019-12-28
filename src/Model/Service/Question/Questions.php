@@ -7,7 +7,7 @@ use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 
-class Questions
+class Questions implements QuestionService\Question\QuestionsInterface
 {
     public function __construct(
         QuestionFactory\Question $questionFactory,
