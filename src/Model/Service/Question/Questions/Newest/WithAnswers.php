@@ -10,18 +10,18 @@ class WithAnswers
 {
     public function __construct(
         QuestionFactory\Answer $answerFactory,
-        QuestionService\Question\Questions $questionsService,
+        QuestionService\Question\QuestionsInterface $questionsInterface,
         QuestionTable\Answer $answerTable
     ) {
-        $this->answerFactory    = $answerFactory;
-        $this->questionsService = $questionsService;
-        $this->answerTable      = $answerTable;
+        $this->answerFactory      = $answerFactory;
+        $this->questionsInterface = $questionsInterface;
+        $this->answerTable        = $answerTable;
     }
 
     public function getQuestionsWithAnswers(
         int $page
     ): Generator {
-        $questionEntities = $this->questionsService->getQuestions(
+        $questionEntities = $this->questionsInterface->getQuestions(
             $page,
             50
         );
