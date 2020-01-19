@@ -1,16 +1,15 @@
 {
-    "minimum-stability": "dev",
     "name": "leo-galleguillos/question",
     "license": "MIT",
     "require": {
+        "laminas/laminas-db": "^2.9",
+        "laminas/laminas-test": "^3.1",
         "leo-galleguillos/flash": "dev-master",
         "leo-galleguillos/memcached": "dev-master",
         "leo-galleguillos/string": "dev-master",
         "leo-galleguillos/superglobal": "dev-master",
         "leo-galleguillos/test": "dev-master",
-        "leo-galleguillos/user": "dev-master",
-        "zendframework/zend-test": "^3.1",
-        "zendframework/zend-db": "^2.9"
+        "leo-galleguillos/user": "^1.0"
     },
     "autoload": {
         "psr-4": {
