@@ -1357,16 +1357,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/Flash.git",
-                "reference": "bafb34197d2d8354cf2df55004ea7a8996c34909"
+                "reference": "4910faf5b2df0e1cd8e62de80d10a41fb2570d49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/Flash/zipball/bafb34197d2d8354cf2df55004ea7a8996c34909",
-                "reference": "bafb34197d2d8354cf2df55004ea7a8996c34909",
+                "url": "https://api.github.com/repos/LeoGalleguillos/Flash/zipball/4910faf5b2df0e1cd8e62de80d10a41fb2570d49",
+                "reference": "4910faf5b2df0e1cd8e62de80d10a41fb2570d49",
                 "shasum": ""
             },
             "require": {
-                "zendframework/zend-test": "^3.1"
+                "laminas/laminas-test": "^3.1"
             },
             "type": "library",
             "autoload": {
@@ -1379,7 +1379,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-08-03T00:28:08+00:00"
+            "time": "2020-01-25T09:15:06+00:00"
         },
         {
             "name": "leo-galleguillos/memcached",
@@ -1449,12 +1449,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/String.git",
-                "reference": "9a3f01741eea81ca120499b42b9b42ebf3bca6eb"
+                "reference": "cd4d14a2571d1778a8d7a4bb39b75675b1570bcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/9a3f01741eea81ca120499b42b9b42ebf3bca6eb",
-                "reference": "9a3f01741eea81ca120499b42b9b42ebf3bca6eb",
+                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/cd4d14a2571d1778a8d7a4bb39b75675b1570bcb",
+                "reference": "cd4d14a2571d1778a8d7a4bb39b75675b1570bcb",
                 "shasum": ""
             },
             "require": {
@@ -1471,7 +1471,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-01-13T08:00:21+00:00"
+            "time": "2020-01-25T09:17:34+00:00"
         },
         {
             "name": "leo-galleguillos/superglobal",
