@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9b6e3f727d9168b7dd4e378b7a97bc7",
+    "content-hash": "8c5a8315aca8c156f97c67e272b89285",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -1353,16 +1353,16 @@
         },
         {
             "name": "leo-galleguillos/flash",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/Flash.git",
-                "reference": "4910faf5b2df0e1cd8e62de80d10a41fb2570d49"
+                "reference": "3e42ea1770828477ae71cd7c9fd326db98c8f7b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/Flash/zipball/4910faf5b2df0e1cd8e62de80d10a41fb2570d49",
-                "reference": "4910faf5b2df0e1cd8e62de80d10a41fb2570d49",
+                "url": "https://api.github.com/repos/LeoGalleguillos/Flash/zipball/3e42ea1770828477ae71cd7c9fd326db98c8f7b1",
+                "reference": "3e42ea1770828477ae71cd7c9fd326db98c8f7b1",
                 "shasum": ""
             },
             "require": {
@@ -1379,20 +1379,20 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-01-25T09:15:06+00:00"
+            "time": "2020-01-25T09:12:09+00:00"
         },
         {
             "name": "leo-galleguillos/memcached",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/Memcached.git",
-                "reference": "914037c4246aec58224c1771fa3add5fbca77922"
+                "reference": "f41aa92ff8a9d4fce1490f3f3c738b41950c7809"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/Memcached/zipball/914037c4246aec58224c1771fa3add5fbca77922",
-                "reference": "914037c4246aec58224c1771fa3add5fbca77922",
+                "url": "https://api.github.com/repos/LeoGalleguillos/Memcached/zipball/f41aa92ff8a9d4fce1490f3f3c738b41950c7809",
+                "reference": "f41aa92ff8a9d4fce1490f3f3c738b41950c7809",
                 "shasum": ""
             },
             "require": {
@@ -1410,25 +1410,25 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-01-13T12:30:10+00:00"
+            "time": "2020-01-25T09:37:50+00:00"
         },
         {
             "name": "leo-galleguillos/re-captcha",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/ReCaptcha.git",
-                "reference": "9bf9dfed9f6b3c1b936612b6dd0294003407207a"
+                "reference": "d7fc7a1c2470034f48e05588491a61eabf62506d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/ReCaptcha/zipball/9bf9dfed9f6b3c1b936612b6dd0294003407207a",
-                "reference": "9bf9dfed9f6b3c1b936612b6dd0294003407207a",
+                "url": "https://api.github.com/repos/LeoGalleguillos/ReCaptcha/zipball/d7fc7a1c2470034f48e05588491a61eabf62506d",
+                "reference": "d7fc7a1c2470034f48e05588491a61eabf62506d",
                 "shasum": ""
             },
             "require": {
                 "laminas/laminas-test": "^3.1",
-                "leo-galleguillos/string": "dev-master"
+                "leo-galleguillos/string": "^1.0"
             },
             "type": "library",
             "autoload": {
@@ -1441,11 +1441,11 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-01-18T08:02:37+00:00"
+            "time": "2020-01-26T08:50:12+00:00"
         },
         {
             "name": "leo-galleguillos/string",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/String.git",
@@ -1475,16 +1475,16 @@
         },
         {
             "name": "leo-galleguillos/superglobal",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/Superglobal.git",
-                "reference": "4be3c6b599a1f748864acf780e12a7298ebde729"
+                "reference": "1605d3dcb66ef04379f1d8e4e2a28d2e709c9352"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/Superglobal/zipball/4be3c6b599a1f748864acf780e12a7298ebde729",
-                "reference": "4be3c6b599a1f748864acf780e12a7298ebde729",
+                "url": "https://api.github.com/repos/LeoGalleguillos/Superglobal/zipball/1605d3dcb66ef04379f1d8e4e2a28d2e709c9352",
+                "reference": "1605d3dcb66ef04379f1d8e4e2a28d2e709c9352",
                 "shasum": ""
             },
             "require": {
@@ -1501,20 +1501,20 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-01-13T20:25:06+00:00"
+            "time": "2020-01-26T07:23:01+00:00"
         },
         {
             "name": "leo-galleguillos/test",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/Test.git",
-                "reference": "4bc9e130a1c03b72f93329e75ff4bf519f03a4c4"
+                "reference": "34e71d6fd5e13c7bfae0632a9599ae0534ce0b94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/Test/zipball/4bc9e130a1c03b72f93329e75ff4bf519f03a4c4",
-                "reference": "4bc9e130a1c03b72f93329e75ff4bf519f03a4c4",
+                "url": "https://api.github.com/repos/LeoGalleguillos/Test/zipball/34e71d6fd5e13c7bfae0632a9599ae0534ce0b94",
+                "reference": "34e71d6fd5e13c7bfae0632a9599ae0534ce0b94",
                 "shasum": ""
             },
             "require": {
@@ -1532,29 +1532,29 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-01-13T07:41:45+00:00"
+            "time": "2020-01-26T07:24:54+00:00"
         },
         {
             "name": "leo-galleguillos/user",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/User.git",
-                "reference": "c10f87ad8b56396a570b95ed9eb8e5da7dbf3ee8"
+                "reference": "715d52f3abc4801c584bd08aa0e1bcb22919b7fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/c10f87ad8b56396a570b95ed9eb8e5da7dbf3ee8",
-                "reference": "c10f87ad8b56396a570b95ed9eb8e5da7dbf3ee8",
+                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/715d52f3abc4801c584bd08aa0e1bcb22919b7fd",
+                "reference": "715d52f3abc4801c584bd08aa0e1bcb22919b7fd",
                 "shasum": ""
             },
             "require": {
                 "laminas/laminas-db": "^2.9",
                 "laminas/laminas-test": "^3.1",
-                "leo-galleguillos/flash": "dev-master",
-                "leo-galleguillos/re-captcha": "~2.0.0",
-                "leo-galleguillos/string": "dev-master",
-                "leo-galleguillos/test": "dev-master"
+                "leo-galleguillos/flash": "^1.0",
+                "leo-galleguillos/re-captcha": "^2.0",
+                "leo-galleguillos/string": "^1.0",
+                "leo-galleguillos/test": "^1.0"
             },
             "type": "library",
             "autoload": {
@@ -1567,7 +1567,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-01-18T22:20:28+00:00"
+            "time": "2020-01-26T08:54:12+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -3175,13 +3175,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "leo-galleguillos/flash": 20,
-        "leo-galleguillos/memcached": 20,
-        "leo-galleguillos/string": 20,
-        "leo-galleguillos/superglobal": 20,
-        "leo-galleguillos/test": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

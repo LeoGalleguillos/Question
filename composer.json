@@ -4,11 +4,11 @@
     "require": {
         "laminas/laminas-db": "^2.9",
         "laminas/laminas-test": "^3.1",
-        "leo-galleguillos/flash": "dev-master",
-        "leo-galleguillos/memcached": "dev-master",
-        "leo-galleguillos/string": "dev-master",
-        "leo-galleguillos/superglobal": "dev-master",
-        "leo-galleguillos/test": "dev-master",
+        "leo-galleguillos/flash": "^1.0",
+        "leo-galleguillos/memcached": "^1.0",
+        "leo-galleguillos/string": "^1.0",
+        "leo-galleguillos/superglobal": "^1.0",
+        "leo-galleguillos/test": "^1.0",
         "leo-galleguillos/user": "^1.0"
     },
     "autoload": {
