@@ -10,5 +10,6 @@ CREATE TABLE `question_edit_queue` (
     `reason` varchar(255) default null,
     `queue_status_id` tinyint(1) default 0,
     `modified` datetime default null,
-    PRIMARY KEY (`question_edit_queue_id`)
+    PRIMARY KEY (`question_edit_queue_id`),
+    KEY `queue_status_id_created_datetime` (queue_status_id, created_datetime)
 ) CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
