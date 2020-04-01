@@ -302,16 +302,16 @@
         },
         {
             "name": "laminas/laminas-db",
-            "version": "2.11.2",
+            "version": "2.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-db.git",
-                "reference": "76f9527da996c2fef32ef1f3a939e18ca5e9d962"
+                "reference": "6c4238918b9204db1eb8cafae2c1940d40f4c007"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-db/zipball/76f9527da996c2fef32ef1f3a939e18ca5e9d962",
-                "reference": "76f9527da996c2fef32ef1f3a939e18ca5e9d962",
+                "url": "https://api.github.com/repos/laminas/laminas-db/zipball/6c4238918b9204db1eb8cafae2c1940d40f4c007",
+                "reference": "6c4238918b9204db1eb8cafae2c1940d40f4c007",
                 "shasum": ""
             },
             "require": {
@@ -320,7 +320,7 @@
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
-                "zendframework/zend-db": "self.version"
+                "zendframework/zend-db": "^2.11.0"
             },
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
@@ -360,7 +360,7 @@
                 "db",
                 "laminas"
             ],
-            "time": "2020-01-14T13:07:26+00:00"
+            "time": "2020-03-29T12:08:51+00:00"
         },
         {
             "name": "laminas/laminas-dom",
@@ -820,16 +820,16 @@
         },
         {
             "name": "laminas/laminas-router",
-            "version": "3.3.1",
+            "version": "3.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-router.git",
-                "reference": "c94f13f39dfbc4313efdbfcd9772487b4b009026"
+                "reference": "01a6905202ad41a42ba63d60260eba32b89e18c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-router/zipball/c94f13f39dfbc4313efdbfcd9772487b4b009026",
-                "reference": "c94f13f39dfbc4313efdbfcd9772487b4b009026",
+                "url": "https://api.github.com/repos/laminas/laminas-router/zipball/01a6905202ad41a42ba63d60260eba32b89e18c7",
+                "reference": "01a6905202ad41a42ba63d60260eba32b89e18c7",
                 "shasum": ""
             },
             "require": {
@@ -844,7 +844,7 @@
                 "laminas/laminas-mvc": "<3.0.0"
             },
             "replace": {
-                "zendframework/zend-router": "self.version"
+                "zendframework/zend-router": "^3.3.0"
             },
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
@@ -881,7 +881,7 @@
                 "mvc",
                 "routing"
             ],
-            "time": "2020-01-03T17:19:34+00:00"
+            "time": "2020-03-29T13:21:03+00:00"
         },
         {
             "name": "laminas/laminas-servicemanager",
@@ -1007,16 +1007,16 @@
         },
         {
             "name": "laminas/laminas-test",
-            "version": "3.4.0",
+            "version": "3.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-test.git",
-                "reference": "e2d0dec7872bbee214b9f2a9448e429d71b0e668"
+                "reference": "b540d62ca1d3efc0813cdb50bfaf8e4abcf88426"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-test/zipball/e2d0dec7872bbee214b9f2a9448e429d71b0e668",
-                "reference": "e2d0dec7872bbee214b9f2a9448e429d71b0e668",
+                "url": "https://api.github.com/repos/laminas/laminas-test/zipball/b540d62ca1d3efc0813cdb50bfaf8e4abcf88426",
+                "reference": "b540d62ca1d3efc0813cdb50bfaf8e4abcf88426",
                 "shasum": ""
             },
             "require": {
@@ -1034,7 +1034,7 @@
                 "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0 || ^8.0 || ^9.0"
             },
             "replace": {
-                "zendframework/zend-test": "self.version"
+                "zendframework/zend-test": "^3.3.0"
             },
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
@@ -1076,7 +1076,7 @@
                 "laminas",
                 "test"
             ],
-            "time": "2020-02-07T16:14:56+00:00"
+            "time": "2020-03-29T13:38:04+00:00"
         },
         {
             "name": "laminas/laminas-uri",
@@ -1299,16 +1299,16 @@
         },
         {
             "name": "laminas/laminas-zendframework-bridge",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-zendframework-bridge.git",
-                "reference": "0fb9675b84a1666ab45182b6c5b29956921e818d"
+                "reference": "faf68f6109ceeff24241226033ab59640c7eb63b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/0fb9675b84a1666ab45182b6c5b29956921e818d",
-                "reference": "0fb9675b84a1666ab45182b6c5b29956921e818d",
+                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/faf68f6109ceeff24241226033ab59640c7eb63b",
+                "reference": "faf68f6109ceeff24241226033ab59640c7eb63b",
                 "shasum": ""
             },
             "require": {
@@ -1347,7 +1347,7 @@
                 "laminas",
                 "zf"
             ],
-            "time": "2020-01-07T22:58:31+00:00"
+            "time": "2020-03-26T16:07:12+00:00"
         },
         {
             "name": "leo-galleguillos/flash",
@@ -1443,16 +1443,16 @@
         },
         {
             "name": "leo-galleguillos/string",
-            "version": "v1.0.17",
+            "version": "v1.0.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/String.git",
-                "reference": "13ca7ed216f7a3d12bed30810c211f0ccc56c579"
+                "reference": "ac03c3556ce9bf17614caaace59d4cba006cd7d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/13ca7ed216f7a3d12bed30810c211f0ccc56c579",
-                "reference": "13ca7ed216f7a3d12bed30810c211f0ccc56c579",
+                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/ac03c3556ce9bf17614caaace59d4cba006cd7d7",
+                "reference": "ac03c3556ce9bf17614caaace59d4cba006cd7d7",
                 "shasum": ""
             },
             "require": {
@@ -1469,20 +1469,20 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-02-28T05:34:06+00:00"
+            "time": "2020-04-01T03:39:29+00:00"
         },
         {
             "name": "leo-galleguillos/superglobal",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/Superglobal.git",
-                "reference": "1605d3dcb66ef04379f1d8e4e2a28d2e709c9352"
+                "reference": "3b9fb3c5660690951d1da7530d39eaf3727f8e5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/Superglobal/zipball/1605d3dcb66ef04379f1d8e4e2a28d2e709c9352",
-                "reference": "1605d3dcb66ef04379f1d8e4e2a28d2e709c9352",
+                "url": "https://api.github.com/repos/LeoGalleguillos/Superglobal/zipball/3b9fb3c5660690951d1da7530d39eaf3727f8e5d",
+                "reference": "3b9fb3c5660690951d1da7530d39eaf3727f8e5d",
                 "shasum": ""
             },
             "require": {
@@ -1499,20 +1499,20 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-01-26T07:23:01+00:00"
+            "time": "2020-03-11T05:54:20+00:00"
         },
         {
             "name": "leo-galleguillos/test",
-            "version": "v1.0.3",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/Test.git",
-                "reference": "bba52a6b0be73071cd7ffeeb688771a63b703162"
+                "reference": "bcd546da840f6fd2af1b7029217c67f393d614db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/Test/zipball/bba52a6b0be73071cd7ffeeb688771a63b703162",
-                "reference": "bba52a6b0be73071cd7ffeeb688771a63b703162",
+                "url": "https://api.github.com/repos/LeoGalleguillos/Test/zipball/bcd546da840f6fd2af1b7029217c67f393d614db",
+                "reference": "bcd546da840f6fd2af1b7029217c67f393d614db",
                 "shasum": ""
             },
             "require": {
@@ -1530,7 +1530,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-02-13T09:51:50+00:00"
+            "time": "2020-03-23T05:18:38+00:00"
         },
         {
             "name": "leo-galleguillos/user",
@@ -1867,16 +1867,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "v1.10.2",
+            "version": "v1.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "b4400efc9d206e83138e2bb97ed7f5b14b831cd9"
+                "reference": "451c3cd1418cf640de218914901e51b064abb093"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/b4400efc9d206e83138e2bb97ed7f5b14b831cd9",
-                "reference": "b4400efc9d206e83138e2bb97ed7f5b14b831cd9",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/451c3cd1418cf640de218914901e51b064abb093",
+                "reference": "451c3cd1418cf640de218914901e51b064abb093",
                 "shasum": ""
             },
             "require": {
@@ -1926,7 +1926,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2020-01-20T15:57:02+00:00"
+            "time": "2020-03-05T15:02:03+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -3025,16 +3025,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.14.0",
+            "version": "v1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "fbdeaec0df06cf3d51c93de80c7eb76e271f5a38"
+                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/fbdeaec0df06cf3d51c93de80c7eb76e271f5a38",
-                "reference": "fbdeaec0df06cf3d51c93de80c7eb76e271f5a38",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
+                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
                 "shasum": ""
             },
             "require": {
@@ -3046,7 +3046,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.14-dev"
+                    "dev-master": "1.15-dev"
                 }
             },
             "autoload": {
@@ -3079,7 +3079,21 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2020-01-13T11:15:53+00:00"
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-02-27T09:26:54+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -3177,5 +3191,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
