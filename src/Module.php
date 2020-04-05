@@ -477,8 +477,7 @@ class Module
                 },
                 QuestionTable\Question::class => function ($sm) {
                     return new QuestionTable\Question(
-                        $sm->get('question'),
-                        $sm->get(MemcachedService\Memcached::class)
+                        $sm->get('question')
                     );
                 },
                 QuestionTable\Question\CreatedDatetimeDeletedDatetime::class => function ($sm) {

@@ -48,30 +48,6 @@ class QuestionTest extends TableTestCase
         $result = $this->adapter->query($sql)->execute();
     }
 
-    public function testInitialize()
-    {
-        $this->assertInstanceOf(
-            QuestionTable\Question::class,
-            $this->questionTable
-        );
-    }
-
-    public function testInsertAndSelectCount()
-    {
-        $this->memcachedServiceMock->method('get')->will($this->onConsecutiveCalls(5, null));
-        $this->assertSame(
-            5,
-            $this->questionTable->selectCount()
-        );
-        $this->questionTable->insert(1, 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4');
-        $this->questionTable->insert(2, 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4');
-        $this->questionTable->insert(3, 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4');
-        $this->assertSame(
-            3,
-            $this->questionTable->selectCount()
-        );
-    }
-
     public function testInsertDeleted()
     {
         $questionId = $this->questionTable->insertDeleted(

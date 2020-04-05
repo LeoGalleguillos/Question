@@ -2,7 +2,6 @@
 namespace LeoGalleguillos\Question\Model\Table;
 
 use Generator;
-use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use TypeError;
 use Zend\Db\Adapter\Adapter;
 
@@ -14,11 +13,9 @@ class Question
     protected $adapter;
 
     public function __construct(
-        Adapter $adapter,
-        MemcachedService\Memcached $memcachedService
+        Adapter $adapter
     ) {
-        $this->adapter          = $adapter;
-        $this->memcachedService = $memcachedService;
+        $this->adapter = $adapter;
     }
 
     /**
@@ -115,24 +112,6 @@ class Question
             ->query($sql)
             ->execute($parameters)
             ->getGeneratedValue();
-    }
-
-    public function selectCount(): int
-    {
-        $cacheKey = md5(__METHOD__);
-        if (null !== ($count = $this->memcachedService->get($cacheKey))) {
-            return $count;
-        }
-
-        $sql = '
-            SELECT COUNT(*) AS `count`
-              FROM `question`
-                 ;
-        ';
-        $count = (int) $this->adapter->query($sql)->execute()->current()['count'];
-
-        $this->memcachedService->setForDays($cacheKey, $count, 7);
-        return $count;
     }
 
     public function selectWhereDeletedDatetimeIsNullOrderByCreatedDateTimeDesc(
