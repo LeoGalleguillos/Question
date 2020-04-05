@@ -30,6 +30,7 @@ class MessageDeletedDatetimeCreatedDatetime
                AND `question`.`deleted_datetime` IS NULL
              ORDER
                 BY `question`.`created_datetime` DESC
+                 , `question`.`question_id` DESC
              LIMIT 1
         ';
         $parameters = [

@@ -1,12 +1,8 @@
 <?php
 namespace LeoGalleguillos\QuestionTest\Model\Table\Question;
 
-use Generator;
-use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use LeoGalleguillos\Test\TableTestCase;
-use Zend\Db\Adapter\Adapter;
-use PHPUnit\Framework\TestCase;
 
 class MessageDeletedDatetimeCreatedDatetimeTest extends TableTestCase
 {
@@ -15,7 +11,7 @@ class MessageDeletedDatetimeCreatedDatetimeTest extends TableTestCase
         $this->questionTable = new QuestionTable\Question(
             $this->getAdapter()
         );
-        $this->questionMessageTable = new QuestionTable\Question\Message(
+        $this->messageDeletedDatetimeCreatedDatetimeTable = new QuestionTable\Question\MessageDeletedDatetimeCreatedDatetime(
             $this->getAdapter(),
             $this->questionTable
         );
@@ -23,114 +19,92 @@ class MessageDeletedDatetimeCreatedDatetimeTest extends TableTestCase
         $this->dropAndCreateTable('question');
     }
 
-    public function testSelectWhereMessageRegularExpression()
+    public function test_selectWhereMessageAndDeletedDatetimeIsNullOrderByCreatedDatetimeDescLimit1_emptyTable_emptyResult()
     {
-        $result = $this->questionMessageTable->selectWhereMessageRegularExpression(
-            'oba',
-            1,
-            1
-        );
-        $results = iterator_to_array($result);
-        $this->assertEmpty($results);
+        $result = $this->messageDeletedDatetimeCreatedDatetimeTable
+            ->selectWhereMessageAndDeletedDatetimeIsNullOrderByCreatedDatetimeDescLimit1(
+                'this is the message'
+            );
+        $this->assertEmpty($result);
+    }
 
+    public function test_selectWhereMessageAndDeletedDatetimeIsNullOrderByCreatedDatetimeDescLimit1_multipleRows_oneResult()
+    {
         $this->questionTable->insert(
-            1,
-            'subject',
-            'foobarbaz',
-            '1.2.3.4',
-            'name',
+            null,
+            'this is the subject',
+            'this is the message',
+            'this is the name',
             '1.2.3.4'
         );
         $this->questionTable->insert(
-            1,
-            'subject',
-            '&lt;b&gt;',
-            '1.2.3.4',
-            'name',
-            '1.2.3.4'
+            null,
+            'this is another subject',
+            'this is the message',
+            'this is another name',
+            '5.6.7.8'
         );
 
-        $result = $this->questionMessageTable->selectWhereMessageRegularExpression(
-            'oba',
-            0,
-            10
-        );
-        $results = iterator_to_array($result);
+        $result = $this->messageDeletedDatetimeCreatedDatetimeTable
+            ->selectWhereMessageAndDeletedDatetimeIsNullOrderByCreatedDatetimeDescLimit1(
+                'this is the message'
+            );
         $this->assertSame(
-            $results[0]['question_id'],
-            '1'
-        );
-
-        $result = $this->questionMessageTable->selectWhereMessageRegularExpression(
-            '&lt;',
-            0,
-            10
-        );
-        $results = iterator_to_array($result);
-        $this->assertSame(
-            $results[0]['question_id'],
-            '2'
-        );
-
-        $result = $this->questionMessageTable->selectWhereMessageRegularExpression(
-            '&gt;',
-            0,
-            10
-        );
-        $results = iterator_to_array($result);
-        $this->assertSame(
-            $results[0]['question_id'],
-            '2'
-        );
-
-        $result = $this->questionMessageTable->selectWhereMessageRegularExpression(
-            'hello',
-            0,
-            10
-        );
-        $results = iterator_to_array($result);
-        $this->assertEmpty($results);
-
-        $result = $this->questionMessageTable->selectWhereMessageRegularExpression(
-            '[A-Za-z0-9]+;',
-            0,
-            10
-        );
-        $results = iterator_to_array($result);
-        $this->assertSame(
-            $results[0]['question_id'],
-            '2'
+            [
+                '2',
+                'this is another subject',
+                'this is the message',
+                'this is another name',
+                '5.6.7.8',
+            ],
+            [
+                $result->current()['question_id'],
+                $result->current()['subject'],
+                $result->current()['message'],
+                $result->current()['created_name'],
+                $result->current()['created_ip'],
+            ]
         );
     }
 
-    public function testUpdateWhereQuestionId()
+    public function test_selectWhereMessageAndDeletedDatetimeIsNullOrderByCreatedDatetimeDescLimit1_deletedRow_oneResult()
     {
         $this->questionTable->insert(
-            1,
-            'subject',
-            'foobarbaz',
-            '1.2.3.4',
-            'name',
+            null,
+            'this is the subject',
+            'this is the message',
+            'this is the name',
             '1.2.3.4'
         );
+        $this->questionTable->insertDeleted(
+            0,
+            'this is another subject',
+            'this is the message',
+            'this is another name',
+            '5.6.7.8',
+            '99',
+            'deleted reason'
+        );
 
-        $this->assertFalse(
-            $this->questionMessageTable->updateWhereQuestionId(
-                'foobarbaz',
-                1
-            )
-        );
-        $this->assertTrue(
-            $this->questionMessageTable->updateWhereQuestionId(
-                'foo, bar, baz',
-                1
-            )
-        );
-        $this->assertFalse(
-            $this->questionMessageTable->updateWhereQuestionId(
-                'foobarbaz',
-                2
-            )
+        $result = $this->messageDeletedDatetimeCreatedDatetimeTable
+            ->selectWhereMessageAndDeletedDatetimeIsNullOrderByCreatedDatetimeDescLimit1(
+                'this is the message'
+            );
+        $this->assertSame(
+            [
+                '1',
+                'this is the subject',
+                'this is the message',
+                'this is the name',
+                '1.2.3.4',
+            ],
+            [
+                $result->current()['question_id'],
+                $result->current()['subject'],
+                $result->current()['message'],
+                $result->current()['created_name'],
+                $result->current()['created_ip'],
+            ]
         );
     }
 }
