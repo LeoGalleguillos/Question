@@ -298,7 +298,7 @@ class Module
                 QuestionService\Question\Duplicate::class => function ($sm) {
                     return new QuestionService\Question\Duplicate(
                         $sm->get(QuestionFactory\Question::class),
-                        $sm->get(QuestionTable\Question\MessageCreatedDatetimeDeletedDatetime::class)
+                        $sm->get(QuestionTable\Question\MessageDeletedDatetimeCreatedDatetime::class)
                     );
                 },
                 QuestionService\Question\IncrementViews::class => function ($sm) {
@@ -562,8 +562,8 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
-                QuestionTable\Question\MessageCreatedDatetimeDeletedDatetime::class => function ($sm) {
-                    return new QuestionTable\Question\MessageCreatedDatetimeDeletedDatetime(
+                QuestionTable\Question\MessageDeletedDatetimeCreatedDatetime::class => function ($sm) {
+                    return new QuestionTable\Question\MessageDeletedDatetimeCreatedDatetime(
                         $sm->get('question'),
                         $sm->get(QuestionTable\Question::class)
                     );

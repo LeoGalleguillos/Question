@@ -1,41 +1,37 @@
 <?php
 namespace LeoGalleguillos\Question\Model\Service\Question;
 
-use DateInterval;
-use DateTime;
+use Exception;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
-use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use TypeError;
 
 class Duplicate
 {
     public function __construct(
         QuestionFactory\Question $questionFactory,
-        QuestionTable\Question\MessageCreatedDatetimeDeletedDatetime $messageCreatedDatetimeDeletedDatetimeTable
+        QuestionTable\Question\MessageDeletedDatetimeCreatedDatetime $messageDeletedDatetimeCreatedDatetimeTable
     ) {
         $this->questionFactory                            = $questionFactory;
-        $this->messageCreatedDatetimeDeletedDatetimeTable = $messageCreatedDatetimeDeletedDatetimeTable;
+        $this->messageDeletedDatetimeCreatedDatetimeTable = $messageDeletedDatetimeCreatedDatetimeTable;
     }
 
     /**
-     * @throws TypeError
+     * @throws Exception
      */
     public function getDuplicate(
         string $message
     ): QuestionEntity\Question {
-        $dateTime = new DateTime();
-        $dateTime->sub(new DateInterval('P3D'));
-
-        /* @throws TypeError */
-        $array = $this->messageCreatedDatetimeDeletedDatetimeTable->selectWhereMessageAndCreatedDateTimeIsGreaterThanOrEqualToAndDeletedDatetimeIsNull(
-            $message,
-            $dateTime->format('Y-m-d H:i:s')
-        );
+        $result = $this->messageDeletedDatetimeCreatedDatetimeTable
+            ->selectWhereMessageAndDeletedDatetimeIsNullOrderByCreatedDatetimeDescLimit1(
+                $message
+            );
+        if (!count($result)) {
+            throw new Exception('No duplicate question found.');
+        }
 
         return $this->questionFactory->buildFromArray(
-            $array
+            $result->current()
         );
     }
 }
