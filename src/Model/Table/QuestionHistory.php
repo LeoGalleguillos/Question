@@ -31,7 +31,6 @@ class QuestionHistory
                     , `name`
                     , `subject`
                     , `message`
-                    , `ip`
                     , `created`
                     , `reason`
                  )
@@ -40,7 +39,6 @@ class QuestionHistory
                  , `question`.`created_name`
                  , `question`.`subject`
                  , `question`.`message`
-                 , `question`.`created_ip`
                  , IFNULL(
                        `question`.`modified_datetime`
                      , `question`.`created_datetime`
@@ -69,7 +67,6 @@ class QuestionHistory
                  , `question_history`.`name`
                  , `question_history`.`subject`
                  , `question_history`.`message`
-                 , `question_history`.`ip`
                  , `question_history`.`created`
                  , `question_history`.`reason`
               FROM `question_history`

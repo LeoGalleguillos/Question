@@ -55,14 +55,6 @@ class QuestionHistoryTest extends TableTestCase
         $this->adapter->query($sql)->execute();
     }
 
-    public function testInitialize()
-    {
-        $this->assertInstanceOf(
-            QuestionTable\QuestionHistory::class,
-            $this->questionHistoryTable
-        );
-    }
-
     public function testInsertSelectFromQuestion()
     {
         $questionHistoryId = $this->questionHistoryTable->insertSelectFromQuestion(
