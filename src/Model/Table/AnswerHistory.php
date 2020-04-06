@@ -24,14 +24,12 @@ class AnswerHistory
               INTO `answer_history`
                  (
                       `answer_id`
-                    , `user_id`
                     , `name`
                     , `message`
                     , `created`
                     , `reason`
                  )
             SELECT `answer`.`answer_id`
-                 , `answer`.`user_id`
                  , `answer`.`created_name`
                  , `answer`.`message`
                  , IFNULL(`answer`.`modified_datetime`, `answer`.`created_datetime`)
@@ -55,7 +53,6 @@ class AnswerHistory
     ): array {
         $sql = '
             SELECT `answer_history`.`answer_id`
-                 , `answer_history`.`user_id`
                  , `answer_history`.`name`
                  , `answer_history`.`message`
                  , `answer_history`.`created`
