@@ -27,7 +27,6 @@ class QuestionHistory
               INTO `question_history`
                  (
                       `question_id`
-                    , `user_id`
                     , `name`
                     , `subject`
                     , `message`
@@ -35,7 +34,6 @@ class QuestionHistory
                     , `reason`
                  )
             SELECT `question`.`question_id`
-                 , `question`.`user_id`
                  , `question`.`created_name`
                  , `question`.`subject`
                  , `question`.`message`
@@ -63,7 +61,6 @@ class QuestionHistory
     ): array {
         $sql = '
             SELECT `question_history`.`question_id`
-                 , `question_history`.`user_id`
                  , `question_history`.`name`
                  , `question_history`.`subject`
                  , `question_history`.`message`

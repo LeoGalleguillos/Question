@@ -80,9 +80,9 @@ class QuestionHistoryTest extends TableTestCase
 
         $questionId = $this->questionTable->insert(
             12345,
-            'subject',
-            'message',
-            'name',
+            'this is the subject',
+            'this is the message message',
+            'this is the name',
             '1.2.3.4'
         );
         $questionHistoryId = $this->questionHistoryTable->insertSelectFromQuestion(
@@ -93,11 +93,11 @@ class QuestionHistoryTest extends TableTestCase
             1
         );
         $this->assertSame(
-            '12345',
-            $array['user_id']
+            'this is the subject',
+            $array['subject']
         );
         $this->assertSame(
-            'name',
+            'this is the name',
             $array['name']
         );
     }

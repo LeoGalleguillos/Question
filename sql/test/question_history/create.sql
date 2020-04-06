@@ -1,7 +1,6 @@
 CREATE TABLE `question_history` (
     `question_history_id` int(10) unsigned auto_increment,
     `question_id` int(10) unsigned not null,
-    `user_id` int(10) unsigned default null,
     `name` varchar(255) default null,
     `subject` varchar(255) not null,
     `message` text,
