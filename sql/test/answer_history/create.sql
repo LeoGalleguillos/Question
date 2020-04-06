@@ -4,7 +4,6 @@ CREATE TABLE `answer_history` (
     `user_id` int(10) unsigned default null,
     `name` varchar(255) default null,
     `message` text,
-    `ip` varchar(45) default null,
     `created` datetime not null,
     `reason` varchar(255) default null,
     PRIMARY KEY (`answer_history_id`),

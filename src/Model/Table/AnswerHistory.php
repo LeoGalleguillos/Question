@@ -27,7 +27,6 @@ class AnswerHistory
                     , `user_id`
                     , `name`
                     , `message`
-                    , `ip`
                     , `created`
                     , `reason`
                  )
@@ -35,7 +34,6 @@ class AnswerHistory
                  , `answer`.`user_id`
                  , `answer`.`created_name`
                  , `answer`.`message`
-                 , `answer`.`created_ip`
                  , IFNULL(`answer`.`modified_datetime`, `answer`.`created_datetime`)
                  , ?
               FROM `answer`
@@ -60,7 +58,6 @@ class AnswerHistory
                  , `answer_history`.`user_id`
                  , `answer_history`.`name`
                  , `answer_history`.`message`
-                 , `answer_history`.`ip`
                  , `answer_history`.`created`
                  , `answer_history`.`reason`
               FROM `answer_history`
