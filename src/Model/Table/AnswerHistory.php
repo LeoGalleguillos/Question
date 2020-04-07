@@ -16,7 +16,7 @@ class AnswerHistory
     }
 
     public function insertSelectFromAnswer(
-        string $reason,
+        string $modifiedReason,
         int $answerId
     ): int {
         $sql = '
@@ -27,7 +27,7 @@ class AnswerHistory
                     , `name`
                     , `message`
                     , `created`
-                    , `reason`
+                    , `modified_reason`
                  )
             SELECT `answer`.`answer_id`
                  , `answer`.`created_name`
@@ -39,7 +39,7 @@ class AnswerHistory
                  ;
         ';
         $parameters = [
-            $reason,
+            $modifiedReason,
             $answerId,
         ];
         return (int) $this->adapter
@@ -56,7 +56,7 @@ class AnswerHistory
                  , `answer_history`.`name`
                  , `answer_history`.`message`
                  , `answer_history`.`created`
-                 , `answer_history`.`reason`
+                 , `answer_history`.`modified_reason`
               FROM `answer_history`
              WHERE `answer_history`.`answer_id` = ?
              ORDER
