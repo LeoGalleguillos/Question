@@ -19,7 +19,7 @@ class QuestionHistory
      * @return int
      */
     public function insertSelectFromQuestion(
-        string $reason,
+        string $modifiedReason,
         int $questionId
     ): int {
         $sql = '
@@ -31,7 +31,7 @@ class QuestionHistory
                     , `subject`
                     , `message`
                     , `created`
-                    , `reason`
+                    , `modified_reason`
                  )
             SELECT `question`.`question_id`
                  , `question`.`created_name`
@@ -47,7 +47,7 @@ class QuestionHistory
                  ;
         ';
         $parameters = [
-            $reason,
+            $modifiedReason,
             $questionId,
         ];
         return $this->adapter
@@ -65,7 +65,7 @@ class QuestionHistory
                  , `question_history`.`subject`
                  , `question_history`.`message`
                  , `question_history`.`created`
-                 , `question_history`.`reason`
+                 , `question_history`.`modified_reason`
               FROM `question_history`
              WHERE `question_history`.`question_id` = ?
              ORDER
