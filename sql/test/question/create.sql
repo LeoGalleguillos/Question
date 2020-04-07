@@ -10,6 +10,7 @@ CREATE TABLE `question` (
     `created_ip` varchar(45) default null,
     `modified_datetime` DATETIME DEFAULT NULL,
     `modified_user_id` INT(10) UNSIGNED DEFAULT NULL,
+    `modified_reason` varchar(255) DEFAULT NULL,
     `deleted` datetime default null,
     `deleted_datetime` datetime default null,
     `deleted_user_id` int(10) default null,
