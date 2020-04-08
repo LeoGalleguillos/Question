@@ -4,8 +4,8 @@ CREATE TABLE `question_history` (
     `name` varchar(255) default null,
     `subject` varchar(255) not null,
     `message` text,
+    `modified_reason` varchar(255) DEFAULT NULL,
     `created` datetime not null,
-    `modified_reason` varchar(255) default null,
     PRIMARY KEY (`question_history_id`),
     KEY `question_id_created` (`question_id`, `created`)
 ) CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
