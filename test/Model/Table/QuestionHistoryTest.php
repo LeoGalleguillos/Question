@@ -89,38 +89,41 @@ class QuestionHistoryTest extends TableTestCase
         );
     }
 
-    public function testSelectWhereQuestionIdOrderByCreatedAscLimit1()
+    public function test_selectWhereQuestionIdOrderByCreatedAsc()
     {
-        try {
-            $array = $this->questionHistoryTable->selectWhereQuestionIdOrderByCreatedAscLimit1(
+        $result = $this->questionHistoryTable
+            ->selectWhereQuestionIdOrderByCreatedAsc(
                 1
             );
-            $this->fail();
-        } catch (TypeError $typeError) {
-            $this->assertTrue(true);
-        }
+        $this->assertEmpty($result);
 
-        $questionId = $this->questionTable->insert(
+        $this->questionTable->insert(
             12345,
             'this is the subject',
-            'this is the message message',
+            'this is the message',
             'this is the name',
             '1.2.3.4'
         );
-        $questionHistoryId = $this->questionHistoryTable->insertSelectFromQuestion(
-            'reason',
+        $this->questionHistoryTable->insertSelectFromQuestion(
+            'this is the reason',
             1
         );
-        $array = $this->questionHistoryTable->selectWhereQuestionIdOrderByCreatedAscLimit1(
+        $this->questionHistoryTable->insertSelectFromQuestion(
+            'this is another reason',
             1
         );
+        $result = $this->questionHistoryTable
+            ->selectWhereQuestionIdOrderByCreatedAsc(
+                1
+            );
         $this->assertSame(
-            'this is the subject',
-            $array['subject']
+            'this is the reason',
+            $result->current()['modified_reason']
         );
+        $result->next();
         $this->assertSame(
-            'this is the name',
-            $array['name']
+            'this is another reason',
+            $result->current()['modified_reason']
         );
     }
 }

@@ -70,29 +70,26 @@ class QuestionHistory
         return $this->adapter->query($sql)->execute();
     }
 
-    public function selectWhereQuestionIdOrderByCreatedAscLimit1(
+    public function selectWhereQuestionIdOrderByCreatedAsc(
         int $questionId
-    ): array {
+    ): Result {
         $sql = '
             SELECT `question_history`.`question_id`
                  , `question_history`.`name`
                  , `question_history`.`subject`
                  , `question_history`.`message`
-                 , `question_history`.`created`
                  , `question_history`.`modified_reason`
+                 , `question_history`.`created`
               FROM `question_history`
              WHERE `question_history`.`question_id` = ?
              ORDER
                 BY `question_history`.`created` ASC
-             LIMIT 1
+                 , `question_history`.`question_id` ASC
                  ;
         ';
         $parameters = [
             $questionId,
         ];
-        return $this->adapter
-                    ->query($sql)
-                    ->execute($parameters)
-                    ->current();
+        return $this->adapter->query($sql)->execute($parameters);
     }
 }
