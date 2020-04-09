@@ -1,7 +1,8 @@
 <?php
 namespace LeoGalleguillos\Question\Model\Table;
 
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Driver\Pdo\Result;
 
 class QuestionHistory
 {
@@ -54,6 +55,19 @@ class QuestionHistory
                     ->query($sql)
                     ->execute($parameters)
                     ->getGeneratedValue();
+    }
+
+    public function selectDistinctQuestionId(): Result
+    {
+        $sql = '
+            SELECT
+          DISTINCT `question_id`
+              FROM `question_history`
+             ORDER
+                BY `question_id` ASC
+                 ;
+        ';
+        return $this->adapter->query($sql)->execute();
     }
 
     public function selectWhereQuestionIdOrderByCreatedAscLimit1(

@@ -1,14 +1,11 @@
 <?php
 namespace LeoGalleguillos\QuestionTest\Model\Table;
 
-use ArrayObject;
-use Exception;
 use Generator;
-use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Driver\Pdo\Result;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\QuestionTest\TableTestCase;
-use Zend\Db\Adapter\Adapter;
-use PHPUnit\Framework\TestCase;
+use LeoGalleguillos\Test\TableTestCase;
 use TypeError;
 
 class QuestionHistoryTest extends TableTestCase
@@ -20,39 +17,16 @@ class QuestionHistoryTest extends TableTestCase
 
     protected function setUp()
     {
-        $this->sqlPath   = $_SERVER['PWD'] . '/sql/leogalle_test/question_history/';
-        $configArray     = require(__DIR__ . '/../../../config/autoload/local.php');
-        $configArray     = $configArray['db']['adapters']['leogalle_test'];
-        $this->adapter   = new Adapter($configArray);
-
         $this->questionTable = new QuestionTable\Question(
-            $this->adapter,
-            new MemcachedService\Memcached()
+            $this->getAdapter()
         );
-        $this->questionHistoryTable = new QuestionTable\QuestionHistory($this->adapter);
+        $this->questionHistoryTable = new QuestionTable\QuestionHistory(
+            $this->getAdapter()
+        );
 
-        $this->setForeignKeyChecks0();
-        $this->dropTables();
-        $this->createTables();
-        $this->setForeignKeyChecks1();
-    }
-
-    protected function dropTables()
-    {
-        $sql = file_get_contents($this->sqlPath . 'drop.sql');
-        $result = $this->adapter->query($sql)->execute();
-
-        $sql = file_get_contents($_SERVER['PWD'] . '/sql/leogalle_test/question/drop.sql');
-        $this->adapter->query($sql)->execute();
-    }
-
-    protected function createTables()
-    {
-        $sql = file_get_contents($this->sqlPath . 'create.sql');
-        $result = $this->adapter->query($sql)->execute();
-
-        $sql = file_get_contents($_SERVER['PWD'] . '/sql/leogalle_test/question/create.sql');
-        $this->adapter->query($sql)->execute();
+        $this->setForeignKeyChecks(0);
+        $this->dropAndCreateTables(['question', 'question_history']);
+        $this->setForeignKeyChecks(1);
     }
 
     public function testInsertSelectFromQuestion()
@@ -64,6 +38,54 @@ class QuestionHistoryTest extends TableTestCase
         $this->assertSame(
             $questionHistoryId,
             0
+        );
+    }
+
+    public function test_selectDistinctQuestionId_emptyTable_emptyResult()
+    {
+        $result = $this->questionHistoryTable->selectDistinctQuestionId();
+        $this->assertEmpty($result);
+    }
+
+    public function test_selectDistinctQuestionId_multipleRows_multipleResults()
+    {
+        $this->questionTable->insert(
+            null,
+            'subject',
+            'message',
+            'created name',
+            '1.2.3.4'
+        );
+        $this->questionTable->insert(
+            null,
+            'subject 2',
+            'message 2',
+            'created name 2',
+            '5.6.7.8'
+        );
+        $this->questionHistoryTable->insertSelectFromQuestion(
+            'modified reason',
+            1
+        );
+        $this->questionHistoryTable->insertSelectFromQuestion(
+            'another modified reason',
+            2
+        );
+        $this->questionHistoryTable->insertSelectFromQuestion(
+            'yet another modified reason',
+            2
+        );
+        $result = $this->questionHistoryTable->selectDistinctQuestionId();
+        $this->assertCount(
+            2,
+            $result
+        );
+        $this->assertSame(
+            [
+                ['question_id' => '1'],
+                ['question_id' => '2'],
+            ],
+            iterator_to_array($result)
         );
     }
 
