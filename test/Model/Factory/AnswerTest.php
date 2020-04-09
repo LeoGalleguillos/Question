@@ -14,12 +14,8 @@ class AnswerTest extends TestCase
         $this->answerTableMock = $this->createMock(
             QuestionTable\Answer::class
         );
-        $this->answerHistoryTableMock = $this->createMock(
-            QuestionTable\AnswerHistory::class
-        );
         $this->answerFactory = new QuestionFactory\Answer(
-            $this->answerTableMock,
-            $this->answerHistoryTableMock
+            $this->answerTableMock
         );
     }
 
@@ -61,9 +57,6 @@ class AnswerTest extends TestCase
         ];
         $this->answerTableMock->method('selectWhereAnswerId')->willReturn(
             $array
-        );
-        $this->answerHistoryTableMock->method('selectWhereAnswerIdOrderByCreatedAscLimit1')->willReturn(
-            null
         );
 
         $answerEntity = new QuestionEntity\Answer();

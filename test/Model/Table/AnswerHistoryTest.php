@@ -87,4 +87,43 @@ class AnswerHistoryTest extends TableTestCase
             iterator_to_array($result)
         );
     }
+
+    public function test_selectWhereAnswerIdOrderByCreatedAsc()
+    {
+        $result = $this->answerHistoryTable
+            ->selectWhereAnswerIdOrderByCreatedAsc(
+                1
+            );
+        $this->assertEmpty($result);
+
+        $this->answerTable->insert(
+            2,
+            123,
+            'message',
+            'created name',
+            '1.2.3.4'
+        );
+
+        $this->answerHistoryTable->insertSelectFromAnswer(
+            'this is the reason',
+            1
+        );
+        $this->answerHistoryTable->insertSelectFromAnswer(
+            'this is another reason',
+            1
+        );
+        $result = $this->answerHistoryTable
+            ->selectWhereAnswerIdOrderByCreatedAsc(
+                1
+            );
+        $this->assertSame(
+            'this is the reason',
+            $result->current()['modified_reason']
+        );
+        $result->next();
+        $this->assertSame(
+            'this is another reason',
+            $result->current()['modified_reason']
+        );
+    }
 }
