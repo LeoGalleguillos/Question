@@ -1,7 +1,8 @@
 <?php
 namespace LeoGalleguillos\Question\Model\Table;
 
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Driver\Pdo\Result;
 
 class AnswerHistory
 {
@@ -46,6 +47,19 @@ class AnswerHistory
             ->query($sql)
             ->execute($parameters)
             ->getGeneratedValue();
+    }
+
+    public function selectDistinctAnswerId(): Result
+    {
+        $sql = '
+            SELECT
+          DISTINCT `answer_id`
+              FROM `answer_history`
+             ORDER
+                BY `answer_id` ASC
+                 ;
+        ';
+        return $this->adapter->query($sql)->execute();
     }
 
     public function selectWhereAnswerIdOrderByCreatedAscLimit1(
