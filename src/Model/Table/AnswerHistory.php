@@ -66,7 +66,8 @@ class AnswerHistory
         int $answerId
     ): Result {
         $sql = '
-            SELECT `answer_history`.`answer_id`
+            SELECT `answer_history`.`answer_history_id`
+                 , `answer_history`.`answer_id`
                  , `answer_history`.`name`
                  , `answer_history`.`message`
                  , `answer_history`.`modified_reason`

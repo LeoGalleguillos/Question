@@ -74,7 +74,8 @@ class QuestionHistory
         int $questionId
     ): Result {
         $sql = '
-            SELECT `question_history`.`question_id`
+            SELECT `question_history`.`question_history_id`
+                 , `question_history`.`question_id`
                  , `question_history`.`name`
                  , `question_history`.`subject`
                  , `question_history`.`message`
