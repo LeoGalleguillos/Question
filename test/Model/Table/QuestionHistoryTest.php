@@ -89,10 +89,10 @@ class QuestionHistoryTest extends TableTestCase
         );
     }
 
-    public function test_selectWhereQuestionIdOrderByCreatedAsc()
+    public function test_selectWhereQuestionIdOrderByCreatedDesc()
     {
         $result = $this->questionHistoryTable
-            ->selectWhereQuestionIdOrderByCreatedAsc(
+            ->selectWhereQuestionIdOrderByCreatedDesc(
                 1
             );
         $this->assertEmpty($result);
@@ -113,16 +113,16 @@ class QuestionHistoryTest extends TableTestCase
             1
         );
         $result = $this->questionHistoryTable
-            ->selectWhereQuestionIdOrderByCreatedAsc(
+            ->selectWhereQuestionIdOrderByCreatedDesc(
                 1
             );
         $this->assertSame(
-            'this is the reason',
+            'this is another reason',
             $result->current()['modified_reason']
         );
         $result->next();
         $this->assertSame(
-            'this is another reason',
+            'this is the reason',
             $result->current()['modified_reason']
         );
     }

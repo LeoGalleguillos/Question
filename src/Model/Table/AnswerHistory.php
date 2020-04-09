@@ -62,7 +62,7 @@ class AnswerHistory
         return $this->adapter->query($sql)->execute();
     }
 
-    public function selectWhereAnswerIdOrderByCreatedAsc(
+    public function selectWhereAnswerIdOrderByCreatedDesc(
         int $answerId
     ): Result {
         $sql = '
@@ -75,8 +75,8 @@ class AnswerHistory
               FROM `answer_history`
              WHERE `answer_history`.`answer_id` = ?
              ORDER
-                BY `answer_history`.`created` ASC
-                 , `answer_history`.`answer_id` ASC
+                BY `answer_history`.`created` DESC
+                 , `answer_history`.`answer_id` DESC
                  ;
         ';
         $parameters = [
