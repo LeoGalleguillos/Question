@@ -6,5 +6,5 @@ CREATE TABLE `answer_history` (
     `modified_reason` varchar(255) DEFAULT NULL,
     `created` datetime not null,
     PRIMARY KEY (`answer_history_id`),
-    KEY `question_id` (`answer_id`)
+    KEY `answer_id_created` (`answer_id`, `created`)
 ) CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
