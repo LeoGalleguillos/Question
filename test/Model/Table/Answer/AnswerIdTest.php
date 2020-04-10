@@ -9,19 +9,14 @@ class AnswerIdTest extends TableTestCase
 {
     protected function setUp()
     {
-        $this->memcachedServiceMock = $this->createMock(
-            MemcachedService\Memcached::class
-        );
         $this->answerTable = new QuestionTable\Answer(
-            $this->getAdapter(),
-            $this->memcachedServiceMock
+            $this->getAdapter()
         );
         $this->answerIdTable = new QuestionTable\Answer\AnswerId(
             $this->getAdapter()
         );
 
-        $this->dropTable('answer');
-        $this->createTable('answer');
+        $this->dropAndCreateTable('answer');
     }
 
     public function testUpdateSetDeletedColumnsWhereAnswerId()
@@ -66,6 +61,52 @@ class AnswerIdTest extends TableTestCase
         $this->assertSame(
             'deleted reason',
             $array['deleted_reason']
+        );
+    }
+
+    public function test_updateSetModifiedReasonWhereAnswerId_emptyTable_0AffectedRows()
+    {
+        $result = $this->answerIdTable
+            ->updateSetModifiedReasonWhereAnswerId(
+                'modified reason',
+                12345
+            );
+        $this->assertSame(
+            0,
+            $result->getAffectedRows()
+        );
+    }
+
+    public function test_updateSetModifiedReasonWhereAnswerId_multipleRows_1AffectedRow()
+    {
+        $this->answerTable->insert(
+            12345,
+            null,
+            'message',
+            'name',
+            'ip'
+        );
+        $this->answerTable->insert(
+            98765,
+            null,
+            'message 2',
+            'name 2',
+            'ip 2'
+        );
+
+        $result = $this->answerIdTable
+            ->updateSetModifiedReasonWhereAnswerId(
+                'a modified reason',
+                1
+            );
+        $this->assertSame(
+            1,
+            $result->getAffectedRows()
+        );
+        $array = $this->answerTable->selectWhereAnswerId(1);
+        $this->assertSame(
+            'a modified reason',
+            $array['modified_reason']
         );
     }
 }
