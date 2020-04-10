@@ -126,4 +126,77 @@ class QuestionHistoryTest extends TableTestCase
             $result->current()['modified_reason']
         );
     }
+
+    public function test_updateSetModifiedReasonWhereQuestionHistoryId_emptyTable_0AffectedRows()
+    {
+        $result = $this->questionHistoryTable
+            ->updateSetModifiedReasonWhereQuestionHistoryId(
+                'modified reason',
+                12345
+            );
+        $this->assertSame(
+            0,
+            $result->getAffectedRows()
+        );
+    }
+
+    public function test_updateSetModifiedReasonWhereQuestionHistoryId_multipleRows_1AffectedRow()
+    {
+        $this->questionTable->insert(
+            12345,
+            'this is the subject',
+            'this is the message',
+            'this is the name',
+            '1.2.3.4'
+        );
+        $this->questionHistoryTable->insertSelectFromQuestion(
+            'this is the first reason',
+            1
+        );
+        $this->questionHistoryTable->insertSelectFromQuestion(
+            'this is the second reason',
+            1
+        );
+
+        $result = $this->questionHistoryTable
+            ->updateSetModifiedReasonWhereQuestionHistoryId(
+                'a modified reason',
+                2
+            );
+        $this->assertSame(
+            1,
+            $result->getAffectedRows()
+        );
+
+        $result = $this->questionHistoryTable
+            ->selectWhereQuestionIdOrderByCreatedDesc(
+                1
+            );
+        $this->assertSame(
+            'a modified reason',
+            $result->current()['modified_reason']
+        );
+        $result->next();
+        $this->assertSame(
+            'this is the first reason',
+            $result->current()['modified_reason']
+        );
+
+        $result = $this->questionHistoryTable
+            ->updateSetModifiedReasonWhereQuestionHistoryId(
+                null,
+                1
+            );
+        $this->assertSame(
+            1,
+            $result->getAffectedRows()
+        );
+        $result = $this->questionHistoryTable
+            ->selectWhereQuestionIdOrderByCreatedDesc(
+                1
+            );
+        $this->assertNull(
+            iterator_to_array($result)[1]['modified_reason']
+        );
+    }
 }

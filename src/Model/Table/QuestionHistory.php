@@ -93,4 +93,21 @@ class QuestionHistory
         ];
         return $this->adapter->query($sql)->execute($parameters);
     }
+
+    public function updateSetModifiedReasonWhereQuestionHistoryId(
+        string $modifiedReason = null,
+        int $questionHistoryId
+    ): Result {
+        $sql = '
+            UPDATE `question_history`
+               SET `modified_reason` = ?
+             WHERE `question_history_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $modifiedReason,
+            $questionHistoryId,
+        ];
+        return $this->adapter->query($sql)->execute($parameters);
+    }
 }
