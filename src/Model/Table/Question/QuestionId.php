@@ -1,7 +1,8 @@
 <?php
 namespace LeoGalleguillos\Question\Model\Table\Question;
 
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Driver\Pdo\Result;
 
 class QuestionId
 {
@@ -95,6 +96,23 @@ class QuestionId
             ->query($sql)
             ->execute($parameters)
             ->getAffectedRows();
+    }
+
+    public function updateSetModifiedReasonWhereQuestionId(
+        string $modifiedReason,
+        int $questionId
+    ): Result {
+        $sql = '
+            UPDATE `question`
+               SET `question`.`modified_reason` = ?
+             WHERE `question`.`question_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $modifiedReason,
+            $questionId,
+        ];
+        return $this->adapter->query($sql)->execute($parameters);
     }
 
     public function updateSetViewsBrowserWhereQuestionId(
