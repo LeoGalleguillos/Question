@@ -126,4 +126,77 @@ class AnswerHistoryTest extends TableTestCase
             $result->current()['modified_reason']
         );
     }
+
+    public function test_updateSetModifiedReasonWhereAnswerHistoryId_emptyTable_0AffectedRows()
+    {
+        $result = $this->answerHistoryTable
+            ->updateSetModifiedReasonWhereAnswerHistoryId(
+                'modified reason',
+                12345
+            );
+        $this->assertSame(
+            0,
+            $result->getAffectedRows()
+        );
+    }
+
+    public function test_updateSetModifiedReasonWhereAnswerHistoryId_multipleRows_1AffectedRow()
+    {
+        $this->answerTable->insert(
+            99,
+            null,
+            'message',
+            'created name',
+            '1.2.3.4'
+        );
+        $this->answerHistoryTable->insertSelectFromAnswer(
+            'this is the first reason',
+            1
+        );
+        $this->answerHistoryTable->insertSelectFromAnswer(
+            'this is the second reason',
+            1
+        );
+
+        $result = $this->answerHistoryTable
+            ->updateSetModifiedReasonWhereAnswerHistoryId(
+                'a modified reason',
+                2
+            );
+        $this->assertSame(
+            1,
+            $result->getAffectedRows()
+        );
+
+        $result = $this->answerHistoryTable
+            ->selectWhereAnswerIdOrderByCreatedDesc(
+                1
+            );
+        $this->assertSame(
+            'a modified reason',
+            $result->current()['modified_reason']
+        );
+        $result->next();
+        $this->assertSame(
+            'this is the first reason',
+            $result->current()['modified_reason']
+        );
+
+        $result = $this->answerHistoryTable
+            ->updateSetModifiedReasonWhereAnswerHistoryId(
+                null,
+                1
+            );
+        $this->assertSame(
+            1,
+            $result->getAffectedRows()
+        );
+        $result = $this->answerHistoryTable
+            ->selectWhereAnswerIdOrderByCreatedDesc(
+                1
+            );
+        $this->assertNull(
+            iterator_to_array($result)[1]['modified_reason']
+        );
+    }
 }
