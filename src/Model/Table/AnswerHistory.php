@@ -16,6 +16,18 @@ class AnswerHistory
         $this->adapter = $adapter;
     }
 
+    public function getSelect(): string
+    {
+        return '
+            SELECT `answer_history`.`answer_history_id`
+                 , `answer_history`.`answer_id`
+                 , `answer_history`.`name`
+                 , `answer_history`.`message`
+                 , `answer_history`.`modified_reason`
+                 , `answer_history`.`created`
+        ';
+    }
+
     public function insertSelectFromAnswer(
         string $modifiedReason,
         int $answerId
@@ -65,13 +77,8 @@ class AnswerHistory
     public function selectWhereAnswerIdOrderByCreatedDesc(
         int $answerId
     ): Result {
-        $sql = '
-            SELECT `answer_history`.`answer_history_id`
-                 , `answer_history`.`answer_id`
-                 , `answer_history`.`name`
-                 , `answer_history`.`message`
-                 , `answer_history`.`modified_reason`
-                 , `answer_history`.`created`
+        $sql = $this->getSelect()
+            . '
               FROM `answer_history`
              WHERE `answer_history`.`answer_id` = ?
              ORDER

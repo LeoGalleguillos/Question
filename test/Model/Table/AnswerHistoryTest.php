@@ -29,6 +29,17 @@ class AnswerHistoryTest extends TableTestCase
         $this->setForeignKeyChecks(1);
     }
 
+    public function test_getSelect()
+    {
+        $sql = $this->answerHistoryTable->getSelect()
+            . 'FROM `answer_history` LIMIT 1;';
+        $result = $this->getAdapter()->query($sql)->execute();
+        $this->assertInstanceOf(
+            Result::class,
+            $result
+        );
+    }
+
     public function test_selectDistinctAnswerId_emptyTable_emptyResult()
     {
         $result = $this->answerHistoryTable->selectDistinctAnswerId();

@@ -29,6 +29,17 @@ class QuestionHistoryTest extends TableTestCase
         $this->setForeignKeyChecks(1);
     }
 
+    public function test_getSelect()
+    {
+        $sql = $this->questionHistoryTable->getSelect()
+            . 'FROM `question_history` LIMIT 1;';
+        $result = $this->getAdapter()->query($sql)->execute();
+        $this->assertInstanceOf(
+            Result::class,
+            $result
+        );
+    }
+
     public function testInsertSelectFromQuestion()
     {
         $questionHistoryId = $this->questionHistoryTable->insertSelectFromQuestion(

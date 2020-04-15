@@ -16,6 +16,19 @@ class QuestionHistory
         $this->adapter = $adapter;
     }
 
+    public function getSelect(): string
+    {
+        return '
+            SELECT `question_history`.`question_history_id`
+                 , `question_history`.`question_id`
+                 , `question_history`.`name`
+                 , `question_history`.`subject`
+                 , `question_history`.`message`
+                 , `question_history`.`modified_reason`
+                 , `question_history`.`created`
+        ';
+    }
+
     /**
      * @return int
      */
@@ -73,14 +86,8 @@ class QuestionHistory
     public function selectWhereQuestionIdOrderByCreatedDesc(
         int $questionId
     ): Result {
-        $sql = '
-            SELECT `question_history`.`question_history_id`
-                 , `question_history`.`question_id`
-                 , `question_history`.`name`
-                 , `question_history`.`subject`
-                 , `question_history`.`message`
-                 , `question_history`.`modified_reason`
-                 , `question_history`.`created`
+        $sql = $this->getSelect()
+            . '
               FROM `question_history`
              WHERE `question_history`.`question_id` = ?
              ORDER
