@@ -52,12 +52,6 @@ class QuestionHistoryTest extends TableTestCase
         );
     }
 
-    public function test_selectDistinctQuestionId_emptyTable_emptyResult()
-    {
-        $result = $this->questionHistoryTable->selectDistinctQuestionId();
-        $this->assertEmpty($result);
-    }
-
     public function test_selectDistinctQuestionId_multipleRows_multipleResults()
     {
         $this->questionTable->insert(
@@ -135,19 +129,6 @@ class QuestionHistoryTest extends TableTestCase
         $this->assertSame(
             'this is the reason',
             $result->current()['modified_reason']
-        );
-    }
-
-    public function test_updateSetModifiedReasonWhereQuestionHistoryId_emptyTable_0AffectedRows()
-    {
-        $result = $this->questionHistoryTable
-            ->updateSetModifiedReasonWhereQuestionHistoryId(
-                'modified reason',
-                12345
-            );
-        $this->assertSame(
-            0,
-            $result->getAffectedRows()
         );
     }
 
