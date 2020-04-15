@@ -83,6 +83,24 @@ class QuestionHistory
         return $this->adapter->query($sql)->execute();
     }
 
+    public function selectWhereQuestionIdOrderByCreatedAsc(
+        int $questionId
+    ): Result {
+        $sql = $this->getSelect()
+            . '
+              FROM `question_history`
+             WHERE `question_history`.`question_id` = ?
+             ORDER
+                BY `question_history`.`created` ASC
+                 , `question_history`.`question_id` ASC
+                 ;
+        ';
+        $parameters = [
+            $questionId,
+        ];
+        return $this->adapter->query($sql)->execute($parameters);
+    }
+
     public function selectWhereQuestionIdOrderByCreatedDesc(
         int $questionId
     ): Result {

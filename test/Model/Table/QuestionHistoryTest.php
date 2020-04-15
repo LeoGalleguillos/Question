@@ -94,14 +94,40 @@ class QuestionHistoryTest extends TableTestCase
         );
     }
 
-    public function test_selectWhereQuestionIdOrderByCreatedDesc()
+    public function test_selectWhereQuestionIdOrderByCreatedAsc()
     {
+        $this->questionTable->insert(
+            12345,
+            'this is the subject',
+            'this is the message',
+            'this is the name',
+            '1.2.3.4'
+        );
+        $this->questionHistoryTable->insertSelectFromQuestion(
+            'this is the reason',
+            1
+        );
+        $this->questionHistoryTable->insertSelectFromQuestion(
+            'this is another reason',
+            1
+        );
         $result = $this->questionHistoryTable
-            ->selectWhereQuestionIdOrderByCreatedDesc(
+            ->selectWhereQuestionIdOrderByCreatedAsc(
                 1
             );
-        $this->assertEmpty($result);
+        $this->assertSame(
+            'this is the reason',
+            $result->current()['modified_reason']
+        );
+        $result->next();
+        $this->assertSame(
+            'this is another reason',
+            $result->current()['modified_reason']
+        );
+    }
 
+    public function test_selectWhereQuestionIdOrderByCreatedDesc()
+    {
         $this->questionTable->insert(
             12345,
             'this is the subject',
