@@ -119,6 +119,23 @@ class QuestionHistory
         return $this->adapter->query($sql)->execute($parameters);
     }
 
+    public function updateSetCreatedWhereQuestionHistoryId(
+        string $created,
+        int $questionHistoryId
+    ): Result {
+        $sql = '
+            UPDATE `question_history`
+               SET `created` = ?
+             WHERE `question_history_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $created,
+            $questionHistoryId,
+        ];
+        return $this->adapter->query($sql)->execute($parameters);
+    }
+
     public function updateSetModifiedReasonWhereQuestionHistoryId(
         string $modifiedReason = null,
         int $questionHistoryId

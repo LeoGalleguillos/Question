@@ -159,6 +159,54 @@ class AnswerHistoryTest extends TableTestCase
         );
     }
 
+    public function test_updateSetCreatedWhereAnswerHistoryId_multipleRows()
+    {
+        $this->answerTable->insert(
+            99,
+            null,
+            'message',
+            'created name',
+            '1.2.3.4'
+        );
+        $this->answerHistoryTable->insertSelectFromAnswer(
+            'this is the first reason',
+            1
+        );
+        $this->answerHistoryTable->insertSelectFromAnswer(
+            'this is the second reason',
+            1
+        );
+
+        $result = $this->answerHistoryTable
+            ->updateSetCreatedWhereAnswerHistoryId(
+                '2010-04-15 15:07:35',
+                3
+            );
+        $this->assertSame(
+            0,
+            $result->getAffectedRows()
+        );
+
+        $result = $this->answerHistoryTable
+            ->updateSetCreatedWhereAnswerHistoryId(
+                '2010-04-15 15:07:35',
+                2
+            );
+        $this->assertSame(
+            1,
+            $result->getAffectedRows()
+        );
+
+        $result = $this->answerHistoryTable
+            ->selectWhereAnswerIdOrderByCreatedAsc(
+                1
+            );
+        $this->assertSame(
+            '2010-04-15 15:07:35',
+            $result->current()['created']
+        );
+    }
+
     public function test_updateSetModifiedReasonWhereAnswerHistoryId_multipleRows_1AffectedRow()
     {
         $this->answerTable->insert(
