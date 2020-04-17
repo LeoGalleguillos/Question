@@ -18,11 +18,6 @@ class Question
         $this->adapter = $adapter;
     }
 
-    /**
-     * Get select.
-     *
-     * @return string
-     */
     public function getSelect(): string
     {
         return '
