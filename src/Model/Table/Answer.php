@@ -27,6 +27,8 @@ class Answer
                  , `answer`.`created_datetime`
                  , `answer`.`created_name`
                  , `answer`.`created_ip`
+                 , `answer`.`modified_datetime`
+                 , `answer`.`modified_user_id`
                  , `answer`.`modified_reason`
                  , `answer`.`deleted_datetime`
                  , `answer`.`deleted_user_id`
