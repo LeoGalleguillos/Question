@@ -130,6 +130,9 @@ class Answer
         return (int) $row['count'];
     }
 
+    /**
+     * @deprecated Use QuestionTable\Answer\AnswerId::selectWhereAnswerId instead
+     */
     public function selectWhereAnswerId(int $answerId) : array
     {
         $sql = $this->getSelect()

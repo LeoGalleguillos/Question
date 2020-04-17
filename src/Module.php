@@ -407,7 +407,8 @@ class Module
                 },
                 QuestionTable\Answer\AnswerId::class => function ($sm) {
                     return new QuestionTable\Answer\AnswerId(
-                        $sm->get('question')
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Answer::class)
                     );
                 },
                 QuestionTable\Answer\CreatedName::class => function ($sm) {

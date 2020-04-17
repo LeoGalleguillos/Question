@@ -13,10 +13,39 @@ class AnswerIdTest extends TableTestCase
             $this->getAdapter()
         );
         $this->answerIdTable = new QuestionTable\Answer\AnswerId(
-            $this->getAdapter()
+            $this->getAdapter(),
+            $this->answerTable
         );
 
         $this->dropAndCreateTable('answer');
+    }
+
+    public function test_selectWhereAnswerId()
+    {
+        $this->answerTable->insert(
+            12345,
+            null,
+            'message',
+            'name',
+            'ip'
+        );
+        $array = $this->answerIdTable->selectWhereAnswerId(1)->current();
+        $this->assertSame(
+            '1',
+            $array['answer_id']
+        );
+        $this->assertSame(
+            '12345',
+            $array['question_id']
+        );
+        $this->assertSame(
+            'name',
+            $array['created_name']
+        );
+        $this->assertSame(
+            'ip',
+            $array['created_ip']
+        );
     }
 
     public function testUpdateSetDeletedColumnsWhereAnswerId()

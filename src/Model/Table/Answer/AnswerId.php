@@ -3,6 +3,7 @@ namespace LeoGalleguillos\Question\Model\Table\Answer;
 
 use Laminas\Db\Adapter\Adapter;
 use Laminas\Db\Adapter\Driver\Pdo\Result;
+use LeoGalleguillos\Question\Model\Table as QuestionTable;
 
 class AnswerId
 {
@@ -11,9 +12,26 @@ class AnswerId
      */
     protected $adapter;
 
-    public function __construct(Adapter $adapter)
+    public function __construct(
+        Adapter $adapter,
+        QuestionTable\Answer $answerTable
+    ) {
+        $this->adapter     = $adapter;
+        $this->answerTable = $answerTable;
+    }
+
+    public function selectWhereAnswerId(int $answerId): Result
     {
-        $this->adapter = $adapter;
+        $sql = $this->answerTable->getSelect()
+             . '
+              FROM `answer`
+             WHERE `answer`.`answer_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $answerId,
+        ];
+        return $this->adapter->query($sql)->execute($parameters);
     }
 
     public function updateSetDeletedColumnsWhereAnswerId(
