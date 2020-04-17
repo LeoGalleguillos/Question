@@ -136,7 +136,7 @@ class Question
     }
 
     /**
-     * @deprecated Use QuestionTable\QuestionId::selectWhereQuestionId instead
+     * @deprecated Use QuestionTable\Question\QuestionId::selectWhereQuestionId instead
      *
      * Select where question ID.
      *
