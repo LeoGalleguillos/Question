@@ -553,7 +553,8 @@ class Module
                 },
                 QuestionTable\Question\QuestionId::class => function ($sm) {
                     return new QuestionTable\Question\QuestionId(
-                        $sm->get('question')
+                        $sm->get('question'),
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
                 QuestionTable\Question\Message::class => function ($sm) {

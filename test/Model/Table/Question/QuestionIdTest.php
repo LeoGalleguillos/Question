@@ -12,10 +12,36 @@ class QuestionIdTest extends TableTestCase
             $this->getAdapter()
         );
         $this->questionIdTable = new QuestionTable\Question\QuestionId(
-            $this->getAdapter()
+            $this->getAdapter(),
+            $this->questionTable
         );
 
         $this->dropAndCreateTable('question');
+    }
+
+    public function test_selectWhereQuestionId()
+    {
+        $this->questionTable->insert(
+            3,
+            'this is the subject',
+            'message',
+            '1.2.3.4',
+            'name',
+            '1.2.3.4'
+        );
+        $array = $this->questionIdTable->selectWhereQuestionId(1)->current();
+        $this->assertSame(
+            '1',
+            $array['question_id']
+        );
+        $this->assertSame(
+            '3',
+            $array['user_id']
+        );
+        $this->assertSame(
+            'this is the subject',
+            $array['subject']
+        );
     }
 
     public function testUpdateSetDeletedColumnsWhereQuestionId()

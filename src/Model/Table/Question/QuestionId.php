@@ -3,6 +3,7 @@ namespace LeoGalleguillos\Question\Model\Table\Question;
 
 use Laminas\Db\Adapter\Adapter;
 use Laminas\Db\Adapter\Driver\Pdo\Result;
+use LeoGalleguillos\Question\Model\Table as QuestionTable;
 
 class QuestionId
 {
@@ -11,9 +12,26 @@ class QuestionId
      */
     protected $adapter;
 
-    public function __construct(Adapter $adapter)
+    public function __construct(
+        Adapter $adapter,
+        QuestionTable\Question $questionTable
+    ) {
+        $this->adapter       = $adapter;
+        $this->questionTable = $questionTable;
+    }
+
+    public function selectWhereQuestionId(int $questionId): Result
     {
-        $this->adapter = $adapter;
+        $sql = $this->questionTable->getSelect()
+            . '
+              FROM `question`
+             WHERE `question`.`question_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $questionId,
+        ];
+        return $this->adapter->query($sql)->execute($parameters);
     }
 
     public function updateIncrementViewsBrowserWhereQuestionId(

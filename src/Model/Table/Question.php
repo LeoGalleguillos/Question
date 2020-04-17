@@ -134,6 +134,8 @@ class Question
     }
 
     /**
+     * @deprecated Use QuestionTable\QuestionId::selectWhereQuestionId instead
+     *
      * Select where question ID.
      *
      * @param int $questionId
