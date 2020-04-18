@@ -111,7 +111,7 @@ class AnswerHistory
     }
 
     public function updateSetCreatedWhereAnswerHistoryId(
-        string $created = null,
+        string $created,
         int $answerHistoryId
     ): Result {
         $sql = '
