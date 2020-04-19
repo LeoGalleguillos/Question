@@ -29,7 +29,6 @@ class AnswerHistory
     }
 
     public function insertSelectFromAnswer(
-        string $modifiedReason,
         int $answerId
     ): int {
         $sql = '
@@ -39,20 +38,19 @@ class AnswerHistory
                       `answer_id`
                     , `name`
                     , `message`
-                    , `created`
                     , `modified_reason`
+                    , `created`
                  )
             SELECT `answer`.`answer_id`
                  , `answer`.`created_name`
                  , `answer`.`message`
-                 , IFNULL(`answer`.`modified_datetime`, `answer`.`created_datetime`)
-                 , ?
+                 , `answer`.`modified_reason`
+                 , UTC_TIMESTAMP()
               FROM `answer`
              WHERE `answer`.`answer_id` = ?
                  ;
         ';
         $parameters = [
-            $modifiedReason,
             $answerId,
         ];
         return (int) $this->adapter

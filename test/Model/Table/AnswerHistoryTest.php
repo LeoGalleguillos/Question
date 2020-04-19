@@ -64,19 +64,15 @@ class AnswerHistoryTest extends TableTestCase
             '1.2.3.4'
         );
         $this->answerHistoryTable->insertSelectFromAnswer(
-            'modified reason',
             1
         );
         $this->answerHistoryTable->insertSelectFromAnswer(
-            'another modified reason',
             2
         );
         $this->answerHistoryTable->insertSelectFromAnswer(
-            'yet another modified reason',
             2
         );
         $this->answerHistoryTable->insertSelectFromAnswer(
-            'yet another modified reason again',
             2
         );
         $result = $this->answerHistoryTable->selectDistinctAnswerId();
@@ -104,11 +100,9 @@ class AnswerHistoryTest extends TableTestCase
         );
 
         $this->answerHistoryTable->insertSelectFromAnswer(
-            'this is the reason',
             1
         );
         $this->answerHistoryTable->insertSelectFromAnswer(
-            'this is another reason',
             1
         );
         $result = $this->answerHistoryTable
@@ -116,13 +110,13 @@ class AnswerHistoryTest extends TableTestCase
                 1
             );
         $this->assertSame(
-            'this is the reason',
-            $result->current()['modified_reason']
+            '1',
+            $result->current()['answer_history_id']
         );
         $result->next();
         $this->assertSame(
-            'this is another reason',
-            $result->current()['modified_reason']
+            '2',
+            $result->current()['answer_history_id']
         );
     }
 
@@ -137,11 +131,9 @@ class AnswerHistoryTest extends TableTestCase
         );
 
         $this->answerHistoryTable->insertSelectFromAnswer(
-            'this is the reason',
             1
         );
         $this->answerHistoryTable->insertSelectFromAnswer(
-            'this is another reason',
             1
         );
         $result = $this->answerHistoryTable
@@ -149,13 +141,13 @@ class AnswerHistoryTest extends TableTestCase
                 1
             );
         $this->assertSame(
-            'this is another reason',
-            $result->current()['modified_reason']
+            '2',
+            $result->current()['answer_history_id']
         );
         $result->next();
         $this->assertSame(
-            'this is the reason',
-            $result->current()['modified_reason']
+            '1',
+            $result->current()['answer_history_id']
         );
     }
 
@@ -169,11 +161,9 @@ class AnswerHistoryTest extends TableTestCase
             '1.2.3.4'
         );
         $this->answerHistoryTable->insertSelectFromAnswer(
-            'this is the first reason',
             1
         );
         $this->answerHistoryTable->insertSelectFromAnswer(
-            'this is the second reason',
             1
         );
 
@@ -217,11 +207,9 @@ class AnswerHistoryTest extends TableTestCase
             '1.2.3.4'
         );
         $this->answerHistoryTable->insertSelectFromAnswer(
-            'this is the first reason',
             1
         );
         $this->answerHistoryTable->insertSelectFromAnswer(
-            'this is the second reason',
             1
         );
 
@@ -244,14 +232,13 @@ class AnswerHistoryTest extends TableTestCase
             $result->current()['modified_reason']
         );
         $result->next();
-        $this->assertSame(
-            'this is the first reason',
+        $this->assertNull(
             $result->current()['modified_reason']
         );
 
         $result = $this->answerHistoryTable
             ->updateSetModifiedReasonWhereAnswerHistoryId(
-                null,
+                'a modified reason for answer_history_id 1',
                 1
             );
         $this->assertSame(
@@ -262,7 +249,8 @@ class AnswerHistoryTest extends TableTestCase
             ->selectWhereAnswerIdOrderByCreatedDesc(
                 1
             );
-        $this->assertNull(
+        $this->assertSame(
+            'a modified reason for answer_history_id 1',
             iterator_to_array($result)[1]['modified_reason']
         );
     }
