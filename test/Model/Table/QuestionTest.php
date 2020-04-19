@@ -14,6 +14,10 @@ class QuestionTest extends TableTestCase
         $this->questionTable = new QuestionTable\Question(
             $this->getAdapter()
         );
+        $this->questionIdTable = new QuestionTable\Question\QuestionId(
+            $this->getAdapter(),
+            $this->questionTable
+        );
 
         $this->setForeignKeyChecks(0);
         $this->dropAndCreateTable('question');
@@ -95,6 +99,37 @@ class QuestionTest extends TableTestCase
         $this->assertSame(
             2,
             count($array)
+        );
+    }
+
+    public function test_updateWhereQuestionId()
+    {
+        $this->questionTable->insert(
+            1, 'name', 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4'
+        );
+        $result = $this->questionTable->updateWhereQuestionId(
+            'modified subject',
+            'modified message',
+            10,
+            'modified reason',
+            1
+        );
+        $this->assertSame(
+            1,
+            $result->getAffectedRows()
+        );
+        $result = $this->questionIdTable->selectWhereQuestionId(1);
+        $this->assertSame(
+            'modified subject',
+            $result->current()['subject']
+        );
+        $this->assertSame(
+            'modified message',
+            $result->current()['message']
+        );
+        $this->assertSame(
+            'modified reason',
+            $result->current()['modified_reason']
         );
     }
 }

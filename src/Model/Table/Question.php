@@ -3,7 +3,8 @@ namespace LeoGalleguillos\Question\Model\Table;
 
 use Generator;
 use TypeError;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Driver\Pdo\Result;
 
 class Question
 {
@@ -192,14 +193,16 @@ class Question
         string $subject,
         string $message,
         int $modifiedUserId,
+        string $modifiedReason,
         int $questionId
-    ): bool {
+    ): Result {
         $sql = '
             UPDATE `question`
                SET `question`.`subject` = ?
                  , `question`.`message` = ?
                  , `question`.`modified_datetime` = UTC_TIMESTAMP()
                  , `question`.`modified_user_id` = ?
+                 , `question`.`modified_reason` = ?
              WHERE `question`.`question_id` = ?
                  ;
         ';
@@ -207,11 +210,9 @@ class Question
             $subject,
             $message,
             $modifiedUserId,
+            $modifiedReason,
             $questionId,
         ];
-        return (int) $this->adapter
-            ->query($sql)
-            ->execute($parameters)
-            ->getAffectedRows();
+        return $this->adapter->query($sql)->execute($parameters);
     }
 }
