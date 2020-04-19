@@ -2,50 +2,22 @@
 namespace LeoGalleguillos\QuestionTest\Model\Table;
 
 use Generator;
-use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\QuestionTest\TableTestCase;
+use LeoGalleguillos\Test\TableTestCase;
 use Zend\Db\Adapter\Adapter;
 use PHPUnit\Framework\TestCase;
 
 class QuestionTest extends TableTestCase
 {
-    /**
-     * @var string
-     */
-    protected $sqlPath = __DIR__ . '/../../..' . '/sql/leogalle_test/question/';
-
     protected function setUp()
     {
-        $configArray     = require(__DIR__ . '/../../../config/autoload/local.php');
-        $configArray     = $configArray['db']['adapters']['leogalle_test'];
-
-        $this->adapter   = new Adapter($configArray);
-        $this->memcachedServiceMock = $this->createMock(
-            MemcachedService\Memcached::class
-        );
-
         $this->questionTable = new QuestionTable\Question(
-            $this->adapter,
-            $this->memcachedServiceMock
+            $this->getAdapter()
         );
 
-        $this->setForeignKeyChecks0();
-        $this->dropTable();
-        $this->createTable();
-        $this->setForeignKeyChecks1();
-    }
-
-    protected function dropTable()
-    {
-        $sql = file_get_contents($this->sqlPath . 'drop.sql');
-        $result = $this->adapter->query($sql)->execute();
-    }
-
-    protected function createTable()
-    {
-        $sql = file_get_contents($this->sqlPath . 'create.sql');
-        $result = $this->adapter->query($sql)->execute();
+        $this->setForeignKeyChecks(0);
+        $this->dropAndCreateTable('question');
+        $this->setForeignKeyChecks(1);
     }
 
     public function testInsertDeleted()
