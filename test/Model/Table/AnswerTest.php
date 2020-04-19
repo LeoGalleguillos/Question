@@ -8,9 +8,14 @@ class AnswerTest extends TableTestCase
 {
     protected function setUp()
     {
-        $this->dropTable('answer');
-        $this->createTable('answer');
-        $this->answerTable = new QuestionTable\Answer($this->getAdapter());
+        $this->dropAndCreateTable('answer');
+        $this->answerTable = new QuestionTable\Answer(
+            $this->getAdapter()
+        );
+        $this->answerIdTable = new QuestionTable\Answer\AnswerId(
+            $this->getAdapter(),
+            $this->answerTable
+        );
     }
 
     public function testInsertAndSelectCount()
@@ -88,6 +93,32 @@ class AnswerTest extends TableTestCase
         $generator = $this->answerTable->selectWhereQuestionId(12345);
         $this->assertEmpty(
             iterator_to_array($generator)
+        );
+    }
+
+    public function test_updateWhereAnswerId()
+    {
+        $this->answerTable->insert(
+            1, 2, 'first message', null, '1.2.3.4'
+        );
+        $result = $this->answerTable->updateWhereAnswerId(
+            'modified message',
+            10,
+            'modified reason',
+            1
+        );
+        $this->assertSame(
+            1,
+            $result->getAffectedRows()
+        );
+        $result = $this->answerIdTable->selectWhereAnswerId(1);
+        $this->assertSame(
+            'modified message',
+            $result->current()['message']
+        );
+        $this->assertSame(
+            'modified reason',
+            $result->current()['modified_reason']
         );
     }
 }

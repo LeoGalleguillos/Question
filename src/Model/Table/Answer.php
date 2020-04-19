@@ -1,9 +1,9 @@
 <?php
 namespace LeoGalleguillos\Question\Model\Table;
 
-use Exception;
 use Generator;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Driver\Pdo\Result;
 
 class Answer
 {
@@ -224,24 +224,24 @@ class Answer
     public function updateWhereAnswerId(
         string $message,
         int $modifiedUserId,
+        string $modifiedReason,
         int $answerId
-    ): int {
+    ): Result {
         $sql = '
             UPDATE `answer`
                SET `answer`.`message` = ?
                  , `answer`.`modified_datetime` = UTC_TIMESTAMP()
                  , `answer`.`modified_user_id` = ?
+                 , `answer`.`modified_reason` = ?
              WHERE `answer`.`answer_id` = ?
                  ;
         ';
         $parameters = [
             $message,
             $modifiedUserId,
+            $modifiedReason,
             $answerId,
         ];
-        return (int) $this->adapter
-            ->query($sql)
-            ->execute($parameters)
-            ->getAffectedRows();
+        return $this->adapter->query($sql)->execute($parameters);
     }
 }
