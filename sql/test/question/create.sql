@@ -6,7 +6,7 @@ CREATE TABLE `question` (
     `views` int(10) unsigned NOT NULL DEFAULT '0',
     `views_browser` int(10) unsigned NOT NULL DEFAULT '0',
     `created_datetime` datetime NOT NULL,
-    `created_name` varchar(255) default null,
+    `created_name` varchar(255) default null, #@todo Rename column to `name`
     `created_ip` varchar(45) default null,
     `modified_datetime` DATETIME DEFAULT NULL,
     `modified_user_id` INT(10) UNSIGNED DEFAULT NULL,
