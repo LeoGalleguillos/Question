@@ -43,7 +43,6 @@ class QuestionHistoryTest extends TableTestCase
     public function testInsertSelectFromQuestion()
     {
         $questionHistoryId = $this->questionHistoryTable->insertSelectFromQuestion(
-            'reason',
             123
         );
         $this->assertSame(
@@ -69,15 +68,12 @@ class QuestionHistoryTest extends TableTestCase
             '5.6.7.8'
         );
         $this->questionHistoryTable->insertSelectFromQuestion(
-            'modified reason',
             1
         );
         $this->questionHistoryTable->insertSelectFromQuestion(
-            'another modified reason',
             2
         );
         $this->questionHistoryTable->insertSelectFromQuestion(
-            'yet another modified reason',
             2
         );
         $result = $this->questionHistoryTable->selectDistinctQuestionId();
@@ -104,11 +100,9 @@ class QuestionHistoryTest extends TableTestCase
             '1.2.3.4'
         );
         $this->questionHistoryTable->insertSelectFromQuestion(
-            'this is the reason',
             1
         );
         $this->questionHistoryTable->insertSelectFromQuestion(
-            'this is another reason',
             1
         );
         $result = $this->questionHistoryTable
@@ -116,13 +110,13 @@ class QuestionHistoryTest extends TableTestCase
                 1
             );
         $this->assertSame(
-            'this is the reason',
-            $result->current()['modified_reason']
+            '1',
+            $result->current()['question_history_id']
         );
         $result->next();
         $this->assertSame(
-            'this is another reason',
-            $result->current()['modified_reason']
+            '2',
+            $result->current()['question_history_id']
         );
     }
 
@@ -136,11 +130,9 @@ class QuestionHistoryTest extends TableTestCase
             '1.2.3.4'
         );
         $this->questionHistoryTable->insertSelectFromQuestion(
-            'this is the reason',
             1
         );
         $this->questionHistoryTable->insertSelectFromQuestion(
-            'this is another reason',
             1
         );
         $result = $this->questionHistoryTable
@@ -148,13 +140,13 @@ class QuestionHistoryTest extends TableTestCase
                 1
             );
         $this->assertSame(
-            'this is another reason',
-            $result->current()['modified_reason']
+            '2',
+            $result->current()['question_history_id']
         );
         $result->next();
         $this->assertSame(
-            'this is the reason',
-            $result->current()['modified_reason']
+            '1',
+            $result->current()['question_history_id']
         );
     }
 
@@ -168,11 +160,9 @@ class QuestionHistoryTest extends TableTestCase
             '1.2.3.4'
         );
         $this->questionHistoryTable->insertSelectFromQuestion(
-            'this is the first reason',
             1
         );
         $this->questionHistoryTable->insertSelectFromQuestion(
-            'this is the second reason',
             1
         );
 
@@ -216,17 +206,15 @@ class QuestionHistoryTest extends TableTestCase
             '1.2.3.4'
         );
         $this->questionHistoryTable->insertSelectFromQuestion(
-            'this is the first reason',
             1
         );
         $this->questionHistoryTable->insertSelectFromQuestion(
-            'this is the second reason',
             1
         );
 
         $result = $this->questionHistoryTable
             ->updateSetModifiedReasonWhereQuestionHistoryId(
-                'a modified reason',
+                'a modified reason for question_history_id 2',
                 2
             );
         $this->assertSame(
@@ -239,18 +227,17 @@ class QuestionHistoryTest extends TableTestCase
                 1
             );
         $this->assertSame(
-            'a modified reason',
+            'a modified reason for question_history_id 2',
             $result->current()['modified_reason']
         );
         $result->next();
-        $this->assertSame(
-            'this is the first reason',
+        $this->assertNull(
             $result->current()['modified_reason']
         );
 
         $result = $this->questionHistoryTable
             ->updateSetModifiedReasonWhereQuestionHistoryId(
-                null,
+                'a modified reason for question_history_id 1',
                 1
             );
         $this->assertSame(
@@ -261,7 +248,8 @@ class QuestionHistoryTest extends TableTestCase
             ->selectWhereQuestionIdOrderByCreatedDesc(
                 1
             );
-        $this->assertNull(
+        $this->assertSame(
+            'a modified reason for question_history_id 1',
             iterator_to_array($result)[1]['modified_reason']
         );
     }

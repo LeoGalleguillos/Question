@@ -33,7 +33,6 @@ class QuestionHistory
      * @return int
      */
     public function insertSelectFromQuestion(
-        string $modifiedReason,
         int $questionId
     ): int {
         $sql = '
@@ -44,24 +43,20 @@ class QuestionHistory
                     , `name`
                     , `subject`
                     , `message`
-                    , `created`
                     , `modified_reason`
+                    , `created`
                  )
             SELECT `question`.`question_id`
                  , `question`.`created_name`
                  , `question`.`subject`
                  , `question`.`message`
-                 , IFNULL(
-                       `question`.`modified_datetime`
-                     , `question`.`created_datetime`
-                   )
-                 , ?
+                 , `question`.`modified_reason`
+                 , UTC_TIMESTAMP()
               FROM `question`
              WHERE `question`.`question_id` = ?
                  ;
         ';
         $parameters = [
-            $modifiedReason,
             $questionId,
         ];
         return $this->adapter
