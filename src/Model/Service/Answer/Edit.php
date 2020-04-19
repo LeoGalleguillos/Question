@@ -22,16 +22,16 @@ class Edit
         $name,
         $message,
         $modifiedUserId,
-        $reason
+        $modifiedReason
     ) {
         $this->adapter->getDriver()->getConnection()->beginTransaction();
         $this->answerHistoryTable->insertSelectFromAnswer(
-            $reason,
             $answerEntity->getAnswerId()
         );
         $this->answerTable->updateWhereAnswerId(
             $message,
             $modifiedUserId,
+            $modifiedReason,
             $answerEntity->getAnswerId()
         );
         $this->adapter->getDriver()->getConnection()->commit();

@@ -23,17 +23,17 @@ class Edit
         $subject,
         $message,
         $modifiedUserId,
-        $reason
+        $modifiedReason
     ) {
         $this->adapter->getDriver()->getConnection()->beginTransaction();
         $this->questionHistoryTable->insertSelectFromQuestion(
-            $reason,
             $questionEntity->getQuestionId()
         );
         $this->questionTable->updateWhereQuestionId(
             $subject,
             $message,
             $modifiedUserId,
+            $modifiedReason,
             $questionEntity->getQuestionId()
         );
         $this->adapter->getDriver()->getConnection()->commit();
