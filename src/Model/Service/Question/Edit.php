@@ -43,6 +43,7 @@ class Edit
             $questionEntity->getQuestionId()
         );
         $this->questionTable->updateWhereQuestionId(
+            $name,
             $subject,
             $message,
             $modifiedUserId,
