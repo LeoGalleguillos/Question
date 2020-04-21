@@ -190,6 +190,7 @@ class Question
     }
 
     public function updateWhereQuestionId(
+        string $name = null,
         string $subject,
         string $message,
         int $modifiedUserId,
@@ -198,7 +199,8 @@ class Question
     ): Result {
         $sql = '
             UPDATE `question`
-               SET `question`.`subject` = ?
+               SET `question`.`created_name` = ?
+                 , `question`.`subject` = ?
                  , `question`.`message` = ?
                  , `question`.`modified_datetime` = UTC_TIMESTAMP()
                  , `question`.`modified_user_id` = ?
@@ -207,6 +209,7 @@ class Question
                  ;
         ';
         $parameters = [
+            $name,
             $subject,
             $message,
             $modifiedUserId,

@@ -107,7 +107,9 @@ class QuestionTest extends TableTestCase
         $this->questionTable->insert(
             1, 'name', 'subject', 'message', '1.2.3.4', 'name', '1.2.3.4'
         );
+
         $result = $this->questionTable->updateWhereQuestionId(
+            'new name',
             'modified subject',
             'modified message',
             10,
@@ -120,6 +122,10 @@ class QuestionTest extends TableTestCase
         );
         $result = $this->questionIdTable->selectWhereQuestionId(1);
         $this->assertSame(
+            'new name',
+            $result->current()['created_name']
+        );
+        $this->assertSame(
             'modified subject',
             $result->current()['subject']
         );
@@ -130,6 +136,23 @@ class QuestionTest extends TableTestCase
         $this->assertSame(
             'modified reason',
             $result->current()['modified_reason']
+        );
+
+        $result = $this->questionTable->updateWhereQuestionId(
+            null,
+            'modified subject',
+            'modified message',
+            10,
+            'modified reason',
+            1
+        );
+        $this->assertSame(
+            1,
+            $result->getAffectedRows()
+        );
+        $result = $this->questionIdTable->selectWhereQuestionId(1);
+        $this->assertNull(
+            $result->current()['created_name']
         );
     }
 }
