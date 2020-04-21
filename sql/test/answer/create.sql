@@ -1,7 +1,7 @@
 CREATE TABLE `answer` (
     `answer_id` int(10) unsigned auto_increment,
     `question_id` int(10) unsigned not null,
-    `user_id` int(10) unsigned default null,
+    `user_id` int(10) unsigned default null, #@todo Rename column to `created_user_id`
     `message` text,
     `created_datetime` datetime NOT NULL,
     `created_name` varchar(255) default null, #@todo Rename column to `name`
