@@ -4,13 +4,19 @@ namespace LeoGalleguillos\Question\Model\Factory;
 use DateTime;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
+use LeoGalleguillos\User\Model\Factory as UserFactory;
+use LeoGalleguillos\User\Model\Service as UserService;
 
 class Question
 {
     public function __construct(
-        QuestionTable\Question $questionTable
+        QuestionTable\Question $questionTable,
+        UserFactory\User $userFactory,
+        UserService\DisplayNameOrUsername $displayNameOrUsernameService
     ) {
-        $this->questionTable = $questionTable;
+        $this->questionTable                = $questionTable;
+        $this->userFactory                  = $userFactory;
+        $this->displayNameOrUsernameService = $displayNameOrUsernameService;
     }
 
     public function buildFromArray(
@@ -47,6 +53,15 @@ class Question
                 ->setUserId((int) $array['user_id'])
                 ->setCreatedUserId((int) $array['user_id'])
                 ;
+
+            $userEntity = $this->userFactory->buildFromUserId(
+                $array['user_id']
+            );
+            $questionEntity->setCreatedName(
+                $this->displayNameOrUsernameService->getDisplayNameOrUsername(
+                    $userEntity
+                )
+            );
         }
 
         return $questionEntity;

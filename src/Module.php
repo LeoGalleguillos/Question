@@ -10,6 +10,7 @@ use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\String\Model\Service as StringService;
 use LeoGalleguillos\Superglobal\Model\Service as SuperglobalService;
 use LeoGalleguillos\User\Model\Factory as UserFactory;
+use LeoGalleguillos\User\Model\Service as UserService;
 
 class Module
 {
@@ -81,7 +82,9 @@ class Module
                 },
                 QuestionFactory\Question::class => function ($sm) {
                     return new QuestionFactory\Question(
-                        $sm->get(QuestionTable\Question::class)
+                        $sm->get(QuestionTable\Question::class),
+                        $sm->get(UserFactory\User::class),
+                        $sm->get(UserService\DisplayNameOrUsername::class)
                     );
                 },
                 QuestionService\Answer\Answers::class => function ($sm) {

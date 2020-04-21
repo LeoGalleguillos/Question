@@ -5,6 +5,8 @@ use DateTime;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
+use LeoGalleguillos\User\Model\Factory as UserFactory;
+use LeoGalleguillos\User\Model\Service as UserService;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
@@ -15,8 +17,16 @@ class QuestionTest extends TestCase
         $this->questionTableMock = $this->createMock(
             QuestionTable\Question::class
         );
+        $this->userFactoryMock = $this->createMock(
+            UserFactory\User::class
+        );
+        $this->displayNameOrUsernameServiceMock = $this->createMock(
+            UserService\DisplayNameOrUsername::class
+        );
         $this->questionFactory = new QuestionFactory\Question(
-            $this->questionTableMock
+            $this->questionTableMock,
+            $this->userFactoryMock,
+            $this->displayNameOrUsernameServiceMock
         );
     }
 
@@ -24,7 +34,7 @@ class QuestionTest extends TestCase
     {
         $array = [
             'question_id' => 1,
-            'user_id'     => 1,
+            'user_id'     => null,
             'name'        => 'name',
             'subject'     => 'subject',
             'message'     => 'message',
@@ -71,7 +81,7 @@ class QuestionTest extends TestCase
         $this->questionTableMock->method('selectWhereQuestionId')->willReturn(
             [
                 'question_id' => 123,
-                'user_id'     => 1,
+                'user_id'     => null,
                 'name'        => 'name',
                 'subject'     => 'subject',
                 'message'     => 'message',
