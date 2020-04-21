@@ -43,7 +43,10 @@ class Question
             $questionEntity->setDeletedReason($array['deleted_reason']);
         }
         if (isset($array['user_id'])) {
-            $questionEntity->setUserId((int) $array['user_id']);
+            $questionEntity
+                ->setUserId((int) $array['user_id'])
+                ->setCreatedUserId((int) $array['user_id'])
+                ;
         }
 
         return $questionEntity;

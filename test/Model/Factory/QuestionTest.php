@@ -36,11 +36,13 @@ class QuestionTest extends TestCase
         $questionEntity
             ->setCreatedDateTime(new DateTime($array['created_datetime']))
             ->setCreatedIp($array['created_ip'])
+            ->setCreatedUserId((int) $array['user_id'])
             ->setDeletedDateTime(new DateTime($array['deleted_datetime']))
             ->setMessage($array['message'])
             ->setQuestionId($array['question_id'])
             ->setSubject($array['subject'])
-            ->setUserId((int) $array['user_id']);
+            ->setUserId((int) $array['user_id'])
+            ;
         $this->assertEquals(
             $questionEntity,
             $this->questionFactory->buildFromArray($array)
