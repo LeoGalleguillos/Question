@@ -1,8 +1,10 @@
 <?php
 namespace LeoGalleguillos\Question\Model\Service\Question;
 
+use Exception;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
+use TypeError;
 use Zend\Db\Adapter\Adapter;
 
 class Edit
@@ -17,6 +19,9 @@ class Edit
         $this->questionHistoryTable = $questionHistoryTable;
     }
 
+    /**
+     * @throws Exception
+     */
     public function edit(
         QuestionEntity\Question $questionEntity,
         $name,
@@ -25,6 +30,14 @@ class Edit
         $modifiedUserId,
         $modifiedReason
     ) {
+        try {
+            $questionEntity->getCreatedUserId();
+        } catch (TypeError $typeError) {
+            if (empty($name)) {
+                throw new Exception('Name cannot be empty');
+            }
+        }
+
         $this->adapter->getDriver()->getConnection()->beginTransaction();
         $this->questionHistoryTable->insertSelectFromQuestion(
             $questionEntity->getQuestionId()
