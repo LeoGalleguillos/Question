@@ -22,18 +22,21 @@ class QuestionTest extends TestCase
 
     public function testGettersAndSetters()
     {
-        $userId = 123;
-        $this->questionEntity->setUserId($userId);
-        $this->assertSame(
-            $userId,
-            $this->questionEntity->getUserId()
-        );
-
         $createdDateTime = new DateTime();
         $this->questionEntity->setCreatedDateTime($createdDateTime);
         $this->assertSame(
             $createdDateTime,
             $this->questionEntity->getCreatedDateTime()
+        );
+
+        $createdUserId = 12345;
+        $this->assertSame(
+            $this->questionEntity,
+            $this->questionEntity->setCreatedUserId($createdUserId)
+        );
+        $this->assertSame(
+            $createdUserId,
+            $this->questionEntity->getCreatedUserId()
         );
 
         $deletedDateTime = new DateTime();
@@ -64,6 +67,16 @@ class QuestionTest extends TestCase
         $this->assertSame(
             $deletedReason,
             $this->questionEntity->getDeletedReason()
+        );
+
+        $userId = 123;
+        $this->assertSame(
+            $this->questionEntity,
+            $this->questionEntity->setUserId($userId)
+        );
+        $this->assertSame(
+            $userId,
+            $this->questionEntity->getUserId()
         );
     }
 }
