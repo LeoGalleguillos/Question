@@ -30,26 +30,29 @@ class AnswerTest extends TestCase
         );
     }
 
-    public function testBuildFromArray()
+    public function test_buildFromArray_userIdIsNull_nameIsSetFromArray()
     {
         $array = [
             'answer_id'        => 1,
+            'created_datetime' => '2018-03-12 22:12:23',
+            'created_name'     => 'name',
+            'created_ip'       => '5.6.7.8',
+            'deleted_datetime' => '2018-09-18 11:23:05',
+            'message'          => 'message',
             'question_id'      => 1,
             'user_id'          => null,
-            'message'          => 'message',
-            'created_datetime' => '2018-03-12 22:12:23',
-            'created_ip'       => '5.6.7.8',
-            'deleted'          => '2018-09-18 11:23:05',
-            'deleted_datetime' => '2018-09-18 11:23:05',
         ];
 
         $answerEntity = new QuestionEntity\Answer();
-        $answerEntity->setAnswerId($array['answer_id'])
-                     ->setCreatedDateTime(new DateTime($array['created_datetime']))
-                     ->setCreatedIp($array['created_ip'])
-                     ->setDeletedDateTime(new DateTime($array['deleted']))
-                     ->setMessage($array['message'])
-                     ->setQuestionId($array['question_id']);
+        $answerEntity
+            ->setAnswerId($array['answer_id'])
+            ->setCreatedDateTime(new DateTime($array['created_datetime']))
+            ->setCreatedIp($array['created_ip'])
+            ->setDeletedDateTime(new DateTime($array['deleted_datetime']))
+            ->setMessage($array['message'])
+            ->setCreatedName($array['created_name'])
+            ->setQuestionId($array['question_id'])
+            ;
 
         $this->assertEquals(
             $answerEntity,
@@ -57,25 +60,45 @@ class AnswerTest extends TestCase
         );
     }
 
-    public function testBuildFromAnswerId()
+    public function test_buildFromArray_userIdIsNotNull_nameIsSetFromUserService()
     {
+        $userEntity = new UserEntity\User();
+        $userEntity
+            ->setDisplayName('i am foo')
+            ->setUserId(12345)
+            ->setUsername('Foo')
+            ;
+        $this->userFactoryMock
+            ->expects($this->once())
+            ->method('buildFromUserId')
+            ->with(12345)
+            ->willReturn($userEntity);
+        $this->displayNameOrUsernameServiceMock
+            ->expects($this->once())
+            ->method('getDisplayNameOrUsername')
+            ->with($userEntity)
+            ->willReturn('i am foo');
         $array = [
-            'answer_id'   => 1,
-            'question_id' => 1,
-            'user_id'     => 1,
-            'message'     => 'message',
-            'created_datetime'     => '2018-03-12 22:12:23',
+            'answer_id'        => 1,
+            'created_datetime' => '2018-03-12 22:12:23',
+            'message'          => 'message',
+            'question_id'      => 1,
+            'user_id'          => 12345,
         ];
         $this->answerTableMock->method('selectWhereAnswerId')->willReturn(
             $array
         );
 
         $answerEntity = new QuestionEntity\Answer();
-        $answerEntity->setAnswerId($array['answer_id'])
-                     ->setCreatedDateTime(new DateTime($array['created_datetime']))
-                     ->setMessage($array['message'])
-                     ->setQuestionId($array['question_id'])
-                     ->setUserId($array['user_id']);
+        $answerEntity
+            ->setAnswerId($array['answer_id'])
+            ->setCreatedDateTime(new DateTime($array['created_datetime']))
+            ->setCreatedUserId($array['user_id'])
+            ->setCreatedName('i am foo')
+            ->setMessage($array['message'])
+            ->setQuestionId($array['question_id'])
+            ->setUserId($array['user_id'])
+            ;
 
         $this->assertEquals(
             $answerEntity,

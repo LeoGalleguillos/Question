@@ -47,7 +47,19 @@ class Answer
             $answerEntity->setQuestionId($array['question_id']);
         }
         if (isset($array['user_id'])) {
-            $answerEntity->setUserId($array['user_id']);
+            $answerEntity
+                ->setUserId((int) $array['user_id'])
+                ->setCreatedUserId((int) $array['user_id'])
+                ;
+
+            $userEntity = $this->userFactory->buildFromUserId(
+                $array['user_id']
+            );
+            $answerEntity->setCreatedName(
+                $this->displayNameOrUsernameService->getDisplayNameOrUsername(
+                    $userEntity
+                )
+            );
         }
 
         return $answerEntity;
