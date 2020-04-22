@@ -29,6 +29,7 @@ class Edit
             $answerEntity->getAnswerId()
         );
         $this->answerTable->updateWhereAnswerId(
+            $name,
             $message,
             $modifiedUserId,
             $modifiedReason,

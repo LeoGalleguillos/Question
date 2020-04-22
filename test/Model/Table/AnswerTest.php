@@ -102,6 +102,7 @@ class AnswerTest extends TableTestCase
             1, 2, 'first message', null, '1.2.3.4'
         );
         $result = $this->answerTable->updateWhereAnswerId(
+            'new name',
             'modified message',
             10,
             'modified reason',
@@ -113,12 +114,32 @@ class AnswerTest extends TableTestCase
         );
         $result = $this->answerIdTable->selectWhereAnswerId(1);
         $this->assertSame(
+            'new name',
+            $result->current()['created_name']
+        );
+        $this->assertSame(
             'modified message',
             $result->current()['message']
         );
         $this->assertSame(
             'modified reason',
             $result->current()['modified_reason']
+        );
+
+        $result = $this->answerTable->updateWhereAnswerId(
+            null,
+            'modified message',
+            10,
+            'modified reason',
+            1
+        );
+        $this->assertSame(
+            1,
+            $result->getAffectedRows()
+        );
+        $result = $this->answerIdTable->selectWhereAnswerId(1);
+        $this->assertNull(
+            $result->current()['created_name']
         );
     }
 }
