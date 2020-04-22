@@ -10,13 +10,19 @@ class Answer
     protected $createdDateTime;
     protected $createdIp;
     protected $createdName;
+    protected $createdUserId;
     protected $deletedDateTime;
     protected $deletedUserId;
     protected $deletedReason;
     protected $history;
     protected $message;
     protected $questionId;
+
+    /**
+     * @deprecated Use ::createdUserId property instead
+     */
     protected $userId;
+
     protected $views;
 
     public function getAnswerId(): int
@@ -37,6 +43,11 @@ class Answer
     public function getCreatedName(): string
     {
         return $this->createdName;
+    }
+
+    public function getCreatedUserId(): int
+    {
+        return $this->createdUserId;
     }
 
     public function getDeletedDateTime(): DateTime
@@ -69,6 +80,9 @@ class Answer
         return $this->questionId;
     }
 
+    /**
+     * @deprecated Use ::getCreatedUserId() instead
+     */
     public function getUserId(): int
     {
         return $this->userId;
@@ -94,6 +108,12 @@ class Answer
     public function setCreatedIp(string $createdIp): QuestionEntity\Answer
     {
         $this->createdIp = $createdIp;
+        return $this;
+    }
+
+    public function setCreatedUserId(int $createdUserId): QuestionEntity\Answer
+    {
+        $this->createdUserId = $createdUserId;
         return $this;
     }
 
@@ -139,6 +159,9 @@ class Answer
         return $this;
     }
 
+    /**
+     * @deprecated Use ::setCreatedUserId() instead
+     */
     public function setUserId(int $userId): QuestionEntity\Answer
     {
         $this->userId = $userId;
