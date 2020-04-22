@@ -33,6 +33,14 @@ class QuestionTest extends TestCase
 
     public function test_buildFromArray_userIdIsNull_nameIsSetFromArray()
     {
+        $this->userFactoryMock
+            ->expects($this->exactly(0))
+            ->method('buildFromUserId')
+            ;
+        $this->displayNameOrUsernameServiceMock
+            ->expects($this->exactly(0))
+            ->method('getDisplayNameOrUsername')
+            ;
         $array = [
             'created_name'     => 'name',
             'created_datetime' => '2018-03-12 22:12:23',
