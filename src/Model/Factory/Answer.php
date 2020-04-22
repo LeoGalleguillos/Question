@@ -4,14 +4,20 @@ namespace LeoGalleguillos\Question\Model\Factory;
 use DateTime;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
+use LeoGalleguillos\User\Model\Factory as UserFactory;
+use LeoGalleguillos\User\Model\Service as UserService;
 use TypeError;
 
 class Answer
 {
     public function __construct(
-        QuestionTable\Answer $answerTable
+        QuestionTable\Answer $answerTable,
+        UserFactory\User $userFactory,
+        UserService\DisplayNameOrUsername $displayNameOrUsernameService
     ) {
-        $this->answerTable = $answerTable;
+        $this->answerTable                  = $answerTable;
+        $this->userFactory                  = $userFactory;
+        $this->displayNameOrUsernameService = $displayNameOrUsernameService;
     }
 
     public function buildFromArray(

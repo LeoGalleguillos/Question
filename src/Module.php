@@ -77,7 +77,9 @@ class Module
             'factories' => [
                 QuestionFactory\Answer::class => function ($sm) {
                     return new QuestionFactory\Answer(
-                        $sm->get(QuestionTable\Answer::class)
+                        $sm->get(QuestionTable\Answer::class),
+                        $sm->get(UserFactory\User::class),
+                        $sm->get(UserService\DisplayNameOrUsername::class)
                     );
                 },
                 QuestionFactory\Question::class => function ($sm) {
