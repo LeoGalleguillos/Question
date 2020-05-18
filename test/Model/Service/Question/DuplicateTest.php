@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 
 class DuplicateTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->questionFactoryMock = $this->createMock(
             QuestionFactory\Question::class
@@ -34,7 +34,7 @@ class DuplicateTest extends TestCase
 
     public function test_getDuplicate_oneResult_oneQuestionEntity()
     {
-        $resultHydrator = new TestHydrator\Result();
+        $resultHydrator = new TestHydrator\CountableIterator();
         $resultMock = $this->createMock(
             Result::class
         );

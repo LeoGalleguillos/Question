@@ -8,7 +8,7 @@ use LeoGalleguillos\Test\TableTestCase;
 
 class SubjectTest extends TableTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->memcachedServiceMock = $this->createMock(
             MemcachedService\Memcached::class

@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class YearMonthTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->questionFactoryMock = $this->createMock(
             QuestionFactory\Question::class

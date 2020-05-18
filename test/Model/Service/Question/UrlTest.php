@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class UrlTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->rootRelativeUrlServiceMock = $this->createMock(
             QuestionService\Question\RootRelativeUrl::class

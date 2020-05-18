@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class ApproveTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->answerIdTableMock = $this->createMock(
             QuestionTable\Answer\AnswerId::class

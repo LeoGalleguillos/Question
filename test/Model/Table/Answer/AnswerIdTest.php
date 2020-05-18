@@ -7,7 +7,7 @@ use LeoGalleguillos\Test\TableTestCase;
 
 class AnswerIdTest extends TableTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->answerTable = new QuestionTable\Answer(
             $this->getAdapter()

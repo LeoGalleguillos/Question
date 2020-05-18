@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class QuestionTest extends TableTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->questionTable = new QuestionTable\Question(
             $this->getAdapter()
@@ -62,8 +62,7 @@ class QuestionTest extends TableTestCase
             '1.2.3.4'
         );
         $array = $this->questionTable->selectWhereQuestionId(1);
-        $this->assertInternalType(
-            'array',
+        $this->assertIsArray(
             $array
         );
         $this->assertSame(

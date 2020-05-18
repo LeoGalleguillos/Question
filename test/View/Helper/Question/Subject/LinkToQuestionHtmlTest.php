@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class LinkToQuestionHtmlTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->rootRelativeUrlServiceMock = $this->createMock(
             QuestionService\Question\RootRelativeUrl::class

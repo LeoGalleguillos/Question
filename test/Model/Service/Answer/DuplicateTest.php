@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class DuplicateTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->questionIdDeletedCreatedDatetimeTableMock = $this->createMock(
             QuestionTable\Answer\QuestionIdDeletedCreatedDatetime::class

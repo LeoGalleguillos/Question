@@ -14,7 +14,7 @@ class AnswerEditQueueTest extends TableTestCase
      */
     protected $sqlPath;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->answerEditQueueTable = new QuestionTable\AnswerEditQueue($this->getAdapter());
 

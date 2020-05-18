@@ -14,7 +14,7 @@ class QuestionEditQueueTest extends TableTestCase
      */
     protected $sqlPath;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->sqlPath = $_SERVER['PWD'] . '/sql/leogalle_test/question_edit_queue/';
         $configArray   = require(__DIR__ . '/../../../config/autoload/local.php');

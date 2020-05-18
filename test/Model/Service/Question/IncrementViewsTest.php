@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class IncrementViewsTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->questionTableMock = $this->createMock(
             QuestionTable\Question::class

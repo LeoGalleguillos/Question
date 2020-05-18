@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class QuestionTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->questionEntity = new QuestionEntity\Question();
     }

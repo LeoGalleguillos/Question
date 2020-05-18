@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class QuestionFromAnswerTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->questionFactoryMock = $this->createMock(
             QuestionFactory\Question::class

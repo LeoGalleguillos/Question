@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class TitleTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->titleService = new QuestionService\Question\Title(
             new StringService\StripTagsAndShorten(

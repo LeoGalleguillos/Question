@@ -12,7 +12,7 @@ class DeletedTest extends TableTestCase
      */
     protected $sqlPath;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->memcachedServiceMock = $this->createMock(
             MemcachedService\Memcached::class

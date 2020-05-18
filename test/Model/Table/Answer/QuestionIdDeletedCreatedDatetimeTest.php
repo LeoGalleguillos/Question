@@ -7,7 +7,7 @@ use LeoGalleguillos\Test\TableTestCase;
 
 class QuestionIdDeletedCreatedDatetimeTest extends TableTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->answerTable = new QuestionTable\Answer(
             $this->getAdapter()

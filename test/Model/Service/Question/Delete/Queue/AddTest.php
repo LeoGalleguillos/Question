@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 class AddTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->questionDeleteQueueTableMock = $this->createMock(
             QuestionTable\QuestionDeleteQueue::class

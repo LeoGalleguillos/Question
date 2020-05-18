@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class AnswersTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->answerFactoryMock = $this->createMock(
             QuestionFactory\Answer::class

@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class MessageTest extends TableTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->questionTable = new QuestionTable\Question(
             $this->getAdapter(),

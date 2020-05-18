@@ -16,7 +16,7 @@ class MessageTest extends TableTestCase
      */
     protected $sqlPath;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->sqlPath = $_SERVER['PWD'] . '/sql/leogalle_test/answer/';
 
