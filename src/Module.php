@@ -1,6 +1,7 @@
 <?php
 namespace LeoGalleguillos\Question;
 
+use Laminas\Db as LaminasDb;
 use LeoGalleguillos\Flash\Model\Service as FlashService;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
@@ -75,6 +76,12 @@ class Module
     {
         return [
             'factories' => [
+                'laminas-db-table-gateway-table-gateway-question_view_not_bot_log' => function ($sm) {
+                    return new LaminasDb\TableGateway\TableGateway(
+                        'question_view_not_bot_log',
+                        $sm->get('question')
+                    );
+                },
                 QuestionFactory\Answer::class => function ($sm) {
                     return new QuestionFactory\Answer(
                         $sm->get(QuestionTable\Answer::class),
