@@ -9,16 +9,16 @@ class ConditionallyIncrement
 {
     public function __construct(
         QuestionTable\Question\QuestionId $questionIdTable,
-        SuperglobalService\Server\HttpUserAgent\Browser $browserService
+        SuperglobalService\Server\HttpUserAgent\Bot $botService
     ) {
         $this->questionIdTable = $questionIdTable;
-        $this->browserService  = $browserService;
+        $this->botService      = $botService;
     }
 
     public function conditionallyIncrement(
         QuestionEntity\Question $questionEntity
     ): bool {
-        if ($this->browserService->isBrowser()) {
+        if (!$this->botService->isBot()) {
             $this->questionIdTable->updateIncrementViewsBrowserWhereQuestionId(
                 $questionEntity->getQuestionId()
             );

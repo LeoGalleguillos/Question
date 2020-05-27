@@ -260,7 +260,7 @@ class Module
                 QuestionService\Question\ViewsBrowser\ConditionallyIncrement::class => function ($sm) {
                     return new QuestionService\Question\ViewsBrowser\ConditionallyIncrement(
                         $sm->get(QuestionTable\Question\QuestionId::class),
-                        $sm->get(SuperglobalService\Server\HttpUserAgent\Browser::class)
+                        $sm->get(SuperglobalService\Server\HttpUserAgent\Bot::class)
                     );
                 },
                 QuestionService\QuestionFromAnswer::class => function ($sm) {
