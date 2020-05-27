@@ -18,10 +18,10 @@ class MessageTest extends TableTestCase
 
     protected function setUp(): void
     {
-        $this->sqlPath = $_SERVER['PWD'] . '/sql/leogalle_test/answer/';
+        $this->sqlPath = $_SERVER['PWD'] . '/sql/test/answer/';
 
         $configArray   = require($_SERVER['PWD'] . '/config/autoload/local.php');
-        $configArray   = $configArray['db']['adapters']['leogalle_test'];
+        $configArray   = $configArray['db']['adapters']['test'];
         $this->adapter = new Adapter($configArray);
 
         $this->answerTable = new QuestionTable\Answer(
