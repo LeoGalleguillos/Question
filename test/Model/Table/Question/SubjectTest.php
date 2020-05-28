@@ -22,8 +22,9 @@ class SubjectTest extends TableTestCase
             $this->questionTable
         );
 
-        $this->dropTable('question');
-        $this->createTable('question');
+        $this->setForeignKeyChecks(0);
+        $this->dropAndCreateTable('question');
+        $this->setForeignKeyChecks(1);
     }
 
     public function testSelectSubjectCount()

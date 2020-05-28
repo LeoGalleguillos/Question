@@ -16,7 +16,9 @@ class QuestionIdTest extends TableTestCase
             $this->questionTable
         );
 
+        $this->setForeignKeyChecks(0);
         $this->dropAndCreateTable('question');
+        $this->setForeignKeyChecks(1);
     }
 
     public function test_selectWhereQuestionId()
