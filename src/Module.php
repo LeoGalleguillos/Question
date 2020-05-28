@@ -264,6 +264,12 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionService\Question\QuestionViewNotBotLog\ConditionallyInsert::class => function ($sm) {
+                    return new QuestionService\Question\QuestionViewNotBotLog\ConditionallyInsert(
+                        $sm->get('laminas-db-table-gateway-table-gateway-question_view_not_bot_log'),
+                        $sm->get(SuperglobalService\Server\HttpUserAgent\Bot::class)
+                    );
+                },
                 QuestionService\Question\ViewsBrowser\ConditionallyIncrement::class => function ($sm) {
                     return new QuestionService\Question\ViewsBrowser\ConditionallyIncrement(
                         $sm->get(QuestionTable\Question\QuestionId::class),
