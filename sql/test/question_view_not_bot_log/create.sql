@@ -4,5 +4,6 @@ CREATE TABLE `question_view_not_bot_log` (
     `ip` varchar(45) NOT NULL,
     `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`question_view_not_bot_log_id`),
-    KEY `created_question_id_ip` (`created`, `question_id`, `ip`)
+    KEY `created_question_id_ip` (`created`, `question_id`, `ip`),
+    KEY `ip` (`ip`)
 ) CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
