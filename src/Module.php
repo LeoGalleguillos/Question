@@ -349,6 +349,14 @@ class Module
                         $sm->get(QuestionTable\Answer::class)
                     );
                 },
+                QuestionService\Question\Questions\Search\Results::class => function ($sm) {
+                    return new QuestionService\Question\Questions\Search\Results(
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question::class),
+                        $sm->get(QuestionTable\QuestionSearchMessage::class),
+                        $sm->get(StringService\KeepFirstWords::class)
+                    );
+                },
                 QuestionService\Question\Questions\Similar::class => function ($sm) {
                     return new QuestionService\Question\Questions\Similar(
                         $sm->get(QuestionFactory\Question::class),
