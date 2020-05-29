@@ -28,6 +28,8 @@ class QuestionSearchMessageTest extends TableTestCase
             ->selectQuestionIdWhereMatchAgainstOrderByViewsDescScoreDesc(
                 'the search query',
                 0,
+                100,
+                0,
                 100
             );
         $this->assertEmpty(

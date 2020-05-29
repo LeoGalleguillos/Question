@@ -32,6 +32,8 @@ class Results
             ->selectQuestionIdWhereMatchAgainstOrderByViewsDescScoreDesc(
                 $query,
                 ($page - 1) * 100,
+                100,
+                0,
                 100
             );
 
