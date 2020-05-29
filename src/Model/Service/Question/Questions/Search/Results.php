@@ -28,27 +28,31 @@ class Results
             16
         );
 
-        $questionIds = $this->questionSearchMessageTable
-            ->selectQuestionIdWhereMatchAgainst(
+        $result = $this->questionSearchMessageTable
+            ->selectQuestionIdWhereMatchAgainstOrderByViewsDescScoreDesc(
                 $query,
                 ($page - 1) * 100,
                 100
             );
 
-        if (empty($questionIds)) {
-            $arrays = [];
-        } else {
-            $arrays = $this->questionTable->selectWhereQuestionIdInAndDeletedDatetimeIsNull(
-                $questionIds
-            );
-        }
+        foreach ($result as $array) {
+            $questionEntity = $this->questionFactory->buildFromQuestionId($array['question_id']);
 
-        foreach ($arrays as $array) {
             try {
-                yield $this->questionFactory->buildFromArray($array);
+                $questionEntity->getDeletedDatetime();
+                continue;
             } catch (TypeError $typeError) {
                 // Do nothing.
             }
+
+            try {
+                $questionEntity->getMovedDatetime();
+                continue;
+            } catch (TypeError $typeError) {
+                // Do nothing.
+            }
+
+            yield $questionEntity;
         }
     }
 }
