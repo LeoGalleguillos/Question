@@ -51,8 +51,8 @@ class QuestionSearchMessage
 
     public function selectQuestionIdWhereMatchAgainstOrderByViewsDescScoreDesc(
         string $query,
-        int $limitOffset,
-        int $limitRowCount
+        int $questionSearchMessageLimitOffset,
+        int $questionSearchMessageLimitRowCount
     ): LaminasDb\Adapter\Driver\Pdo\Result {
         $sql = '
             SELECT `question_id`
@@ -63,7 +63,7 @@ class QuestionSearchMessage
                        WHERE MATCH (`message`) AGAINST (:query)
                        ORDER
                           BY `score` DESC
-                       LIMIT :limitOffset, :limitRowCount
+                       LIMIT :questionSearchMessageLimitOffset, :questionSearchMessageLimitRowCount
                    )
                 AS `question_search_message`
               LEFT
@@ -75,9 +75,9 @@ class QuestionSearchMessage
                  ;
         ';
         $parameters = [
-            'query'         => $query,
-            'limitOffset'   => $limitOffset,
-            'limitRowCount' => $limitRowCount
+            'query'                              => $query,
+            'questionSearchMessageLimitOffset'   => $questionSearchMessageLimitOffset,
+            'questionSearchMessageLimitRowCount' => $questionSearchMessageLimitRowCount
         ];
         return $this->adapter->query($sql)->execute($parameters);
     }
