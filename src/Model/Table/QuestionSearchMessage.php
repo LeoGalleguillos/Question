@@ -1,6 +1,7 @@
 <?php
 namespace LeoGalleguillos\Question\Model\Table;
 
+use Laminas\Db as LaminasDb;
 use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use Zend\Db\Adapter\Adapter;
 
@@ -46,6 +47,39 @@ class QuestionSearchMessage
 
         $this->memcachedService->setForDays($cacheKey, $questionIds, 28);
         return $questionIds;
+    }
+
+    public function selectQuestionIdWhereMatchAgainstOrderByViewsDescScoreDesc(
+        string $query,
+        int $limitOffset,
+        int $limitRowCount
+    ): LaminasDb\Adapter\Driver\Pdo\Result {
+        $sql = '
+            SELECT `question_id`
+              FROM (
+                       SELECT `question_id`,
+                              MATCH (`message`) AGAINST (:query) AS `score`
+                        FROM `question_search_message`
+                       WHERE MATCH (`message`) AGAINST (:query)
+                       ORDER
+                          BY `score` DESC
+                       LIMIT :limitOffset, :limitRowCount
+                   )
+                AS `question_search_message`
+              LEFT
+              JOIN `question_view_not_bot_one_month`
+             USING (`question_id`)
+             ORDER
+                BY `question_view_not_bot_one_month`.`views` DESC
+                 , `question_search_message`.`score` DESC
+                 ;
+        ';
+        $parameters = [
+            'query'         => $query,
+            'limitOffset'   => $limitOffset,
+            'limitRowCount' => $limitRowCount
+        ];
+        return $this->adapter->query($sql)->execute($parameters);
     }
 
     public function selectCountWhereMatchAgainst(string $query): int
