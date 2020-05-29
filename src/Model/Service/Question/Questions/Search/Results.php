@@ -45,13 +45,6 @@ class Results
                 // Do nothing.
             }
 
-            try {
-                $questionEntity->getMovedDatetime();
-                continue;
-            } catch (TypeError $typeError) {
-                // Do nothing.
-            }
-
             yield $questionEntity;
         }
     }
