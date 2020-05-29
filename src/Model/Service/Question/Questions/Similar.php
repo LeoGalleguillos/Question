@@ -5,6 +5,7 @@ use Generator;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
+use TypeError;
 
 class Similar
 {
