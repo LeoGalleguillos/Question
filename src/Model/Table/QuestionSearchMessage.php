@@ -15,40 +15,6 @@ class QuestionSearchMessage
         $this->adapter   = $adapter;
     }
 
-    public function selectQuestionIdWhereMatchAgainst(
-        string $query,
-        int $offset,
-        int $rowCount = 100
-    ): array {
-        $cacheKey = md5(__METHOD__ . $query . $offset . $rowCount);
-        if (null !== ($questionIds = $this->memcachedService->get($cacheKey))) {
-            return $questionIds;
-        }
-
-        $sql = "
-            SELECT `question_id`,
-                    MATCH (`message`) AGAINST (:query) AS `score`
-              FROM `question_search_message`
-             WHERE MATCH (`message`) AGAINST (:query)
-             ORDER
-                BY `score` DESC
-             LIMIT $offset, $rowCount
-                 ;
-        ";
-        $parameters = [
-            'query' => $query,
-        ];
-        $result = $this->adapter->query($sql)->execute($parameters);
-
-        $questionIds = [];
-        foreach ($result as $row) {
-            $questionIds[] = $row['question_id'];
-        }
-
-        $this->memcachedService->setForDays($cacheKey, $questionIds, 28);
-        return $questionIds;
-    }
-
     public function selectQuestionIdWhereMatchAgainstOrderByViewsDescScoreDesc(
         string $query,
         int $questionSearchMessageLimitOffset,
