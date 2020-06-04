@@ -61,18 +61,18 @@ class QuestionSearchMessage
               FROM (
                        SELECT `question_id`,
                               MATCH (`message`) AGAINST (:query) AS `score`
-                        FROM `question_search_message`
-                       WHERE MATCH (`message`) AGAINST (:query)
-                       ORDER
-                          BY `score` DESC
-                       LIMIT :questionSearchMessageLimitOffset, :questionSearchMessageLimitRowCount
+                         FROM `question_search_message`
+                        WHERE MATCH (`message`) AGAINST (:query)
+                        ORDER
+                           BY `score` DESC
+                        LIMIT :questionSearchMessageLimitOffset, :questionSearchMessageLimitRowCount
                    )
                 AS `question_search_message`
               LEFT
-              JOIN `question_view_not_bot_one_month`
+              JOIN `question`
              USING (`question_id`)
              ORDER
-                BY `question_view_not_bot_one_month`.`views` DESC
+                BY `question`.`views_not_bot_one_month` DESC
                  , `question_search_message`.`score` DESC
              LIMIT :outerLimitOffset, :outerLimitRowCount
                  ;
