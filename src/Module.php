@@ -337,8 +337,9 @@ class Module
                 },
                 QuestionService\Question\Questions\MostPopular\CreatedName::class => function ($sm) {
                     return new QuestionService\Question\Questions\MostPopular\CreatedName(
+                        $sm->get('laminas-db-sql-sql'),
                         $sm->get(QuestionFactory\Question::class),
-                        $sm->get(QuestionTable\Question\CreatedNameDeletedDatetimeViewsBrowser::class)
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
                 QuestionService\Question\Questions\Newest\CreatedName::class => function ($sm) {
