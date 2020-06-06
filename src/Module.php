@@ -76,6 +76,11 @@ class Module
     {
         return [
             'factories' => [
+                'laminas-db-sql-sql' => function ($sm) {
+                    return new LaminasDb\Sql\Sql(
+                        $sm->get('question')
+                    );
+                },
                 'laminas-db-table-gateway-table-gateway-question_view_not_bot_log' => function ($sm) {
                     return new LaminasDb\TableGateway\TableGateway(
                         'question_view_not_bot_log',
