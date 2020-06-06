@@ -21,6 +21,7 @@ CREATE TABLE `question` (
     KEY `created_datetime_deleted_datetime_views_browser` (`created_datetime`, `deleted_datetime`, `views_browser`),
     KEY `created_name_deleted_datetime_created_datetime` (`created_name`, `deleted_datetime`, `created_datetime`),
     KEY `created_name_deleted_datetime_views_browser` (`created_name`, `deleted_datetime`, `views_browser`),
+    KEY `created_name_deleted_datetime_views_not_bot_one_month` (`created_name`, `deleted_datetime`, `views_not_bot_one_month`),
     KEY `created_ip_created_datetime` (`created_ip`, `created_datetime`),
     KEY `deleted_datetime_created_datetime` (`deleted_datetime`, `created_datetime`),
     KEY `deleted_user_id_deleted_datetime` (`deleted_user_id`, `deleted_datetime`),
