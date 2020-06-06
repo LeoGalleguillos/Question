@@ -24,6 +24,13 @@ class QuestionTest extends TableTestCase
         $this->setForeignKeyChecks(1);
     }
 
+    public function test_getSelectColumns()
+    {
+        $this->assertIsArray(
+            $this->questionTable->getSelectColumns()
+        );
+    }
+
     public function testInsertDeleted()
     {
         $questionId = $this->questionTable->insertDeleted(

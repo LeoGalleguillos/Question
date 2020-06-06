@@ -40,6 +40,30 @@ class Question
         ';
     }
 
+    /**
+     * Get columns which are commonly-used for SELECT statements.
+     */
+    public function getSelectColumns(): array
+    {
+        return [
+            'question_id',
+            'user_id',
+            'subject',
+            'message',
+            'views',
+            'created_datetime',
+            'created_name',
+            'created_ip',
+            'modified_user_id',
+            'modified_datetime',
+            'modified_reason',
+            'deleted_datetime',
+            'deleted_user_id',
+            'deleted_reason',
+        ];
+    }
+
+
     public function insert(
         int $userId = null,
         string $subject,
