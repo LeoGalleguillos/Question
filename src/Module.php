@@ -366,8 +366,8 @@ class Module
                 },
                 QuestionService\Question\Questions\Subject::class => function ($sm) {
                     return new QuestionService\Question\Questions\Subject(
-                        $sm->get(QuestionFactory\Question::class),
-                        $sm->get(QuestionTable\Question\SubjectDeletedDatetimeViewsBrowser::class)
+                        $sm->get('laminas-db-sql-sql'),
+                        $sm->get(QuestionFactory\Question::class)
                     );
                 },
                 QuestionService\Question\Questions\Subject\NumberOfPages::class => function ($sm) {
