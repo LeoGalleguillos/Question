@@ -7,7 +7,6 @@ use DateTimeZone;
 use Generator;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use TypeError;
 
 class YearMonth
 {
