@@ -27,7 +27,7 @@ class Question
                  , `question`.`subject`
                  , `question`.`message`
                  , `question`.`views`
-                 , `question`.`views_browser`
+                 , `question`.`views_not_bot_one_month`
                  , `question`.`created_datetime`
                  , `question`.`created_name`
                  , `question`.`created_ip`
@@ -51,6 +51,7 @@ class Question
             'subject',
             'message',
             'views',
+            'views_not_bot_one_month',
             'created_datetime',
             'created_name',
             'created_ip',
