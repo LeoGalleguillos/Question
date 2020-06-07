@@ -33,29 +33,4 @@ class SubjectDeletedDatetimeViewsBrowser
         $array = $this->adapter->query($sql)->execute($parameters)->current();
         return (int) $array['count'];
     }
-
-    public function selectWhereSubjectEqualsAndDeletedDatetimeIsNullOrderByViewsBrowser(
-        string $subject,
-        int $limitOffset,
-        int $limitRowCount
-    ): Generator {
-        $sql = $this->questionTable->getSelect()
-             . '
-              FROM `question`
-             WHERE `question`.`subject` = ?
-               AND `question`.`deleted_datetime` IS NULL
-             ORDER
-                BY `question`.`views_browser` DESC
-             LIMIT ?, ?
-                 ;
-        ';
-        $parameters = [
-            $subject,
-            $limitOffset,
-            $limitRowCount,
-        ];
-        foreach ($this->adapter->query($sql)->execute($parameters) as $array) {
-            yield $array;
-        }
-    }
 }
