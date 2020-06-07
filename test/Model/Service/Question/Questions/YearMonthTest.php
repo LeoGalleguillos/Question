@@ -2,6 +2,7 @@
 namespace LeoGalleguillos\QuestionTest\Model\Service;
 
 use Generator;
+use Laminas\Db as LaminasDb;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
@@ -11,60 +12,28 @@ class YearMonthTest extends TestCase
 {
     protected function setUp(): void
     {
+        $this->sqlMock = $this->createMock(
+            LaminasDb\Sql\Sql::class
+        );
         $this->questionFactoryMock = $this->createMock(
             QuestionFactory\Question::class
         );
-        $this->createdDatetimeDeletedDatetimeViewsBrowserTableMock = $this->createMock(
-            QuestionTable\Question\CreatedDatetimeDeletedDatetimeViewsBrowser::class
+        $this->questionTableMock = $this->createMock(
+            QuestionTable\Question::class
         );
         $this->yearMonthService = new QuestionService\Question\Questions\YearMonth(
+            $this->sqlMock,
             $this->questionFactoryMock,
-            $this->createdDatetimeDeletedDatetimeViewsBrowserTableMock
+            $this->questionTableMock
         );
     }
 
-    public function testGetQuestions()
+    public function test_getQuestions()
     {
-        $this->createdDatetimeDeletedDatetimeViewsBrowserTableMock
-            ->method('selectWhereCreatedDatetimeBetweenAndDeletedDatetimeIsNullOrderByViewsBrowserDescLimit100')
-            ->will(
-                $this->onConsecutiveCalls(
-                    $this->yieldArrays(),
-                    $this->yieldArrays2()
-                )
-            );
-        $this->createdDatetimeDeletedDatetimeViewsBrowserTableMock
-            ->expects($this->exactly(2))
-            ->method('selectWhereCreatedDatetimeBetweenAndDeletedDatetimeIsNullOrderByViewsBrowserDescLimit100')
-            ->withConsecutive(
-            ['2017-07-01 04:00:00', '2017-08-01 03:59:59'],
-            ['2006-11-01 05:00:00', '2006-12-01 04:59:59']
+        $generator = $this->yearMonthService->getQuestions(2017, 7);
+        $this->assertInstanceOf(
+            Generator::class,
+            $generator
         );
-
-        $generator = $this->yearMonthService->getQuestions(
-            2017,
-            7
-        );
-        iterator_to_array($generator);
-
-        $generator = $this->yearMonthService->getQuestions(
-            2006,
-            11
-        );
-        iterator_to_array($generator);
-    }
-
-    protected function yieldArrays()
-    {
-        yield [];
-        yield [];
-        yield [];
-    }
-
-    protected function yieldArrays2()
-    {
-        yield [];
-        yield [];
-        yield [];
     }
 }
