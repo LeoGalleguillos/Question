@@ -206,7 +206,7 @@ class Answer
                AND `question`.`deleted_datetime` IS NULL
 
              ORDER
-                BY `question`.`views_browser` DESC
+                BY `question`.`views_not_bot_one_month` DESC
 
              LIMIT ?, ?
                  ;
