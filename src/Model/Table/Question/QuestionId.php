@@ -34,24 +34,6 @@ class QuestionId
         return $this->adapter->query($sql)->execute($parameters);
     }
 
-    public function updateIncrementViewsBrowserWhereQuestionId(
-        int $questionId
-    ): int {
-        $sql = '
-            UPDATE `question`
-               SET `question`.`views_browser` = `question`.`views_browser` + 1
-             WHERE `question`.`question_id` = ?
-                 ;
-        ';
-        $parameters = [
-            $questionId,
-        ];
-        return (int) $this->adapter
-            ->query($sql)
-            ->execute($parameters)
-            ->getAffectedRows();
-    }
-
     public function updateSetCreatedNameWhereQuestionId(
         string $createdName,
         int $questionId

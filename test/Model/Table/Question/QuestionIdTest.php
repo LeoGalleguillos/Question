@@ -91,40 +91,6 @@ class QuestionIdTest extends TableTestCase
         );
     }
 
-    public function testUpdateIncrementViewsBrowserWhereQuestionId()
-    {
-        $rowsAffected = $this->questionIdTable->updateIncrementViewsBrowserWhereQuestionId(
-            1
-        );
-        $this->assertSame(
-            0,
-            $rowsAffected
-        );
-
-        $this->questionTable->insert(
-            null,
-            'name',
-            'subject',
-            'message',
-            'ip',
-            'name',
-            'ip'
-        );
-
-        $rowsAffected = $this->questionIdTable->updateIncrementViewsBrowserWhereQuestionId(
-            1
-        );
-        $this->assertSame(
-            1,
-            $rowsAffected
-        );
-        $array = $this->questionTable->selectWhereQuestionId(1);
-        $this->assertSame(
-            '1',
-            $array['views_browser']
-        );
-    }
-
     public function test_updateSetModifiedReasonWhereQuestionId_emptyTable_0AffectedRows()
     {
         $result = $this->questionIdTable
