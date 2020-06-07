@@ -132,24 +132,4 @@ class QuestionId
         ];
         return $this->adapter->query($sql)->execute($parameters);
     }
-
-    public function updateSetViewsBrowserWhereQuestionId(
-        int $viewsBrowser,
-        int $questionId
-    ): int {
-        $sql = '
-            UPDATE `question`
-               SET `question`.`views_browser` = ?
-             WHERE `question`.`question_id` = ?
-                 ;
-        ';
-        $parameters = [
-            $viewsBrowser,
-            $questionId,
-        ];
-        return (int) $this->adapter
-            ->query($sql)
-            ->execute($parameters)
-            ->getAffectedRows();
-    }
 }

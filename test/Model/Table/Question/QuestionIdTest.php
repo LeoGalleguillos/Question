@@ -170,41 +170,4 @@ class QuestionIdTest extends TableTestCase
             $array['modified_reason']
         );
     }
-
-    public function testUpdateSetViewsBrowserWhereQuestionId()
-    {
-        $rowsAffected = $this->questionIdTable->updateSetViewsBrowserWhereQuestionId(
-            777,
-            1
-        );
-        $this->assertSame(
-            0,
-            $rowsAffected
-        );
-
-        $this->questionTable->insert(
-            null,
-            'name',
-            'subject',
-            'message',
-            'ip',
-            'name',
-            'ip'
-        );
-
-        $rowsAffected = $this->questionIdTable->updateSetViewsBrowserWhereQuestionId(
-            777,
-            1
-        );
-        $this->assertSame(
-            1,
-            $rowsAffected
-        );
-
-        $array = $this->questionTable->selectWhereQuestionId(1);
-        $this->assertSame(
-            '777',
-            $array['views_browser']
-        );
-    }
 }
