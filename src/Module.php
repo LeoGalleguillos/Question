@@ -397,8 +397,9 @@ class Module
                 },
                 QuestionService\Question\Questions\YearMonthDay::class => function ($sm) {
                     return new QuestionService\Question\Questions\YearMonthDay(
+                        $sm->get('laminas-db-sql-sql'),
                         $sm->get(QuestionFactory\Question::class),
-                        $sm->get(QuestionTable\Question\CreatedDatetimeDeletedDatetimeViewsBrowser::class)
+                        $sm->get(QuestionTable\Question::class)
                     );
                 },
                 QuestionService\Question\RootRelativeUrl::class => function ($sm) {
