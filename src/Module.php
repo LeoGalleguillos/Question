@@ -336,8 +336,29 @@ class Module
                         $sm->get(QuestionTable\Question::class)
                     );
                 },
+                QuestionService\Question\Questions\MostPopular\Day::class => function ($sm) {
+                    return new QuestionService\Question\Questions\MostPopular\Day(
+                        $sm->get('laminas-db-sql-sql'),
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question::class)
+                    );
+                },
+                QuestionService\Question\Questions\MostPopular\Hour::class => function ($sm) {
+                    return new QuestionService\Question\Questions\MostPopular\Hour(
+                        $sm->get('laminas-db-sql-sql'),
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question::class)
+                    );
+                },
                 QuestionService\Question\Questions\MostPopular\Month::class => function ($sm) {
                     return new QuestionService\Question\Questions\MostPopular\Month(
+                        $sm->get('laminas-db-sql-sql'),
+                        $sm->get(QuestionFactory\Question::class),
+                        $sm->get(QuestionTable\Question::class)
+                    );
+                },
+                QuestionService\Question\Questions\MostPopular\Week::class => function ($sm) {
+                    return new QuestionService\Question\Questions\MostPopular\Week(
                         $sm->get('laminas-db-sql-sql'),
                         $sm->get(QuestionFactory\Question::class),
                         $sm->get(QuestionTable\Question::class)
