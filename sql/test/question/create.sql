@@ -24,6 +24,9 @@ CREATE TABLE `question` (
     KEY `created_ip_created_datetime` (`created_ip`, `created_datetime`),
     KEY `deleted_datetime_created_datetime` (`deleted_datetime`, `created_datetime`),
     KEY `deleted_datetime_views_not_bot_one_month` (`deleted_datetime`,`views_not_bot_one_month`),
+    KEY `deleted_datetime_views_not_bot_one_week` (`deleted_datetime`,`views_not_bot_one_week`),
+    KEY `deleted_datetime_views_not_bot_one_day` (`deleted_datetime`,`views_not_bot_one_day`),
+    KEY `deleted_datetime_views_not_bot_one_hour` (`deleted_datetime`,`views_not_bot_one_hour`),
     KEY `deleted_user_id_deleted_datetime` (`deleted_user_id`, `deleted_datetime`),
     KEY `message_255` (`message`(255))
 ) CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
