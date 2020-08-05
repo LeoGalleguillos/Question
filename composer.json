@@ -9,7 +9,8 @@
         "leo-galleguillos/string": "^1.0",
         "leo-galleguillos/superglobal": "^1.0",
         "leo-galleguillos/test": "^1.0",
-        "leo-galleguillos/user": "^1.0"
+        "leo-galleguillos/user": "^1.0",
+        "monthly-basis/laminas-test": "^2.0"
     },
     "autoload": {
         "psr-4": {
