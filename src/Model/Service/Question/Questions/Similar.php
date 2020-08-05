@@ -19,8 +19,12 @@ class Similar
         $this->questionSearchMessageTable = $questionSearchMessageTable;
     }
 
+    /**
+     * @todo Make $maxResults a required parameter
+     */
     public function getSimilar(
-        QuestionEntity\Question $questionEntity
+        QuestionEntity\Question $questionEntity,
+        int $maxResults = 12
     ): Generator {
         $query = $questionEntity->getMessage();
         $query = strip_tags($query);
@@ -37,15 +41,23 @@ class Similar
                 0,
                 100,
                 0,
-                11
+                $maxResults + 1
             );
 
+        $questionsYielded = 0;
+
         foreach ($result as $array) {
+            if ($questionsYielded >= $maxResults) {
+                break;
+            }
+
             if ($array['question_id'] == $questionIdStored) {
                 continue;
             }
 
-            $questionEntity = $this->questionFactory->buildFromQuestionId($array['question_id']);
+            $questionEntity = $this->questionFactory->buildFromQuestionId(
+                (int) $array['question_id']
+            );
 
             try {
                 $questionEntity->getDeletedDatetime();
@@ -55,6 +67,7 @@ class Similar
             }
 
             yield $questionEntity;
+            $questionsYielded++;
         }
     }
 }
