@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "875a0f1d570aaa2581a5876a197457d2",
+    "content-hash": "2d6768bc6ed51f1a59c28217f2311740",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -2277,6 +2277,36 @@
                 "MIT"
             ],
             "time": "2020-08-13T05:50:24+00:00"
+        },
+        {
+            "name": "monthly-basis/flash",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/monthly-basis/flash.git",
+                "reference": "26750b27d12405f84bca3bff5368a1fa1281ce2e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/monthly-basis/flash/zipball/26750b27d12405f84bca3bff5368a1fa1281ce2e",
+                "reference": "26750b27d12405f84bca3bff5368a1fa1281ce2e",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-test": "^3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MonthlyBasis\\Flash\\": "src/",
+                    "MonthlyBasis\\FlashTest\\": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2020-11-09T05:06:44+00:00"
         },
         {
             "name": "monthly-basis/laminas-test",

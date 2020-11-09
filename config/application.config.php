@@ -2,12 +2,12 @@
 
 return [
     'modules' => [
-        'LeoGalleguillos\Flash',
         'LeoGalleguillos\Memcached',
         'LeoGalleguillos\Question',
         'LeoGalleguillos\String',
         'LeoGalleguillos\Superglobal',
         'LeoGalleguillos\User',
+        'MonthlyBasis\Flash',
         'Zend\Db',
         'Zend\Router',
     ],

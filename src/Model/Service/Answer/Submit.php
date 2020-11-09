@@ -2,7 +2,7 @@
 namespace LeoGalleguillos\Question\Model\Service\Answer;
 
 use Exception;
-use LeoGalleguillos\Flash\Model\Service as FlashService;
+use MonthlyBasis\Flash\Model\Service as FlashService;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
