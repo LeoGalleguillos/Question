@@ -2,7 +2,7 @@
 namespace LeoGalleguillos\QuestionTest\Model\Table\Question;
 
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\Test\TableTestCase;
+use MonthlyBasis\LaminasTest\TableTestCase;
 
 class MessageDeletedDatetimeCreatedDatetimeTest extends TableTestCase
 {

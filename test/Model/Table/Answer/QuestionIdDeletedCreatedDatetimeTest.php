@@ -3,7 +3,7 @@ namespace LeoGalleguillos\QuestionTest\Model\Table\Answer;
 
 use DateTime;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\Test\TableTestCase;
+use MonthlyBasis\LaminasTest\TableTestCase;
 
 class QuestionIdDeletedCreatedDatetimeTest extends TableTestCase
 {

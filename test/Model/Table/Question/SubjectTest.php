@@ -4,7 +4,7 @@ namespace LeoGalleguillos\QuestionTest\Model\Table\Question;
 use Generator;
 use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\Test\TableTestCase;
+use MonthlyBasis\LaminasTest\TableTestCase;
 
 class SubjectTest extends TableTestCase
 {

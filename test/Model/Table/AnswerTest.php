@@ -2,7 +2,7 @@
 namespace LeoGalleguillos\AnswerTest\Model\Table;
 
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\Test\TableTestCase;
+use MonthlyBasis\LaminasTest\TableTestCase;
 
 class AnswerTest extends TableTestCase
 {

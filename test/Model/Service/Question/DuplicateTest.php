@@ -7,7 +7,7 @@ use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\Test\Hydrator as TestHydrator;
+use MonthlyBasis\LaminasTest\Hydrator as TestHydrator;
 use PHPUnit\Framework\TestCase;
 
 class DuplicateTest extends TestCase

@@ -3,7 +3,7 @@ namespace LeoGalleguillos\QuestionTest\Model\Table;
 
 use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\Test\TableTestCase;
+use MonthlyBasis\LaminasTest\TableTestCase;
 
 class QuestionSearchMessageTest extends TableTestCase
 {
