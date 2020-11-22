@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d6768bc6ed51f1a59c28217f2311740",
+    "content-hash": "185a5410ea9130e602bb35b9db617b30",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -40,36 +40,31 @@
         },
         {
             "name": "doctrine/instantiator",
-            "version": "1.3.1",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/instantiator.git",
-                "reference": "f350df0268e904597e3bd9c4685c53e0e333feea"
+                "reference": "d56bf6102915de5702778fe20f2de3b2fe570b5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/f350df0268e904597e3bd9c4685c53e0e333feea",
-                "reference": "f350df0268e904597e3bd9c4685c53e0e333feea",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/d56bf6102915de5702778fe20f2de3b2fe570b5b",
+                "reference": "d56bf6102915de5702778fe20f2de3b2fe570b5b",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^6.0",
+                "doctrine/coding-standard": "^8.0",
                 "ext-pdo": "*",
                 "ext-phar": "*",
-                "phpbench/phpbench": "^0.13",
-                "phpstan/phpstan-phpunit": "^0.11",
-                "phpstan/phpstan-shim": "^0.11",
-                "phpunit/phpunit": "^7.0"
+                "phpbench/phpbench": "^0.13 || 1.0.0-alpha2",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-phpunit": "^0.12",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Doctrine\\Instantiator\\": "src/Doctrine/Instantiator/"
@@ -83,7 +78,7 @@
                 {
                     "name": "Marco Pivetta",
                     "email": "ocramius@gmail.com",
-                    "homepage": "http://ocramius.github.com/"
+                    "homepage": "https://ocramius.github.io/"
                 }
             ],
             "description": "A small, lightweight utility to instantiate objects in PHP without invoking their constructors",
@@ -92,7 +87,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2020-05-29T17:27:14+00:00"
+            "time": "2020-11-10T18:47:58+00:00"
         },
         {
             "name": "laminas/laminas-cache",
@@ -2058,48 +2053,17 @@
             "time": "2020-09-14T14:23:00+00:00"
         },
         {
-            "name": "leo-galleguillos/flash",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/LeoGalleguillos/Flash.git",
-                "reference": "3e42ea1770828477ae71cd7c9fd326db98c8f7b1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/Flash/zipball/3e42ea1770828477ae71cd7c9fd326db98c8f7b1",
-                "reference": "3e42ea1770828477ae71cd7c9fd326db98c8f7b1",
-                "shasum": ""
-            },
-            "require": {
-                "laminas/laminas-test": "^3.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "LeoGalleguillos\\Flash\\": "src/",
-                    "LeoGalleguillos\\FlashTest\\": "test/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "abandoned": "monthly-basis/flash",
-            "time": "2020-01-25T09:12:09+00:00"
-        },
-        {
             "name": "leo-galleguillos/memcached",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/Memcached.git",
-                "reference": "f41aa92ff8a9d4fce1490f3f3c738b41950c7809"
+                "reference": "a955ebfbbb5a677730c6be45d1c647dc19a0a28b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/Memcached/zipball/f41aa92ff8a9d4fce1490f3f3c738b41950c7809",
-                "reference": "f41aa92ff8a9d4fce1490f3f3c738b41950c7809",
+                "url": "https://api.github.com/repos/LeoGalleguillos/Memcached/zipball/a955ebfbbb5a677730c6be45d1c647dc19a0a28b",
+                "reference": "a955ebfbbb5a677730c6be45d1c647dc19a0a28b",
                 "shasum": ""
             },
             "require": {
@@ -2117,7 +2081,8 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-01-25T09:37:50+00:00"
+            "abandoned": "monthly-basis/memcached",
+            "time": "2020-11-10T20:57:30+00:00"
         },
         {
             "name": "leo-galleguillos/re-captcha",
@@ -2152,16 +2117,16 @@
         },
         {
             "name": "leo-galleguillos/string",
-            "version": "v2.3.1",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/String.git",
-                "reference": "d615b80d68ed7e05f21be74eaef7a418daeae01e"
+                "reference": "c016f7202a637c03a864af98f6ac440ea80675d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/d615b80d68ed7e05f21be74eaef7a418daeae01e",
-                "reference": "d615b80d68ed7e05f21be74eaef7a418daeae01e",
+                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/c016f7202a637c03a864af98f6ac440ea80675d4",
+                "reference": "c016f7202a637c03a864af98f6ac440ea80675d4",
                 "shasum": ""
             },
             "require": {
@@ -2178,7 +2143,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-09-07T17:42:04+00:00"
+            "time": "2020-11-16T20:23:33+00:00"
         },
         {
             "name": "leo-galleguillos/superglobal",
@@ -2245,24 +2210,24 @@
         },
         {
             "name": "leo-galleguillos/user",
-            "version": "v1.0.8",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/User.git",
-                "reference": "337a400e9b1635fb992c63a4cda3a7259af5932c"
+                "reference": "ee92ed5b59bc433b3f8d2fee1817d2bfd64fec1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/337a400e9b1635fb992c63a4cda3a7259af5932c",
-                "reference": "337a400e9b1635fb992c63a4cda3a7259af5932c",
+                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/ee92ed5b59bc433b3f8d2fee1817d2bfd64fec1e",
+                "reference": "ee92ed5b59bc433b3f8d2fee1817d2bfd64fec1e",
                 "shasum": ""
             },
             "require": {
                 "laminas/laminas-db": "^2.9",
                 "laminas/laminas-test": "^3.1",
-                "leo-galleguillos/flash": "^1.0",
                 "leo-galleguillos/re-captcha": "^2.0",
                 "leo-galleguillos/string": "^2.0",
+                "monthly-basis/flash": "^2.0",
                 "monthly-basis/laminas-test": "^2.0"
             },
             "type": "library",
@@ -2276,7 +2241,40 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-08-13T05:50:24+00:00"
+            "time": "2020-11-11T17:39:50+00:00"
+        },
+        {
+            "name": "monthly-basis/content-moderation",
+            "version": "v0.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/monthly-basis/content-moderation.git",
+                "reference": "f4223e5e22ac4d7735dc96b863974dae2886a0eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/monthly-basis/content-moderation/zipball/f4223e5e22ac4d7735dc96b863974dae2886a0eb",
+                "reference": "f4223e5e22ac4d7735dc96b863974dae2886a0eb",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-mvc": "^3.0.1",
+                "laminas/laminas-test": "^3.1",
+                "leo-galleguillos/string": "^2.0",
+                "monthly-basis/laminas-test": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MonthlyBasis\\ContentModeration\\": "src/",
+                    "MonthlyBasis\\ContentModerationTest\\": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2020-11-19T06:09:12+00:00"
         },
         {
             "name": "monthly-basis/flash",
@@ -2341,16 +2339,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.10.1",
+            "version": "1.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "969b211f9a51aa1f6c01d1d2aef56d3bd91598e5"
+                "reference": "776f831124e9c62e1a2c601ecc52e776d8bb7220"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/969b211f9a51aa1f6c01d1d2aef56d3bd91598e5",
-                "reference": "969b211f9a51aa1f6c01d1d2aef56d3bd91598e5",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/776f831124e9c62e1a2c601ecc52e776d8bb7220",
+                "reference": "776f831124e9c62e1a2c601ecc52e776d8bb7220",
                 "shasum": ""
             },
             "require": {
@@ -2385,7 +2383,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2020-06-29T13:22:24+00:00"
+            "time": "2020-11-13T09:40:50+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -2953,39 +2951,39 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.5.8",
+            "version": "8.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "34c18baa6a44f1d1fbf0338907139e9dce95b997"
+                "reference": "f5c8a5dd5e7e8d68d7562bfb48d47287d33937d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/34c18baa6a44f1d1fbf0338907139e9dce95b997",
-                "reference": "34c18baa6a44f1d1fbf0338907139e9dce95b997",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/f5c8a5dd5e7e8d68d7562bfb48d47287d33937d6",
+                "reference": "f5c8a5dd5e7e8d68d7562bfb48d47287d33937d6",
                 "shasum": ""
             },
             "require": {
-                "doctrine/instantiator": "^1.2.0",
+                "doctrine/instantiator": "^1.3.1",
                 "ext-dom": "*",
                 "ext-json": "*",
                 "ext-libxml": "*",
                 "ext-mbstring": "*",
                 "ext-xml": "*",
                 "ext-xmlwriter": "*",
-                "myclabs/deep-copy": "^1.9.1",
+                "myclabs/deep-copy": "^1.10.0",
                 "phar-io/manifest": "^1.0.3",
                 "phar-io/version": "^2.0.1",
                 "php": "^7.2",
-                "phpspec/prophecy": "^1.8.1",
-                "phpunit/php-code-coverage": "^7.0.7",
+                "phpspec/prophecy": "^1.10.3",
+                "phpunit/php-code-coverage": "^7.0.10",
                 "phpunit/php-file-iterator": "^2.0.2",
                 "phpunit/php-text-template": "^1.2.1",
                 "phpunit/php-timer": "^2.1.2",
                 "sebastian/comparator": "^3.0.2",
                 "sebastian/diff": "^3.0.2",
-                "sebastian/environment": "^4.2.2",
-                "sebastian/exporter": "^3.1.1",
+                "sebastian/environment": "^4.2.3",
+                "sebastian/exporter": "^3.1.2",
                 "sebastian/global-state": "^3.0.0",
                 "sebastian/object-enumerator": "^3.0.3",
                 "sebastian/resource-operations": "^2.0.1",
@@ -3032,7 +3030,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2020-06-22T07:06:58+00:00"
+            "time": "2020-11-10T12:51:38+00:00"
         },
         {
             "name": "psr/cache",

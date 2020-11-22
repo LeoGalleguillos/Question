@@ -8,6 +8,7 @@
         "leo-galleguillos/string": "^2.0",
         "leo-galleguillos/superglobal": "^1.0",
         "leo-galleguillos/user": "^1.0",
+        "monthly-basis/content-moderation": "^0.9",
         "monthly-basis/flash": "^2.0",
         "monthly-basis/laminas-test": "^2.0"
     },
