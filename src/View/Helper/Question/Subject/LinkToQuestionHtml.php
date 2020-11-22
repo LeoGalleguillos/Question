@@ -1,20 +1,21 @@
 <?php
 namespace LeoGalleguillos\Question\View\Helper\Question\Subject;
 
+use Laminas\View\Helper\AbstractHelper;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\String\Model\Service as StringService;
-use Zend\View\Helper\AbstractHelper;
+use MonthlyBasis\ContentModeration\Model\Service as ContentModerationService;
 
 class LinkToQuestionHtml extends AbstractHelper
 {
     public function __construct(
+        ContentModerationService\Replace\Spaces $spacesService,
         QuestionService\Question\RootRelativeUrl $rootRelativeUrlService,
-        StringService\CleanUpSpaces $cleanUpSpacesService,
         StringService\Escape $escapeService
     ) {
+        $this->spacesService          = $spacesService;
         $this->rootRelativeUrlService = $rootRelativeUrlService;
-        $this->cleanUpSpacesService   = $cleanUpSpacesService;
         $this->escapeService          = $escapeService;
     }
 
@@ -27,7 +28,7 @@ class LinkToQuestionHtml extends AbstractHelper
         $subjectEscaped = $this->escapeService->escape(
             $questionEntity->getSubject()
         );
-        $subjectEscapedAndCleaned = $this->cleanUpSpacesService->cleanUpSpaces(
+        $subjectEscapedAndCleaned = $this->spacesService->replaceSpaces(
             $subjectEscaped
         );
 

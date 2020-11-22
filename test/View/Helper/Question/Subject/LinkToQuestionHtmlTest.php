@@ -5,6 +5,7 @@ use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\String\Model\Service as StringService;
 use LeoGalleguillos\Question\View\Helper as QuestionHelper;
+use MonthlyBasis\ContentModeration\Model\Service as ContentModerationService;
 use PHPUnit\Framework\TestCase;
 
 class LinkToQuestionHtmlTest extends TestCase
@@ -15,8 +16,8 @@ class LinkToQuestionHtmlTest extends TestCase
             QuestionService\Question\RootRelativeUrl::class
         );
         $this->linkToQuestionHtmlHelper = new QuestionHelper\Question\Subject\LinkToQuestionHtml(
+            new ContentModerationService\Replace\Spaces(),
             $this->rootRelativeUrlServiceMock,
-            new StringService\CleanUpSpaces(),
             new StringService\Escape()
         );
     }

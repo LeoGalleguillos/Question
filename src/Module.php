@@ -2,7 +2,6 @@
 namespace LeoGalleguillos\Question;
 
 use Laminas\Db as LaminasDb;
-use MonthlyBasis\Flash\Model\Service as FlashService;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
@@ -12,6 +11,8 @@ use LeoGalleguillos\String\Model\Service as StringService;
 use LeoGalleguillos\Superglobal\Model\Service as SuperglobalService;
 use LeoGalleguillos\User\Model\Factory as UserFactory;
 use LeoGalleguillos\User\Model\Service as UserService;
+use MonthlyBasis\ContentModeration\Model\Service as ContentModerationService;
+use MonthlyBasis\Flash\Model\Service as FlashService;
 
 class Module
 {
@@ -46,8 +47,8 @@ class Module
                     },
                     QuestionHelper\Question\Subject\LinkToQuestionHtml::class => function($sm) {
                         return new QuestionHelper\Question\Subject\LinkToQuestionHtml(
+                            $sm->get(ContentModerationService\Replace\Spaces::class),
                             $sm->get(QuestionService\Question\RootRelativeUrl::class),
-                            $sm->get(StringService\CleanUpSpaces::class),
                             $sm->get(StringService\Escape::class)
 
                         );
