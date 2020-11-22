@@ -4,7 +4,7 @@ namespace LeoGalleguillos\Question\Model\Table\Question;
 use Generator;
 use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 
 class Deleted
 {

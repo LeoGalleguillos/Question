@@ -2,7 +2,7 @@
 namespace LeoGalleguillos\Question\Model\Table\Answer;
 
 use Generator;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 
 class CreatedIp
 {

@@ -3,7 +3,7 @@ namespace LeoGalleguillos\Question\Model\Table\Answer;
 
 use Generator;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 
 class CreatedNameDeletedCreatedDatetime
 {

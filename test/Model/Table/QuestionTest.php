@@ -4,7 +4,7 @@ namespace LeoGalleguillos\QuestionTest\Model\Table;
 use Generator;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use MonthlyBasis\LaminasTest\TableTestCase;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 use PHPUnit\Framework\TestCase;
 
 class QuestionTest extends TableTestCase

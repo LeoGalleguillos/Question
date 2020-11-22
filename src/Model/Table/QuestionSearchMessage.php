@@ -3,7 +3,7 @@ namespace LeoGalleguillos\Question\Model\Table;
 
 use Laminas\Db as LaminasDb;
 use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 
 class QuestionSearchMessage
 {

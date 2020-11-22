@@ -5,7 +5,7 @@ use Exception;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use TypeError;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 
 class Edit
 {

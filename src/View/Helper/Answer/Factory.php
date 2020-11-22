@@ -2,7 +2,7 @@
 namespace LeoGalleguillos\Question\View\Helper\Answer;
 
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
-use Zend\View\Helper\AbstractHelper;
+use Laminas\View\Helper\AbstractHelper;
 
 class Factory extends AbstractHelper
 {

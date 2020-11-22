@@ -3,7 +3,7 @@ namespace LeoGalleguillos\Question\View\Helper\Question;
 
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
-use Zend\View\Helper\AbstractHelper;
+use Laminas\View\Helper\AbstractHelper;
 
 class Title extends AbstractHelper
 {

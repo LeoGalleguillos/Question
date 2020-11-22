@@ -5,7 +5,7 @@ use Generator;
 use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use MonthlyBasis\LaminasTest\TableTestCase;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 use PHPUnit\Framework\TestCase;
 
 class MessageTest extends TableTestCase

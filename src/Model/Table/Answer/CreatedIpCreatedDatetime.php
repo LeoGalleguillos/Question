@@ -1,7 +1,7 @@
 <?php
 namespace LeoGalleguillos\Question\Model\Table\Answer;
 
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 
 class CreatedIpCreatedDatetime
 {
