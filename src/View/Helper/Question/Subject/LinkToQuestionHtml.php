@@ -4,7 +4,7 @@ namespace LeoGalleguillos\Question\View\Helper\Question\Subject;
 use Laminas\View\Helper\AbstractHelper;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
-use LeoGalleguillos\String\Model\Service as StringService;
+use MonthlyBasis\String\Model\Service as StringService;
 use MonthlyBasis\ContentModeration\Model\Service as ContentModerationService;
 
 class LinkToQuestionHtml extends AbstractHelper

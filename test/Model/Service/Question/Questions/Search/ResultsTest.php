@@ -5,7 +5,7 @@ use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\String\Model\Service as StringService;
+use MonthlyBasis\String\Model\Service as StringService;
 use PHPUnit\Framework\TestCase;
 
 class ResultsTest extends TestCase

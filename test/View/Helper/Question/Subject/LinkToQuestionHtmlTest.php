@@ -1,9 +1,9 @@
 <?php
-namespace LeoGalleguillos\StringTest\View\Helper;
+namespace MonthlyBasis\StringTest\View\Helper;
 
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
-use LeoGalleguillos\String\Model\Service as StringService;
+use MonthlyBasis\String\Model\Service as StringService;
 use LeoGalleguillos\Question\View\Helper as QuestionHelper;
 use MonthlyBasis\ContentModeration\Model\Service as ContentModerationService;
 use PHPUnit\Framework\TestCase;

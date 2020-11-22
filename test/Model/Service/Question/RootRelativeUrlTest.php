@@ -3,7 +3,7 @@ namespace LeoGalleguillos\QuestionTest\Model\Service;
 
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
-use LeoGalleguillos\String\Model\Service as StringService;
+use MonthlyBasis\String\Model\Service as StringService;
 use PHPUnit\Framework\TestCase;
 
 class RootRelativeUrlTest extends TestCase

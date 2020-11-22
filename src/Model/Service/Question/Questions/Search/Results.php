@@ -3,7 +3,7 @@ namespace LeoGalleguillos\Question\Model\Service\Question\Questions\Search;
 
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\String\Model\Service as StringService;
+use MonthlyBasis\String\Model\Service as StringService;
 use TypeError;
 
 class Results

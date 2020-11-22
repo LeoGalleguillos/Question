@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "185a5410ea9130e602bb35b9db617b30",
+    "content-hash": "00b1f77bc72971772765b334aed163f0",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -2336,6 +2336,36 @@
                 "MIT"
             ],
             "time": "2020-07-03T01:24:44+00:00"
+        },
+        {
+            "name": "monthly-basis/string",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/monthly-basis/string.git",
+                "reference": "4a98c479856a005a40b12ff813dd02d527cf4a8f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/monthly-basis/string/zipball/4a98c479856a005a40b12ff813dd02d527cf4a8f",
+                "reference": "4a98c479856a005a40b12ff813dd02d527cf4a8f",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-test": "^3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MonthlyBasis\\String\\": "src/",
+                    "MonthlyBasis\\StringTest\\": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2020-11-19T06:15:40+00:00"
         },
         {
             "name": "myclabs/deep-copy",

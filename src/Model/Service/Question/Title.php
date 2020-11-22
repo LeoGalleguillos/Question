@@ -2,7 +2,7 @@
 namespace LeoGalleguillos\Question\Model\Service\Question;
 
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
-use LeoGalleguillos\String\Model\Service as StringService;
+use MonthlyBasis\String\Model\Service as StringService;
 
 class Title
 {

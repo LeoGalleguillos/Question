@@ -1,5 +1,5 @@
 <?php
-namespace LeoGalleguillos\StringTest\View\Helper;
+namespace MonthlyBasis\StringTest\View\Helper;
 
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
