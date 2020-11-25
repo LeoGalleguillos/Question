@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "00b1f77bc72971772765b334aed163f0",
+    "content-hash": "0c5fc3254fcbce71488e50fb44bf35f4",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -2086,21 +2086,21 @@
         },
         {
             "name": "leo-galleguillos/re-captcha",
-            "version": "v2.0.4",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/ReCaptcha.git",
-                "reference": "95546a9ebd1581ce43bdb955808c1b19946c309a"
+                "reference": "21a80f77efb39ec0d658ac872b51d51c1c8b3418"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/ReCaptcha/zipball/95546a9ebd1581ce43bdb955808c1b19946c309a",
-                "reference": "95546a9ebd1581ce43bdb955808c1b19946c309a",
+                "url": "https://api.github.com/repos/LeoGalleguillos/ReCaptcha/zipball/21a80f77efb39ec0d658ac872b51d51c1c8b3418",
+                "reference": "21a80f77efb39ec0d658ac872b51d51c1c8b3418",
                 "shasum": ""
             },
             "require": {
                 "laminas/laminas-test": "^3.1",
-                "leo-galleguillos/string": "^2.0"
+                "monthly-basis/string": "^3.0"
             },
             "type": "library",
             "autoload": {
@@ -2113,37 +2113,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-08-10T02:17:30+00:00"
-        },
-        {
-            "name": "leo-galleguillos/string",
-            "version": "v2.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/LeoGalleguillos/String.git",
-                "reference": "c016f7202a637c03a864af98f6ac440ea80675d4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/String/zipball/c016f7202a637c03a864af98f6ac440ea80675d4",
-                "reference": "c016f7202a637c03a864af98f6ac440ea80675d4",
-                "shasum": ""
-            },
-            "require": {
-                "laminas/laminas-test": "^3.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "LeoGalleguillos\\String\\": "src/",
-                    "LeoGalleguillos\\StringTest\\": "test/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "time": "2020-11-16T20:23:33+00:00"
+            "time": "2020-11-24T06:55:21+00:00"
         },
         {
             "name": "leo-galleguillos/superglobal",
@@ -2210,25 +2180,25 @@
         },
         {
             "name": "leo-galleguillos/user",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LeoGalleguillos/User.git",
-                "reference": "ee92ed5b59bc433b3f8d2fee1817d2bfd64fec1e"
+                "reference": "89e807601b5b7432ad3fdff903787fb95d2e19d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/ee92ed5b59bc433b3f8d2fee1817d2bfd64fec1e",
-                "reference": "ee92ed5b59bc433b3f8d2fee1817d2bfd64fec1e",
+                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/89e807601b5b7432ad3fdff903787fb95d2e19d4",
+                "reference": "89e807601b5b7432ad3fdff903787fb95d2e19d4",
                 "shasum": ""
             },
             "require": {
                 "laminas/laminas-db": "^2.9",
                 "laminas/laminas-test": "^3.1",
                 "leo-galleguillos/re-captcha": "^2.0",
-                "leo-galleguillos/string": "^2.0",
                 "monthly-basis/flash": "^2.0",
-                "monthly-basis/laminas-test": "^2.0"
+                "monthly-basis/laminas-test": "^2.0",
+                "monthly-basis/string": "^3.0"
             },
             "type": "library",
             "autoload": {
@@ -2241,27 +2211,27 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-11-11T17:39:50+00:00"
+            "time": "2020-11-24T07:19:25+00:00"
         },
         {
             "name": "monthly-basis/content-moderation",
-            "version": "v0.9.0",
+            "version": "v0.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/monthly-basis/content-moderation.git",
-                "reference": "f4223e5e22ac4d7735dc96b863974dae2886a0eb"
+                "reference": "22793080b40f9ddbb65eb8cea33cf2d26db816cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/monthly-basis/content-moderation/zipball/f4223e5e22ac4d7735dc96b863974dae2886a0eb",
-                "reference": "f4223e5e22ac4d7735dc96b863974dae2886a0eb",
+                "url": "https://api.github.com/repos/monthly-basis/content-moderation/zipball/22793080b40f9ddbb65eb8cea33cf2d26db816cd",
+                "reference": "22793080b40f9ddbb65eb8cea33cf2d26db816cd",
                 "shasum": ""
             },
             "require": {
                 "laminas/laminas-mvc": "^3.0.1",
                 "laminas/laminas-test": "^3.1",
-                "leo-galleguillos/string": "^2.0",
-                "monthly-basis/laminas-test": "^2.0"
+                "monthly-basis/laminas-test": "^2.0",
+                "monthly-basis/string": "^3.0"
             },
             "type": "library",
             "autoload": {
@@ -2274,7 +2244,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-11-19T06:09:12+00:00"
+            "time": "2020-11-24T07:26:06+00:00"
         },
         {
             "name": "monthly-basis/flash",
