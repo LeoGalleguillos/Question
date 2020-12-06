@@ -2,7 +2,7 @@
 namespace LeoGalleguillos\Question\Model\Table;
 
 use Laminas\Db as LaminasDb;
-use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
+use MonthlyBasis\Memcached\Model\Service as MemcachedService;
 use Laminas\Db\Adapter\Adapter;
 
 class QuestionSearchMessage

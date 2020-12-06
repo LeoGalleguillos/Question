@@ -2,7 +2,7 @@
 namespace LeoGalleguillos\QuestionTest\Model\Table\Answer;
 
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
+use MonthlyBasis\Memcached\Model\Service as MemcachedService;
 use MonthlyBasis\LaminasTest\TableTestCase;
 
 class AnswerIdTest extends TableTestCase

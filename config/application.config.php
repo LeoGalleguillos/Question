@@ -4,12 +4,12 @@ return [
     'modules' => [
         'Laminas\Db',
         'Laminas\Router',
-        'LeoGalleguillos\Memcached',
         'LeoGalleguillos\Question',
         'LeoGalleguillos\Superglobal',
         'LeoGalleguillos\User',
         'MonthlyBasis\ContentModeration',
         'MonthlyBasis\Flash',
+        'MonthlyBasis\Memcached',
         'MonthlyBasis\String',
     ],
     // These are various options for the listeners attached to the ModuleManager

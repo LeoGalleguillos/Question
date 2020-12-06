@@ -6,7 +6,7 @@ use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use LeoGalleguillos\Question\View\Helper as QuestionHelper;
-use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
+use MonthlyBasis\Memcached\Model\Service as MemcachedService;
 use MonthlyBasis\String\Model\Service as StringService;
 use LeoGalleguillos\Superglobal\Model\Service as SuperglobalService;
 use LeoGalleguillos\User\Model\Factory as UserFactory;

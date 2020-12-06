@@ -2,7 +2,7 @@
 namespace LeoGalleguillos\Question\Model\Table\Question;
 
 use Generator;
-use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
+use MonthlyBasis\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use Laminas\Db\Adapter\Adapter;
 

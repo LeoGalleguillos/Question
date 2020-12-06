@@ -2,7 +2,7 @@
 namespace LeoGalleguillos\QuestionTest\Model\Table\Question;
 
 use Generator;
-use LeoGalleguillos\Memcached\Model\Service as MemcachedService;
+use MonthlyBasis\Memcached\Model\Service as MemcachedService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use MonthlyBasis\LaminasTest\TableTestCase;
 
