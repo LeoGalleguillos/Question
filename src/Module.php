@@ -9,8 +9,8 @@ use LeoGalleguillos\Question\View\Helper as QuestionHelper;
 use MonthlyBasis\Memcached\Model\Service as MemcachedService;
 use MonthlyBasis\String\Model\Service as StringService;
 use LeoGalleguillos\Superglobal\Model\Service as SuperglobalService;
-use LeoGalleguillos\User\Model\Factory as UserFactory;
-use LeoGalleguillos\User\Model\Service as UserService;
+use MonthlyBasis\User\Model\Factory as UserFactory;
+use MonthlyBasis\User\Model\Service as UserService;
 use MonthlyBasis\ContentModeration\Model\Service as ContentModerationService;
 use MonthlyBasis\Flash\Model\Service as FlashService;
 

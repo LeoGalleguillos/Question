@@ -4,7 +4,7 @@ namespace LeoGalleguillos\Question\Model\Service\Answer\Delete\Queue;
 use LeoGalleguillos\Question\Model\Factory as QuestionFactory;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\User\Model\Factory as UserFactory;
+use MonthlyBasis\User\Model\Factory as UserFactory;
 
 class Approve
 {

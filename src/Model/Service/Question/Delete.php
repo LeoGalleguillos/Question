@@ -3,7 +3,7 @@ namespace LeoGalleguillos\Question\Model\Service\Question;
 
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
-use LeoGalleguillos\User\Model\Entity as UserEntity;
+use MonthlyBasis\User\Model\Entity as UserEntity;
 
 class Delete
 {

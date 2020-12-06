@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fef371ee2273689290375e951b166ad6",
+    "content-hash": "2baba83dec824f4670f0cff34df41473",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -2116,42 +2116,6 @@
             "time": "2020-06-06T16:07:22+00:00"
         },
         {
-            "name": "leo-galleguillos/user",
-            "version": "v1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/LeoGalleguillos/User.git",
-                "reference": "e696d80a1ac2cae55200c05cc3c3b98ceb7652dc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/e696d80a1ac2cae55200c05cc3c3b98ceb7652dc",
-                "reference": "e696d80a1ac2cae55200c05cc3c3b98ceb7652dc",
-                "shasum": ""
-            },
-            "require": {
-                "laminas/laminas-db": "^2.9",
-                "laminas/laminas-test": "^3.1",
-                "monthly-basis/flash": "^2.0",
-                "monthly-basis/laminas-test": "^2.0",
-                "monthly-basis/re-captcha": "^3.0",
-                "monthly-basis/string": "^3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "LeoGalleguillos\\User\\": "src/",
-                    "LeoGalleguillos\\UserTest\\": "test/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "abandoned": "monthly-basis/user",
-            "time": "2020-11-27T01:49:42+00:00"
-        },
-        {
             "name": "monthly-basis/content-moderation",
             "version": "v0.10.0",
             "source": {
@@ -2336,6 +2300,41 @@
                 "MIT"
             ],
             "time": "2020-11-19T06:15:40+00:00"
+        },
+        {
+            "name": "monthly-basis/user",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/monthly-basis/user.git",
+                "reference": "0a52bcbe706719d88c7709c6ac443b4da6cb0988"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/monthly-basis/user/zipball/0a52bcbe706719d88c7709c6ac443b4da6cb0988",
+                "reference": "0a52bcbe706719d88c7709c6ac443b4da6cb0988",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-db": "^2.9",
+                "laminas/laminas-test": "^3.1",
+                "monthly-basis/flash": "^2.0",
+                "monthly-basis/laminas-test": "^2.0",
+                "monthly-basis/re-captcha": "^3.0",
+                "monthly-basis/string": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MonthlyBasis\\User\\": "src/",
+                    "MonthlyBasis\\UserTest\\": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2020-12-01T00:17:24+00:00"
         },
         {
             "name": "myclabs/deep-copy",

@@ -3,7 +3,7 @@ namespace LeoGalleguillos\Question\Model\Service;
 
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Table as QuestionTable;
-use LeoGalleguillos\User\Model\Entity as UserEntity;
+use MonthlyBasis\User\Model\Entity as UserEntity;
 
 class NumberOfPostsDeletedByUserId0InLast24Hours
 {

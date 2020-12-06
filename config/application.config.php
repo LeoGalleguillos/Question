@@ -6,11 +6,11 @@ return [
         'Laminas\Router',
         'LeoGalleguillos\Question',
         'LeoGalleguillos\Superglobal',
-        'LeoGalleguillos\User',
         'MonthlyBasis\ContentModeration',
         'MonthlyBasis\Flash',
         'MonthlyBasis\Memcached',
         'MonthlyBasis\String',
+        'MonthlyBasis\User',
     ],
     // These are various options for the listeners attached to the ModuleManager
     'module_listener_options' => array(
