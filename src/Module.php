@@ -8,7 +8,7 @@ use LeoGalleguillos\Question\Model\Table as QuestionTable;
 use LeoGalleguillos\Question\View\Helper as QuestionHelper;
 use MonthlyBasis\Memcached\Model\Service as MemcachedService;
 use MonthlyBasis\String\Model\Service as StringService;
-use LeoGalleguillos\Superglobal\Model\Service as SuperglobalService;
+use MonthlyBasis\Superglobal\Model\Service as SuperglobalService;
 use MonthlyBasis\User\Model\Factory as UserFactory;
 use MonthlyBasis\User\Model\Service as UserService;
 use MonthlyBasis\ContentModeration\Model\Service as ContentModerationService;

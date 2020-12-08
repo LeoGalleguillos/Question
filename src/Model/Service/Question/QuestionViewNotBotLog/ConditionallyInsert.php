@@ -3,7 +3,7 @@ namespace LeoGalleguillos\Question\Model\Service\Question\QuestionViewNotBotLog;
 
 use Laminas\Db as LaminasDb;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
-use LeoGalleguillos\Superglobal\Model\Service as SuperglobalService;
+use MonthlyBasis\Superglobal\Model\Service as SuperglobalService;
 
 class ConditionallyInsert
 {

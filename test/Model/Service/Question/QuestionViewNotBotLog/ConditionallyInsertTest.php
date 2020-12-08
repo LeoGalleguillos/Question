@@ -4,7 +4,7 @@ namespace LeoGalleguillos\QuestionTest\Model\Service\Question\QuestionViewNotBot
 use Laminas\Db as LaminasDb;
 use LeoGalleguillos\Question\Model\Entity as QuestionEntity;
 use LeoGalleguillos\Question\Model\Service as QuestionService;
-use LeoGalleguillos\Superglobal\Model\Service as SuperglobalService;
+use MonthlyBasis\Superglobal\Model\Service as SuperglobalService;
 use PHPUnit\Framework\TestCase;
 
 class UrlTest extends TestCase

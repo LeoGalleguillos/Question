@@ -5,11 +5,11 @@ return [
         'Laminas\Db',
         'Laminas\Router',
         'LeoGalleguillos\Question',
-        'LeoGalleguillos\Superglobal',
         'MonthlyBasis\ContentModeration',
         'MonthlyBasis\Flash',
         'MonthlyBasis\Memcached',
         'MonthlyBasis\String',
+        'MonthlyBasis\Superglobal',
         'MonthlyBasis\User',
     ],
     // These are various options for the listeners attached to the ModuleManager

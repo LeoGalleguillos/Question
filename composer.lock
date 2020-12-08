@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2baba83dec824f4670f0cff34df41473",
+    "content-hash": "819489e54b7bf339f0f4e57c7fac7005",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -2053,69 +2053,6 @@
             "time": "2020-09-14T14:23:00+00:00"
         },
         {
-            "name": "leo-galleguillos/superglobal",
-            "version": "v1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/LeoGalleguillos/Superglobal.git",
-                "reference": "8802f17b886e1938e20d62731625b4c4a413553d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/Superglobal/zipball/8802f17b886e1938e20d62731625b4c4a413553d",
-                "reference": "8802f17b886e1938e20d62731625b4c4a413553d",
-                "shasum": ""
-            },
-            "require": {
-                "laminas/laminas-test": "^3.1",
-                "leo-galleguillos/test": "^1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "LeoGalleguillos\\Superglobal\\": "src/",
-                    "LeoGalleguillos\\SuperglobalTest\\": "test/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "time": "2020-05-27T04:06:13+00:00"
-        },
-        {
-            "name": "leo-galleguillos/test",
-            "version": "v1.0.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/LeoGalleguillos/Test.git",
-                "reference": "313e9bc536f6ce1e28eeecab25ea4aa11e203755"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/Test/zipball/313e9bc536f6ce1e28eeecab25ea4aa11e203755",
-                "reference": "313e9bc536f6ce1e28eeecab25ea4aa11e203755",
-                "shasum": ""
-            },
-            "require": {
-                "laminas/laminas-db": "^2.9",
-                "laminas/laminas-test": "^3.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "LeoGalleguillos\\Test\\": "src/",
-                    "LeoGalleguillos\\TestTest\\": "test/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "abandoned": "monthly-basis/laminas-test",
-            "time": "2020-06-06T16:07:22+00:00"
-        },
-        {
             "name": "monthly-basis/content-moderation",
             "version": "v0.10.0",
             "source": {
@@ -2300,6 +2237,37 @@
                 "MIT"
             ],
             "time": "2020-11-19T06:15:40+00:00"
+        },
+        {
+            "name": "monthly-basis/superglobal",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/monthly-basis/superglobal.git",
+                "reference": "c97330500a60ac7500fbf75140526f20f0ad0169"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/monthly-basis/superglobal/zipball/c97330500a60ac7500fbf75140526f20f0ad0169",
+                "reference": "c97330500a60ac7500fbf75140526f20f0ad0169",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-test": "^3.1",
+                "monthly-basis/laminas-test": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MonthlyBasis\\Superglobal\\": "src/",
+                    "MonthlyBasis\\SuperglobalTest\\": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2020-12-08T08:41:04+00:00"
         },
         {
             "name": "monthly-basis/user",

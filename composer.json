@@ -4,12 +4,12 @@
     "require": {
         "laminas/laminas-db": "^2.9",
         "laminas/laminas-test": "^3.1",
-        "leo-galleguillos/superglobal": "^1.0",
         "monthly-basis/content-moderation": "^0.10",
         "monthly-basis/flash": "^2.0",
         "monthly-basis/laminas-test": "^2.0",
         "monthly-basis/memcached": "^2.0",
         "monthly-basis/string": "^3.0",
+        "monthly-basis/superglobal": "^2.0",
         "monthly-basis/user": "^2.0"
     },
     "autoload": {
